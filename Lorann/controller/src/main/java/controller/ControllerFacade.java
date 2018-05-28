@@ -1,5 +1,6 @@
 package controller;
 
+import java.awt.*;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -71,5 +72,20 @@ public class ControllerFacade implements IController {
      */
     public IModel getModel() {
         return this.model;
+    }
+
+    public void Initialization() {
+
+    }
+
+    public Image[][] MapStringToMapSprite(String map[][]) {
+        Image MapSprite[][] = null;
+
+        for (int x=0; x > map.length; x++) {
+            for (int y=0; y > map.length; y++) {
+                MapSprite[x][y] = model.getSpriteFromString(map[x][y]);
+            }
+        }
+        return MapSprite;
     }
 }
