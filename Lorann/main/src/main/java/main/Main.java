@@ -26,6 +26,7 @@ public abstract class Main {
         final ControllerFacade controller = new ControllerFacade(view, model);
 
         view.run();
+        view.showElements();
     }
 
 }
