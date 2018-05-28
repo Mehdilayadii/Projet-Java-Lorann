@@ -32,7 +32,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/jadiet/Mes codes/java/showboard/showboard.jar">
+	<classpathentry kind="lib" path="D:/CESI/PROJET/Projet 5 - Java/showboard-master.zip">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:file:/C:/Users/jadiet/Mes%20codes/java/showboard/showboard.doc.jar!/doc"/>
 		</attributes>

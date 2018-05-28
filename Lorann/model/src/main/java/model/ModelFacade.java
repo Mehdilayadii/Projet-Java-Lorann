@@ -12,7 +12,7 @@ import model.dao.ExampleDAO;
  * @version 1.0
  */
 public final class ModelFacade implements IModel {
-
+	
     /**
      * Instantiates a new model facade.
      */
@@ -46,5 +46,15 @@ public final class ModelFacade implements IModel {
     public List<Example> getAllExamples() throws SQLException {
         return ExampleDAO.getAllExamples();
     }
+    
+	public Image LoadSprite() {
+		try {
+            Image picture = ImageIO.read(new File("images/lorann_b.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+		
+		return picture;
+	}
 
 }
