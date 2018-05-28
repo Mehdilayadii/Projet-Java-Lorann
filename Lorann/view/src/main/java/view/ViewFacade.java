@@ -12,6 +12,8 @@ import java.awt.*;
  */
 public class ViewFacade implements IView {
 
+    private IController controller;
+
     /* Test purpose */
     private String map[][] =
             {       {"o","-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","-","o"},
@@ -43,6 +45,11 @@ public class ViewFacade implements IView {
     @Override
     public final void displayMessage(final String message) {
         JOptionPane.showMessageDialog(null, message);
+    }
+
+    /**** GETTERS and SETTERS ****/
+    public void setController(IController controller) {
+        this.controller = controller;
     }
 
     /**** METHODS ****/
