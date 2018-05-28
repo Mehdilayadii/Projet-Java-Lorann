@@ -75,7 +75,8 @@ public class ControllerFacade implements IController {
     }
 
     public void Initialization() {
-
+        model.loadAllSprites();
+        /*Will be add the JDBC connection*/
     }
 
     public Image[][] MapStringToMapSprite(String map[][]) {
