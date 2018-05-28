@@ -2,6 +2,7 @@ package main;
 
 import java.sql.SQLException;
 
+import model.dao.*;
 import controller.ControllerFacade;
 import model.ModelFacade;
 import view.ViewFacade;
@@ -21,10 +22,24 @@ public abstract class Main {
      *            the arguments
      */
     public static void main(final String[] args) {
+
+    	//Connection to database "lorann" 
+    	try {
+    		System.out.print("Trying to connect to Database :\n");
+    		LorannBDDConnector conn =new LorannBDDConnector();
+    		System.out.print("Successfuly connected\n");
+    	}
+    	catch (Exception e){
+    		e.printStackTrace();
+    	}
+    	
+    	
+    	
+    	
         final ModelFacade model = new ModelFacade();
         final ViewFacade view = new ViewFacade();
         final ControllerFacade controller = new ControllerFacade(view, model);
-
+        
         view.run();
         view.showElements();
     }

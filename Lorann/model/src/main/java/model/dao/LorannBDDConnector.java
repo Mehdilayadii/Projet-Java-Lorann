@@ -12,7 +12,7 @@ import java.sql.Statement;
  * @author Jean-Aymeric DIET jadiet@cesi.fr
  * @version 1.0
  */
-final class LorannBDDConnector {
+public final class LorannBDDConnector {
 
     /** The instance. */
     private static LorannBDDConnector instance;
@@ -35,7 +35,7 @@ final class LorannBDDConnector {
     /**
      * Instantiates a new boulder dash BDD connector.
      */
-    private LorannBDDConnector() {
+    public LorannBDDConnector() {
         this.open();
     }
 
