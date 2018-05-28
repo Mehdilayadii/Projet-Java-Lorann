@@ -1,20 +1,24 @@
 package view;
 
-import javax.swing.JOptionPane;
+import javax.swing.*;
+
+import controller.IController;
+
+import java.awt.*;
 
 /**
  * <h1>The Class ViewFacade provides a facade of the View component.</h1>
  *
- * @author Jean-Aymeric DIET jadiet@cesi.fr
- * @version 1.0
  */
 public class ViewFacade implements IView {
 
     /**
+     * CONSTRUCTOR
      * Instantiates a new view facade.
      */
     public ViewFacade() {
         super();
+
     }
 
     /*
@@ -26,4 +30,9 @@ public class ViewFacade implements IView {
         JOptionPane.showMessageDialog(null, message);
     }
 
+    /**** METHODS ****/
+    public final void run() {
+        final CustomJFrame window;
+        window = new CustomJFrame();
+    }
 }

@@ -21,13 +21,11 @@ public abstract class Main {
      *            the arguments
      */
     public static void main(final String[] args) {
-        final ControllerFacade controller = new ControllerFacade(new ViewFacade(), new ModelFacade());
+        final ModelFacade model = new ModelFacade();
+        final ViewFacade view = new ViewFacade();
+        final ControllerFacade controller = new ControllerFacade(view, model);
 
-        try {
-            controller.start();
-        } catch (final SQLException exception) {
-            exception.printStackTrace();
-        }
+        view.run();
     }
 
 }
