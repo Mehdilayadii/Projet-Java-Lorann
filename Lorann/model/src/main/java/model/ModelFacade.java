@@ -18,12 +18,14 @@ import model.dao.ExampleDAO;
  * @version 1.0
  */
 public final class ModelFacade implements IModel {
-	
+
+    private final Sprite sprite;
+
     /**
      * Instantiates a new model facade.
      */
     public ModelFacade() {
-        super();
+        this.sprite = new Sprite();
     }
 
     /*
@@ -53,15 +55,15 @@ public final class ModelFacade implements IModel {
         return ExampleDAO.getAllExamples();
     }
     
-	public Image LoadSprite() {
-		Image picture;
-		try {
-           picture = ImageIO.read(new File("images/lorann_b.png"));
-            return picture;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-	}
+    /**** METHODS ****/
+    /*Start by getting all the sprites*/
+    public void loadAllSprites() {
+        sprite.LoadAllSprite();
+    }
+
+    /*Get the a specific sprite previously load*/
+    public Image getSpriteFromString(String string) {
+        return this.sprite.getSpriteFromString(string);
+    }
 
 }
