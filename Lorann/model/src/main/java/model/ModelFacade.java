@@ -1,5 +1,6 @@
 package model;
 
+import java.awt.Image;
 import java.sql.SQLException;
 import java.util.List;
 
