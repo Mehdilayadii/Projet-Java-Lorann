@@ -1,8 +1,13 @@
 package model;
 
+
 import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+
+import javax.imageio.ImageIO;
 
 import model.dao.ExampleDAO;
 
@@ -49,8 +54,9 @@ public final class ModelFacade implements IModel {
     }
     
 	public Image LoadSprite() {
+		Image picture;
 		try {
-            Image picture = ImageIO.read(new File("images/lorann_b.png"));
+           picture = ImageIO.read(new File("images/lorann_b.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
