@@ -34,6 +34,8 @@ public class ControllerFacade implements IController {
         super();
         this.view = view;
         this.model = model;
+
+        this.Initialization();
     }
 
     /**
@@ -74,16 +76,26 @@ public class ControllerFacade implements IController {
         return this.model;
     }
 
+    /**
+     * Initialization :
+     * Load all sprites and start the JDBC connection
+     * */
     public void Initialization() {
         model.loadAllSprites();
         /*Will be add the JDBC connection*/
+    }
+
+    /**
+     * Main function, launch the game.
+     */
+    public void play() {
     }
 
     public Image[][] MapStringToMapSprite(String map[][]) {
         Image MapSprite[][] = null;
 
         for (int x=0; x > map.length; x++) {
-            for (int y=0; y > map.length; y++) {
+            for (int y=0; y > map[0].length; y++) {
                 MapSprite[x][y] = model.getSpriteFromString(map[x][y]);
             }
         }

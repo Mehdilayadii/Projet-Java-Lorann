@@ -58,7 +58,8 @@ public class ViewFacade implements IView {
         window = new CustomJFrame();
     }
 
+
     public void showElements() {
-        new CustomJPanel();
+        new CustomJPanel(controller.MapStringToMapSprite(map));
     }
 }

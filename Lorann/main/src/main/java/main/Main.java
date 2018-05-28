@@ -23,6 +23,7 @@ public abstract class Main {
      */
     public static void main(final String[] args) {
 
+        /*
     	//Connection to database "lorann" 
     	try {
     		System.out.print("Trying to connect to Database :\n");
@@ -32,14 +33,13 @@ public abstract class Main {
     	catch (Exception e){
     		e.printStackTrace();
     	}
-    	
-    	
-    	
+    	*/
     	
         final ModelFacade model = new ModelFacade();
         final ViewFacade view = new ViewFacade();
         final ControllerFacade controller = new ControllerFacade(view, model);
-        
+
+        /* To move in the controller.play()*/
         view.run();
         view.showElements();
     }
