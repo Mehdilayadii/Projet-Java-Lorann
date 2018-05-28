@@ -4,6 +4,7 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import model.sprite.*;
 
 public class Sprite {
 
@@ -19,8 +20,8 @@ public class Sprite {
     }
 
     public void LoadAllSprite() {
-        for (CharToSprite sprite : CharToSprite.values()) {
-            sprite.setImage(LoadSprite("sprite\\"+sprite.getName()+".png"));
+        for (CharToSprite sprite : CharToSprite.values()) {       	
+        	sprite.setImage(LoadSprite("../model/src/main/java/model/sprite/"+sprite.getName()+".png"));
         }
     }
 
