@@ -52,11 +52,6 @@ public class ViewFacade implements IView {
     }
 
     public void showElements() {
-        for (int x = 0; x < map.length; x++) {
-            for (int y = 0; y < map[0].length; y++) {
-                
-            }
-            System.out.println();
-        }
+        new CustomJPanel();
     }
 }
