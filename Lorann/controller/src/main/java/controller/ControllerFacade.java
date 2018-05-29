@@ -8,7 +8,6 @@ import java.util.List;
 import model.Example;
 import model.IModel;
 import view.IView;
-import model.dao.LorannBDDConnector;
 
 /**
  * <h1>The Class ControllerFacade provides a facade of the Controller component.</h1>
@@ -85,16 +84,16 @@ public class ControllerFacade implements IController {
     public void Initialization() {
         model.loadAllSprites();
     	//Connection to database "lorann" 
-    	try {
+    	/*
+        try {
     		System.out.print("Trying to connect to Database :\n");
     		LorannBDDConnector conn =new LorannBDDConnector();
     		System.out.print("Successfuly connected\n");
     	}
     	catch (Exception e){
     		e.printStackTrace();
-    	}
+    	}*/
 
-        /*Will be add the JDBC connection*/
     }
 
     /**
@@ -105,7 +104,6 @@ public class ControllerFacade implements IController {
 
     public Image[][] MapStringToMapSprite(String map[][]) {
         Image MapSprite[][] = new Image[map[0].length][map.length];
-        System.out.println(map.length+"]["+  map[0].length);
 
         for (int y = 0; y < map.length; y++) {
             for (int x = 0; x < map[0].length; x++) {

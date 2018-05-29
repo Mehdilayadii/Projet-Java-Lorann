@@ -34,7 +34,8 @@ public abstract class Main {
     		e.printStackTrace();
     	}
     	*/
-    	
+        System.getProperty("user.dir");
+
         final ModelFacade model = new ModelFacade();
         final ViewFacade view = new ViewFacade();
         final ControllerFacade controller = new ControllerFacade(view, model);

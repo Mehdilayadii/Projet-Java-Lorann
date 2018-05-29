@@ -20,13 +20,8 @@ public class Sprite {
     }
 
     public void LoadAllSprite() {
-<<<<<<< HEAD
         for (CharToSprite sprite : CharToSprite.values()) {
-            sprite.setImage(LoadSprite("F:\\Cesi\\Annee 1\\_Project\\Github\\Projet-Java-Lorann\\Lorann\\main\\src\\main\\ressources\\sprite\\"+sprite.getName()+".png"));
-=======
-        for (CharToSprite sprite : CharToSprite.values()) {       	
-        	sprite.setImage(LoadSprite("../model/src/main/java/model/sprite/"+sprite.getName()+".png"));
->>>>>>> 9c8b3cbac2038aef21ff2b99dbcc77f1cdb50513
+        	sprite.setImage(LoadSprite("..\\model\\src\\main\\java\\model\\sprite\\"+sprite.getName()+".png"));
         }
     }
 

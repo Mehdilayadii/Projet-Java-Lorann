@@ -21,8 +21,6 @@ public class CustomJPanel extends JPanel {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        System.out.print("Paint component of JPanel");
-
         for (int x = 0; x < map.length; x++) {
             for (int y = 0; y < map[0].length; y++) {
                 g.drawImage(map[x][y],x*32,y*32,32,32,null);

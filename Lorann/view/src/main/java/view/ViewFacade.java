@@ -61,7 +61,6 @@ public class ViewFacade implements IView {
 
     public void showElements() {
         window.add(new CustomJPanel(controller.MapStringToMapSprite(map)));
-        System.out.println("Show elements");
 
         window.setVisible(true);
     }
