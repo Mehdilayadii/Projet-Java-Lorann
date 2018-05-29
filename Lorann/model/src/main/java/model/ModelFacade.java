@@ -10,6 +10,7 @@ import java.util.List;
 import javax.imageio.ImageIO;
 
 import model.dao.ExampleDAO;
+import model.dao.LorannBDDConnector;
 
 /**
  * <h1>The Class ModelFacade provides a facade of the Model component.</h1>
@@ -64,6 +65,20 @@ public final class ModelFacade implements IModel {
     /*Get the a specific sprite previously load*/
     public Image getSpriteFromString(String string) {
         return this.sprite.getSpriteFromString(string);
+    }
+    
+    
+    /*Connect to the database lorann */
+    public void connectToDB() {
+    	LorannBDDConnector conn = null;
+    	try {
+    		System.out.print("Trying to connect to Database :\n");
+    		conn =new LorannBDDConnector();
+    		System.out.print("Successfuly connected\n");
+    	}
+    	catch (Exception e){
+    		e.printStackTrace();
+    	}
     }
 
 }

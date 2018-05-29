@@ -84,15 +84,7 @@ public class ControllerFacade implements IController {
     public void Initialization() {
         model.loadAllSprites();
     	//Connection to database "lorann" 
-    	/*
-        try {
-    		System.out.print("Trying to connect to Database :\n");
-    		LorannBDDConnector conn =new LorannBDDConnector();
-    		System.out.print("Successfuly connected\n");
-    	}
-    	catch (Exception e){
-    		e.printStackTrace();
-    	}*/
+    	model.connectToDB();
 
     }
 

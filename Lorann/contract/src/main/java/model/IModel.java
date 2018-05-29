@@ -45,4 +45,5 @@ public interface IModel {
 
     void loadAllSprites();
     Image getSpriteFromString(String string);
+    void connectToDB();
 }
