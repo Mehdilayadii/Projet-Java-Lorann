@@ -14,6 +14,7 @@ import model.Example;
  * @author Jean-Aymeric DIET jadiet@cesi.fr
  * @version 1.0
  */
+
 public abstract class ExampleDAO extends AbstractDAO {
 
     /** The sql example by id. */
@@ -40,6 +41,7 @@ public abstract class ExampleDAO extends AbstractDAO {
      * @throws SQLException
      *             the SQL exception
      */
+    /*
     public static Example getExampleById(final int id) throws SQLException {
         final CallableStatement callStatement = prepareCall(sqlExampleById);
         Example example = null;
@@ -62,7 +64,7 @@ public abstract class ExampleDAO extends AbstractDAO {
      * @return the example by name
      * @throws SQLException
      *             the SQL exception
-     */
+     *//*
     public static Example getExampleByName(final String name) throws SQLException {
         final CallableStatement callStatement = prepareCall(sqlExampleByName);
         Example example = null;
@@ -84,7 +86,7 @@ public abstract class ExampleDAO extends AbstractDAO {
      * @return the all examples
      * @throws SQLException
      *             the SQL exception
-     */
+     *//*
     public static List<Example> getAllExamples() throws SQLException {
         final ArrayList<Example> examples = new ArrayList<Example>();
         final CallableStatement callStatement = prepareCall(sqlAllExamples);
@@ -97,5 +99,5 @@ public abstract class ExampleDAO extends AbstractDAO {
             result.close();
         }
         return examples;
-    }
+    }*/
 }
