@@ -92,11 +92,12 @@ public class ControllerFacade implements IController {
     }
 
     public Image[][] MapStringToMapSprite(String map[][]) {
-        Image MapSprite[][] = null;
+        Image MapSprite[][] = new Image[map[0].length][map.length];
+        System.out.println(map.length+"]["+  map[0].length);
 
-        for (int x=0; x > map.length; x++) {
-            for (int y=0; y > map[0].length; y++) {
-                MapSprite[x][y] = model.getSpriteFromString(map[x][y]);
+        for (int y = 0; y < map.length; y++) {
+            for (int x = 0; x < map[0].length; x++) {
+                MapSprite[x][y] = model.getSpriteFromString(map[y][x]);
             }
         }
         return MapSprite;

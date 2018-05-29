@@ -20,7 +20,7 @@ public class Sprite {
 
     public void LoadAllSprite() {
         for (CharToSprite sprite : CharToSprite.values()) {
-            sprite.setImage(LoadSprite("sprite\\"+sprite.getName()+".png"));
+            sprite.setImage(LoadSprite("F:\\Cesi\\Annee 1\\_Project\\Github\\Projet-Java-Lorann\\Lorann\\main\\src\\main\\ressources\\sprite\\"+sprite.getName()+".png"));
         }
     }
 

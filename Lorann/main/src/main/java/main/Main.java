@@ -39,8 +39,9 @@ public abstract class Main {
         final ViewFacade view = new ViewFacade();
         final ControllerFacade controller = new ControllerFacade(view, model);
 
+        view.setController(controller);
+
         /* To move in the controller.play()*/
-        view.run();
         view.showElements();
     }
 

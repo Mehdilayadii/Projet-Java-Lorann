@@ -1,0 +1,7 @@
+model\CharToSprite.class
+model\Sprite.class
+model\dao\BoulderDashBDDConnector.class
+model\dao\LorannBDDConnector.class
+model\dao\AbstractDAO.class
+model\dao\ExampleDAO.class
+model\ModelFacade.class

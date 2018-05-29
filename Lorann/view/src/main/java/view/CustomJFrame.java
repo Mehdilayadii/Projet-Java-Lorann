@@ -11,14 +11,13 @@ public class CustomJFrame extends JFrame {
 
         /*Style*/
         this.setTitle("Lorann Game");
-        this.setSize(640, 416);
+        this.setSize(660, 460);
         /*Position*/
         this.setLocationRelativeTo(null);
         /*Behavior*/
         this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        this.setVisible(true);
     }
 
 }
