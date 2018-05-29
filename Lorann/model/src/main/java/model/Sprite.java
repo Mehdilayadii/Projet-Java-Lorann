@@ -21,7 +21,7 @@ public class Sprite {
 
     public void LoadAllSprite() {
         for (CharToSprite sprite : CharToSprite.values()) {
-        	sprite.setImage(LoadSprite("..\\model\\src\\main\\java\\model\\sprite\\"+sprite.getName()+".png"));
+        	sprite.setImage(LoadSprite("model/src/main/java/model/sprite/"+sprite.getName()+".png"));
         }
     }
 
