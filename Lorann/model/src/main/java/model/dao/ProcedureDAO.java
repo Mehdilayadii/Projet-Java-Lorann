@@ -70,7 +70,7 @@ public abstract class ProcedureDAO extends AbstractDAO {
      * @throws SQLException
      *             the SQL exception
      */
-    public static List<Example> getLevelByID(final int id) throws SQLException {
+   public static List<Example> getLevelByID(final int id) throws SQLException {
     	final ArrayList<Example> levels = new ArrayList<Example>();
         final CallableStatement callStatement = prepareCall(sqlgetLevelByID);
         callStatement.setInt(1, id);
