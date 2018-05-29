@@ -25,13 +25,16 @@ public abstract class ProcedureDAO extends AbstractDAO {
     
    
     
+    /** The element column index. */
+    private static int    elementColumnIndex  = 2;
     
+    /** The cooX column index. */
+    private static int    cooXColumnIndex    = 3;
     
-    /** The id column index. */
-    private static int    idColumnIndex    = 1;
+    /** The cooY column index. */
+    private static int    cooYColumnIndex    = 4;
 
-    /** The name column index. */
-    private static int    nameColumnIndex  = 2;
+   
 
     /**
      * Gets the example by id.
@@ -74,7 +77,7 @@ public abstract class ProcedureDAO extends AbstractDAO {
             final ResultSet result = callStatement.getResultSet();
 
             for (boolean isResultLeft = result.first(); isResultLeft; isResultLeft = result.next()) {
-                levels.add(new Example(result.getInt(idColumnIndex), result.getString(nameColumnIndex)));
+                levels.add(new Example(result.getString(elementColumnIndex), result.getInt(cooXColumnIndex), result.getInt(cooYColumnIndex)));
             }
             result.close();
         }
@@ -109,17 +112,6 @@ public abstract class ProcedureDAO extends AbstractDAO {
     */
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+   
 }
 
