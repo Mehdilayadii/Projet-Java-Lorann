@@ -107,3 +107,4 @@ public class Example {
    public String toString() {
         return this.getElement() + ";" + this.getCooX()+ ";" + this.getCooY();
     }
+}
