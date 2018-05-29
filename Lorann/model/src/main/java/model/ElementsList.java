@@ -6,7 +6,7 @@ import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 
-public enum Elements {
+public enum ElementsList {
 
     /*Lorann*/
     Lorann_D                ("lorann_b","L1",Behavior.PLAYER),
@@ -51,15 +51,15 @@ public enum Elements {
 
     private Image image = null;
 
-    private static Map<String, Elements> lookup = new HashMap<String, Elements>();
+    private static Map<String, ElementsList> lookup = new HashMap<String, ElementsList>();
     static {
-        for (Elements e : Elements.values()) {
+        for (ElementsList e : ElementsList.values()) {
             lookup.put(e.character,e);
         }
     }
 
     //Constructeur
-    Elements(String name, String character, Behavior behavior){
+    ElementsList(String name, String character, Behavior behavior){
         this.name = name;
         this.character = character;
         this.behavior = behavior;
@@ -79,7 +79,7 @@ public enum Elements {
     }
 
     /* Get enum from given char */
-    public static Elements get(String character) {
+    public static ElementsList get(String character) {
         return lookup.get(character);
     }
 }
