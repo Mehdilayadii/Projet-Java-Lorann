@@ -22,7 +22,7 @@ public abstract class ProcedureDAO extends AbstractDAO {
     /** The sql example by id. */
     private static String sqlgetLevelByID   = "{call getLevelByID(?)}";
 
-    
+
    
     
     /** The element column index. */
@@ -71,13 +71,17 @@ public abstract class ProcedureDAO extends AbstractDAO {
      *             the SQL exception
      */
     public static List<Example> getLevelByID(final int id) throws SQLException {
-        final ArrayList<Example> levels = new ArrayList<Example>();
+    	System.out.print("test");
+    	final ArrayList<Example> levels = new ArrayList<Example>();
         final CallableStatement callStatement = prepareCall(sqlgetLevelByID);
         callStatement.setInt(1, id);
         if (callStatement.execute()) {
+        	System.out.print("test");
             final ResultSet result = callStatement.getResultSet();
 
             for (boolean isResultLeft = result.first(); isResultLeft; isResultLeft = result.next()) {
+            	
+            	System.out.print(result.getString(elementColumnIndex));
                 levels.add(new Example(result.getString(elementColumnIndex), result.getInt(cooXColumnIndex), result.getInt(cooYColumnIndex)));
             }
             result.close();

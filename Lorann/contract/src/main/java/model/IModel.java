@@ -15,5 +15,5 @@ public interface IModel {
     void loadAllSprites();
     Image getSpriteFromString(String string);
     void connectToDB();
-    List<Example> getLevelByID(int id);
+    List<Example> getLevelByID(int id) throws SQLException;
 }

@@ -11,6 +11,7 @@ import javax.imageio.ImageIO;
 
 import model.dao.ExampleDAO;
 import model.dao.LorannBDDConnector;
+import model.dao.ProcedureDAO;
 
 /**
  * <h1>The Class ModelFacade provides a facade of the Model component.</h1>
@@ -57,9 +58,8 @@ public final class ModelFacade implements IModel {
 
 
 	@Override
-	public List<Example> getLevelByID(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Example> getLevelByID(int id) throws SQLException {
+		return ProcedureDAO.getLevelByID(id);
 	}
 
 }
