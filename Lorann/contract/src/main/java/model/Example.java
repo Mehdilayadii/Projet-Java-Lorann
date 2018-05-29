@@ -104,7 +104,6 @@ public class Example {
      * @see java.lang.Object#toString()
      */
     @Override
-    public String toString() {
-        return this.getElement() + " : " + this.getCooX()+ " : " + this.getCooY();
+   public String toString() {
+        return this.getElement() + ";" + this.getCooX()+ ";" + this.getCooY();
     }
-}
