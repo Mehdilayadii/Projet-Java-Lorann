@@ -71,17 +71,15 @@ public abstract class ProcedureDAO extends AbstractDAO {
      *             the SQL exception
      */
     public static List<Example> getLevelByID(final int id) throws SQLException {
-    	System.out.print("test");
     	final ArrayList<Example> levels = new ArrayList<Example>();
         final CallableStatement callStatement = prepareCall(sqlgetLevelByID);
         callStatement.setInt(1, id);
         if (callStatement.execute()) {
-        	System.out.print("test");
             final ResultSet result = callStatement.getResultSet();
 
             for (boolean isResultLeft = result.first(); isResultLeft; isResultLeft = result.next()) {
             	
-            	System.out.print(result.getString(elementColumnIndex));
+            	//System.out.print(result.getString(elementColumnIndex)+"\n");
                 levels.add(new Example(result.getString(elementColumnIndex), result.getInt(cooXColumnIndex), result.getInt(cooYColumnIndex)));
             }
             result.close();

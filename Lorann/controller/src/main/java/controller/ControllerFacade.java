@@ -73,15 +73,15 @@ public class ControllerFacade implements IController {
     	
     	//this.getModel().getLevelByID(1);
     	//model.getLevelByID(1);
-        //System.out.print(model.getLevelByID(1));
+        System.out.print(model.getLevelByID(1));
 
     	//this.getModel().getLevelByID(1);
-        final List<Example> examples = this.getModel().getLevelByID(1);
+        /*final List<Example> examples = this.getModel().getLevelByID(1);
         final StringBuilder message = new StringBuilder();
         for (final Example example : examples) {
             message.append(example);
-            message.append('\n');
-    }}
+            message.append('\n');*/
+    }
 
     /**
      * Main function, launch the game.
