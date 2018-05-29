@@ -70,16 +70,57 @@ public class ControllerFacade implements IController {
     	//Connection to database "lorann"
     	model.connectToDB();
     	
-    	//this.getModel().getLevelByID(1);
+    	
     	//model.getLevelByID(1);
-        System.out.print(model.getLevelByID(1));
+       // List<Example> test =model.getLevelByID(1);
+        //System.out.print(model.getLevelByID(1) .toString());
+        //System.out.print(
+       // test.get(1).toString();
 
     	//this.getModel().getLevelByID(1);
-        /*final List<Example> examples = this.getModel().getLevelByID(1);
+        final List<Example> examples = this.getModel().getLevelByID(1);
         final StringBuilder message = new StringBuilder();
         for (final Example example : examples) {
             message.append(example);
-            message.append('\n');*/
+            message.append('\n'); 
+        }
+        //System.out.print(message);
+        String test=message.toString();
+        //System.out.println(test);
+        String[] ary = test.split("\n");
+        String x;
+        String y;
+        String el;
+        int cooX;
+        int cooY;
+        
+        String[][]mapV2= new String[20][12];
+
+        for(int i=0;i<ary.length;i++){	 
+            String provisoire = ary[i];
+            String[] tempo = provisoire.split(";"); // On coupe le String de la forme 
+        	  el=tempo[0];
+        	  x=tempo[1];
+        	  y=tempo[2];
+        	  cooX=Integer.parseInt(x);
+        	  cooY=Integer.parseInt(y);
+        	  cooX-=1;
+          	  cooY-=1;
+        	  //System.out.print(cooX+";");
+        	  //System.out.print(cooY+"\n");
+        	  
+        	  mapV2[cooX][cooY]=el;
+        	  
+        		}
+        
+        
+        for(int i=0;i<12;i++) {
+        	System.out.print("\n");
+        	for(int j=0;j<20;j++) {
+        		System.out.print(mapV2[j][i]);
+        	}
+
+        }
     }
 
     /**
