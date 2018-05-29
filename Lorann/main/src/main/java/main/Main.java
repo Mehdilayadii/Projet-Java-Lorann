@@ -34,6 +34,7 @@ public abstract class Main {
     		e.printStackTrace();
     	}
     	*/
+        System.out.print(System.getProperty("user.dir"));
 
         final ModelFacade model = new ModelFacade();
         final ViewFacade view = new ViewFacade();

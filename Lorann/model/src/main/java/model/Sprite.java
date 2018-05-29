@@ -26,6 +26,6 @@ public class Sprite {
     }
 
     public Image getSpriteFromString(String sprite) {
-        return CharToSprite.valueOf(sprite).getImage();
+        return CharToSprite.get(sprite).getImage();
     }
 }
