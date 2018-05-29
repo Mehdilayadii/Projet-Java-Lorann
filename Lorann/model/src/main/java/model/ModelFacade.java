@@ -55,4 +55,11 @@ public final class ModelFacade implements IModel {
     	}
     }
 
+
+	@Override
+	public List<Example> getLevelByID(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
