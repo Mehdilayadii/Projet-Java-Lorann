@@ -6,9 +6,9 @@ import java.io.File;
 import java.io.IOException;
 
 
-public class Sprite {
+public abstract class Sprite {
 
-    public Image LoadSprite(String name) {
+    public static Image LoadSprite(String name) {
         Image picture;
         try {
             picture = ImageIO.read(new File(name));
@@ -19,13 +19,13 @@ public class Sprite {
         return null;
     }
 
-    public void LoadAllSprite() {
+    public static void LoadAllSprite() {
         for (ElementsList sprite : ElementsList.values()) {
         	sprite.setImage(LoadSprite("model/src/main/java/model/sprite/"+sprite.getName()+".png"));
         }
     }
 
-    public Image getSpriteFromString(String sprite) {
+    public static Image getSpriteFromString(String sprite) {
         return ElementsList.get(sprite).getImage();
     }
 }

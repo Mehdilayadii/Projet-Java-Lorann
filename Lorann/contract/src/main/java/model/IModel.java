@@ -12,8 +12,9 @@ import java.util.List;
  */
 public interface IModel {
 
-    void loadAllSprites();
-    Image getSpriteFromString(String string);
+    Image getSpriteFromMap(int x,int y);
+    Dimension getMapSize();
+
     void connectToDB();
     List<Example> getLevelByID(int id) throws SQLException;
 }

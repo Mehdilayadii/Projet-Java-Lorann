@@ -1,15 +1,10 @@
 package model;
 
 
-import java.awt.Image;
-import java.io.File;
-import java.io.IOException;
+import java.awt.*;
 import java.sql.SQLException;
 import java.util.List;
 
-import javax.imageio.ImageIO;
-
-import model.dao.ExampleDAO;
 import model.dao.LorannBDDConnector;
 import model.dao.ProcedureDAO;
 
@@ -21,28 +16,41 @@ import model.dao.ProcedureDAO;
  */
 public final class ModelFacade implements IModel {
 
-    private final Sprite sprite;
+    private MapModel map;
 
+    /* Test purpose, will come from Database */
+    private String mapString[][] =
+            {{"C","H","H","H","H","H","H","H","H","H","H","H","H","H","H","H","H","H","H","C"},
+                    {"V"," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," ","V"},
+                    {"V"," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," ","V"},
+                    {"V"," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," ","V"},
+                    {"V"," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," ","V"},
+                    {"V"," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," ","V"},
+                    {"V"," "," "," "," "," "," "," "," ","L1"," "," "," "," "," "," "," "," "," ","V"},
+                    {"V"," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," ","V"},
+                    {"V"," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," ","V"},
+                    {"V"," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," ","V"},
+                    {"V"," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," ","V"},
+                    {"V"," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," "," ","V"},
+                    {"C","H","H","H","H","H","H","H","H","H","H","H","H","H","H","H","H","H","H","C"}};
     /**
      * Instantiates a new model facade.
      */
     public ModelFacade() {
-        this.sprite = new Sprite();
+        Sprite.LoadAllSprite();
+        this.map = new MapModel(mapString);
     }
 
+    /**** GETTERS and SETTERS ****/
+    public Image getSpriteFromMap(int x,int y) {
+        return map.getMap()[x][y].getSprite();
+    }
+
+    public Dimension getMapSize() {
+        return new Dimension(map.getMap().length,map.getMap()[0].length);
+    }
 
     /**** METHODS ****/
-    /*Start by getting all the sprites*/
-    public void loadAllSprites() {
-        sprite.LoadAllSprite();
-    }
-
-    /*Get the a specific sprite previously load*/
-    public Image getSpriteFromString(String string) {
-        return this.sprite.getSpriteFromString(string);
-    }
-    
-    
     /*Connect to the database lorann */
     public void connectToDB() {
     	LorannBDDConnector conn = null;

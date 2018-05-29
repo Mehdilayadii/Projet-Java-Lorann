@@ -19,11 +19,11 @@ public enum ElementsList {
     Lorann_DR               ("lorann_br","L8",Behavior.PLAYER),
 
     /*Spell*/
-    Spell_GREEN             ("fireball_1","S1",Behavior.MOB_LETHAL),
-    Spell_BLUE              ("fireball_2","S2",Behavior.MOB_LETHAL),
-    Spell_PURPLE            ("fireball_3","S3",Behavior.MOB_LETHAL),
-    Spell_RED               ("fireball_4","S4",Behavior.MOB_LETHAL),
-    Spell_YELLOW            ("fireball_5","S5",Behavior.MOB_LETHAL),
+    Spell_GREEN             ("fireball_1","S1",Behavior.PLAYER_SHOOT),
+    Spell_BLUE              ("fireball_2","S2",Behavior.PLAYER_SHOOT),
+    Spell_PURPLE            ("fireball_3","S3",Behavior.PLAYER_SHOOT),
+    Spell_RED               ("fireball_4","S4",Behavior.PLAYER_SHOOT),
+    Spell_YELLOW            ("fireball_5","S5",Behavior.PLAYER_SHOOT),
 
     /*Doors*/
     Door_CLOSE              ("gate_closed","DC",Behavior.PLAYER_LETHAL),

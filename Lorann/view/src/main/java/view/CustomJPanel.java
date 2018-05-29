@@ -23,7 +23,7 @@ public class CustomJPanel extends JPanel {
 
         for (int x = 0; x < map.length; x++) {
             for (int y = 0; y < map[0].length; y++) {
-                g.drawImage(map[x][y],x*32,y*32,32,32,null);
+                g.drawImage(map[x][y],y*32,x*32,32,32,null);
             }
         }
     }

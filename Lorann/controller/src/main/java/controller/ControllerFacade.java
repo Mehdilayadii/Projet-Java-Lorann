@@ -67,8 +67,7 @@ public class ControllerFacade implements IController {
      * Load all sprites and start the JDBC connection
      * */
     public void Initialization() throws SQLException {
-        model.loadAllSprites();
-    	//Connection to database "lorann" 
+    	//Connection to database "lorann"
     	model.connectToDB();
     	
     	//this.getModel().getLevelByID(1);
@@ -89,14 +88,18 @@ public class ControllerFacade implements IController {
     public void play() {
     }
 
-    public Image[][] MapStringToMapSprite(String map[][]) {
-        Image MapSprite[][] = new Image[map[0].length][map.length];
+    public Image[][] getImageMap() {
 
-        for (int y = 0; y < map.length; y++) {
-            for (int x = 0; x < map[0].length; x++) {
-                MapSprite[x][y] = model.getSpriteFromString(map[y][x]);
+        int mapX = model.getMapSize().width;
+        int mapY = model.getMapSize().height;
+
+        Image[][] imageMap = new Image[mapX][mapY];
+
+        for(int x=0; x < mapX; x++) {
+            for (int y=0; y < mapY; y++) {
+                imageMap[x][y] = model.getSpriteFromMap(x,y);
             }
         }
-        return MapSprite;
+        return imageMap;
     }
 }

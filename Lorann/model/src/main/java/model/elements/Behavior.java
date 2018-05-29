@@ -1,10 +1,16 @@
 package model.elements;
 
 public enum Behavior {
-    PLAYER,
-    PLAYER_LETHAL,
-    MOB_LETHAL,
-    OBSTACLE,
-    FINISH,
-    ITEM;
+    PLAYER (true),
+    PLAYER_LETHAL (true),
+    PLAYER_SHOOT (false),
+    OBSTACLE (true),
+    FINISH (false),
+    ITEM (false);
+
+    private boolean isSolid;
+
+    Behavior(boolean isSolid) {
+        this.isSolid = isSolid;
+    }
 }

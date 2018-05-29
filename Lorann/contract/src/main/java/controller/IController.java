@@ -9,5 +9,5 @@ import java.awt.*;
  * @version 1.0
  */
 public interface IController {
-    Image[][] MapStringToMapSprite(String map[][]);
+    Image[][] getImageMap();
 }
