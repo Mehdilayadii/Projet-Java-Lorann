@@ -23,19 +23,6 @@ public abstract class Main {
      */
     public static void main(final String[] args) {
 
-        /*
-    	//Connection to database "lorann" 
-    	try {
-    		System.out.print("Trying to connect to Database :\n");
-    		LorannBDDConnector conn =new LorannBDDConnector();
-    		System.out.print("Successfuly connected\n");
-    	}
-    	catch (Exception e){
-    		e.printStackTrace();
-    	}
-    	*/
-        System.out.print(System.getProperty("user.dir"));
-
         final ModelFacade model = new ModelFacade();
         final ViewFacade view = new ViewFacade();
         final ControllerFacade controller = new ControllerFacade(view, model);
