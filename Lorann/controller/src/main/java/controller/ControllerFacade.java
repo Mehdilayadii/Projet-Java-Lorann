@@ -36,7 +36,11 @@ public class ControllerFacade implements IController {
         this.view = view;
         this.model = model;
 
-        this.Initialization();
+        try {
+        this.Initialization(); 
+        }catch(SQLException e) {
+        		e.printStackTrace();
+        }
     }
     
 
@@ -62,10 +66,12 @@ public class ControllerFacade implements IController {
      * Initialization :
      * Load all sprites and start the JDBC connection
      * */
-    public void Initialization() {
+    public void Initialization() throws SQLException {
         model.loadAllSprites();
     	//Connection to database "lorann" 
     	model.connectToDB();
+    	
+    	this.getModel().getLevelByID(1);
 
     }
 
