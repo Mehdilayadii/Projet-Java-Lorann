@@ -67,53 +67,63 @@ public class ControllerFacade implements IController {
      * Load all sprites and start the JDBC connection
      * */
     public void Initialization() throws SQLException {
-    	//Connection to database "lorann"
+     
+    	//Connection to database "lorann" 
     	model.connectToDB();
     	
     	
-    	//model.getLevelByID(1);
-       // List<Example> test =model.getLevelByID(1);
-        //System.out.print(model.getLevelByID(1) .toString());
-        //System.out.print(
-       // test.get(1).toString();
-
-    	//this.getModel().getLevelByID(1);
+   // Convert List<Example> to StringBuilder
         final List<Example> examples = this.getModel().getLevelByID(1);
         final StringBuilder message = new StringBuilder();
         for (final Example example : examples) {
             message.append(example);
             message.append('\n'); 
         }
-        //System.out.print(message);
+        
+        
+        
+        //Convert StringBuilder type to String type
         String test=message.toString();
-        //System.out.println(test);
+
+        
         String[] ary = test.split("\n");
-        String x;
+       // Store differents elements as String type
+        String x; 
         String y;
-        String el;
+        String element;
+        
+        //Real coordinates as integer
         int cooX;
         int cooY;
         
+        //Our map
         String[][]mapV2= new String[20][12];
 
-        for(int i=0;i<ary.length;i++){	 
-            String provisoire = ary[i];
-            String[] tempo = provisoire.split(";"); // On coupe le String de la forme 
-        	  el=tempo[0];
+        for(int i=0;i<ary.length;i++){	
+        	
+        	 //Temporary String storing sql recording line per line
+             String provisoire = ary[i];
+            
+              //Separe our message from database to real coordinate
+            		//Example : Convert C;1;1
+            		//To Element=C, X=1, Y=1
+              String[] tempo = provisoire.split(";"); // Cutting String 
+        	  element=tempo[0];
         	  x=tempo[1];
         	  y=tempo[2];
-        	  cooX=Integer.parseInt(x);
+        	  
+        	  //Convert String coordinates to integer
+        	  cooX=Integer.parseInt(x); 
         	  cooY=Integer.parseInt(y);
         	  cooX-=1;
           	  cooY-=1;
-        	  //System.out.print(cooX+";");
-        	  //System.out.print(cooY+"\n");
-        	  
-        	  mapV2[cooX][cooY]=el;
+          	  
+        	  //Store data into our map
+        	  mapV2[cooX][cooY]=element; 
         	  
         		}
         
-        
+        // Show the map //TO BE DELETED LATER
         for(int i=0;i<12;i++) {
         	System.out.print("\n");
         	for(int j=0;j<20;j++) {
@@ -121,7 +131,11 @@ public class ControllerFacade implements IController {
         	}
 
         }
-    }
+        
+        
+        
+        
+        }
 
     /**
      * Main function, launch the game.
