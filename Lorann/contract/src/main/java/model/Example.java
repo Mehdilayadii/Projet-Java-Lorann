@@ -8,11 +8,15 @@ package model;
  */
 public class Example {
 
-    /** The id. */
-    private final int id;
 
-    /** The name. */
-    private String    name;
+    /** The name of element */
+    private String    element;
+    
+    /** The X coordinates of element */
+    private int cooX;
+    
+    /** The Y coordinates of element */
+    private int cooY;
 
     /**
      * Instantiates a new example.
@@ -22,39 +26,78 @@ public class Example {
      * @param name
      *            the name
      */
-    public Example(final int id, final String name) {
+    public Example(final String element,final int cooX,final int cooY) {
         super();
-        this.id = id;
-        this.name = name;
+        this.element = element;
+        this.cooX = cooX;
+        this.cooY = cooY;
     }
 
     /**
-     * Gets the id.
+     * Gets the element.
      *
-     * @return the id
+     * @return the element
      */
-    public int getId() {
-        return this.id;
+    public String getElement() {
+        return this.element;
+    }
+    
+        
+    /**
+     * Gets the X coordinates.
+     *
+     * @return the X coordinates
+     */
+    public int getCooX() {
+        return this.cooX;
+    }
+    
+    
+    /**
+     * Gets the Y coordinates.
+     *
+     * @return the Y coordinates
+     */
+    public int getCooY() {
+        return this.cooY;
     }
 
-    /**
-     * Gets the name.
-     *
-     * @return the name
-     */
-    public String getName() {
-        return this.name;
-    }
+    
 
     /**
-     * Sets the name.
+     * Sets the element.
      *
-     * @param name
-     *            the new name
+     * @param element
+     *            the new element
      */
-    public void setName(final String name) {
-        this.name = name;
+    public void setElement(final String element) {
+        this.element= element;
     }
+    
+    
+
+    /**
+     * Sets the X coordinates.
+     *
+     * @param element
+     *            the new X coordinates
+     */
+    public void setCooX(final int cooX) {
+        this.cooX= cooX;
+    }
+    
+    
+    /**
+     * Sets the Y coordinates.
+     *
+     * @param element
+     *            the new Y coordinates
+     */
+    public void setCooY(final int cooY) {
+        this.cooY= cooY;
+    }
+    
+    
 
     /*
      * (non-Javadoc)
@@ -62,6 +105,6 @@ public class Example {
      */
     @Override
     public String toString() {
-        return this.getId() + " : " + this.getName();
+        return this.getElement() + " : " + this.getCooX()+ " : " + this.getCooY();
     }
 }
