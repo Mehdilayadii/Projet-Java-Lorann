@@ -5,6 +5,7 @@ import java.awt.*;
 import java.sql.SQLException;
 import java.util.List;
 
+import model.dao.ImportLevel;
 import model.dao.LorannBDDConnector;
 import model.dao.ProcedureDAO;
 
@@ -35,10 +36,12 @@ public final class ModelFacade implements IModel {
                     {"C","H","H","H","H","H","H","H","H","H","H","H","H","H","H","H","H","H","H","C"}};
     /**
      * Instantiates a new model facade.
+     * @throws SQLException 
      */
-    public ModelFacade() {
+    public ModelFacade()  {
         Sprite.LoadAllSprite();
-        this.map = new MapModel(mapString);
+        this.map = new MapModel(ImportLevel.CreateMap(this));
+        
     }
 
     /**** GETTERS and SETTERS ****/
