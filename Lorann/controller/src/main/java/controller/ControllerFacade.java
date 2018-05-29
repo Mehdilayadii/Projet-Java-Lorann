@@ -1,12 +1,14 @@
 package controller;
 
 import java.awt.*;
+
 import java.sql.SQLException;
 import java.util.List;
 
 import model.Example;
 import model.IModel;
 import view.IView;
+import model.dao.LorannBDDConnector;
 
 /**
  * <h1>The Class ControllerFacade provides a facade of the Controller component.</h1>
@@ -82,6 +84,16 @@ public class ControllerFacade implements IController {
      * */
     public void Initialization() {
         model.loadAllSprites();
+    	//Connection to database "lorann" 
+    	try {
+    		System.out.print("Trying to connect to Database :\n");
+    		LorannBDDConnector conn =new LorannBDDConnector();
+    		System.out.print("Successfuly connected\n");
+    	}
+    	catch (Exception e){
+    		e.printStackTrace();
+    	}
+
         /*Will be add the JDBC connection*/
     }
 
