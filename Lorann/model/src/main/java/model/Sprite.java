@@ -20,12 +20,12 @@ public class Sprite {
     }
 
     public void LoadAllSprite() {
-        for (CharToSprite sprite : CharToSprite.values()) {
+        for (Elements sprite : Elements.values()) {
         	sprite.setImage(LoadSprite("model/src/main/java/model/sprite/"+sprite.getName()+".png"));
         }
     }
 
     public Image getSpriteFromString(String sprite) {
-        return CharToSprite.get(sprite).getImage();
+        return Elements.get(sprite).getImage();
     }
 }
