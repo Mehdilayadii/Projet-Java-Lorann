@@ -13,12 +13,15 @@ public class Player extends Mobile{
 
     /**** METHODS ****/
     public void animate (){
-        if (animationNumber < 8){
+        if (animationNumber < 7){
             this.sprite = ElementsList.values()[animationNumber].getImage();
             this.stringStyle = ElementsList.values()[animationNumber].getCharacter();
             animationNumber++;
+
         }
         else {
+            this.sprite = ElementsList.values()[animationNumber].getImage();
+            this.stringStyle = ElementsList.values()[animationNumber].getCharacter();
             animationNumber = 0;
         }
     }
