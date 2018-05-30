@@ -8,10 +8,16 @@ import model.elements.Mobile.Spell;
 import model.elements.Static;
 import model.elements.Types;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class MapModel {
 
     private Elements[][] map;
     private Player player;
+
+    private List<Enemy> enemies = new ArrayList<Enemy>();
 
     /**** CONSTRUCTOR ****/
     public MapModel(String[][] mapString) {
@@ -25,6 +31,10 @@ public class MapModel {
 
     public Player getPlayer() {
         return player;
+    }
+
+    public List<Enemy> getEnemies() {
+        return enemies;
     }
 
     /**** METHODS ****/
@@ -56,7 +66,8 @@ public class MapModel {
                 element = new Static(stringStyle,true,false);
                 break;
             case ENEMY:
-                element = new Enemy(stringStyle,positionX,positionY);
+                enemies.add(new Enemy(stringStyle,positionX,positionY));
+                element = enemies.get(enemies.size() - 1);
                 break;
             case SPELL:
                 element = new Spell(stringStyle,positionX,positionY);

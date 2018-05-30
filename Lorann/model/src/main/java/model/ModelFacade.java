@@ -3,11 +3,13 @@ package model;
 
 import java.awt.*;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import model.dao.ImportLevel;
 import model.dao.LorannBDDConnector;
 import model.dao.ProcedureDAO;
+import model.elements.Mobile.Enemy;
 
 /**
  * <h1>The Class ModelFacade provides a facade of the Model component.</h1>
@@ -72,4 +74,21 @@ public final class ModelFacade implements IModel {
 
     /* Get behavior of a Elements */
     /*IN PROGRESS*/
+
+    /* Get Player location*/
+    public Point getPlayerLocation() {
+        return map.getPlayer().getLocation();
+    }
+
+    /* Get Enemies locations */
+    public List<Point> getEnemiesLocation() {
+
+        List<Point> enemiesLocations = new ArrayList<Point>();
+        List<Enemy> enemies = map.getEnemies();
+
+        for(Enemy enemy : enemies) {
+            enemiesLocations.add(enemy.getLocation());
+        }
+        return enemiesLocations;
+    }
 }
