@@ -33,16 +33,16 @@ public final class LorannBDDConnector {
     private Statement                      statement;
 
     /**
-     * Instantiates a new boulder dash BDD connector.
+     * Instantiates a new BDD connector.
      */
     public LorannBDDConnector() {
         this.open();
     }
 
     /**
-     * Gets the single instance of BoulderDashBDDConnector.
+     * Gets the single instance of the BDDConnector.
      *
-     * @return single instance of BoulderDashBDDConnector
+     * @return single instance of the BDDConnector
      */
     public static LorannBDDConnector getInstance() {
         if (instance == null) {
