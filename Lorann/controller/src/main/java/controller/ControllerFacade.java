@@ -24,6 +24,7 @@ public class ControllerFacade implements IController {
     private final IModel model;
     
     private static final int speed = 100;
+    private boolean game_loop = true;
 
     /**
      * Instantiates a new controller facade.
@@ -41,7 +42,7 @@ public class ControllerFacade implements IController {
         try {
         this.Initialization(); 
         }catch(SQLException e) {
-        		e.printStackTrace();
+                e.printStackTrace();
         }
     }
     
@@ -70,8 +71,8 @@ public class ControllerFacade implements IController {
      * */
     public void Initialization() throws SQLException {
      
-    	//Connection to database "lorann" 
-    	model.connectToDB();   
+        //Connection to database "lorann" 
+        model.connectToDB();   
         }
 
     /**
@@ -79,15 +80,16 @@ public class ControllerFacade implements IController {
      */
     
     public void play(){
-    	try {
-    		  while (true) {
-    	            model.animate();
-    	            view.showElements();
-    	            Thread.sleep(speed);
-    	            		}
-            	
+        try {
+              while (game_loop) {
+                    model.animate();
+                    view.showElements();
+                    Thread.sleep(speed);
+                    //System.out.println();
+                            }
+                
         } catch(InterruptedException e) { e.printStackTrace();
-            	}
+                }
        
     }
 
