@@ -23,7 +23,7 @@ public class ControllerFacade implements IController {
     /** The model. */
     private final IModel model;
     
-    private static final int speed = 300;
+    private static final int speed = 100;
 
     /**
      * Instantiates a new controller facade.
@@ -84,7 +84,6 @@ public class ControllerFacade implements IController {
     	            model.animate();
     	            view.showElements();
     	            Thread.sleep(speed);
-    	            view.resetElements();
     	            		}
             	
         } catch(InterruptedException e) { e.printStackTrace();
