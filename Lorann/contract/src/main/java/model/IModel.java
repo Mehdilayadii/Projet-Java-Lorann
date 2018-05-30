@@ -17,4 +17,7 @@ public interface IModel {
 
     void connectToDB();
     List<Example> getLevelByID(int id) throws SQLException;
+
+    void showElements();
+    void resetElements();
 }
