@@ -8,11 +8,7 @@ package view;
  */
 public interface IView {
 
-    /**
-     * Display message.
-     *
-     * @param message
-     *            the message
-     */
+    void showElements();
+    void resetElements();
     void displayMessage(String message);
 }

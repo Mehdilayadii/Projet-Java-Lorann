@@ -2,12 +2,13 @@ package model;
 
 import model.elements.Elements;
 import model.elements.Mobile.Mobile;
+import model.elements.Mobile.Player;
 import model.elements.Types;
 
 public class MapModel {
 
     private Elements[][] map;
-    private Mobile player;
+    private Player player;
 
     /**** CONSTRUCTOR ****/
     public MapModel(String[][] mapString) {
@@ -41,7 +42,7 @@ public class MapModel {
 
         switch (type) {
             case PLAYER:
-                player = new Mobile(stringStyle,type.isSolid(),positionX,positionY);
+                player = new Player(stringStyle,type.isSolid(),positionX,positionY);
                 element = player;
                 break;
             default:
@@ -55,5 +56,10 @@ public class MapModel {
         Elements elementToMove = map[oldX][oldY];
         map[newX][newY] = elementToMove;
         map[oldX][oldY] = new Elements(" ",false);
+    }
+
+    /* Animate Player and Spells*/
+    public void animateElements() {
+        player.animate();
     }
 }

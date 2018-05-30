@@ -26,7 +26,6 @@ public final class ModelFacade implements IModel {
     public ModelFacade()  {
         Sprite.LoadAllSprite();
         this.map = new MapModel(ImportLevel.CreateMap(this));
-        
     }
 
     /**** GETTERS and SETTERS ****/
@@ -52,10 +51,14 @@ public final class ModelFacade implements IModel {
     	}
     }
 
-
 	@Override
 	public List<Example> getLevelByID(int id) throws SQLException {
 		return ProcedureDAO.getLevelByID(id);
 	}
+
+	/*Animate*/
+    public void animate() {
+        map.animateElements();
+    }
 
 }
