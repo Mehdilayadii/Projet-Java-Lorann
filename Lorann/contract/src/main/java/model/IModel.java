@@ -20,4 +20,5 @@ public interface IModel {
 
     void animate();
     void movePlayer(int moveX, int moveY);
+    void moveEnemies(List<Point> enemiesMove);
 }
