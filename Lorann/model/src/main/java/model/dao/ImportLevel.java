@@ -14,16 +14,11 @@ public abstract class ImportLevel{
 	// Convert List<Example> to StringBuilder
    
 	try {
-		final List<Example> examples = model.getLevelByID(1);
-		final StringBuilder message = new StringBuilder();
-	    for (final Example example : examples) {
-	        message.append(example);
-	        message.append('\n'); 
-	    }
-	    //Convert StringBuilder type to String type
-	    String test=message.toString();
-	    String[] ary = test.split("\n");
-	    // Store differents elements as String type
+		
+		// 			Our variable
+		//
+		//
+		// Will store different elements as String type
 	     String x; 
 	     String y;
 	     String element;
@@ -34,16 +29,33 @@ public abstract class ImportLevel{
 	     
 	     //Our map
 	     String[][]mapV2= new String[20][12];
+		
+		
+	     //Call our procedure and store data into our var 'message'
+		final List<Example> examples = model.getLevelByID(1);
+		final StringBuilder message = new StringBuilder();
+	    for (final Example example : examples) {
+	        message.append(example);
+	        message.append('\n'); 
+	    }
+	    
+	    
+	    //Convert StringBuilder type to String type
+	    String stringMessage=message.toString();
+	    
+	   //Separe our different element in an array 
+	    String[] ary = stringMessage.split("\n");
+	    
 
 	     for(int i=0;i<ary.length;i++){	
 	     	
 	     	 //Temporary String storing sql recording line per line
-	          String provisoire = ary[i];
+	          String provisional = ary[i];
 	         
 	           //Separe our message from database to real coordinate
 	         		//Example : Convert C;1;1
 	         		//To Element=C, X=1, Y=1
-	           String[] tempo = provisoire.split(";"); // Cutting String 
+	           String[] tempo = provisional.split(";"); // Cutting String 
 	     	  element=tempo[0];
 	     	  x=tempo[1];
 	     	  y=tempo[2];
