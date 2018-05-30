@@ -13,6 +13,7 @@ import java.awt.*;
 public class ViewFacade implements IView {
 
     private final CustomJFrame window;
+
     private IController controller;
 
     /**
@@ -45,7 +46,6 @@ public class ViewFacade implements IView {
 
     public void showElements() {
         window.add(new CustomJPanel(controller.getImageMap()));
-
         window.setVisible(true);
     }
 }

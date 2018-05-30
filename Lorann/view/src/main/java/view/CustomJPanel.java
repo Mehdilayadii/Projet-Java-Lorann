@@ -6,12 +6,24 @@ import java.awt.*;
 public class CustomJPanel extends JPanel {
 
     private Image map[][];
-
+    private String score = "SCORE : ";
     /**
      * CONSTRUCTOR
      */
     public CustomJPanel(Image map[][]) {
         this.map = map;
+        this.setBackground(Color.BLACK);
+    }
+
+    /**
+     * GETTERS and SETTERS
+     */
+    public String getScore() {
+        return score;
+    }
+
+    public void setScore(String score) {
+        this.score = "SCORE : "+score;
     }
 
     /**
@@ -26,5 +38,9 @@ public class CustomJPanel extends JPanel {
                 g.drawImage(map[x][y],x*32,y*32,32,32,null);
             }
         }
+        Font fonte = new Font(" TimesRoman ",Font.BOLD,30);
+        g.setFont(fonte);
+        g.setColor(Color.WHITE);
+        g.drawString(score,10,this.getHeight()-10);
     }
 }

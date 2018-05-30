@@ -18,7 +18,7 @@ import model.dao.ProcedureDAO;
 public final class ModelFacade implements IModel {
 
     private MapModel map;
-    
+
     /**
      * Instantiates a new model facade.
      * @throws SQLException 
