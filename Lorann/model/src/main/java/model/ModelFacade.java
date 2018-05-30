@@ -72,8 +72,24 @@ public final class ModelFacade implements IModel {
         map.getPlayer().setLocation(newX,newY);
     }
 
-    /* Get behavior of a Elements */
-    /*IN PROGRESS*/
+    /*Move enemies*/
+    public void moveEnemies(List<Point> enemiesMove) {
+        List<Point> enemiesOld = getEnemiesLocation();
+        int i = 0;
+
+        for (Point enemyMove : enemiesMove) {
+            int oldX = map.getEnemies().get(i).getLocation().x;
+            int oldY = map.getEnemies().get(i).getLocation().y;
+
+            int newX = oldX + enemyMove.x;
+            int newY = oldY + enemyMove.y;
+
+            map.moveElement(oldX,oldY,newX,newY);
+            map.getEnemies().get(i).setLocation(newX,newY);
+
+            i++;
+        }
+    }
 
     /* Get Player location*/
     public Point getPlayerLocation() {
@@ -90,5 +106,10 @@ public final class ModelFacade implements IModel {
             enemiesLocations.add(enemy.getLocation());
         }
         return enemiesLocations;
+    }
+
+    /* Get behavior of a Elements */
+    public State getState(int x, int y) {
+    	return map.getMap()[x][y].getState();
     }
 }
