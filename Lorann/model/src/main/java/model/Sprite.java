@@ -21,7 +21,7 @@ public abstract class Sprite {
 
     public static void LoadAllSprite() {
         for (ElementsList sprite : ElementsList.values()) {
-        	sprite.setImage(LoadSprite("../model/src/main/java/model/sprite/"+sprite.getName()+".png"));
+        	sprite.setImage(LoadSprite("model/src/main/java/model/sprite/"+sprite.getName()+".png"));
         }
     }
 

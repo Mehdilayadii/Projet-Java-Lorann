@@ -48,7 +48,6 @@ public class CustomJFrame extends JFrame implements KeyListener {
                  deplacement_player.x = -1;
                  break;
          }
-         System.out.println(deplacement_player);
     }
 
     public Point return_deplacement_player() {
@@ -87,7 +86,6 @@ public class CustomJFrame extends JFrame implements KeyListener {
     @Override
     public void keyTyped(KeyEvent key) {
         // TODO Auto-generated method stub
-
 
     }
 }
