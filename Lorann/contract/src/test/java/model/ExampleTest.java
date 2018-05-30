@@ -47,21 +47,43 @@ public class ExampleTest {
         assertEquals(expected, this.test.getCooY());
     }
 
-    /*@Test
-    public void testSetName() {
-        String expected = "Example test";
-        assertEquals(expected, this.example.getName());
-        expected = "Example test modified";
-        this.example.setName(expected);
-        assertEquals(expected, this.example.getName());
+    
+    @Test
+    public void testSetElement() {
+        String expected = "test";
+        assertEquals(expected, this.test.getElement());
+        expected = "element";
+        this.test.setElement(expected);
+        assertEquals(expected, this.test.getElement());
+    }
+    
+    
+    
+    @Test
+    public void testSetCooX() {
+        int expected = 1;
+        assertEquals(expected, this.test.getCooX());
+        expected = 3;
+        this.test.setCooX(expected);
+        assertEquals(expected, this.test.getCooX());
+    }
+    
+    @Test
+    public void testSetCooY() {
+        int expected = 2;
+        assertEquals(expected, this.test.getCooY());
+        expected = 4;
+        this.test.setCooY(expected);
+        assertEquals(expected, this.test.getCooY());
     }
 
+    
     @Test
     public void testToString() {
-        final String expected = "1 : Example test";
-        assertEquals(expected, this.example.toString());
+        final String expected = "test;1;2";
+        assertEquals(expected, this.test.toString());
     }
-*/
+
 
 }
 
