@@ -22,6 +22,8 @@ public class ControllerFacade implements IController {
 
     /** The model. */
     private final IModel model;
+    
+    private static final int speed = 300;
 
     /**
      * Instantiates a new controller facade.
@@ -69,20 +71,26 @@ public class ControllerFacade implements IController {
     public void Initialization() throws SQLException {
      
     	//Connection to database "lorann" 
-    	model.connectToDB();
-    	
-    	
-   
-        
-        
-        
-        
+    	model.connectToDB();   
         }
 
     /**
      * Main function, launch the game.
      */
-    public void play() {
+    
+    public void play(){
+    	try {
+    		  while (true) {
+    			    System.out.println("BITE");
+    	            model.animate();
+    	            view.showElements();
+    	            Thread.sleep(speed);
+    	            view.resetElements();
+    	            		}
+            	
+        } catch(InterruptedException e) { e.printStackTrace();
+            	}
+       
     }
 
     public Image[][] getImageMap() {
