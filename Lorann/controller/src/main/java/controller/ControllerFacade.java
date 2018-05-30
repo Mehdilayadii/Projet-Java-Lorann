@@ -80,10 +80,10 @@ public class ControllerFacade implements IController {
      */
     
     public void play(){
-    	Point player_deplacement_point = new Point(0,0);
+        Point player_deplacement_point = new Point(0,0);
         try {
               while (game_loop) {
-            	  	//Refresh screen//
+                    //Refresh screen//
                     model.animate();
                     view.showElements();
                     Thread.sleep(speed);
