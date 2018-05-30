@@ -47,7 +47,7 @@ public class ExampleTest {
         assertEquals(expected, this.test.getCooY());
     }
 
-    @Test
+    /*@Test
     public void testSetName() {
         String expected = "Example test";
         assertEquals(expected, this.example.getName());
@@ -61,7 +61,7 @@ public class ExampleTest {
         final String expected = "1 : Example test";
         assertEquals(expected, this.example.toString());
     }
-
+*/
 
 }
 
