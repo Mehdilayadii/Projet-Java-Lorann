@@ -47,7 +47,7 @@ public enum ElementsList {
 
     private String name = "";
     private String character = "";
-    private Types behavior;
+    private Types type;
 
     private Image image = null;
 
@@ -59,10 +59,10 @@ public enum ElementsList {
     }
 
     //Constructeur
-    ElementsList(String name, String character, Types behavior){
+    ElementsList(String name, String character, Types type){
         this.name = name;
         this.character = character;
-        this.behavior = behavior;
+        this.type = type;
     }
 
     /**** GETTERS and SETTERS ****/
@@ -72,6 +72,10 @@ public enum ElementsList {
 
     public Image getImage() {
         return image;
+    }
+
+    public Types getType() {
+        return this.type;
     }
 
     public void setImage(Image image) {

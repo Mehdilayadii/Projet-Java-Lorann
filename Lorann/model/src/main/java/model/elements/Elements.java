@@ -5,13 +5,16 @@ import model.Sprite;
 import java.awt.*;
 
 public class Elements {
-    private String stringStyle;
-    private Image sprite;
 
+    private String stringStyle;
+    protected Image sprite;
+
+    private boolean isSolid;
 
     /**** CONSTRUCTOR ****/
-    public Elements(String stringStyle) {
+    public Elements(String stringStyle,boolean isSolid) {
         this.stringStyle = stringStyle;
+        this.isSolid = isSolid;
 
         sprite = Sprite.getSpriteFromString(stringStyle);
     }
