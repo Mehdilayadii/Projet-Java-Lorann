@@ -32,7 +32,7 @@ public class CustomJFrame extends JFrame implements KeyListener {
         requestFocusInWindow();
     }
     
-    private Point return_deplacement_player(final int keyCode) {
+    private void changing_value_deplacement(final int keyCode) {
          switch (keyCode)
          {
              case KeyEvent.VK_UP: // UP
@@ -49,15 +49,17 @@ public class CustomJFrame extends JFrame implements KeyListener {
                  break;
          }
          System.out.println(deplacement_player);
-         return deplacement_player; 
+    }
+
+    public Point return_deplacement_player() {
+        return deplacement_player; 
     }
 
     
     @Override
     public void keyPressed(KeyEvent key) {
         // TODO Auto-generated method stub
-        this.return_deplacement_player(key.getKeyCode());       
- 
+        this.changing_value_deplacement(key.getKeyCode());       
     }
     
     @Override

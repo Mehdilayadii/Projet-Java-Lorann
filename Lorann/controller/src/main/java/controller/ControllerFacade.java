@@ -23,7 +23,7 @@ public class ControllerFacade implements IController {
     /** The model. */
     private final IModel model;
     
-    private static final int speed = 100;
+    private static final int speed = 150;
     private boolean game_loop = true;
 
     /**
@@ -80,12 +80,16 @@ public class ControllerFacade implements IController {
      */
     
     public void play(){
+    	Point player_deplacement_point = new Point(0,0);
         try {
               while (game_loop) {
+            	  	//Refresh screen//
                     model.animate();
                     view.showElements();
                     Thread.sleep(speed);
-                    //System.out.println();
+                    //deplacement//
+                    player_deplacement_point = view.return_deplacement_player();
+                    model.movePlayer(player_deplacement_point.x,player_deplacement_point.y);
                             }
                 
         } catch(InterruptedException e) { e.printStackTrace();

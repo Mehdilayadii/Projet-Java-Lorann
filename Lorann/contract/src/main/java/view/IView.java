@@ -1,5 +1,7 @@
 package view;
 
+import java.awt.Point;
+
 /**
  * <h1>The Interface IView.</h1>
  *
@@ -10,4 +12,5 @@ public interface IView {
 
     void showElements();
     void displayMessage(String message);
+    public Point return_deplacement_player();
 }

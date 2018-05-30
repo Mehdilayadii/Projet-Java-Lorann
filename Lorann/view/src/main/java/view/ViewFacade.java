@@ -45,6 +45,12 @@ public class ViewFacade implements IView {
 
     public void showElements() {
         window.add(new CustomJPanel(controller.getImageMap()));
-        window.revalidate();;
+        window.revalidate();
     }
+    
+    //Return Userinput
+    public Point return_deplacement_player() {
+    	return window.return_deplacement_player();
+    }
+    
 }

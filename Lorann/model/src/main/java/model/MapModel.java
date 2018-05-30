@@ -91,7 +91,9 @@ public class MapModel {
     public void moveElement(int oldX, int oldY, int newX, int newY) {
         Elements elementToMove = map[oldX][oldY];
         map[newX][newY] = elementToMove;
-        map[oldX][oldY] = new Elements(" ");
+        if ((newX != oldX) || (newY != oldY)) {
+        	map[oldX][oldY] = new Elements(" ");
+        }
     }
 
     /* Animate Player and Spells*/
