@@ -13,6 +13,7 @@ public class Mobile extends Elements {
         super(stringStyle);
 
         this.location = new Point(x,y);
+        this.isSolid = true;
     }
 
     /**** GETTERS and SETTERS ****/

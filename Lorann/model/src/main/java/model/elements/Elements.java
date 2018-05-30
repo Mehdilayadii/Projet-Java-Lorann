@@ -9,6 +9,8 @@ public class Elements {
     protected String stringStyle;
     protected Image sprite;
 
+    protected boolean isSolid;
+
     /**** CONSTRUCTOR ****/
     public Elements(String stringStyle) {
         this.stringStyle = stringStyle;

@@ -70,4 +70,6 @@ public final class ModelFacade implements IModel {
         map.getPlayer().setLocation(newX,newY);
     }
 
+    /* Get behavior of a Elements */
+    /*IN PROGRESS*/
 }

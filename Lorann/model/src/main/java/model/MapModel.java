@@ -1,8 +1,11 @@
 package model;
 
 import model.elements.Elements;
+import model.elements.Mobile.Enemy;
 import model.elements.Mobile.Mobile;
 import model.elements.Mobile.Player;
+import model.elements.Mobile.Spell;
+import model.elements.Static;
 import model.elements.Types;
 
 public class MapModel {
@@ -48,6 +51,24 @@ public class MapModel {
             case PLAYER:
                 player = new Player(stringStyle,positionX,positionY);
                 element = player;
+                break;
+            case OBSTACLE:
+                element = new Static(stringStyle,true,false);
+                break;
+            case ENEMY:
+                element = new Enemy(stringStyle,positionX,positionY);
+                break;
+            case SPELL:
+                element = new Spell(stringStyle,positionX,positionY);
+                break;
+            case OBSTACLE_KILL:
+                element = new Static(stringStyle,true,true);
+                break;
+            case ITEM:
+                element = new Static(stringStyle,true,false);
+                break;
+            case EXIT_DOOR:
+                element = new Static(stringStyle,true,false);
                 break;
             default:
                 element = new Elements(stringStyle);
