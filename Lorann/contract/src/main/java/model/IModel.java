@@ -19,4 +19,5 @@ public interface IModel {
     List<Example> getLevelByID(int id) throws SQLException;
 
     void animate();
+    void movePlayer(int moveX, int moveY);
 }

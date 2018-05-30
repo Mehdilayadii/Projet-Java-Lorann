@@ -20,6 +20,10 @@ public class MapModel {
         return map;
     }
 
+    public Player getPlayer() {
+        return player;
+    }
+
     /**** METHODS ****/
     /* Convert the map from the string ressource*/
     public void MapStringToMapElements(String mapString[][]) {

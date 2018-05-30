@@ -61,4 +61,13 @@ public final class ModelFacade implements IModel {
         map.animateElements();
     }
 
+    /*Move player*/
+    public void movePlayer(int moveX, int moveY) {
+        int newX = map.getPlayer().getLocation().x + moveX;
+        int newY = map.getPlayer().getLocation().y + moveY;
+
+        map.moveElement(map.getPlayer().getLocation().x,map.getPlayer().getLocation().y,newX,newY);
+        map.getPlayer().setLocation(newX,newY);
+    }
+
 }
