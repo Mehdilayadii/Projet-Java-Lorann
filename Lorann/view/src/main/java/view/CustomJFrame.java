@@ -3,13 +3,13 @@ package view;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
 
 public class CustomJFrame extends JFrame implements KeyListener {
 
-    boolean up_pressed = false;
-    boolean down_pressed = false;
-    boolean right_pressed = false;
-    boolean left_pressed = false;
+    int move_x = 0;
+    int move_y = 0; 
+    Point deplacement_player = new Point(0,0);
 
     /**
      * CONSTRUCTOR
@@ -26,112 +26,66 @@ public class CustomJFrame extends JFrame implements KeyListener {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         this.setVisible(true);
-
+        
         addKeyListener(this);
         //Focus on Keyboard
         requestFocusInWindow();
-
     }
+    
+    private Point return_deplacement_player(final int keyCode) {
+         switch (keyCode)
+         {
+             case KeyEvent.VK_UP: // UP
+                 deplacement_player.y = 1;
+                 break;
+             case KeyEvent.VK_DOWN: // DOWN
+                 deplacement_player.y = -1;
+                 break;
+             case KeyEvent.VK_RIGHT: // RIGHT
+                 deplacement_player.x = 1;
+                 break;
+             case KeyEvent.VK_LEFT: // LEFT
+                 deplacement_player.x = -1;
+                 break;
+         }
+         System.out.println(deplacement_player);
+         return deplacement_player; 
+    }
+
     
     @Override
     public void keyPressed(KeyEvent key) {
         // TODO Auto-generated method stub
-        int keyCode = key.getKeyCode();
-
-                    // DETECTE LES TOUCHES PRESSES
-            switch (keyCode)
-            {
-                case KeyEvent.VK_UP: // UP
-                    up_pressed = true;
-                    break;
-                case KeyEvent.VK_DOWN: // DOWN
-                    down_pressed = true;
-                    break;
-                case KeyEvent.VK_RIGHT: // RIGHT
-                    right_pressed = true;
-                    break;
-                case KeyEvent.VK_LEFT: // LEFT
-                    left_pressed = true;
-                    break;
-            }
-
-                    // AFFICHE LA DIRECTION //
-            
-            // UP //
-            if (up_pressed == true) {
-                //diagonal droite
-                if ((right_pressed == true) && (left_pressed == false)) {
-                    System.out.println("Diagonal UP-RIGHT");
-                }
-
-                //diagonal gauche
-                else if ((left_pressed == true) && (right_pressed == false)) {
-                    System.out.println("Diagonal UP-LEFT");
-                }
-                //up
-                else {
-                    System.out.println("UP");
-                }
-            }
-
-            // DOWN //
-                //diagonal droite
-            if (down_pressed == true) {
-                if ((right_pressed == true) && (left_pressed == false)) {
-                    System.out.println("Diagonal DOWN-RIGHT");
-                }
-                //diagonal gauche
-                else if ((left_pressed == true) && (right_pressed == false)) {
-                    System.out.println("Diagonal DOWN-LEFT");
-                }
-                //down
-                else {
-                    System.out.println("DOWN");
-                }
-            }
-
-            // RIGHT //
-            if (right_pressed == true) {
-                if ((up_pressed == false) && (down_pressed == false)) {
-                    System.out.println("RIGHT");
-                }
-            }
-
-            // LEFT //
-            if (left_pressed == true) {
-                if ((up_pressed == false) && (down_pressed == false)) {
-                    System.out.println("LEFT");
-                }
-            } 
+        this.return_deplacement_player(key.getKeyCode());       
+ 
     }
     
     @Override
     public void keyReleased(KeyEvent key) {
         // TODO Auto-generated method stub
         int keyCode = key.getKeyCode();
+     switch (keyCode)
+     {
+         case KeyEvent.VK_UP: // UP
+             deplacement_player.y = 0;
+             break;
+         case KeyEvent.VK_DOWN: // DOWN
+             deplacement_player.y = 0;
+             break;
+         case KeyEvent.VK_RIGHT: // RIGHT
+             deplacement_player.x = 0;
+             break;
+         case KeyEvent.VK_LEFT: // LEFT
+             deplacement_player.x = 0;
+             break;
+     }
 
-                    // DETECTE LES TOUCHES PRESSES
-            switch (keyCode)
-            {
-                case KeyEvent.VK_UP: // UP
-                    up_pressed = false;
-                    break;
-                case KeyEvent.VK_DOWN: // DOWN
-                    down_pressed = false;
-                    break;
-                case KeyEvent.VK_RIGHT: // RIGHT
-                    right_pressed = false;
-                    break;
-                case KeyEvent.VK_LEFT: // LEFT
-                    left_pressed = false;
-                    break;
-            }
     }
+    
+    @Override
+    public void keyTyped(KeyEvent key) {
+        // TODO Auto-generated method stub
 
-	@Override
-	public void keyTyped(KeyEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
 
+    }
 }
