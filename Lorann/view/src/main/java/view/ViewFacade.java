@@ -47,8 +47,4 @@ public class ViewFacade implements IView {
         window.add(new CustomJPanel(controller.getImageMap()));
         window.setVisible(true);
     }
-
-    public void resetElements() {
-        window.removeAll();
-    }
 }

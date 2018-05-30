@@ -78,6 +78,10 @@ public enum ElementsList {
         return this.type;
     }
 
+    public String getCharacter() {
+        return character;
+    }
+
     public void setImage(Image image) {
         this.image = image;
     }

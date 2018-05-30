@@ -6,11 +6,11 @@ import java.awt.*;
 
 public class Mobile extends Elements {
 
-    private Point location;
+    protected Point location;
 
     /**** CONSTRUCTOR ****/
-    public Mobile(String stringStyle,boolean isSolid, int x, int y) {
-        super(stringStyle,isSolid);
+    public Mobile(String stringStyle, int x, int y) {
+        super(stringStyle);
 
         this.location = new Point(x,y);
     }

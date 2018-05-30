@@ -6,15 +6,12 @@ import java.awt.*;
 
 public class Elements {
 
-    private String stringStyle;
+    protected String stringStyle;
     protected Image sprite;
 
-    private boolean isSolid;
-
     /**** CONSTRUCTOR ****/
-    public Elements(String stringStyle,boolean isSolid) {
+    public Elements(String stringStyle) {
         this.stringStyle = stringStyle;
-        this.isSolid = isSolid;
 
         sprite = Sprite.getSpriteFromString(stringStyle);
     }

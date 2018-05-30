@@ -81,7 +81,6 @@ public class ControllerFacade implements IController {
     public void play(){
     	try {
     		  while (true) {
-    			    System.out.println("BITE");
     	            model.animate();
     	            view.showElements();
     	            Thread.sleep(speed);

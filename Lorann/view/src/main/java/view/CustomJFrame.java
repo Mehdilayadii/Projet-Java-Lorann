@@ -24,7 +24,9 @@ public class CustomJFrame extends JFrame implements KeyListener {
         /*Behavior*/
         this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
+
+        this.setVisible(true);
+
         addKeyListener(this);
         //Focus on Keyboard
         requestFocusInWindow();

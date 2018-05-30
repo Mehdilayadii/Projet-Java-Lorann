@@ -42,11 +42,11 @@ public class MapModel {
 
         switch (type) {
             case PLAYER:
-                player = new Player(stringStyle,type.isSolid(),positionX,positionY);
+                player = new Player(stringStyle,positionX,positionY);
                 element = player;
                 break;
             default:
-                element = new Elements(stringStyle,type.isSolid());
+                element = new Elements(stringStyle);
         }
         return element;
     }
@@ -55,7 +55,7 @@ public class MapModel {
     public void moveElement(int oldX, int oldY, int newX, int newY) {
         Elements elementToMove = map[oldX][oldY];
         map[newX][newY] = elementToMove;
-        map[oldX][oldY] = new Elements(" ",false);
+        map[oldX][oldY] = new Elements(" ");
     }
 
     /* Animate Player and Spells*/

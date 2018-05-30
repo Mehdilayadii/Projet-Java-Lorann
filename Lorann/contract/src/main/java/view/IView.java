@@ -9,6 +9,5 @@ package view;
 public interface IView {
 
     void showElements();
-    void resetElements();
     void displayMessage(String message);
 }

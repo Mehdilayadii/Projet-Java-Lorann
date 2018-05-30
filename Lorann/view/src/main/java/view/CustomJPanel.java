@@ -38,6 +38,7 @@ public class CustomJPanel extends JPanel {
                 g.drawImage(map[x][y],x*32,y*32,32,32,null);
             }
         }
+        System.out.println("BITE VIEW");
         Font fonte = new Font("Felix Titling",Font.BOLD,30);
         g.setFont(fonte);
         g.setColor(Color.WHITE);
