@@ -1,6 +1,6 @@
 package model;
 
-import model.elements.Behavior;
+import model.elements.Types;
 
 import java.awt.*;
 import java.util.HashMap;
@@ -9,45 +9,45 @@ import java.util.Map;
 public enum ElementsList {
 
     /*Lorann*/
-    Lorann_D                ("lorann_b","L1",Behavior.PLAYER),
-    Lorann_DL               ("lorann_bl","L2",Behavior.PLAYER),
-    Lorann_L                ("lorann_l","L3",Behavior.PLAYER),
-    Lorann_UL               ("lorann_ul","L4",Behavior.PLAYER),
-    Lorann_U                ("lorann_u","L5",Behavior.PLAYER),
-    Lorann_UR               ("lorann_ur","L6",Behavior.PLAYER),
-    Lorann_R                ("lorann_r","L7",Behavior.PLAYER),
-    Lorann_DR               ("lorann_br","L8",Behavior.PLAYER),
+    Lorann_D                ("lorann_b","L1",Types.PLAYER),
+    Lorann_DL               ("lorann_bl","L2",Types.PLAYER),
+    Lorann_L                ("lorann_l","L3",Types.PLAYER),
+    Lorann_UL               ("lorann_ul","L4",Types.PLAYER),
+    Lorann_U                ("lorann_u","L5",Types.PLAYER),
+    Lorann_UR               ("lorann_ur","L6",Types.PLAYER),
+    Lorann_R                ("lorann_r","L7",Types.PLAYER),
+    Lorann_DR               ("lorann_br","L8",Types.PLAYER),
 
     /*Spell*/
-    Spell_GREEN             ("fireball_1","S1",Behavior.PLAYER_SHOOT),
-    Spell_BLUE              ("fireball_2","S2",Behavior.PLAYER_SHOOT),
-    Spell_PURPLE            ("fireball_3","S3",Behavior.PLAYER_SHOOT),
-    Spell_RED               ("fireball_4","S4",Behavior.PLAYER_SHOOT),
-    Spell_YELLOW            ("fireball_5","S5",Behavior.PLAYER_SHOOT),
+    Spell_GREEN             ("fireball_1","S1",Types.SPELL),
+    Spell_BLUE              ("fireball_2","S2",Types.SPELL),
+    Spell_PURPLE            ("fireball_3","S3",Types.SPELL),
+    Spell_RED               ("fireball_4","S4",Types.SPELL),
+    Spell_YELLOW            ("fireball_5","S5",Types.SPELL),
 
     /*Doors*/
-    Door_CLOSE              ("gate_closed","DC",Behavior.PLAYER_LETHAL),
-    Door_OPEN               ("gate_open", "DO",Behavior.FINISH),
+    Door_CLOSE              ("gate_closed","DC",Types.OBSTACLE_KILL),
+    Door_OPEN               ("gate_open", "DO",Types.EXIT_DOOR),
 
     /*Obstacle*/
-    Obstacle_SPACE          ("space"," ",Behavior.OBSTACLE),
-    Obstacle_COIN           ("bone","C",Behavior.OBSTACLE),
-    Obstacle_HORIZONTAL     ("horizontal_bone","H",Behavior.OBSTACLE),
-    Obstacle_VERTICAL       ("vertical_bone","V",Behavior.OBSTACLE),
+    Obstacle_SPACE          ("space"," ",Types.OBSTACLE),
+    Obstacle_COIN           ("bone","C",Types.OBSTACLE),
+    Obstacle_HORIZONTAL     ("horizontal_bone","H",Types.OBSTACLE),
+    Obstacle_VERTICAL       ("vertical_bone","V",Types.OBSTACLE),
 
     /*Demons*/
-    Demon_KYRAC             ("monster_1", "D1",Behavior.PLAYER_LETHAL),
-    Demon_CARGYR            ("monster_2", "D2",Behavior.PLAYER_LETHAL),
-    Demon_ARRBARR           ("monster_3", "D3",Behavior.PLAYER_LETHAL),
-    Demon_MAARCG            ("monster_4", "D4",Behavior.PLAYER_LETHAL),
+    Demon_KYRAC             ("monster_1", "D1",Types.ENEMY),
+    Demon_CARGYR            ("monster_2", "D2",Types.ENEMY),
+    Demon_ARRBARR           ("monster_3", "D3",Types.ENEMY),
+    Demon_MAARCG            ("monster_4", "D4",Types.ENEMY),
 
     /*Others*/
-    Object_GOLD             ("purse","G",Behavior.ITEM),
-    Object_BALL             ("crystal_ball","B",Behavior.ITEM);
+    Object_GOLD             ("purse","G",Types.ITEM),
+    Object_BALL             ("crystal_ball","B",Types.ITEM);
 
     private String name = "";
     private String character = "";
-    private Behavior behavior;
+    private Types behavior;
 
     private Image image = null;
 
@@ -59,7 +59,7 @@ public enum ElementsList {
     }
 
     //Constructeur
-    ElementsList(String name, String character, Behavior behavior){
+    ElementsList(String name, String character, Types behavior){
         this.name = name;
         this.character = character;
         this.behavior = behavior;
