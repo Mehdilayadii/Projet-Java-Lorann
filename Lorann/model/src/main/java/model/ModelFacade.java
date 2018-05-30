@@ -109,4 +109,10 @@ public final class ModelFacade implements IModel {
         }
         return enemiesLocations;
     }
+    
+    
+    
+    public State getState(int x, int y) {
+    	return map.getMap()[x][y].getState();
+    }
 }

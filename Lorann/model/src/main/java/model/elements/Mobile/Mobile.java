@@ -1,10 +1,11 @@
 package model.elements.Mobile;
 
+import model.IState;
 import model.elements.Elements;
 
 import java.awt.*;
 
-public class Mobile extends Elements {
+public class Mobile extends Elements implements IState{
 
     protected Point location;
 
