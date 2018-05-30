@@ -31,6 +31,7 @@ public abstract class Main {
 
         /* To move in the controller.play()*/
         view.showElements();
+        controller.play();
     }
 
 }
