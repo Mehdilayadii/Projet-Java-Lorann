@@ -90,8 +90,6 @@ public final class ModelFacade implements IModel {
             i++;
         }
     }
-    /* Get behavior of a Elements */
-    /*IN PROGRESS*/
 
     /* Get Player location*/
     public Point getPlayerLocation() {
@@ -109,9 +107,8 @@ public final class ModelFacade implements IModel {
         }
         return enemiesLocations;
     }
-    
-    
-    
+
+    /* Get behavior of a Elements */
     public State getState(int x, int y) {
     	return map.getMap()[x][y].getState();
     }
