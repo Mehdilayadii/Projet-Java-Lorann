@@ -80,6 +80,7 @@ public class ControllerFacade implements IController {
      */
     //
     public void play(){
+        Point player_facing = new Point(0,0);
         Point player_deplacement_point = new Point(0,0);
         boolean player_casting_spell = false;
         try {
@@ -87,19 +88,25 @@ public class ControllerFacade implements IController {
                     //Refresh screen//
                     model.animate();
                     Thread.sleep(speed);
-                    // Spell //
-                    player_casting_spell = view.return_casting_player();
-                    if (player_casting_spell == true) {
-                        System.out.println("Casting");
-                    }
                     //deplacement//
 
                     player_deplacement_point = view.return_deplacement_player();
+                    if ((player_deplacement_point.x != 0) || (player_deplacement_point.y != 0)) {
+                        player_facing.x = player_deplacement_point.x;
+                        player_facing.y = player_deplacement_point.y;
+                    }
 
                     if (Move.playerCanReach(model,player_deplacement_point.x,player_deplacement_point.y)) {
                         model.movePlayer(player_deplacement_point.x,player_deplacement_point.y);
                     }
                     model.moveEnemies(AIDeplacement.moveAI(model));
+
+                    // Spell //
+                    player_casting_spell = view.return_casting_player();
+                    if (player_casting_spell == true) {
+                        System.out.println("Casting:");
+                        System.out.println(player_facing);
+                    }
 
                     view.showElements();
                             }         
