@@ -28,4 +28,5 @@ public interface IModel {
     Point getSpellLocation();
     void createSpell(int directionX, int directionY);
     void deleteSpell();
+    boolean spellAlive();
 }

@@ -145,4 +145,11 @@ public final class ModelFacade implements IModel {
         return map.getSpell().getLocation();
     }
 
+    /* Check if spell is alive*/
+    public boolean spellAlive() {
+        if (map.getSpell() != null) {
+            return true;
+        }
+        return false;
+    }
 }
