@@ -84,9 +84,10 @@ public final class ModelFacade implements IModel {
             int newX = oldX + enemyMove.x;
             int newY = oldY + enemyMove.y;
 
-            map.moveElement(oldX,oldY,newX,newY);
-            map.getEnemies().get(i).setLocation(newX,newY);
-
+            if (map.getMap()[newX][newY].getType() == Types.VOID || map.getMap()[newX][newY].getType() == Types.PLAYER) {
+                map.moveElement(oldX,oldY,newX,newY);
+                map.getEnemies().get(i).setLocation(newX,newY);
+            }
             i++;
         }
     }

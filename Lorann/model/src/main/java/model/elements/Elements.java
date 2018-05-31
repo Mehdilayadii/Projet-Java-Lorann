@@ -27,4 +27,8 @@ public class Elements {
     public Image getSprite() {
         return sprite;
     }
+
+    public Types getType() {
+        return this.type;
+    }
 }
