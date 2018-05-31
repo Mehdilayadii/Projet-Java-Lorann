@@ -21,6 +21,7 @@ public interface IModel {
     void animate();
     void movePlayer(int moveX, int moveY);
     void moveEnemies(List<Point> enemiesMove);
-    public List<Point> getEnemiesLocation();
-   	public Point getPlayerLocation();
+    List<Point> getEnemiesLocation();
+   	Point getPlayerLocation();
+   	Types getType(int x, int y);
 }

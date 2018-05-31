@@ -93,10 +93,13 @@ public class ControllerFacade implements IController {
                         System.out.println("Casting");
                     }
                     //deplacement//
+
                     player_deplacement_point = view.return_deplacement_player();
-                    model.movePlayer(player_deplacement_point.x,player_deplacement_point.y);
-                    model.getEnemiesLocation();
-                    model.moveEnemies(AIDeplacement.moveAI(model));
+
+                    if (Move.playerCanReach(model,player_deplacement_point.x,player_deplacement_point.y)) {
+                        model.movePlayer(player_deplacement_point.x,player_deplacement_point.y);
+                    }
+                    //model.moveEnemies(AIDeplacement.moveAI(model));
 
                     view.showElements();
                             }         

@@ -28,7 +28,7 @@ public enum ElementsList {
     Door_OPEN               ("gate_open", "DO",Types.EXIT_DOOR),
 
     /*Obstacle*/
-    Obstacle_SPACE          ("space"," ",Types.OBSTACLE),
+    Obstacle_SPACE          ("space"," ",Types.VOID),
     Obstacle_COIN           ("bone","C",Types.OBSTACLE),
     Obstacle_HORIZONTAL     ("horizontal_bone","H",Types.OBSTACLE),
     Obstacle_VERTICAL       ("vertical_bone","V",Types.OBSTACLE),

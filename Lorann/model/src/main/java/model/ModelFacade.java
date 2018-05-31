@@ -107,4 +107,9 @@ public final class ModelFacade implements IModel {
         }
         return enemiesLocations;
     }
+
+    /*Get type of an element*/
+    public Types getType(int x, int y) {
+        return map.getMap()[x][y].getType();
+    }
 }
