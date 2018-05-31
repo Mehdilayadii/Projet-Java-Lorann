@@ -121,6 +121,7 @@ public final class ModelFacade implements IModel {
         Spell spell = new Spell("S1",x,y, new Point(directionX,directionY));
 
         map.addElement(spell,x,y);
+        map.setSpell(spell);
     }
 
     /*Spell get and set location*/
