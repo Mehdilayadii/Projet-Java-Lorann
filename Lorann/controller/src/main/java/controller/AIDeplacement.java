@@ -29,7 +29,7 @@ public abstract class AIDeplacement {
 				random = 0;
 			}
 			else {
-				random = rand.nextInt(possiblePath.size()-1);
+				random = rand.nextInt(possiblePath.size());
 			}
 			// minimum = 0 // maximum = array length //
 
