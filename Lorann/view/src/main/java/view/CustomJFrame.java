@@ -33,21 +33,21 @@ public class CustomJFrame extends JFrame implements KeyListener {
     }
     
     private void changing_value_deplacement(final int keyCode) {
-         switch (keyCode)
-         {
-             case KeyEvent.VK_UP: // UP
-                 deplacement_player.y = 1;
-                 break;
-             case KeyEvent.VK_DOWN: // DOWN
-                 deplacement_player.y = -1;
-                 break;
-             case KeyEvent.VK_RIGHT: // RIGHT
-                 deplacement_player.x = 1;
-                 break;
-             case KeyEvent.VK_LEFT: // LEFT
-                 deplacement_player.x = -1;
-                 break;
-         }
+        switch (keyCode)
+        {
+            case KeyEvent.VK_UP: // UP
+                deplacement_player.y = 1;
+                break;
+            case KeyEvent.VK_DOWN: // DOWN
+                deplacement_player.y = -1;
+                break;
+            case KeyEvent.VK_RIGHT: // RIGHT
+                deplacement_player.x = 1;
+                break;
+            case KeyEvent.VK_LEFT: // LEFT
+                deplacement_player.x = -1;
+                break;
+        }
     }
 
     public Point return_deplacement_player() {
@@ -65,27 +65,39 @@ public class CustomJFrame extends JFrame implements KeyListener {
     public void keyReleased(KeyEvent key) {
         // TODO Auto-generated method stub
         int keyCode = key.getKeyCode();
-     switch (keyCode)
-     {
-         case KeyEvent.VK_UP: // UP
-             deplacement_player.y = 0;
-             break;
-         case KeyEvent.VK_DOWN: // DOWN
-             deplacement_player.y = 0;
-             break;
-         case KeyEvent.VK_RIGHT: // RIGHT
-             deplacement_player.x = 0;
-             break;
-         case KeyEvent.VK_LEFT: // LEFT
-             deplacement_player.x = 0;
-             break;
-     }
+        Point player_deplacement_point = new Point(0,0);
+        player_deplacement_point = return_deplacement_player();
+        System.out.println(player_deplacement_point);
+        switch (keyCode)
+        {
+            case KeyEvent.VK_UP: // UP
+                if (player_deplacement_point.y == 1) {
+                    deplacement_player.y = 0;
+                }
+                 break;
+            case KeyEvent.VK_DOWN: // DOWN
+                if (player_deplacement_point.y == -1) {
+                    deplacement_player.y = 0;
+                }
+                 break;
+            case KeyEvent.VK_RIGHT: // RIGHT
+                if (player_deplacement_point.x == 1) {
+                    deplacement_player.x = 0;
+             }
+                break;
+            case KeyEvent.VK_LEFT: // LEFT
+                if (player_deplacement_point.x == -1) {
+                    deplacement_player.x = 0;
+                    break;
+                }
+        }
 
     }
     
     @Override
     public void keyTyped(KeyEvent key) {
         // TODO Auto-generated method stub
+
 
     }
 }
