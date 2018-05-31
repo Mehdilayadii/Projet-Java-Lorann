@@ -3,7 +3,7 @@ package model;
 public enum Types {
     /*Mobile*/
     PLAYER          (false   ,0),
-    ENEMY           (true   ,-1),
+    ENEMY           (false   ,-1),
     SPELL           (false  ,1),
 
     /*Static*/

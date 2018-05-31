@@ -99,7 +99,7 @@ public class ControllerFacade implements IController {
                     if (Move.playerCanReach(model,player_deplacement_point.x,player_deplacement_point.y)) {
                         model.movePlayer(player_deplacement_point.x,player_deplacement_point.y);
                     }
-                    //model.moveEnemies(AIDeplacement.moveAI(model));
+                    model.moveEnemies(AIDeplacement.moveAI(model));
 
                     view.showElements();
                             }         

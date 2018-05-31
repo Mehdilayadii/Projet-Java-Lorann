@@ -6,30 +6,48 @@ import java.util.List;
 import java.util.Random;
 
 import model.IModel;
+import model.Types;
 
 public abstract class AIDeplacement {
-	
-	//
-	
 
-	
+	public static List<Point> moveAI(IModel model) {
 
-public static List<Point> moveAI(IModel model) {
-		
 		List<Point> enemiesPos = model.getEnemiesLocation();
 		List<Point> newEnemiesPos = new ArrayList<>();
 		Random rand = new Random();
 
+		int random;
+		int directionX;
+		int directionY;
+
 		for (Point enemyMove : enemiesPos) {
 
-			//Random int, for deplacement in x and y
-			int directionX = rand.nextInt(3)-1 ; 
-			int directionY = rand.nextInt(3)-1;
-			// minimum = -1 // maximum=+1 //
+			List<Point> possiblePath = getPath(model,enemyMove);
 
-			newEnemiesPos.add(new Point(directionX,directionY));
-            
+			//Random int, for deplacement in x and y
+			random = rand.nextInt(possiblePath.size()-1);
+			// minimum = 0 // maximum = array length //
+
+			newEnemiesPos.add(new Point(possiblePath.get(random).x,possiblePath.get(random).y));
 		}
 		return newEnemiesPos;
+	}
+
+	/*Get all possible position*/
+	public static List<Point> getPath(IModel model,Point enemyPos) {
+
+		List<Point> possiblePath = new ArrayList<>();
+		Types typeCheck;
+		int i = 0;
+
+		for (int x = -1; x <= 1; x++) {
+			for (int y = -1; y <= 1; y++) {
+				typeCheck = model.getType(enemyPos.x+x,enemyPos.y + y);
+				if (typeCheck == Types.VOID || typeCheck == Types.PLAYER) {
+					possiblePath.add(new Point(x,y));
+				}
+			}
+		}
+		return possiblePath;
 	}
 }
