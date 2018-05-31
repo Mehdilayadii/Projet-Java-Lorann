@@ -102,8 +102,11 @@ public class ControllerFacade implements IController {
                     // Spell //
                     player_casting_spell = view.return_casting_player();
                     if (player_casting_spell == true) {
-                        System.out.println("Casting:");
-                        System.out.println(player_facing);
+                    	if ((player_facing.x != 0) || (player_facing.y != 0)) {
+	                        System.out.println("Casting:");
+	                        System.out.println(player_facing);
+	                        model.createSpell(player_facing.x, player_facing.y);
+                    	}
                     }
 
                     view.showElements();
