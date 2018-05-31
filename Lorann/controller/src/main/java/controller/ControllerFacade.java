@@ -91,7 +91,7 @@ public class ControllerFacade implements IController {
                     player_deplacement_point = view.return_deplacement_player();
                     model.movePlayer(player_deplacement_point.x,player_deplacement_point.y);
                     model.getEnemiesLocation();
-                    //model.moveEnemies(AIDeplacement.moveAI(model));
+                    model.moveEnemies(AIDeplacement.moveAI(model));
 
                     view.showElements();
                             }         
