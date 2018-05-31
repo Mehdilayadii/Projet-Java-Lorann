@@ -12,5 +12,6 @@ public interface IView {
 
     void showElements();
     void displayMessage(String message);
-    public Point return_deplacement_player();
+    Point return_deplacement_player();
+    boolean return_casting_player();
 }
