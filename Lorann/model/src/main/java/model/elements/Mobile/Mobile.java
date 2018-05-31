@@ -1,20 +1,19 @@
 package model.elements.Mobile;
 
-import model.IState;
+import model.Types;
 import model.elements.Elements;
 
 import java.awt.*;
 
-public class Mobile extends Elements implements IState{
+public class Mobile extends Elements{
 
     protected Point location;
 
     /**** CONSTRUCTOR ****/
-    public Mobile(String stringStyle, int x, int y) {
-        super(stringStyle);
+    public Mobile(String stringStyle, Types type, int x, int y) {
+        super(stringStyle, type);
 
         this.location = new Point(x,y);
-        this.isSolid = true;
     }
 
     /**** GETTERS and SETTERS ****/

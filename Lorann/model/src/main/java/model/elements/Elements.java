@@ -1,22 +1,21 @@
 package model.elements;
 
-import model.IState;
 import model.Sprite;
-import model.State;
+import model.Types;
 
 import java.awt.*;
 
-public class Elements implements IState{
+public class Elements {
 
     protected String stringStyle;
     protected Image sprite;
 
-    protected boolean isSolid;
+    protected Types type;
 
     /**** CONSTRUCTOR ****/
-    public Elements(String stringStyle) {
+    public Elements(String stringStyle, Types type) {
         this.stringStyle = stringStyle;
-
+        this.type = type;
         sprite = Sprite.getSpriteFromString(stringStyle);
     }
 
@@ -28,10 +27,4 @@ public class Elements implements IState{
     public Image getSprite() {
         return sprite;
     }
-
-	@Override
-	public State getState() {
-		
-		return new State(false,false,false,false);
-	}
 }

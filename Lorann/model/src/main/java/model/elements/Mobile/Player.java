@@ -1,6 +1,7 @@
 package model.elements.Mobile;
 
 import model.ElementsList;
+import model.Types;
 
 public class Player extends Mobile{
 
@@ -8,7 +9,7 @@ public class Player extends Mobile{
 
     /**** CONSTRUCTOR ****/
     public Player(String stringStyle, int x, int y) {
-        super(stringStyle,x,y);
+        super(stringStyle,Types.PLAYER,x,y);
     }
 
     /**** METHODS ****/

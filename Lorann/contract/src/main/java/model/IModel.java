@@ -23,5 +23,4 @@ public interface IModel {
     void moveEnemies(List<Point> enemiesMove);
     public List<Point> getEnemiesLocation();
    	public Point getPlayerLocation();
-   	public State getState(int x, int y);
 }

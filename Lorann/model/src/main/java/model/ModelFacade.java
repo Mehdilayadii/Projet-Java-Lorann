@@ -9,7 +9,7 @@ import java.util.List;
 import model.dao.ImportLevel;
 import model.dao.LorannBDDConnector;
 import model.dao.ProcedureDAO;
-import model.elements.Mobile.Enemy;
+import model.elements.Mobile.Mobile;
 
 /**
  * <h1>The Class ModelFacade provides a facade of the Model component.</h1>
@@ -100,16 +100,11 @@ public final class ModelFacade implements IModel {
     public List<Point> getEnemiesLocation() {
 
         List<Point> enemiesLocations = new ArrayList<Point>();
-        List<Enemy> enemies = map.getEnemies();
+        List<Mobile> enemies = map.getEnemies();
 
-        for(Enemy enemy : enemies) {
+        for(Mobile enemy : enemies) {
             enemiesLocations.add(enemy.getLocation());
         }
         return enemiesLocations;
-    }
-
-    /* Get behavior of a Elements */
-    public State getState(int x, int y) {
-    	return map.getMap()[x][y].getState();
     }
 }

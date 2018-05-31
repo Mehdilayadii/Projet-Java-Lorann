@@ -1,7 +1,5 @@
 package model;
 
-import model.elements.Types;
-
 import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;

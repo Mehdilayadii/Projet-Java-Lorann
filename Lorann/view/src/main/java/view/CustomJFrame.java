@@ -67,7 +67,6 @@ public class CustomJFrame extends JFrame implements KeyListener {
         int keyCode = key.getKeyCode();
         Point player_deplacement_point = new Point(0,0);
         player_deplacement_point = return_deplacement_player();
-        System.out.println(player_deplacement_point);
         switch (keyCode)
         {
             case KeyEvent.VK_UP: // UP
