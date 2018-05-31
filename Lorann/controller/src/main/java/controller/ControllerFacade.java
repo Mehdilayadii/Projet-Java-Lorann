@@ -99,7 +99,7 @@ public class ControllerFacade implements IController {
                     }
 
                     if (management.playerDie()) {
-                        view.gameOver();
+                        view.displayMessage("Game over !");
                         game_loop = false;
                     }
                     else if (management.playerCanReach()) {

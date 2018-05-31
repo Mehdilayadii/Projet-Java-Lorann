@@ -11,6 +11,7 @@ import model.dao.LorannBDDConnector;
 import model.dao.ProcedureDAO;
 import model.elements.Mobile.Mobile;
 import model.elements.Mobile.Spell;
+import model.elements.Static;
 
 /**
  * <h1>The Class ModelFacade provides a facade of the Model component.</h1>
@@ -122,6 +123,14 @@ public final class ModelFacade implements IModel {
 
         map.addElement(spell,x,y);
         map.setSpell(spell);
+    }
+
+    /* Delete the spell*/
+    public void deleteSpell() {
+        int x = map.getSpell().getLocation().x;
+        int y = map.getSpell().getLocation().y;
+        map.setSpell(null);
+        map.addElement(new Static(" ",Types.VOID),x,y);
     }
 
     /*Spell get and set location*/

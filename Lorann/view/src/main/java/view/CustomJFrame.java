@@ -55,11 +55,6 @@ public class CustomJFrame extends JFrame implements KeyListener {
         }
     }
 
-    /*Show game over*/
-    public void gameOver() {
-        JOptionPane.showMessageDialog(null, "Game over !");
-    }
-
     // Return player input in mainloop
     public Point return_deplacement_player() {
         return deplacement_player; 

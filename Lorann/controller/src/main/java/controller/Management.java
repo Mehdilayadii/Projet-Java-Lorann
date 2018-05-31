@@ -30,6 +30,13 @@ public class Management {
         Types type = model.getType(futureX,futureY);
         boolean canReach = !(type.isSolid());
 
+        if (type == Types.ITEM) {
+
+        }
+        else if (type == Types.EXIT_DOOR) {
+            view.displayMessage("You finish the level !");
+        }
+
         return canReach;
     }
 
