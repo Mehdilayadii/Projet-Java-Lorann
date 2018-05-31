@@ -94,7 +94,11 @@ public class ControllerFacade implements IController {
                         player_facing.y = player_deplacement_point.y;
                     }
 
-                    if (Move.playerCanReach(model,player_deplacement_point.x,player_deplacement_point.y)) {
+                    if (Move.playerDie(model,player_deplacement_point.x,player_deplacement_point.y)) {
+                        view.gameOver();
+                        game_loop = false;
+                    }
+                    else if (Move.playerCanReach(model,player_deplacement_point.x,player_deplacement_point.y)) {
                         model.movePlayer(player_deplacement_point.x,player_deplacement_point.y);
                     }
                     model.moveEnemies(AIDeplacement.moveAI(model));

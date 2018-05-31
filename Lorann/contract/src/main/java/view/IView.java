@@ -14,4 +14,6 @@ public interface IView {
     void displayMessage(String message);
     Point return_deplacement_player();
     boolean return_casting_player();
+
+    void gameOver();
 }

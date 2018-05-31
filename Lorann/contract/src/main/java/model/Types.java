@@ -28,6 +28,10 @@ public enum Types {
         return isSolid;
     }
 
+    public int getBehavior() {
+        return behavior;
+    }
+
     /**** CONSTRUCTOR ****/
     Types(boolean isSolid, int behavior) {
         this.isSolid = isSolid;

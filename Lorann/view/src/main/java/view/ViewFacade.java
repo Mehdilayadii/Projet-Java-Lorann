@@ -57,6 +57,9 @@ public class ViewFacade implements IView {
     public boolean return_casting_player() {
     	return window.return_casting_player();
     }
-    
-    
+
+    @Override
+    public void gameOver() {
+        window.gameOver();
+    }
 }
