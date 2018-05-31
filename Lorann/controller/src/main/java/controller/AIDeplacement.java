@@ -12,31 +12,53 @@ public abstract class AIDeplacement {
 
 	public static List<Point> moveAI(IModel model) {
 
+		
+		final int DETECTION_RANGE=3;
+		
 		List<Point> enemiesPos = model.getEnemiesLocation();
 		List<Point> newEnemiesPos = new ArrayList<>();
 		Random rand = new Random();
+		
+		//Get the current player's position
+		Point playerPos = model.getPlayerLocation();
 
-		int random;
-		int directionX;
-		int directionY;
-
+		int random=0;
+		boolean nearPlayer;
+		
+		
 		for (Point enemyMove : enemiesPos) {
 
+			//false by default
+			nearPlayer=false;
+			
 			List<Point> possiblePath = getPath(model,enemyMove);
-
-			//Random int, for deplacement in x and y
-			if (possiblePath.size() <= 1) {
-				random = 0;
+			
+			//Check if a player is around our monster
+			if(enemyMove.x-DETECTION_RANGE<=playerPos.x && playerPos.x<=enemyMove.x+DETECTION_RANGE) {
+				if (enemyMove.y-DETECTION_RANGE<=playerPos.y && playerPos.y<=enemyMove.y+DETECTION_RANGE){
+					nearPlayer=true;
+					System.out.print("Un démon est proche du héros\n");
+				} 
 			}
-			else {
-				random = rand.nextInt(possiblePath.size());
-			}
+			
+			//if (!nearPlayer) {
+			
+			
+			
+				if (possiblePath.size() <= 1) {
+					random = 0;
+				}
+				else {
+					random = rand.nextInt(possiblePath.size());
+				}
 			// minimum = 0 // maximum = array length //
 
-			newEnemiesPos.add(new Point(possiblePath.get(random).x,possiblePath.get(random).y));
+				newEnemiesPos.add(new Point(possiblePath.get(random).x,possiblePath.get(random).y));
+				}
+			//}
+			return newEnemiesPos;
 		}
-		return newEnemiesPos;
-	}
+	
 
 	/*Get all possible position*/
 	public static List<Point> getPath(IModel model,Point enemyPos) {
