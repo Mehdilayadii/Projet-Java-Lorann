@@ -17,12 +17,20 @@ public abstract class AIDeplacement {
 		Random rand = new Random();
 
 		int random;
+		int directionX;
+		int directionY;
+
 		for (Point enemyMove : enemiesPos) {
 
 			List<Point> possiblePath = getPath(model,enemyMove);
 
 			//Random int, for deplacement in x and y
-			random = rand.nextInt(possiblePath.size()-1);
+			if (possiblePath.size() <= 1) {
+				random = 0;
+			}
+			else {
+				random = rand.nextInt(possiblePath.size()-1);
+			}
 			// minimum = 0 // maximum = array length //
 
 			newEnemiesPos.add(new Point(possiblePath.get(random).x,possiblePath.get(random).y));
