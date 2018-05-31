@@ -86,7 +86,9 @@ public class MapModel {
     /* Animate Player and Spells*/
     public void animateElements() {
         player.animate();
-        spell.animate();
+        if (spell != null) {
+            spell.animate();
+        }
     }
 
     /*Create an element*/
