@@ -24,74 +24,16 @@ public static List<Point> moveAI(IModel model) {
 
 
 
-			//Each random int = a specific movement
-			int direction = rand.nextInt(8) + 1;
-			// minimum = 1 // maximum=8 //
+			//Random int, for deplacement in x and y
+			int directionX = rand.nextInt(3)-1 ; 
+			int directionY = rand.nextInt(3)-1;
+			// minimum = -1 // maximum=+1 //
 
-
-
-            switch(direction) {
-
-				case 1 : // UP
-				{
-					newEnemiesPos.add(new Point(0,1));
-					break;
-				}
-
-				case 2 : // DIAGONAL UP RIGHT
-				{
-					newEnemiesPos.add(new Point(1,1));
-					break;
-				}
-
-				case 3 : // RIGHT
-				{
-					newEnemiesPos.add(new Point(1,0));
-					break;
-				}
-
-				case 4 : // DIAGONAL DOWN RIGHT
-				{
-					newEnemiesPos.add(new Point(1,-1));
-					break;
-				}
-
-				case 5 : // DOWN
-				{
-					newEnemiesPos.add(new Point(0,-1));
-					break;
-				}
-
-				case 6 : // DIAGONAL DOWN LEFT
-				{
-					newEnemiesPos.add(new Point(-1,-1));
-					break;
-				}
-
-				case 7 : // LEFT
-				{
-					newEnemiesPos.add(new Point(-1,0));
-					break;
-				}
-
-				case 8 : // DIAGONAL UP LEFT
-				{
-					newEnemiesPos.add(new Point(-1,1));
-					break;
-				}
-            }
+			newEnemiesPos.add(new Point(directionX,directionY));
             
 		}
 
 		return newEnemiesPos;
 	
-	/*
-	int i=0;
-	List<Point> oldEnemiesPos = model.getEnemiesLocation();
-	List<Point> newEnemiesPos = new ArrayList<>();
-	for (Point enemyMove : oldEnemiesPos) {
-		newEnemiesPos.add(new Point(1,0));
-	}
-return newEnemiesPos;*/
 }
 }
