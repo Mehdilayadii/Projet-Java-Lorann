@@ -48,9 +48,15 @@ public class ViewFacade implements IView {
         window.revalidate();
     }
     
-    //Return Userinput
+    //Return UserInputDeplacement
     public Point return_deplacement_player() {
     	return window.return_deplacement_player();
     }
+    
+    // Return UserInputCastingSpell
+    public boolean return_casting_player() {
+    	return window.return_casting_player();
+    }
+    
     
 }
