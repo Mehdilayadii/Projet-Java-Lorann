@@ -22,13 +22,9 @@ public static List<Point> moveAI(IModel model) {
 
 		for (Point enemyMove : enemiesPos) {
 
-
-
 			//Each random int = a specific movement
 			int direction = rand.nextInt(8) + 1;
 			// minimum = 1 // maximum=8 //
-
-
 
             switch(direction) {
 

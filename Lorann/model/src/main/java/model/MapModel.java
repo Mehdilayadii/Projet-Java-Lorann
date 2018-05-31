@@ -75,9 +75,9 @@ public class MapModel {
     /* Move any Element*/
     public void moveElement(int oldX, int oldY, int newX, int newY) {
         Elements elementToMove = map[oldX][oldY];
-        map[newX][newY] = elementToMove;
         if ((newX != oldX) || (newY != oldY)) {
-        	map[oldX][oldY] = new Static(" ", Types.VOID);
+            map[newX][newY] = elementToMove;
+            map[oldX][oldY] = new Static(" ", Types.VOID);
         }
     }
 

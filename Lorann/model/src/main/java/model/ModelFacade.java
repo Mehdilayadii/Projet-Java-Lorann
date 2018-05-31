@@ -99,7 +99,7 @@ public final class ModelFacade implements IModel {
     /* Get Enemies locations */
     public List<Point> getEnemiesLocation() {
 
-        List<Point> enemiesLocations = new ArrayList<Point>();
+        List<Point> enemiesLocations = new ArrayList<>();
         List<Mobile> enemies = map.getEnemies();
 
         for(Mobile enemy : enemies) {
