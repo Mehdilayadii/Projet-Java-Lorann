@@ -4,6 +4,8 @@ import java.awt.Point;
 import java.util.List;
 import java.util.Random;
 
+import model.IModel;
+
 public abstract class AIDeplacement {
 	
 	//
@@ -11,9 +13,9 @@ public abstract class AIDeplacement {
 
 	
 	
-public List<Point> moveAI() {
+public static List<Point> moveAI(IModel model) {
 		
-		List<Point> enemiesPos = getEnemiesLocation();
+		List<Point> enemiesPos = model.getEnemiesLocation();
 		//List<Point> movePos ;
 		Random rand = new Random();
 		
