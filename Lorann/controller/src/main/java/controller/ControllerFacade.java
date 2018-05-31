@@ -78,7 +78,7 @@ public class ControllerFacade implements IController {
     /**
      * Main function, launch the game.
      */
-    
+    //
     public void play(){
         Point player_deplacement_point = new Point(0,0);
         try {
