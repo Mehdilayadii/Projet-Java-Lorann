@@ -23,11 +23,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Management.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Management.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/Management.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
-              <caret line="36" column="55" selection-start-line="36" selection-start-column="55" selection-end-line="36" selection-end-column="55" />
+              <caret line="36" column="58" lean-forward="true" selection-start-line="36" selection-start-column="58" selection-end-line="36" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -35,32 +35,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IModel.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/contract/src/main/java/model/IModel.java">
+      <file leaf-file-name="IView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/contract/src/main/java/view/IView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+            <state relative-caret-position="270">
+              <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ModelFacade.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/src/main/java/model/ModelFacade.java">
+      <file leaf-file-name="CustomJPanel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/src/main/java/view/CustomJPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="148" column="4" lean-forward="true" selection-start-line="148" selection-start-column="4" selection-end-line="148" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Spell.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/src/main/java/model/elements/Mobile/Spell.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="23" column="47" lean-forward="true" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
+            <state relative-caret-position="135">
+              <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#571#572#0" expanded="true" />
+                <element signature="e#387#388#0" expanded="true" />
+                <element signature="e#415#416#0" expanded="true" />
+                <element signature="e#457#458#0" expanded="true" />
+                <element signature="e#502#503#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ViewFacade.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/src/main/java/view/ViewFacade.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="65" column="4" selection-start-line="65" selection-start-column="4" selection-end-line="65" selection-end-column="25" />
+              <folding>
+                <element signature="e#394#395#0" expanded="true" />
+                <element signature="e#437#438#0" expanded="true" />
+                <element signature="e#1349#1350#0" expanded="true" />
+                <element signature="e#1417#1418#0" expanded="true" />
+                <element signature="e#1422#1423#0" expanded="true" />
+                <element signature="e#1450#1451#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -97,13 +108,14 @@
         <option value="$PROJECT_DIR$/contract/src/main/java/model/Types.java" />
         <option value="$PROJECT_DIR$/controller/src/main/java/controller/AIDeplacement.java" />
         <option value="$PROJECT_DIR$/controller/src/main/java/controller/Move.java" />
-        <option value="$PROJECT_DIR$/view/src/main/java/view/ViewFacade.java" />
         <option value="$PROJECT_DIR$/view/src/main/java/view/CustomJFrame.java" />
-        <option value="$PROJECT_DIR$/contract/src/main/java/view/IView.java" />
         <option value="$PROJECT_DIR$/controller/src/main/java/controller/ControllerFacade.java" />
-        <option value="$PROJECT_DIR$/controller/src/main/java/controller/Management.java" />
         <option value="$PROJECT_DIR$/model/src/main/java/model/ModelFacade.java" />
         <option value="$PROJECT_DIR$/contract/src/main/java/model/IModel.java" />
+        <option value="$PROJECT_DIR$/view/src/main/java/view/CustomJPanel.java" />
+        <option value="$PROJECT_DIR$/view/src/main/java/view/ViewFacade.java" />
+        <option value="$PROJECT_DIR$/contract/src/main/java/view/IView.java" />
+        <option value="$PROJECT_DIR$/controller/src/main/java/controller/Management.java" />
       </list>
     </option>
   </component>
@@ -416,11 +428,11 @@
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="6" weight="0.16040269" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.43019944" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.43019944" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2751678" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2751678" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -684,13 +696,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/src/main/java/view/CustomJPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/src/main/java/model/elements/Mobile/Enemy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -769,13 +774,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contract/src/main/java/view/IView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/src/main/java/view/CustomJFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
@@ -786,31 +784,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/src/main/java/view/ViewFacade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="35" column="35" lean-forward="true" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
-          <folding>
-            <element signature="e#394#395#0" expanded="true" />
-            <element signature="e#437#438#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/ControllerFacade.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-203">
           <caret line="101" column="56" selection-start-line="101" selection-start-column="56" selection-end-line="101" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/Management.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="36" column="55" selection-start-line="36" selection-start-column="55" selection-end-line="36" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -846,6 +823,52 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="262">
           <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/src/main/java/view/CustomJPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#387#388#0" expanded="true" />
+            <element signature="e#415#416#0" expanded="true" />
+            <element signature="e#457#458#0" expanded="true" />
+            <element signature="e#502#503#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/src/main/java/view/ViewFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="65" column="4" selection-start-line="65" selection-start-column="4" selection-end-line="65" selection-end-column="25" />
+          <folding>
+            <element signature="e#394#395#0" expanded="true" />
+            <element signature="e#437#438#0" expanded="true" />
+            <element signature="e#1349#1350#0" expanded="true" />
+            <element signature="e#1417#1418#0" expanded="true" />
+            <element signature="e#1422#1423#0" expanded="true" />
+            <element signature="e#1450#1451#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contract/src/main/java/view/IView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/Management.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="36" column="58" lean-forward="true" selection-start-line="36" selection-start-column="58" selection-end-line="36" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

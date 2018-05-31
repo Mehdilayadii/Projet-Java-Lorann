@@ -13,8 +13,9 @@ import java.awt.*;
 public class ViewFacade implements IView {
 
     private final CustomJFrame window;
-
     private IController controller;
+
+    int score = 0;
 
     /**
      * CONSTRUCTOR
@@ -44,7 +45,7 @@ public class ViewFacade implements IView {
     }
 
     public void showElements() {
-        window.add(new CustomJPanel(controller.getImageMap()));
+        window.add(new CustomJPanel(controller.getImageMap(),score));
         window.revalidate();
     }
     
@@ -56,5 +57,13 @@ public class ViewFacade implements IView {
     // Return UserInputCastingSpell
     public boolean return_casting_player() {
     	return window.return_casting_player();
+    }
+
+    /*Set the score*/
+    public void setScore(int score) {
+        this.score = score;
+    }
+    public int getScore() {
+        return score;
     }
 }

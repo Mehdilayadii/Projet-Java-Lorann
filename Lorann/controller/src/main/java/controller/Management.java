@@ -31,7 +31,7 @@ public class Management {
         boolean canReach = !(type.isSolid());
 
         if (type == Types.ITEM) {
-
+            view.setScore(view.getScore()+100);
         }
         else if (type == Types.EXIT_DOOR) {
             view.displayMessage("You finish the level !");

@@ -2,16 +2,18 @@ package view;
 
 import javax.swing.*;
 import java.awt.*;
+import java.text.DecimalFormat;
 
 public class CustomJPanel extends JPanel {
 
     private Image map[][];
-    private String score = "SCORE : ";
+    private String score;
     /**
      * CONSTRUCTOR
      */
-    public CustomJPanel(Image map[][]) {
+    public CustomJPanel(Image map[][], int score) {
         this.map = map;
+        this.score = "SCORE : "+(new DecimalFormat("00000").format(score));
         this.setBackground(Color.BLACK);
     }
 
