@@ -90,8 +90,7 @@ public class ControllerFacade implements IController {
                     //deplacement//
                     player_deplacement_point = view.return_deplacement_player();
                     model.movePlayer(player_deplacement_point.x,player_deplacement_point.y);
-                            }
-                
+                            }         
         } catch(InterruptedException e) { e.printStackTrace();
                 }
        
