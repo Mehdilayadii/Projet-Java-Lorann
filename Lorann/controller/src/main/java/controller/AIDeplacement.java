@@ -17,9 +17,6 @@ public abstract class AIDeplacement {
 		Random rand = new Random();
 
 		int random;
-		int directionX;
-		int directionY;
-
 		for (Point enemyMove : enemiesPos) {
 
 			List<Point> possiblePath = getPath(model,enemyMove);
