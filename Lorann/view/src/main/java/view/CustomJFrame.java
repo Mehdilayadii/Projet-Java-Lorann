@@ -7,9 +7,12 @@ import java.io.IOException;
 
 public class CustomJFrame extends JFrame implements KeyListener {
 
+    // Move //
     int move_x = 0;
     int move_y = 0; 
     Point deplacement_player = new Point(0,0);
+    // spell //
+    boolean casting_spell = false;
 
     /**
      * CONSTRUCTOR
@@ -47,11 +50,19 @@ public class CustomJFrame extends JFrame implements KeyListener {
             case KeyEvent.VK_LEFT: // LEFT
                 deplacement_player.x = -1;
                 break;
+            case KeyEvent.VK_SPACE: // SPELL
+                casting_spell = true;
+                break;
         }
     }
 
+    // Return player input in mainloop
     public Point return_deplacement_player() {
         return deplacement_player; 
+    }
+
+    public boolean return_casting_player() {
+        return casting_spell; 
     }
 
     
@@ -89,6 +100,9 @@ public class CustomJFrame extends JFrame implements KeyListener {
                     deplacement_player.x = 0;
                     break;
                 }
+            case KeyEvent.VK_SPACE: // SPELL
+                casting_spell = false;
+                break;
         }
 
     }
@@ -96,7 +110,5 @@ public class CustomJFrame extends JFrame implements KeyListener {
     @Override
     public void keyTyped(KeyEvent key) {
         // TODO Auto-generated method stub
-
-
     }
 }
