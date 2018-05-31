@@ -38,6 +38,10 @@ public class MapModel {
     public Spell getSpell() {
         return spell;
     }
+    
+    public void setSpell(Spell spell) {
+    	this.spell = spell;
+    }
 
     /**** METHODS ****/
     /* Convert the map from the string ressource*/
