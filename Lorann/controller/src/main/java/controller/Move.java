@@ -10,4 +10,7 @@ public abstract class Move {
         boolean canReach = !(model.getType(futureX,futureY).isSolid());
         return canReach;
     }
+
+
+
 }

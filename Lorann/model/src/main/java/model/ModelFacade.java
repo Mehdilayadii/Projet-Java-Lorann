@@ -10,6 +10,7 @@ import model.dao.ImportLevel;
 import model.dao.LorannBDDConnector;
 import model.dao.ProcedureDAO;
 import model.elements.Mobile.Mobile;
+import model.elements.Mobile.Spell;
 
 /**
  * <h1>The Class ModelFacade provides a facade of the Model component.</h1>
@@ -112,4 +113,26 @@ public final class ModelFacade implements IModel {
     public Types getType(int x, int y) {
         return map.getMap()[x][y].getType();
     }
+
+    /*Create the spell*/
+    public void createSpell(int directionX, int directionY) {
+        int x = getPlayerLocation().x+directionX;
+        int y = getPlayerLocation().y+directionY;
+        Spell spell = new Spell("S1",x,y, new Point(directionX,directionY));
+
+        map.addElement(spell,x,y);
+    }
+
+    /*Spell get and set location*/
+    public void moveSpell(int moveX, int moveY) {
+        int newX = map.getSpell().getLocation().x + moveX;
+        int newY = map.getSpell().getLocation().y - moveY;
+
+        map.moveElement(map.getSpell().getLocation().x,map.getSpell().getLocation().y,newX,newY);
+        map.getSpell().setLocation(newX,newY);
+    }
+    public Point getSpellLocation() {
+        return map.getSpell().getLocation();
+    }
+
 }

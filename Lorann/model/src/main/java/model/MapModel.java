@@ -13,6 +13,7 @@ public class MapModel {
 
     private Elements[][] map;
     private Player player;
+    private Spell spell;
 
     private List<Mobile> enemies = new ArrayList<Mobile>();
 
@@ -32,6 +33,10 @@ public class MapModel {
 
     public List<Mobile> getEnemies() {
         return enemies;
+    }
+
+    public Spell getSpell() {
+        return spell;
     }
 
     /**** METHODS ****/
@@ -63,9 +68,6 @@ public class MapModel {
                 enemies.add(new Mobile(stringStyle,Types.ENEMY,positionX,positionY));
                 element = enemies.get(enemies.size()-1);
                 break;
-            case SPELL:
-                element = new Spell(stringStyle,positionX,positionY);
-                break;
             default:
                 element = new Static(stringStyle, type);
         }
@@ -84,5 +86,11 @@ public class MapModel {
     /* Animate Player and Spells*/
     public void animateElements() {
         player.animate();
+        spell.animate();
+    }
+
+    /*Create an element*/
+    public void addElement(Elements elements, int x, int y) {
+        map[x][y] = elements;
     }
 }

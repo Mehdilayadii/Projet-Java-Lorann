@@ -24,4 +24,6 @@ public interface IModel {
     List<Point> getEnemiesLocation();
    	Point getPlayerLocation();
    	Types getType(int x, int y);
+    void moveSpell(int moveX, int moveY);
+    Point getSpellLocation();
 }
