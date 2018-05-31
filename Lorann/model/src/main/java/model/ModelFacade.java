@@ -117,7 +117,7 @@ public final class ModelFacade implements IModel {
     /*Create the spell*/
     public void createSpell(int directionX, int directionY) {
         int x = getPlayerLocation().x+directionX;
-        int y = getPlayerLocation().y+directionY;
+        int y = getPlayerLocation().y-directionY;
         Spell spell = new Spell("S1",x,y, new Point(directionX,directionY));
 
         map.addElement(spell,x,y);
