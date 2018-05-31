@@ -23,11 +23,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ModelFacade.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/model/src/main/java/model/ModelFacade.java">
+      <file leaf-file-name="Management.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/Management.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="119" column="49" lean-forward="true" selection-start-line="119" selection-start-column="49" selection-end-line="119" selection-end-column="49" />
+            <state relative-caret-position="277">
+              <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ControllerFacade.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/ControllerFacade.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-233">
+              <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomJFrame.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/src/main/java/view/CustomJFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="59" column="56" selection-start-line="59" selection-start-column="56" selection-end-line="59" selection-end-column="56" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1482#1483#0" expanded="true" />
+                <element signature="e#1548#1549#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -62,13 +88,14 @@
         <option value="$PROJECT_DIR$/contract/src/main/java/model/IModel.java" />
         <option value="$PROJECT_DIR$/model/src/main/java/model/MapModel.java" />
         <option value="$PROJECT_DIR$/contract/src/main/java/model/Types.java" />
-        <option value="$PROJECT_DIR$/controller/src/main/java/controller/Move.java" />
         <option value="$PROJECT_DIR$/contract/src/main/java/view/IView.java" />
         <option value="$PROJECT_DIR$/view/src/main/java/view/CustomJFrame.java" />
         <option value="$PROJECT_DIR$/view/src/main/java/view/ViewFacade.java" />
-        <option value="$PROJECT_DIR$/controller/src/main/java/controller/ControllerFacade.java" />
-        <option value="$PROJECT_DIR$/controller/src/main/java/controller/AIDeplacement.java" />
         <option value="$PROJECT_DIR$/model/src/main/java/model/ModelFacade.java" />
+        <option value="$PROJECT_DIR$/controller/src/main/java/controller/AIDeplacement.java" />
+        <option value="$PROJECT_DIR$/controller/src/main/java/controller/Move.java" />
+        <option value="$PROJECT_DIR$/controller/src/main/java/controller/Management.java" />
+        <option value="$PROJECT_DIR$/controller/src/main/java/controller/ControllerFacade.java" />
       </list>
     </option>
   </component>
@@ -103,41 +130,6 @@
             <path>
               <item name="lorann" type="b2602c69:ProjectViewProjectNode" />
               <item name="Lorann" type="462c0819:PsiDirectoryNode" />
-              <item name="contract" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lorann" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lorann" type="462c0819:PsiDirectoryNode" />
-              <item name="contract" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lorann" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lorann" type="462c0819:PsiDirectoryNode" />
-              <item name="contract" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lorann" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lorann" type="462c0819:PsiDirectoryNode" />
-              <item name="contract" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lorann" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lorann" type="462c0819:PsiDirectoryNode" />
-              <item name="contract" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lorann" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lorann" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -169,62 +161,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lorann" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lorann" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lorann" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lorann" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lorann" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lorann" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lorann" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lorann" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lorann" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lorann" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lorann" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lorann" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="elements" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lorann" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lorann" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="elements" type="462c0819:PsiDirectoryNode" />
-              <item name="Mobile" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lorann" type="b2602c69:ProjectViewProjectNode" />
@@ -733,22 +669,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/src/main/java/view/CustomJFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="59" column="56" selection-start-line="59" selection-start-column="56" selection-end-line="59" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1482#1483#0" expanded="true" />
-            <element signature="e#1568#1569#0" expanded="true" />
-            <element signature="e#1530#1531#0" expanded="true" />
-            <element signature="e#1572#1573#0" expanded="true" />
-            <element signature="e#1618#1619#0" expanded="true" />
-            <element signature="e#1655#1656#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/src/main/java/model/elements/Mobile/Spell.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -757,20 +677,6 @@
             <element signature="imports" expanded="true" />
             <element signature="e#571#572#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/AIDeplacement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="44" column="16" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/ControllerFacade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
-          <caret line="79" column="23" lean-forward="true" selection-start-line="79" selection-start-column="23" selection-end-line="79" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -785,12 +691,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/Move.java">
+    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/ModelFacade.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+        <state relative-caret-position="294">
+          <caret line="119" column="49" lean-forward="true" selection-start-line="119" selection-start-column="49" selection-end-line="119" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/AIDeplacement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="39" column="63" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/src/main/java/view/CustomJFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="59" column="56" selection-start-line="59" selection-start-column="56" selection-end-line="59" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1482#1483#0" expanded="true" />
+            <element signature="e#1548#1549#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -806,10 +728,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/ModelFacade.java">
+    <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/Management.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="119" column="49" lean-forward="true" selection-start-line="119" selection-start-column="49" selection-end-line="119" selection-end-column="49" />
+        <state relative-caret-position="277">
+          <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/ControllerFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-233">
+          <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
         </state>
       </provider>
     </entry>

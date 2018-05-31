@@ -2,10 +2,28 @@ package controller;
 
 import model.IModel;
 import model.Types;
+import view.IView;
 
-public abstract class Move {
+public class Management {
 
-    public static boolean playerCanReach(IModel model,int moveX, int moveY) {
+    private IModel model;
+    private IView view;
+
+    int moveX;
+    int moveY;
+
+    /**** CONSTRUCTOR ****/
+    public Management(IModel model, IView view,int moveX, int moveY) {
+        this.model = model;
+        this.view = view;
+
+        this.moveX = moveX;
+        this.moveY = moveY;
+
+    }
+
+    /**** METHODS ****/
+    public boolean playerCanReach() {
         int futureX = model.getPlayerLocation().x+moveX;
         int futureY = model.getPlayerLocation().y-moveY;
 
@@ -15,7 +33,7 @@ public abstract class Move {
         return canReach;
     }
 
-    public static boolean playerDie(IModel model,int moveX, int moveY) {
+    public boolean playerDie() {
         boolean playerDie = false;
         int futureX = model.getPlayerLocation().x+moveX;
         int futureY = model.getPlayerLocation().y-moveY;

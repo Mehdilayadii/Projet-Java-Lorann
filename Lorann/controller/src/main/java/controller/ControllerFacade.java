@@ -78,27 +78,31 @@ public class ControllerFacade implements IController {
      */
     //
     public void play(){
+
+        Management management;
+
         Point player_facing = new Point(0,0);
         Point player_deplacement_point = new Point(0,0);
         boolean player_casting_spell = false;
+
         try {
               while (game_loop) {
                     //Refresh screen//
                     model.animate();
                     Thread.sleep(speed);
                     //deplacement//
-
-                    player_deplacement_point = view.return_deplacement_player();
+                  player_deplacement_point = view.return_deplacement_player();
+                  management = new Management(model, view, player_deplacement_point.x, player_deplacement_point.y);
                     if ((player_deplacement_point.x != 0) || (player_deplacement_point.y != 0)) {
                         player_facing.x = player_deplacement_point.x;
                         player_facing.y = player_deplacement_point.y;
                     }
 
-                    if (Move.playerDie(model,player_deplacement_point.x,player_deplacement_point.y)) {
+                    if (management.playerDie()) {
                         view.gameOver();
                         game_loop = false;
                     }
-                    else if (Move.playerCanReach(model,player_deplacement_point.x,player_deplacement_point.y)) {
+                    else if (management.playerCanReach()) {
                         model.movePlayer(player_deplacement_point.x,player_deplacement_point.y);
                     }
                     model.moveEnemies(AIDeplacement.moveAI(model));

@@ -37,7 +37,7 @@ public abstract class AIDeplacement {
 			if(enemyMove.x-DETECTION_RANGE<=playerPos.x && playerPos.x<=enemyMove.x+DETECTION_RANGE) {
 				if (enemyMove.y-DETECTION_RANGE<=playerPos.y && playerPos.y<=enemyMove.y+DETECTION_RANGE){
 					nearPlayer=true;
-					System.out.print("Un démon est proche du héros\n");
+					System.out.print("Un dÃ©mon est proche du hÃ©ros\n");
 				} 
 			}
 			
