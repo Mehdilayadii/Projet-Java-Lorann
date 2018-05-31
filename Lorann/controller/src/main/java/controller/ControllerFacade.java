@@ -85,11 +85,14 @@ public class ControllerFacade implements IController {
               while (game_loop) {
                     //Refresh screen//
                     model.animate();
-                    view.showElements();
+                    
                     Thread.sleep(speed);
                     //deplacement//
                     player_deplacement_point = view.return_deplacement_player();
                     model.movePlayer(player_deplacement_point.x,player_deplacement_point.y);
+                    model.moveEnemies(AIDeplacement.moveAI(model));
+                    
+                    view.showElements();
                             }         
         } catch(InterruptedException e) { e.printStackTrace();
                 }
