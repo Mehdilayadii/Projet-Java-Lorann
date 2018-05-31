@@ -13,6 +13,7 @@ public enum Types {
 
     /*Special*/
     ITEM            (false  ,0),
+    MAGICAL_BALL    (false  ,0),
     EXIT_DOOR       (false  ,0);
 
     private boolean isSolid;

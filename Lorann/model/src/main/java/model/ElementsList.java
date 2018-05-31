@@ -41,7 +41,7 @@ public enum ElementsList {
 
     /*Others*/
     Object_GOLD             ("purse","G",Types.ITEM),
-    Object_BALL             ("crystal_ball","B",Types.ITEM);
+    Object_BALL             ("crystal_ball","B",Types.MAGICAL_BALL);
 
     private String name = "";
     private String character = "";

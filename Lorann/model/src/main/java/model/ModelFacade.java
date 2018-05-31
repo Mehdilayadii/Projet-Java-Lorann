@@ -22,7 +22,6 @@ import model.elements.Static;
 public final class ModelFacade implements IModel {
 
     private MapModel map;
-
     /**
      * Instantiates a new model facade.
      * @throws SQLException 
@@ -133,7 +132,7 @@ public final class ModelFacade implements IModel {
         map.addElement(new Static(" ",Types.VOID),x,y);
     }
 
-    /*Spell get and set location*/
+    /* Spell get and set location*/
     public void moveSpell(int moveX, int moveY) {
         int newX = map.getSpell().getLocation().x + moveX;
         int newY = map.getSpell().getLocation().y - moveY;
@@ -151,5 +150,10 @@ public final class ModelFacade implements IModel {
             return true;
         }
         return false;
+    }
+
+    /* Spawn the exit door */
+    public void spawnExitDoor() {
+        map.addElement(new Static("DO",Types.EXIT_DOOR),map.getExitDoor().x,map.getExitDoor().y);
     }
 }

@@ -98,8 +98,7 @@ public class ControllerFacade implements IController {
                         player_facing.y = player_deplacement_point.y;
                     }
 
-                    if (management.playerDie()) {
-                        view.displayMessage("Game over !");
+                    if (management.playerDie() || management.playerWin()) {
                         game_loop = false;
                     }
                     else if (management.playerCanReach()) {

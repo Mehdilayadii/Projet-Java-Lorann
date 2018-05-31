@@ -6,6 +6,7 @@ import model.elements.Mobile.Player;
 import model.elements.Mobile.Spell;
 import model.elements.Static;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +15,7 @@ public class MapModel {
     private Elements[][] map;
     private Player player;
     private Spell spell;
+    private Point exitDoor;
 
     private List<Mobile> enemies = new ArrayList<Mobile>();
 
@@ -41,6 +43,10 @@ public class MapModel {
     
     public void setSpell(Spell spell) {
     	this.spell = spell;
+    }
+
+    public Point getExitDoor() {
+        return this.exitDoor;
     }
 
     /**** METHODS ****/
@@ -72,6 +78,9 @@ public class MapModel {
                 enemies.add(new Mobile(stringStyle,Types.ENEMY,positionX,positionY));
                 element = enemies.get(enemies.size()-1);
                 break;
+            case OBSTACLE_KILL:
+                element = new Static(stringStyle, type);
+                exitDoor = new Point(positionX,positionY);
             default:
                 element = new Static(stringStyle, type);
         }

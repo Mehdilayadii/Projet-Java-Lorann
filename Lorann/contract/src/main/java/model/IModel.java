@@ -7,26 +7,43 @@ import java.util.List;
 /**
  * <h1>The Interface IModel.</h1>
  *
- * @author Jean-Aymeric DIET jadiet@cesi.fr
- * @version 1.0
+ * @author Not Jean-Aymeric DIET jadiet@cesi.fr
+ * @version At least 100.0
  */
 public interface IModel {
 
-    Image getSpriteFromMap(int x,int y);
-    Dimension getMapSize();
+    /*Map Management --------------------------------------*/
+    Image       getSpriteFromMap(int x,int y);
+    Dimension   getMapSize();
 
-    void connectToDB();
+    /*Database --------------------------------------------*/
+    void        connectToDB();
     List<Example> getLevelByID(int id) throws SQLException;
 
-    void animate();
-    void movePlayer(int moveX, int moveY);
-    void moveEnemies(List<Point> enemiesMove);
+    /*Player ----------------------------------------------*/
+    /*Movement management*/
+    void        movePlayer(int moveX, int moveY);
+    Point       getPlayerLocation();
+
+    /*Enemies ---------------------------------------------*/
+    /*Movement management*/
+    void        moveEnemies(List<Point> enemiesMove);
     List<Point> getEnemiesLocation();
-   	Point getPlayerLocation();
-   	Types getType(int x, int y);
-    void moveSpell(int moveX, int moveY);
-    Point getSpellLocation();
-    void createSpell(int directionX, int directionY);
-    void deleteSpell();
-    boolean spellAlive();
+
+    /*Spell -----------------------------------------------*/
+    /*Create and delete*/
+    void        createSpell(int directionX, int directionY);
+    void        deleteSpell();
+
+    /*Movement management*/
+    void        moveSpell(int moveX, int moveY);
+    Point       getSpellLocation();
+
+    /*Check if exist*/
+    boolean     spellAlive();
+
+    /*Others -----------------------------------------------*/
+    void        animate();
+    Types       getType(int x, int y);
+    void        spawnExitDoor();
 }

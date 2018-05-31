@@ -9,46 +9,51 @@ public class Management {
     private IModel model;
     private IView view;
 
-    int moveX;
-    int moveY;
+    int futureX;
+    int futureY;
 
     /**** CONSTRUCTOR ****/
     public Management(IModel model, IView view,int moveX, int moveY) {
         this.model = model;
         this.view = view;
 
-        this.moveX = moveX;
-        this.moveY = moveY;
+        this.futureX = model.getPlayerLocation().x+moveX;
+        this.futureY = model.getPlayerLocation().y-moveY;
 
     }
 
     /**** METHODS ****/
     public boolean playerCanReach() {
-        int futureX = model.getPlayerLocation().x+moveX;
-        int futureY = model.getPlayerLocation().y-moveY;
 
         Types type = model.getType(futureX,futureY);
         boolean canReach = !(type.isSolid());
 
+
+
         if (type == Types.ITEM) {
             view.setScore(view.getScore()+100);
         }
-        else if (type == Types.EXIT_DOOR) {
-            view.displayMessage("You finish the level !");
+        else if(model.getType(futureX,futureY) == Types.MAGICAL_BALL) {
+            model.spawnExitDoor();
         }
 
         return canReach;
     }
 
     public boolean playerDie() {
-        boolean playerDie = false;
-        int futureX = model.getPlayerLocation().x+moveX;
-        int futureY = model.getPlayerLocation().y-moveY;
-
         if (model.getType(futureX,futureY).getBehavior() == -1) {
-            playerDie = true;
+            view.displayMessage("Game over !");
+            return true;
         }
 
-        return playerDie;
+        return false;
+    }
+
+    public boolean playerWin() {
+        if (model.getType(futureX,futureY) == Types.EXIT_DOOR) {
+            view.displayMessage("You finish the level !");
+            return true;
+        }
+        return false;
     }
 }

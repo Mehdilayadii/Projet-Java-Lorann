@@ -40,7 +40,7 @@ public class CustomJPanel extends JPanel {
                 g.drawImage(map[x][y],x*32,y*32,32,32,null);
             }
         }
-        Font fonte = new Font("Felix Titling",Font.BOLD,30);
+        Font fonte = new Font("Courier New",Font.BOLD,30);
         g.setFont(fonte);
         g.setColor(Color.WHITE);
         g.drawString(score,10,this.getHeight()-10);
