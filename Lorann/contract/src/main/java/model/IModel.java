@@ -26,4 +26,5 @@ public interface IModel {
    	Types getType(int x, int y);
     void moveSpell(int moveX, int moveY);
     Point getSpellLocation();
+    void createSpell(int directionX, int directionY);
 }
