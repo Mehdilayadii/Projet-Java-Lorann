@@ -81,12 +81,17 @@ public class ControllerFacade implements IController {
     //
     public void play(){
         Point player_deplacement_point = new Point(0,0);
+        boolean player_casting_spell = false;
         try {
               while (game_loop) {
                     //Refresh screen//
                     model.animate();
-                    
                     Thread.sleep(speed);
+                    // Spell //
+                    player_casting_spell = view.return_casting_player();
+                    if (player_casting_spell == true) {
+                        System.out.println("Casting");
+                    }
                     //deplacement//
                     player_deplacement_point = view.return_deplacement_player();
                     model.movePlayer(player_deplacement_point.x,player_deplacement_point.y);
