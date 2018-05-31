@@ -22,8 +22,6 @@ public static List<Point> moveAI(IModel model) {
 
 		for (Point enemyMove : enemiesPos) {
 
-
-
 			//Random int, for deplacement in x and y
 			int directionX = rand.nextInt(3)-1 ; 
 			int directionY = rand.nextInt(3)-1;
@@ -32,8 +30,6 @@ public static List<Point> moveAI(IModel model) {
 			newEnemiesPos.add(new Point(directionX,directionY));
             
 		}
-
 		return newEnemiesPos;
-	
-}
+	}
 }
