@@ -108,6 +108,15 @@ public final class ModelFacade implements IModel {
         }
         return enemiesLocations;
     }
+    /*Kill enemy*/
+    public void killEnemy(int x, int y) {
+        List<Point> enemiesLocation = getEnemiesLocation();
+        for (Point enemyLocation : enemiesLocation) {
+            if(enemyLocation.x == x && enemyLocation.y == y) {
+                map.addElement(new Static(" ", Types.VOID),x,y);
+            }
+        }
+    }
 
     /*Get type of an element*/
     public Types getType(int x, int y) {

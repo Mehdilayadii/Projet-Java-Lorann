@@ -29,6 +29,8 @@ public interface IModel {
     /*Movement management*/
     void        moveEnemies(List<Point> enemiesMove);
     List<Point> getEnemiesLocation();
+    /*kill*/
+    void        killEnemy(int x, int y);
 
     /*Spell -----------------------------------------------*/
     /*Create and delete*/
