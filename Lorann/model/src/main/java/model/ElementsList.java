@@ -10,9 +10,9 @@ public enum ElementsList {
     Lorann_D                ("lorann_b","L1",Types.PLAYER,0,-1),
     Lorann_DL               ("lorann_bl","L2",Types.PLAYER,-1,-1),
     Lorann_L                ("lorann_l","L3",Types.PLAYER,-1,0),
-    Lorann_UL               ("lorann_ul","L4",Types.PLAYER,1,-1),
+    Lorann_UL               ("lorann_ul","L4",Types.PLAYER,-1,1),
     Lorann_U                ("lorann_u","L5",Types.PLAYER,0,1),
-    Lorann_UR               ("lorann_ur","L6",Types.PLAYER,-1,1),
+    Lorann_UR               ("lorann_ur","L6",Types.PLAYER,1,1),
     Lorann_R                ("lorann_r","L7",Types.PLAYER,1,0),
     Lorann_DR               ("lorann_br","L8",Types.PLAYER,1,-1),
 
