@@ -15,6 +15,9 @@ public class Management {
 
     int futureX;
     int futureY;
+    
+    int futureX_spell;
+    int futureY_spell;
 
     /**** CONSTRUCTOR ****/
     public Management(IModel model, IView view,int moveX, int moveY) {
@@ -31,8 +34,6 @@ public class Management {
 
         Types type = model.getType(futureX,futureY);
         boolean canReach = !(type.isSolid());
-
-
 
         if (type == Types.ITEM) {
             view.setScore(view.getScore()+100);
@@ -67,7 +68,23 @@ public class Management {
     }
 
     public void setFuture(int moveX, int moveY) {
-        this.futureX = model.getPlayerLocation().x+moveX;
-        this.futureY = model.getPlayerLocation().y-moveY;
+        this.futureX = model.getPlayerLocation().x + moveX;
+        this.futureY = model.getPlayerLocation().y - moveY;
     }
+    
+    public void setFuture_spell(int moveX, int moveY) {
+        this.futureX_spell = model.getSpellLocation().x + moveX;
+        this.futureY_spell = model.getSpellLocation().y - moveY;
+    }
+    
+	public boolean spellCanReach() {
+        Types type = model.getType(futureX_spell,futureY_spell);
+        boolean canReach_spell = !(type.isSolid());
+        
+        if (type == Types.PLAYER) {
+        	model.deleteSpell();
+        }
+        
+		return canReach_spell;
+	}
 }
