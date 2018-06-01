@@ -13,8 +13,8 @@ import model.Example;
 /**
  * <h1>The Class ProcedureDAO.</h1>
  *
- * @author Antoine MOHR antoine.mohr@viacesi.fr
- * @version 1.0
+ * @author Groupe 13
+ * @version 2.0
  */
 	
 public abstract class ProcedureDAO extends AbstractDAO {
@@ -23,7 +23,7 @@ public abstract class ProcedureDAO extends AbstractDAO {
     private static String sqlgetLevelByID   = "{call getLevelByID(?)}";
 
 
-   
+   //
     
     /** The element column index. */
     private static int    elementColumnIndex  = 2;

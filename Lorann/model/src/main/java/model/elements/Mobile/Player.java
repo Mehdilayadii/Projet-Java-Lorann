@@ -3,8 +3,6 @@ package model.elements.Mobile;
 import model.ElementsList;
 import model.Types;
 
-import java.awt.*;
-
 public class Player extends Mobile{
 
     private int animationNumber = 0;
