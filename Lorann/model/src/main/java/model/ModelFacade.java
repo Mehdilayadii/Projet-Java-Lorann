@@ -122,6 +122,7 @@ public final class ModelFacade implements IModel {
 
         map.addElement(spell,x,y);
         map.setSpell(spell);
+        map.getSpell().setLocation(x,y);
     }
 
     /* Delete the spell*/

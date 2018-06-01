@@ -4,6 +4,9 @@ import model.IModel;
 import model.Types;
 import view.IView;
 
+import java.awt.*;
+import java.util.List;
+
 public class Management {
 
     private IModel model;
@@ -55,5 +58,17 @@ public class Management {
             return true;
         }
         return false;
+    }
+
+    public boolean mobEatPlayer() {
+        boolean end = false;
+        List<Point> enemiesMove =
+        List<Point> enemiesMove = AIDeplacement.moveAI(model);
+
+        for (Point enemyMove : enemiesMove) {
+
+        }
+
+        return end;
     }
 }

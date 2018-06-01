@@ -109,7 +109,6 @@ public class ControllerFacade implements IController {
                     management = new Management(model, view, player_deplacement_point.x, player_deplacement_point.y);
                     if (management.playerDie()) { // Player die
                         game_loop = false;
-                        view.gameOver();
                     }
                     else if (management.playerCanReach()) { // Moving player
                         model.movePlayer(player_deplacement_point.x,player_deplacement_point.y);
