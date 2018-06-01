@@ -11,6 +11,7 @@ public class Management {
 
     private IModel model;
     private IView view;
+    private boolean gameEnd = false;
 
     int futureX;
     int futureY;
@@ -36,48 +37,37 @@ public class Management {
         if (type == Types.ITEM) {
             view.setScore(view.getScore()+100);
         }
-        else if(model.getType(futureX,futureY) == Types.MAGICAL_BALL) {
+        else if (model.getType(model.getPlayerLocation().x,model.getPlayerLocation().y) == Types.ENEMY) {
+            view.displayMessage("Game over !");
+            gameEnd = true;
+        }
+        else if (type == Types.MAGICAL_BALL) {
             model.spawnExitDoor();
         }
 
         return canReach;
     }
 
-    public boolean playerDie() {
+    public void playerDie() {
         if (model.getType(futureX,futureY).getBehavior() == -1) {
             view.displayMessage("Game over !");
-            return true;
+            gameEnd = true;
         }
-
-        return false;
     }
 
-    public boolean playerWin() {
+    public void playerWin() {
         if (model.getType(futureX,futureY) == Types.EXIT_DOOR) {
             view.displayMessage("You finish the level !");
-            return true;
+            gameEnd = true;
         }
-        return false;
     }
 
-    public boolean mobEatPlayer() {
-        boolean end = false;
-        List<Point> enemiesPosition = model.getEnemiesLocation();
-        List<Point> enemiesMove = AIDeplacement.moveAI(model);
+    public boolean isGameEnd() {
+        return gameEnd;
+    }
 
-        int i = 0;
-
-        for (Point enemyMove : enemiesMove) {
-            int x = enemiesPosition.get(i).x + enemyMove.x;
-            int y = enemiesPosition.get(i).y + enemyMove.y;
-
-            if(model.getType(x,y) == Types.PLAYER) {
-                end = true;
-            }
-
-            i++;
-        }
-
-        return end;
+    public void setFuture(int moveX, int moveY) {
+        this.futureX = model.getPlayerLocation().x+moveX;
+        this.futureY = model.getPlayerLocation().y-moveY;
     }
 }

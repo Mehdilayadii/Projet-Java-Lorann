@@ -80,12 +80,13 @@ public class ControllerFacade implements IController {
     public void play(){
 
         // ATTRIBUTE //
-        Management management;
         Point spell_position = new Point(0,0);
         Point player_facing = new Point(0,0);
         Point player_deplacement_point = new Point(0,0);
         boolean player_casting_spell = false;
         boolean spell_is_alive = false;
+
+        Management management = new Management(model, view, player_deplacement_point.x, player_deplacement_point.y);
 
      // GAME LOOP //    
         try {
@@ -108,16 +109,17 @@ public class ControllerFacade implements IController {
                     }    
 
                     // Moving //
-                    management = new Management(model, view, player_deplacement_point.x, player_deplacement_point.y);
-                    if (management.playerDie()) { // Player die
+                    management.setFuture(player_deplacement_point.x, player_deplacement_point.y);
+                    if (management.isGameEnd() == true) { // Player die
                         game_loop = false;
-
                     }
                     else if (management.playerCanReach()) { // Moving player
                         model.movePlayer(player_deplacement_point.x,player_deplacement_point.y);
                     }
-
+                    System.out.println(management.isGameEnd());
                     model.moveEnemies(AIDeplacement.moveAI(model)); // Moving demons
+
+
 
                     // Spell //                    
                     player_casting_spell = view.return_casting_player(); // Casting ?
