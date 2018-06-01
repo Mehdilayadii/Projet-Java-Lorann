@@ -31,7 +31,7 @@ public class Player extends Mobile{
         }
         else {
             for (int i = 0; i < 8; i++) {
-                if(ElementsList.values()[i].getDirection() == new Point(directionX, directionY)) {
+                if(ElementsList.values()[i].getDirection().x == directionX && ElementsList.values()[i].getDirection().y == directionY) {
                     this.sprite = ElementsList.values()[i].getImage();
                 }
             }

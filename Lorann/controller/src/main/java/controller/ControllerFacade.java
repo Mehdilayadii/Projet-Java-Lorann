@@ -92,15 +92,15 @@ public class ControllerFacade implements IController {
         try {
                 while (game_loop) {
 
-                    // Animate Sprite //
-                    model.animate();
-
                     // Loop //
                     Thread.sleep(speed);
                     spell_is_alive = model.spellAlive();
 
                     // Get Player Facing //
                     player_move = view.return_deplacement_player(); // get player facing
+                    // Animate Sprite //
+                    model.animate(player_move.x, player_move.y);
+
                     if ((player_move.x != 0) || (player_move.y != 0)) { // player is moving
                         if (spell_is_alive == false) { // spell not exist
                             player_facing_during_casting.x = player_move.x; // set new facing (x)
