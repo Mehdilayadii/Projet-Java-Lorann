@@ -81,24 +81,28 @@ public class ControllerFacade implements IController {
 
         Management management;
 
+        Point spell_position = new Point(0,0);
         Point player_facing = new Point(0,0);
         Point player_deplacement_point = new Point(0,0);
         boolean player_casting_spell = false;
 
         try {
               while (game_loop) {
-                    //Refresh screen//
+                    // Animate Sprite //
                     model.animate();
+                    // Loop //
                     Thread.sleep(speed);
-                    //deplacement//
-                  player_deplacement_point = view.return_deplacement_player();
-                  management = new Management(model, view, player_deplacement_point.x, player_deplacement_point.y);
+                    // Get Player Facing //
+                    player_deplacement_point = view.return_deplacement_player();
+                    management = new Management(model, view, player_deplacement_point.x, player_deplacement_point.y);
                     if ((player_deplacement_point.x != 0) || (player_deplacement_point.y != 0)) {
                         player_facing.x = player_deplacement_point.x;
                         player_facing.y = player_deplacement_point.y;
                     }
-
-                    if (management.playerDie() || management.playerWin()) {
+                    
+                    // Moving //
+                    if (management.playerDie()) {
+                        view.gameOver();
                         game_loop = false;
                     }
                     else if (management.playerCanReach()) {
@@ -106,7 +110,7 @@ public class ControllerFacade implements IController {
                     }
                     model.moveEnemies(AIDeplacement.moveAI(model));
 
-                    // Spell //
+                    // Spell //                    
                     player_casting_spell = view.return_casting_player();
                     if (player_casting_spell == true) {
                     	if ((player_facing.x != 0) || (player_facing.y != 0)) {
@@ -116,6 +120,7 @@ public class ControllerFacade implements IController {
                     	}
                     }
 
+                    // Refresh Screen //
                     view.showElements();
                             }         
         } catch(InterruptedException e) { e.printStackTrace();
