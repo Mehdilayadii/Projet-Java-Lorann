@@ -88,7 +88,7 @@ public class ControllerFacade implements IController {
 
      // GAME LOOP //    
         try {
-              while (game_loop) {
+                while (game_loop) {
 
                     // Animate Sprite //
                     model.animate();
@@ -99,35 +99,41 @@ public class ControllerFacade implements IController {
                     // Get Player Facing //
                     player_deplacement_point = view.return_deplacement_player();
                     if ((player_deplacement_point.x != 0) || (player_deplacement_point.y != 0)) {
+                        // if (spell_is_alive = false) {
                         player_facing.x = player_deplacement_point.x;
                         player_facing.y = player_deplacement_point.y;
+                        //}
                     }    
 
                     // Moving //
                     management = new Management(model, view, player_deplacement_point.x, player_deplacement_point.y);
-                    if (management.playerDie()) {
-                        view.gameOver();
+                    if (management.playerDie()) { // Player die
                         game_loop = false;
+                        view.gameOver();
                     }
-                    else if (management.playerCanReach()) {
+                    else if (management.playerCanReach()) { // Moving player
                         model.movePlayer(player_deplacement_point.x,player_deplacement_point.y);
                     }
 
-                    model.moveEnemies(AIDeplacement.moveAI(model));
+                    model.moveEnemies(AIDeplacement.moveAI(model)); // Moving demons
 
                     // Spell //                    
-                    player_casting_spell = view.return_casting_player();
+                    player_casting_spell = view.return_casting_player(); // Casting ?
                     if (player_casting_spell == true) {
-                        if ((player_facing.x != 0) || (player_facing.y != 0)) {
+                        if ((player_facing.x != 0) || (player_facing.y != 0)) { // Create spell
                             System.out.println("Casting:");
                             System.out.println(player_facing);
                             model.createSpell(player_facing.x, player_facing.y);
                         }
                     }
+                    /*if (spell_is_alive == true) { // Moving spell
+                        model.moveSpell(player_facing.x, player_facing.y)
+                    } */
+                    
 
                     // Refresh Screen //
                     view.showElements();
-                            }         
+                }         
         } catch(InterruptedException e) { e.printStackTrace();
                 }
        
