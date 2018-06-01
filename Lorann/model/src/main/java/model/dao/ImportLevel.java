@@ -7,8 +7,20 @@ import model.*;
 
 public abstract class ImportLevel{
 	
+	/**
+	 * <h1>The Class ImportLevel.</h1>
+	 *
+	 * @author Groupe 13
+	 * @version 2.0
+	 */	
 	
 	
+	/**
+     * Create the map from database 
+     *
+     * @return a map as a Array of String[][]
+     * 
+     */
 	public static String[][] CreateMap(ModelFacade model) {
 
 	// Convert List<Example> to StringBuilder
