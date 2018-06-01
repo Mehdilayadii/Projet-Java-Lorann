@@ -21,7 +21,7 @@ public class ControllerFacade implements IController {
     /** The model. */
     private final IModel model;
     
-    private static final int speed = 150;
+    private static final int speed = 120;
     private boolean game_loop = true;
 
     /**
@@ -118,29 +118,36 @@ public class ControllerFacade implements IController {
                         model.movePlayer(player_move.x,player_move.y);
                     }
 
-                    //model.moveEnemies(AIDeplacement.moveAI(model)); // Moving demons
+                    model.moveEnemies(AIDeplacement.moveAI(model)); // Moving demons
 
                     // Spell //   
                     spell_is_alive = model.spellAlive();
                     player_casting_spell = view.return_casting_player(); // is player casting ?
                     if ((player_casting_spell == true) && (spell_is_alive == false)) { // Player is able to cast spell
-                            spell_move.x = player_facing_during_casting.x;
-                            spell_move.y = player_facing_during_casting.y;
-                        if ((spell_move.x != 0) || (spell_move.y != 0)) { // player have facing
+                        spell_move.x = player_facing_during_casting.x;
+                        spell_move.y = player_facing_during_casting.y;
+                        if ((management.canCreateSpell(spell_move.x, spell_move.y)) && ((spell_move.x != 0) || (spell_move.y != 0))) { // player have facing
                             model.createSpell(spell_move.x, spell_move.y); // Create spell
                         }
                     }
+                    
                     if (spell_is_alive == true) { // spell exist
                         management.setFuture_spell(spell_move.x, spell_move.y); // update spell location
-                        if (management.spellCanReach() == 0) { // Can move
+                        if (management.spellCanReach() == 0) { // there is void (can move)
                             model.moveSpell(spell_move.x, spell_move.y); // moving spell
                         }
                         else if (management.spellCanReach() == 1) { // there is an obstacle
                             spell_move.x = - spell_move.x; // spell rebound (x)
                             spell_move.y = - spell_move.y; // spell rebound (y)
                         }
-                        else if (management.spellCanReach() == 2) {
-                            model.deleteSpell();
+                        else if (management.spellCanReach() == 2) { // there is player
+                            model.deleteSpell(); // delete spell
+                            spell_move.x = player_move.x;
+                            spell_move.y = player_move.y;
+                        }
+                        else if (management.spellCanReach() == -1) { // there is enemie
+                            model.killEnemy(model.getSpellLocation().x+spell_move.x, model.getSpellLocation().y+spell_move.y);
+                            model.deleteSpell(); // delete spell
                             spell_move.x = player_move.x;
                             spell_move.y = player_move.y;
                         }
