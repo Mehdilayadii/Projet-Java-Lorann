@@ -132,7 +132,6 @@ public class ControllerFacade implements IController {
                     }
                     if (spell_is_alive == true) { // spell exist
                         management.setFuture_spell(spell_move.x, spell_move.y); // update spell location
-                        System.out.println(management.spellCanReach());
                         if (management.spellCanReach() == 0) { // Can move
                             model.moveSpell(spell_move.x, spell_move.y); // moving spell
                         }
