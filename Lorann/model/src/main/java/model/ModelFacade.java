@@ -32,6 +32,14 @@ public final class ModelFacade implements IModel {
     }
 
     /**** GETTERS and SETTERS ****/
+    /**
+     * Gets entire level from a int(id of level)
+     * @see getLevelById(id) in class ProcedureDAO
+     * @throws SQLException 
+     * @return the map of String
+     * @param id
+     * 			ID of level(1 to 5)
+     */
     public Image getSpriteFromMap(int x,int y) {
         return map.getMap()[x][y].getSprite();
     }
@@ -41,7 +49,9 @@ public final class ModelFacade implements IModel {
     }
 
     /**** METHODS ****/
-    /*Connect to the database lorann */
+   /**
+	 * Connect to the database lorann
+	 */
     public void connectToDB() {
         LorannBDDConnector conn = null;
         try {
@@ -53,13 +63,28 @@ public final class ModelFacade implements IModel {
             e.printStackTrace();
         }
     }
-
+    
+    /**
+     * Gets entire level from a int(id of level)
+     * @see getLevelById(id) in class ProcedureDAO
+     * @throws SQLException 
+     * @return the map of String
+     * @param id
+     * 			ID of level(1 to 5)
+     */
     @Override
     public List<Example> getLevelByID(int id) throws SQLException {
         return ProcedureDAO.getLevelByID(id);
     }
 
-    /*Animate*/
+    /**
+     * Animate elements
+     * @see animateElements in class MapModel
+     * @param directionX
+     * 			Direction in X coordinate
+     * @param directionY
+     * 			Direction in Y coordinate
+     */
     public void animate(int directionX, int directionY) {
         map.animateElements(directionX, directionY);
     }
