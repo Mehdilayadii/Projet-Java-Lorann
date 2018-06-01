@@ -62,11 +62,20 @@ public class Management {
 
     public boolean mobEatPlayer() {
         boolean end = false;
-        List<Point> enemiesMove =
+        List<Point> enemiesPosition = model.getEnemiesLocation();
         List<Point> enemiesMove = AIDeplacement.moveAI(model);
 
-        for (Point enemyMove : enemiesMove) {
+        int i = 0;
 
+        for (Point enemyMove : enemiesMove) {
+            int x = enemiesPosition.get(i).x + enemyMove.x;
+            int y = enemiesPosition.get(i).y + enemyMove.y;
+
+            if(model.getType(x,y) == Types.PLAYER) {
+                end = true;
+            }
+
+            i++;
         }
 
         return end;
