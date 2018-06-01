@@ -81,12 +81,12 @@ public class ControllerFacade implements IController {
 
         // ATTRIBUTE //
         Point spell_position = new Point(0,0);
-        Point player_facing = new Point(0,0);
-        Point player_deplacement_point = new Point(0,0);
+        Point player_facing_during_casting = new Point(0,0);
+        Point player_move = new Point(0,0);
         boolean player_casting_spell = false;
         boolean spell_is_alive = false;
 
-        Management management = new Management(model, view, player_deplacement_point.x, player_deplacement_point.y);
+        Management management = new Management(model, view, player_move.x, player_move.y);
 
      // GAME LOOP //    
         try {
@@ -100,36 +100,43 @@ public class ControllerFacade implements IController {
                     spell_is_alive = model.spellAlive();
 
                     // Get Player Facing //
-                    player_deplacement_point = view.return_deplacement_player();
-                    if ((player_deplacement_point.x != 0) || (player_deplacement_point.y != 0)) {
-                        if (spell_is_alive == false) {
-                            player_facing.x = player_deplacement_point.x;
-                            player_facing.y = player_deplacement_point.y;
+                    player_move = view.return_deplacement_player(); // get player facing
+                    if ((player_move.x != 0) || (player_move.y != 0)) { // player is moving
+                        if (spell_is_alive == false) { // spell not exist
+                            player_facing_during_casting.x = player_move.x; // set new facing (x)
+                            player_facing_during_casting.y = player_move.y; // set new facing (y)
                         }
                     }    
 
                     // Moving //
-                    management.setFuture(player_deplacement_point.x, player_deplacement_point.y);
+                    management.setFuture(player_move.x, player_move.y);
                     if (management.isGameEnd() == true) { // Player die
                         game_loop = false;
                     }
                     else if (management.playerCanReach()) { // Moving player
-                        model.movePlayer(player_deplacement_point.x,player_deplacement_point.y);
+                        model.movePlayer(player_move.x,player_move.y);
                     }
-                    System.out.println(management.isGameEnd());
-                    model.moveEnemies(AIDeplacement.moveAI(model)); // Moving demons
 
-
+                    //model.moveEnemies(AIDeplacement.moveAI(model)); // Moving demons
 
                     // Spell //                    
-                    player_casting_spell = view.return_casting_player(); // Casting ?
-                    if ((player_casting_spell == true) && (spell_is_alive == false)) {
-                        if ((player_facing.x != 0) || (player_facing.y != 0)) { // Create spell
-                            model.createSpell(player_facing.x, player_facing.y);
+                    player_casting_spell = view.return_casting_player(); // is player casting ?
+                    if ((player_casting_spell == true) && (spell_is_alive == false) && (management.spellCanReach() == true)) { // Player is able to cast spell
+                        if ((player_facing_during_casting.x != 0) || (player_facing_during_casting.y != 0)) { // player have facing
+                            model.createSpell(player_facing_during_casting.x, player_facing_during_casting.y); // Create spell
                         }
                     }
-                    if (spell_is_alive == true) { // Moving spell
-                        model.moveSpell(player_facing.x, player_facing.y);
+                    if (spell_is_alive == true) { // spell exist
+                        management.setFuture_spell(player_facing_during_casting.x, player_facing_during_casting.y); // update spell location
+                        if (management.spellCanReach() == true) {
+                            System.out.println(management.spellCanReach());
+                            model.moveSpell(player_facing_during_casting.x, player_facing_during_casting.y); // moving spell
+                        
+                        }
+                        else if (management.spellCanReach() == false) { // there is wall
+                            player_facing_during_casting.x = - player_facing_during_casting.x; // spell rebound (x)
+                            player_facing_during_casting.y = - player_facing_during_casting.y; // spell rebound (y)
+                        }
                     } 
                     
                     // Refresh Screen //
