@@ -45,7 +45,8 @@ public class Management {
         else if (type == Types.MAGICAL_BALL) {
             model.spawnExitDoor();
         }
-
+        playerDie();
+        playerWin();
         return canReach;
     }
 
