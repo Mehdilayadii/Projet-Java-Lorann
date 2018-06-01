@@ -13,7 +13,7 @@ public abstract class AIDeplacement {
 	public static List<Point> moveAI(IModel model) {
 
 
-		final int DETECTION_RANGE=3;
+		final int DETECTION_RANGE=7;
 
 		List<Point> enemiesPos = model.getEnemiesLocation();
 		List<Point> newEnemiesPos = new ArrayList<>();
