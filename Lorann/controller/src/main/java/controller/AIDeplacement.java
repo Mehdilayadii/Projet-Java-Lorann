@@ -13,7 +13,7 @@ public abstract class AIDeplacement {
 	public static List<Point> moveAI(IModel model) {
 
 
-		final int DETECTION_RANGE=10;
+		final int DETECTION_RANGE=3;
 
 		List<Point> enemiesPos = model.getEnemiesLocation();
 		List<Point> newEnemiesPos = new ArrayList<>();
@@ -107,7 +107,6 @@ public abstract class AIDeplacement {
 							
 						}
 
-
 					}
 					else if(playerPos.x<enemyMove.x) {
 
@@ -125,9 +124,68 @@ public abstract class AIDeplacement {
 					}
 					
 				}
+				
+				
+				
+				else  { //There we are in the "near player zone" but with a different X or Y
+					
+					
+					//check if player is in diagonal of a monster
+					if((playerPos.y>enemyMove.y && playerPos.x>enemyMove.x )&&(enemyMove.x-playerPos.x==enemyMove.y-playerPos.y  )) {
+						//Down-Right diagonal
+						 for (int i=0; i<possiblePath.size();i++) {
+								//Check if it's possible to move y+1
+								if ((possiblePath.get(i).x==1) &&(possiblePath.get(i).y==1)) {
+									newEnemiesPos.add(new Point(1,1));
+									movementDone=true;
+								}
+								
+						 }
+												 
+					 }
+					
+					if((playerPos.y<enemyMove.y && playerPos.x<enemyMove.x )&&(playerPos.x-enemyMove.x==playerPos.y-enemyMove.y)) {
+						 //Down-Left diagonal
+						 for (int i=0; i<possiblePath.size();i++) {
+								//Check if it's possible to move y+1
+								if ((possiblePath.get(i).x==-1) &&(possiblePath.get(i).y==1)) {
+									newEnemiesPos.add(new Point(-1,1));
+									movementDone=true;
+								}
+						 } 
+						 
+					 }
+					
+					if((playerPos.y>enemyMove.y && playerPos.x<enemyMove.x )&&(playerPos.x-enemyMove.x==enemyMove.y-playerPos.y  )) {
+						//Up-Right diagonal
+						 for (int i=0; i<possiblePath.size();i++) {
+								//Check if it's possible to move y+1
+								if ((possiblePath.get(i).x==-1) &&(possiblePath.get(i).y==-1)) {
+									newEnemiesPos.add(new Point(-1,-1));
+									movementDone=true;
+								}
+								
+						 }
+						
+					 }
+					
+					if((playerPos.y<enemyMove.y && playerPos.x>enemyMove.x )&&(enemyMove.x-playerPos.x==playerPos.y-enemyMove.y )) {
+						//Up-Left diagonal
+						 
+						 for (int i=0; i<possiblePath.size();i++) {
+								//Check if it's possible to move y+1
+								if ((possiblePath.get(i).x==1) &&(possiblePath.get(i).y==-1)) {
+									newEnemiesPos.add(new Point(1,-1));
+									movementDone=true;
+								}
+								
+						 }
+									 
+					 }
+				}
 
 
-				//If different X and Y
+				//If different X and Y and not in diagonal
 				//TODO Add some features --> still random moves when near player but with a different X or Y
 				if (movementDone==false) {
 					newEnemiesPos.add(new Point(possiblePath.get(random).x,possiblePath.get(random).y));
