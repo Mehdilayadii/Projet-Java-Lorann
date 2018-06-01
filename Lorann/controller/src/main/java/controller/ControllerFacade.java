@@ -96,6 +96,7 @@ public class ControllerFacade implements IController {
 
                     // Loop //
                     Thread.sleep(speed);
+                    spell_is_alive = model.spellAlive();
 
                     // Get Player Facing //
                     player_deplacement_point = view.return_deplacement_player();
@@ -123,7 +124,6 @@ public class ControllerFacade implements IController {
                     if ((player_casting_spell == true) && (spell_is_alive == false)) {
                         if ((player_facing.x != 0) || (player_facing.y != 0)) { // Create spell
                             model.createSpell(player_facing.x, player_facing.y);
-                            spell_is_alive = true;
                         }
                     }
                     if (spell_is_alive == true) { // Moving spell
