@@ -116,14 +116,12 @@ public class ControllerFacade implements IController {
                         model.movePlayer(player_deplacement_point.x,player_deplacement_point.y);
                     }
 
-                  //  model.moveEnemies(AIDeplacement.moveAI(model)); // Moving demons
+                    model.moveEnemies(AIDeplacement.moveAI(model)); // Moving demons
 
                     // Spell //                    
                     player_casting_spell = view.return_casting_player(); // Casting ?
                     if ((player_casting_spell == true) && (spell_is_alive == false)) {
                         if ((player_facing.x != 0) || (player_facing.y != 0)) { // Create spell
-                            System.out.println("Casting:");
-                            System.out.println(player_facing);
                             model.createSpell(player_facing.x, player_facing.y);
                             spell_is_alive = true;
                         }
