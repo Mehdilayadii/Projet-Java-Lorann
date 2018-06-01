@@ -4,6 +4,7 @@ package model;
 import java.awt.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import model.dao.ImportLevel;
@@ -110,10 +111,15 @@ public final class ModelFacade implements IModel {
     }
     /*Kill enemy*/
     public void killEnemy(int x, int y) {
+
         List<Point> enemiesLocation = getEnemiesLocation();
-        for (Point enemyLocation : enemiesLocation) {
-            if(enemyLocation.x == x && enemyLocation.y == y) {
+        Iterator<Point> i = enemiesLocation.iterator();
+
+        while(i.hasNext()) {
+            Point o = i.next();
+            if(o.x == x && o.y == y) {
                 map.addElement(new Static(" ", Types.VOID),x,y);
+                i.remove();
             }
         }
     }
