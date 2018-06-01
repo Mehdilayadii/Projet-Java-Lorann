@@ -45,6 +45,10 @@ public class Management {
         else if (type == Types.MAGICAL_BALL) {
             model.spawnExitDoor();
         }
+        else if (type == Types.SPELL) {
+            model.deleteSpell();    
+        }
+        
         playerDie();
         playerWin();
         return canReach;
@@ -78,14 +82,28 @@ public class Management {
         this.futureY_spell = model.getSpellLocation().y - moveY;
     }
     
-	public boolean spellCanReach() {
+    // Spell //
+    // 0 - Void
+    // 1 - Obstacle
+    // -1 - Demons
+    // 2  - Player
+    public int spellCanReach() {
         Types type = model.getType(futureX_spell,futureY_spell);
-        boolean canReach_spell = !(type.isSolid());
-        
-        if (type == Types.PLAYER) {
-        	model.deleteSpell();
+        int canReach_spell = 0;
+
+
+        if ((type == Types.ITEM) || (type.isSolid() == true) || (type == Types.MAGICAL_BALL) || (type == Types.EXIT_DOOR)) {
+            canReach_spell = 1;
         }
         
-		return canReach_spell;
-	}
+        if (type == Types.PLAYER) {
+            canReach_spell = 2;
+        }
+
+        if (type == Types.ENEMY) {
+            canReach_spell = -1;
+        }
+        
+        return canReach_spell;
+    }
 }
