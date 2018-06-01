@@ -21,10 +21,12 @@ public class Example {
     /**
      * Instantiates a new example.
      *
-     * @param id
-     *            the id
-     * @param name
-     *            the name
+     * @param element
+     *            the element
+     * @param cooX
+     *            the X coordinate
+     * @param cooY
+     *            the Y coordinate
      */
     public Example(final String element,final int cooX,final int cooY) {
         super();
