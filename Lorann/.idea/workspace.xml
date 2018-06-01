@@ -18,6 +18,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="AIDeplacement.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/AIDeplacement.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="142">
+              <caret line="212" column="100" selection-start-line="212" selection-start-column="100" selection-end-line="212" selection-end-column="100" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ModelFacade.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/src/main/java/model/ModelFacade.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -78,23 +87,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ControllerFacade.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ControllerFacade.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/ControllerFacade.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
               <caret line="119" column="20" selection-start-line="119" selection-start-column="20" selection-end-line="119" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Management.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/Management.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-345">
-              <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -129,7 +126,6 @@
         <option value="$PROJECT_DIR$/contract/src/main/java/view/IView.java" />
         <option value="$PROJECT_DIR$/view/src/main/java/view/CustomJPanel.java" />
         <option value="$PROJECT_DIR$/contract/src/main/java/model/Types.java" />
-        <option value="$PROJECT_DIR$/controller/src/main/java/controller/AIDeplacement.java" />
         <option value="$PROJECT_DIR$/controller/src/main/java/controller/Management.java" />
         <option value="$PROJECT_DIR$/contract/src/main/java/model/IModel.java" />
         <option value="$PROJECT_DIR$/model/src/main/java/model/MapModel.java" />
@@ -138,6 +134,7 @@
         <option value="$PROJECT_DIR$/model/src/main/java/model/ElementsList.java" />
         <option value="$PROJECT_DIR$/model/src/main/java/model/elements/Mobile/Player.java" />
         <option value="$PROJECT_DIR$/controller/src/main/java/controller/ControllerFacade.java" />
+        <option value="$PROJECT_DIR$/controller/src/main/java/controller/AIDeplacement.java" />
       </list>
     </option>
   </component>
@@ -457,11 +454,11 @@
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="6" visible="true" weight="0.16040269" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.43019944" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.43019944" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18791947" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18791947" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
@@ -793,13 +790,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/AIDeplacement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/src/main/java/model/elements/Mobile/Spell.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="97">
@@ -841,16 +831,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/Management.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-345">
-          <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/src/main/java/model/ElementsList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -872,10 +852,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/Management.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-345">
+          <caret line="40" column="47" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/ControllerFacade.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="119" column="20" selection-start-line="119" selection-start-column="20" selection-end-line="119" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/AIDeplacement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="212" column="100" selection-start-line="212" selection-start-column="100" selection-end-line="212" selection-end-column="100" />
         </state>
       </provider>
     </entry>

@@ -210,7 +210,7 @@ public abstract class AIDeplacement {
 		for (int x = -1; x <= 1; x++) {
 			for (int y = -1; y <= 1; y++) {
 				typeCheck = model.getType(enemyPos.x+x,enemyPos.y + y);
-				if (typeCheck == Types.VOID || typeCheck == Types.PLAYER) {
+				if (typeCheck == Types.VOID || typeCheck == Types.PLAYER || typeCheck == Types.SPELL) {
 					possiblePath.add(new Point(x,y));
 				}
 			}
