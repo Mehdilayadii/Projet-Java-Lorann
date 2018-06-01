@@ -4,9 +4,6 @@ import model.IModel;
 import model.Types;
 import view.IView;
 
-import java.awt.*;
-import java.util.List;
-
 public class Management {
 
     private IModel model;
