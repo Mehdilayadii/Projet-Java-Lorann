@@ -79,28 +79,32 @@ public class ControllerFacade implements IController {
     //
     public void play(){
 
+        // ATTRIBUTE //
         Management management;
-
         Point spell_position = new Point(0,0);
         Point player_facing = new Point(0,0);
         Point player_deplacement_point = new Point(0,0);
         boolean player_casting_spell = false;
 
+     // GAME LOOP //    
         try {
               while (game_loop) {
+
                     // Animate Sprite //
                     model.animate();
+
                     // Loop //
                     Thread.sleep(speed);
+
                     // Get Player Facing //
                     player_deplacement_point = view.return_deplacement_player();
-                    management = new Management(model, view, player_deplacement_point.x, player_deplacement_point.y);
                     if ((player_deplacement_point.x != 0) || (player_deplacement_point.y != 0)) {
                         player_facing.x = player_deplacement_point.x;
                         player_facing.y = player_deplacement_point.y;
-                    }
-                    
+                    }    
+
                     // Moving //
+                    management = new Management(model, view, player_deplacement_point.x, player_deplacement_point.y);
                     if (management.playerDie()) {
                         view.gameOver();
                         game_loop = false;
@@ -108,16 +112,17 @@ public class ControllerFacade implements IController {
                     else if (management.playerCanReach()) {
                         model.movePlayer(player_deplacement_point.x,player_deplacement_point.y);
                     }
+
                     model.moveEnemies(AIDeplacement.moveAI(model));
 
                     // Spell //                    
                     player_casting_spell = view.return_casting_player();
                     if (player_casting_spell == true) {
-                    	if ((player_facing.x != 0) || (player_facing.y != 0)) {
-	                        System.out.println("Casting:");
-	                        System.out.println(player_facing);
-	                        model.createSpell(player_facing.x, player_facing.y);
-                    	}
+                        if ((player_facing.x != 0) || (player_facing.y != 0)) {
+                            System.out.println("Casting:");
+                            System.out.println(player_facing);
+                            model.createSpell(player_facing.x, player_facing.y);
+                        }
                     }
 
                     // Refresh Screen //
