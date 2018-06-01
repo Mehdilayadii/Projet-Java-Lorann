@@ -3,6 +3,8 @@ package model.elements.Mobile;
 import model.ElementsList;
 import model.Types;
 
+import java.awt.*;
+
 public class Player extends Mobile{
 
     private int animationNumber = 0;
@@ -13,17 +15,26 @@ public class Player extends Mobile{
     }
 
     /**** METHODS ****/
-    public void animate (){
-        if (animationNumber < 7){
-            this.sprite = ElementsList.values()[animationNumber].getImage();
-            this.stringStyle = ElementsList.values()[animationNumber].getCharacter();
-            animationNumber++;
+    public void animate (int directionX, int directionY){
+        if (directionX == 0 && directionY == 0) {
+            if (animationNumber < 7){
+                this.sprite = ElementsList.values()[animationNumber].getImage();
+                this.stringStyle = ElementsList.values()[animationNumber].getCharacter();
+                animationNumber++;
 
+            }
+            else {
+                this.sprite = ElementsList.values()[animationNumber].getImage();
+                this.stringStyle = ElementsList.values()[animationNumber].getCharacter();
+                animationNumber = 0;
+            }
         }
         else {
-            this.sprite = ElementsList.values()[animationNumber].getImage();
-            this.stringStyle = ElementsList.values()[animationNumber].getCharacter();
-            animationNumber = 0;
+            for (int i = 0; i < 8; i++) {
+                if(ElementsList.values()[i].getDirection() == new Point(directionX, directionY)) {
+                    this.sprite = ElementsList.values()[i].getImage();
+                }
+            }
         }
     }
 }

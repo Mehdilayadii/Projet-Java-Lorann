@@ -60,8 +60,8 @@ public final class ModelFacade implements IModel {
 	}
 
 	/*Animate*/
-    public void animate() {
-        map.animateElements();
+    public void animate(int directionX, int directionY) {
+        map.animateElements(directionX, directionY);
     }
 
     /*Move player*/

@@ -45,7 +45,7 @@ public interface IModel {
     boolean     spellAlive();
 
     /*Others -----------------------------------------------*/
-    void        animate();
+    void        animate(int directionX, int directionY);
     Types       getType(int x, int y);
     void        spawnExitDoor();
 }

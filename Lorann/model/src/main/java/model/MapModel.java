@@ -97,8 +97,8 @@ public class MapModel {
     }
 
     /* Animate Player and Spells*/
-    public void animateElements() {
-        player.animate();
+    public void animateElements(int directionX, int directionY) {
+        player.animate(directionX,directionY);
         if (spell != null) {
             spell.animate();
         }
