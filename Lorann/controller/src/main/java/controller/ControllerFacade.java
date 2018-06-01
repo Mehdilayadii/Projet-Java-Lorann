@@ -117,7 +117,7 @@ public class ControllerFacade implements IController {
                         model.movePlayer(player_move.x,player_move.y);
                     }
 
-                    //model.moveEnemies(AIDeplacement.moveAI(model)); // Moving demons
+                    model.moveEnemies(AIDeplacement.moveAI(model)); // Moving demons
 
                     // Spell //                    
                     player_casting_spell = view.return_casting_player(); // is player casting ?
