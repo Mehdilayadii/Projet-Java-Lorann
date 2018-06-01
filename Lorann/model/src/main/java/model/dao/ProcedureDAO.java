@@ -19,7 +19,7 @@ import model.Example;
 	
 public abstract class ProcedureDAO extends AbstractDAO {
 
-    /** The sql example by id. */
+    /** String which contain sql call to procedure 'getLevelByID'  */
     private static String sqlgetLevelByID   = "{call getLevelByID(?)}";
 
 
@@ -37,36 +37,9 @@ public abstract class ProcedureDAO extends AbstractDAO {
    
 
     /**
-     * Gets the example by id.
+     * Gets the map 
      *
-     * @param id
-     *            the id
-     * @return the example by id
-     * @throws SQLException
-     *             the SQL exception
-     */
-    
-    
-    /*
-    public static Example getLevelyId(final int id) throws SQLException {
-        final CallableStatement callStatement = prepareCall(sqlgetLevelByID);
-        Example level = null;
-        callStatement.setInt(1, id);
-        if (callStatement.execute()) {
-            final ResultSet result = callStatement.getResultSet();
-            if (result.first()) {
-                level = new Example(result.getInt(idColumnIndex), result.getString(nameColumnIndex));
-            }
-            result.close();
-        }
-        return level;
-    }
-    /*
-    
-    /**
-     * Gets the all examples.
-     *
-     * @return the all examples
+     * @return a list of elements of Example type(Element, X, Y)
      * @throws SQLException
      *             the SQL exception
      */
@@ -88,31 +61,7 @@ public abstract class ProcedureDAO extends AbstractDAO {
     }
     
     
-    
-    /**
-     * Gets the example by name.
-     *
-     * @param name
-     *            the name
-     * @return the example by name
-     * @throws SQLException
-     *             the SQL exception
-     
-    public static Example getExampleByName(final String name) throws SQLException {
-        final CallableStatement callStatement = prepareCall(sqlExampleByName);
-        Example example = null;
-
-        callStatement.setString(1, name);
-        if (callStatement.execute()) {
-            final ResultSet result = callStatement.getResultSet();
-            if (result.first()) {
-                example = new Example(result.getInt(idColumnIndex), result.getString(nameColumnIndex));
-            }
-            result.close();
-        }
-        return example;
-    }
-    */
+  
     
     
    
