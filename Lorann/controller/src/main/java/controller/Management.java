@@ -103,4 +103,16 @@ public class Management {
         
         return canReach_spell;
     }
+    
+    /*Check if we can create the spell*/
+    public boolean canCreateSpell(int moveX, int moveY) {
+        boolean canCreateSpell = false;
+        int futureX = model.getPlayerLocation().x + moveX;
+        int futureY = model.getPlayerLocation().y - moveY;
+        Types spellSpawnLocationtype = model.getType(futureX,futureY);
+        if ((spellSpawnLocationtype == Types.VOID) || (spellSpawnLocationtype == Types.ENEMY)) {
+            canCreateSpell = true;
+        }
+        return canCreateSpell;
+    }
 }
