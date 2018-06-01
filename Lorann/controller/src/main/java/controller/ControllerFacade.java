@@ -82,6 +82,7 @@ public class ControllerFacade implements IController {
         // ATTRIBUTE //
         Point spell_position = new Point(0,0);
         Point player_facing_during_casting = new Point(0,0);
+        Point spell_move = new Point(0,0);
         Point player_move = new Point(0,0);
         boolean player_casting_spell = false;
         boolean spell_is_alive = false;
@@ -100,7 +101,7 @@ public class ControllerFacade implements IController {
                     player_move = view.return_deplacement_player(); // get player facing
                     // Animate Sprite //
                     model.animate(player_move.x, player_move.y);
-
+                    
                     if ((player_move.x != 0) || (player_move.y != 0)) { // player is moving
                         if (spell_is_alive == false) { // spell not exist
                             player_facing_during_casting.x = player_move.x; // set new facing (x)
@@ -117,25 +118,32 @@ public class ControllerFacade implements IController {
                         model.movePlayer(player_move.x,player_move.y);
                     }
 
-                    model.moveEnemies(AIDeplacement.moveAI(model)); // Moving demons
+                    //model.moveEnemies(AIDeplacement.moveAI(model)); // Moving demons
 
-                    // Spell //                    
+                    // Spell //   
+                    spell_is_alive = model.spellAlive();
                     player_casting_spell = view.return_casting_player(); // is player casting ?
-                    if ((player_casting_spell == true) && (spell_is_alive == false) && (management.spellCanReach() == true)) { // Player is able to cast spell
-                        if ((player_facing_during_casting.x != 0) || (player_facing_during_casting.y != 0)) { // player have facing
-                            model.createSpell(player_facing_during_casting.x, player_facing_during_casting.y); // Create spell
+                    if ((player_casting_spell == true) && (spell_is_alive == false)) { // Player is able to cast spell
+                            spell_move.x = player_facing_during_casting.x;
+                            spell_move.y = player_facing_during_casting.y;
+                        if ((spell_move.x != 0) || (spell_move.y != 0)) { // player have facing
+                            model.createSpell(spell_move.x, spell_move.y); // Create spell
                         }
                     }
                     if (spell_is_alive == true) { // spell exist
-                        management.setFuture_spell(player_facing_during_casting.x, player_facing_during_casting.y); // update spell location
-                        if (management.spellCanReach() == true) {
-                            System.out.println(management.spellCanReach());
-                            model.moveSpell(player_facing_during_casting.x, player_facing_during_casting.y); // moving spell
-                        
+                        management.setFuture_spell(spell_move.x, spell_move.y); // update spell location
+                        System.out.println(management.spellCanReach());
+                        if (management.spellCanReach() == 0) { // Can move
+                            model.moveSpell(spell_move.x, spell_move.y); // moving spell
                         }
-                        else if (management.spellCanReach() == false) { // there is wall
-                            player_facing_during_casting.x = - player_facing_during_casting.x; // spell rebound (x)
-                            player_facing_during_casting.y = - player_facing_during_casting.y; // spell rebound (y)
+                        else if (management.spellCanReach() == 1) { // there is an obstacle
+                            spell_move.x = - spell_move.x; // spell rebound (x)
+                            spell_move.y = - spell_move.y; // spell rebound (y)
+                        }
+                        else if (management.spellCanReach() == 2) {
+                            model.deleteSpell();
+                            spell_move.x = player_move.x;
+                            spell_move.y = player_move.y;
                         }
                     } 
                     
