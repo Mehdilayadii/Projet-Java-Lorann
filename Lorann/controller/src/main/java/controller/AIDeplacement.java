@@ -13,10 +13,10 @@ public abstract class AIDeplacement {
 	public static List<Point> moveAI(IModel model) {
 
 
-		final int DETECTION_RANGE=7;
+		final int DETECTION_RANGE=0;
 
 		List<Point> enemiesPos = model.getEnemiesLocation();
-		List<Point> newEnemiesPos = new ArrayList<>();
+		List<Point> newEnemiesMove = new ArrayList<>();
 		Random rand = new Random();
 
 		//Get the current player's position
@@ -27,19 +27,19 @@ public abstract class AIDeplacement {
 		boolean movementDone=false;
 
 
-		for (Point enemyMove : enemiesPos) {
+		for (Point enemyPos : enemiesPos) {
 
 			//false by default
 			nearPlayer=false;
 			movementDone=false;
 
-			List<Point> possiblePath = getPath(model,enemyMove);
+			List<Point> possiblePath = getPath(model,enemyPos);
 
 
 
 			//Check if a player is around our monster
-			if((enemyMove.x+DETECTION_RANGE>=playerPos.x) && (playerPos.x>=enemyMove.x-DETECTION_RANGE)) {
-				if ((enemyMove.y-DETECTION_RANGE<=playerPos.y) && (playerPos.y<=enemyMove.y+DETECTION_RANGE)){
+			if((enemyPos.x+DETECTION_RANGE>=playerPos.x) && (playerPos.x>=enemyPos.x-DETECTION_RANGE)) {
+				if ((enemyPos.y-DETECTION_RANGE<=playerPos.y) && (playerPos.y<=enemyPos.y+DETECTION_RANGE)){
 					nearPlayer=true;
 				} 
 			}
@@ -55,33 +55,33 @@ public abstract class AIDeplacement {
 
 			//If not near just do random moves
 			if (!nearPlayer) {
-				newEnemiesPos.add(new Point(possiblePath.get(random).x,possiblePath.get(random).y));
+				newEnemiesMove.add(new Point(possiblePath.get(random).x,possiblePath.get(random).y));
 			}
 
 			else {
 				//Same x but different y
-				if(playerPos.x==enemyMove.x) {
-					if(playerPos.y>enemyMove.y) {
+				if(playerPos.x==enemyPos.x) {
+					if(playerPos.y>enemyPos.y) {
 
 
 						for (int i=0; i<possiblePath.size();i++) {
 							//Check if it's possible to move y+1
 							if ((possiblePath.get(i).x==0) &&(possiblePath.get(i).y==1)) {
-								newEnemiesPos.add(new Point(0,1));
+								newEnemiesMove.add(new Point(0,1));
 								movementDone=true;
 							}
 
 						}
 
 					}
-					else if(playerPos.y<enemyMove.y) {
+					else if(playerPos.y<enemyPos.y) {
 
 
 						for (int i=0; i<possiblePath.size();i++) {
 							//Check if it's possible to move y-1
 							if ((possiblePath.get(i).x==0) &&(possiblePath.get(i).y==-1)) {
 
-								newEnemiesPos.add(new Point(0,-1));
+								newEnemiesMove.add(new Point(0,-1));
 								movementDone=true;
 							}
 							
@@ -93,29 +93,29 @@ public abstract class AIDeplacement {
 
 
 				//Same y but different x
-				else if(playerPos.y==enemyMove.y) {
-					if(playerPos.x>enemyMove.x) {
+				else if(playerPos.y==enemyPos.y) {
+					if(playerPos.x>enemyPos.x) {
 
 
 						for (int i=0; i<possiblePath.size();i++) {
 
 							//Check if it's possible to move x+1
 							if ((possiblePath.get(i).x==1) &&(possiblePath.get(i).y==0)) {
-								newEnemiesPos.add(new Point(1,0));
+								newEnemiesMove.add(new Point(1,0));
 								movementDone=true;
 							}
 							
 						}
 
 					}
-					else if(playerPos.x<enemyMove.x) {
+					else if(playerPos.x<enemyPos.x) {
 
 
 						for (int i=0; i<possiblePath.size();i++) {
 
 							//Check if it's possible to move x-1
 							if ((possiblePath.get(i).x==-1) &&(possiblePath.get(i).y==0)) {
-								newEnemiesPos.add(new Point(-1,-0));
+								newEnemiesMove.add(new Point(-1,-0));
 								movementDone=true;
 							}
 							
@@ -131,12 +131,12 @@ public abstract class AIDeplacement {
 					
 					
 					//check if player is in diagonal of a monster
-					if((playerPos.y>enemyMove.y && playerPos.x>enemyMove.x )&&(enemyMove.x-playerPos.x==enemyMove.y-playerPos.y  )) {
+					if((playerPos.y>enemyPos.y && playerPos.x>enemyPos.x )&&(enemyPos.x-playerPos.x==enemyPos.y-playerPos.y  )) {
 						//Down-Right diagonal
 						 for (int i=0; i<possiblePath.size();i++) {
 								//Check if it's possible to move y+1
 								if ((possiblePath.get(i).x==1) &&(possiblePath.get(i).y==1)) {
-									newEnemiesPos.add(new Point(1,1));
+									newEnemiesMove.add(new Point(1,1));
 									movementDone=true;
 								}
 								
@@ -144,24 +144,24 @@ public abstract class AIDeplacement {
 												 
 					 }
 					
-					if((playerPos.y<enemyMove.y && playerPos.x<enemyMove.x )&&(playerPos.x-enemyMove.x==playerPos.y-enemyMove.y)) {
+					if((playerPos.y<enemyPos.y && playerPos.x<enemyPos.x )&&(playerPos.x-enemyPos.x==playerPos.y-enemyPos.y)) {
 						 //Down-Left diagonal
 						 for (int i=0; i<possiblePath.size();i++) {
 								//Check if it's possible to move y+1
 								if ((possiblePath.get(i).x==-1) &&(possiblePath.get(i).y==1)) {
-									newEnemiesPos.add(new Point(-1,1));
+									newEnemiesMove.add(new Point(-1,1));
 									movementDone=true;
 								}
 						 } 
 						 
 					 }
 					
-					if((playerPos.y>enemyMove.y && playerPos.x<enemyMove.x )&&(playerPos.x-enemyMove.x==enemyMove.y-playerPos.y  )) {
+					if((playerPos.y>enemyPos.y && playerPos.x<enemyPos.x )&&(playerPos.x-enemyPos.x==enemyPos.y-playerPos.y  )) {
 						//Up-Right diagonal
 						 for (int i=0; i<possiblePath.size();i++) {
 								//Check if it's possible to move y+1
 								if ((possiblePath.get(i).x==-1) &&(possiblePath.get(i).y==-1)) {
-									newEnemiesPos.add(new Point(-1,-1));
+									newEnemiesMove.add(new Point(-1,-1));
 									movementDone=true;
 								}
 								
@@ -169,13 +169,13 @@ public abstract class AIDeplacement {
 						
 					 }
 					
-					if((playerPos.y<enemyMove.y && playerPos.x>enemyMove.x )&&(enemyMove.x-playerPos.x==playerPos.y-enemyMove.y )) {
+					if((playerPos.y<enemyPos.y && playerPos.x>enemyPos.x )&&(enemyPos.x-playerPos.x==playerPos.y-enemyPos.y )) {
 						//Up-Left diagonal
 						 
 						 for (int i=0; i<possiblePath.size();i++) {
 								//Check if it's possible to move y+1
 								if ((possiblePath.get(i).x==1) &&(possiblePath.get(i).y==-1)) {
-									newEnemiesPos.add(new Point(1,-1));
+									newEnemiesMove.add(new Point(1,-1));
 									movementDone=true;
 								}
 								
@@ -188,16 +188,14 @@ public abstract class AIDeplacement {
 				//If different X and Y and not in diagonal
 				//TODO Add some features --> still random moves when near player but with a different X or Y
 				if (movementDone==false) {
-					newEnemiesPos.add(new Point(possiblePath.get(random).x,possiblePath.get(random).y));
+					newEnemiesMove.add(new Point(possiblePath.get(random).x,possiblePath.get(random).y));
 				}
 
 
 			}
-
-
 		}
 
-		return newEnemiesPos;
+		return newEnemiesMove;
 	}
 
 

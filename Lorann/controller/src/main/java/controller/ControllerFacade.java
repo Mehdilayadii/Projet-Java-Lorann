@@ -3,6 +3,8 @@ package controller;
 import java.awt.*;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import model.IModel;
 import view.IView;
@@ -119,6 +121,16 @@ public class ControllerFacade implements IController {
                     }
 
                     model.moveEnemies(AIDeplacement.moveAI(model)); // Moving demons
+                    /*Check if spell is mob*/
+                    spell_is_alive = model.spellAlive();
+                    List<Point> enemiesPos = model.getEnemiesLocation();
+
+                    for (Point enemyPos : enemiesPos) {
+                        if((spell_is_alive == true) && (enemyPos.x == model.getSpellLocation().x) && (enemyPos.y == model.getSpellLocation().y)) {
+                            model.killEnemy(enemyPos.x, enemyPos.y);
+                            model.deleteSpell();
+                        }
+                    }
 
                     // Spell //   
                     spell_is_alive = model.spellAlive();
