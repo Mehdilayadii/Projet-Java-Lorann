@@ -5,6 +5,7 @@ import javax.swing.*;
 import controller.IController;
 
 import java.awt.*;
+import java.awt.event.WindowEvent;
 
 /**
  * <h1>The Class ViewFacade provides a facade of the View component.</h1>
@@ -32,6 +33,7 @@ public class ViewFacade implements IView {
     @Override
     public final void displayMessage(final String message) {
         JOptionPane.showMessageDialog(null, message);
+        window.dispatchEvent(new WindowEvent(window, WindowEvent.WINDOW_CLOSING));
     }
 
     /**** GETTERS and SETTERS ****/
