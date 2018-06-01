@@ -12,6 +12,7 @@ import java.sql.Statement;
  * @author Groupe 13
  * @version 2.0
  */	
+//
 public final class LorannBDDConnector {
 
     /** The instance. */

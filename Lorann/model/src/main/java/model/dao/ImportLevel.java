@@ -14,7 +14,7 @@ public abstract class ImportLevel{
 	 * @version 2.0
 	 */	
 	
-	
+	//
 	/**
      * Create the map from database 
      *

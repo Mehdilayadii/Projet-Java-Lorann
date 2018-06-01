@@ -9,6 +9,8 @@ import java.sql.ResultSet;
  * @author Groupe 13
  * @version 2.0
  */	
+
+//
 public abstract class AbstractDAO {
 
     /**

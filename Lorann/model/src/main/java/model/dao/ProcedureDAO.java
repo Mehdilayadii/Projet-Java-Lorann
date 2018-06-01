@@ -23,7 +23,7 @@ public abstract class ProcedureDAO extends AbstractDAO {
     private static String sqlgetLevelByID   = "{call getLevelByID(?)}";
 
 
-   
+   //
     
     /** The element column index. */
     private static int    elementColumnIndex  = 2;
