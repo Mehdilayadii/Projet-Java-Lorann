@@ -43,23 +43,23 @@ public final class ModelFacade implements IModel {
     /**** METHODS ****/
     /*Connect to the database lorann */
     public void connectToDB() {
-    	LorannBDDConnector conn = null;
-    	try {
-    		System.out.print("Trying to connect to Database :\n");
-    		conn =new LorannBDDConnector();
-    		System.out.print("Successfuly connected\n");
-    	}
-    	catch (Exception e){
-    		e.printStackTrace();
-    	}
+        LorannBDDConnector conn = null;
+        try {
+            System.out.print("Trying to connect to Database :\n");
+            conn =new LorannBDDConnector();
+            System.out.print("Successfuly connected\n");
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
-	@Override
-	public List<Example> getLevelByID(int id) throws SQLException {
-		return ProcedureDAO.getLevelByID(id);
-	}
+    @Override
+    public List<Example> getLevelByID(int id) throws SQLException {
+        return ProcedureDAO.getLevelByID(id);
+    }
 
-	/*Animate*/
+    /*Animate*/
     public void animate(int directionX, int directionY) {
         map.animateElements(directionX, directionY);
     }
@@ -139,16 +139,19 @@ public final class ModelFacade implements IModel {
         int x = map.getSpell().getLocation().x;
         int y = map.getSpell().getLocation().y;
         map.setSpell(null);
-        map.addElement(new Static(" ",Types.VOID),x,y);
+        map.addElement(new Static(" ",Types.VOID),x,y); 
     }
 
     /* Spell get and set location*/
     public void moveSpell(int moveX, int moveY) {
-        int newX = map.getSpell().getLocation().x + moveX;
-        int newY = map.getSpell().getLocation().y - moveY;
-
-        map.moveElement(map.getSpell().getLocation().x,map.getSpell().getLocation().y,newX,newY);
+        int oldX = map.getSpell().getLocation().x;
+        int oldY = map.getSpell().getLocation().y;
+        int newX = oldX + moveX;
+        int newY = oldY - moveY;
+        
         map.getSpell().setLocation(newX,newY);
+        map.moveElement(oldX,oldY,newX,newY);
+
     }
     public Point getSpellLocation() {
         return map.getSpell().getLocation();
