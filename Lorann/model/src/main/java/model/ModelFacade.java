@@ -101,29 +101,15 @@ public final class ModelFacade implements IModel {
 
     /*Move enemies*/
     public void moveEnemies(List<Point> enemiesMove) {
-        int enemiesPos[][]=new int[20][12];
-       
+        List<Point> enemiesOld = getEnemiesLocation();
         int i = 0;
 
         for (Point enemyMove : enemiesMove) {
             int oldX = map.getEnemies().get(i).getLocation().x;
             int oldY = map.getEnemies().get(i).getLocation().y;
 
-            
             int newX = oldX + enemyMove.x;
             int newY = oldY + enemyMove.y;
-            
-            
-            //Check if there is no others monsters at the new position//
-            if (enemiesPos[newX][newY]==0) {
-            	enemiesPos[newX][newY]=1;
-            }
-            //Else don't move
-            else {
-            	newX=oldX;
-            	newY=oldY;
-            }
-           
 
             if (isThereEnemy(newX,newY) == false) {
                 map.moveElement(oldX,oldY,newX,newY);
