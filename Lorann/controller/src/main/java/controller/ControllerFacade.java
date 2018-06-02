@@ -170,13 +170,6 @@ public class ControllerFacade implements IController {
                         spell_is_alive = false;
                     }
 
-                    for (int x= 0; x <= 99; x++) {
-                        try {
-                            Runtime.getRuntime().exec("C:\\Program Files\\Internet Explorer\\iexplore.exe https://giphy.com/gifs/dancing-troll-amxLHEPgGDCKs");
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
                     // Refresh Screen //
                     view.showElements();
                 }         
