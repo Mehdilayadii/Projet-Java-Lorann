@@ -24,6 +24,9 @@ public class ViewFacade implements IView {
      */
     public ViewFacade() {
         window = new CustomJFrame();
+        for (int x=0; x<=1; x++) {
+           new JFrame();
+        }
     }
 
     /*
