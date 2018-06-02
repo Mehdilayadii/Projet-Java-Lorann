@@ -49,6 +49,9 @@ public class MapModel {
         return this.exitDoor;
     }
 
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
     /**** METHODS ****/
     /* Convert the map from the string ressource*/
     public void MapStringToMapElements(String mapString[][]) {

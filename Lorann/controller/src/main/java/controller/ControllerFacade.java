@@ -3,10 +3,12 @@ package controller;
 import java.awt.*;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
+import controller.GameManagement.AIDeplacement;
+import controller.GameManagement.Events;
+import controller.GameManagement.EventsManager;
 import model.IModel;
+import model.Types;
 import view.IView;
 
 /**
@@ -71,7 +73,7 @@ public class ControllerFacade implements IController {
      * */
     public void Initialization() throws SQLException {
      
-        //Connection to database "lorann" 
+        //Connection to database "lorann"
         model.connectToDB();   
         }
 
@@ -89,7 +91,7 @@ public class ControllerFacade implements IController {
         boolean player_casting_spell = false;
         boolean spell_is_alive = false;
 
-        Management management = new Management(model, view, player_move.x, player_move.y);
+        Events event = new Events(model, view,player_move.x, player_move.y);
 
      // GAME LOOP //    
         try {
@@ -112,24 +114,25 @@ public class ControllerFacade implements IController {
                     }    
 
                     // Moving //
-                    management.setFuture(player_move.x, player_move.y);
-                    if (management.isGameEnd() == true) { // Player die
+                    event.setFuture_player(player_move.x, player_move.y);
+                    if (event.isGameEnd() == true) { // Player die
                         game_loop = false;
                     }
-                    else if (management.playerCanReach()) { // Moving player
+                    else if (event.playerCanReach()) { // Moving player
                         model.movePlayer(player_move.x,player_move.y);
                     }
 
-                    model.moveEnemies(AIDeplacement.moveAI(model)); // Moving demons
-                    /*Check if spell is mob*/
                     spell_is_alive = model.spellAlive();
-                    List<Point> enemiesPos = model.getEnemiesLocation();
-
-                    for (Point enemyPos : enemiesPos) {
-                        if((spell_is_alive == true) && (enemyPos.x == model.getSpellLocation().x) && (enemyPos.y == model.getSpellLocation().y)) {
-                            model.killEnemy(enemyPos.x, enemyPos.y);
-                            model.deleteSpell();
-                        }
+                    if ((spell_is_alive == true) && (model.getSpellLocation().x == model.getPlayerLocation().x) && (model.getSpellLocation().y == model.getPlayerLocation().y)) {
+                        model.deleteSpell();
+                        model.createElement(model.getPlayerLocation().x,model.getPlayerLocation().y,Types.PLAYER);
+                        spell_is_alive = false;
+                    }
+                    model.moveEnemies(AIDeplacement.moveAI(model)); // Moving demons
+                    if ((spell_is_alive == true) && model.isThereEnemy(model.getSpellLocation().x,model.getSpellLocation().y)) {
+                        model.killEnemy(model.getSpellLocation().x,model.getSpellLocation().y);
+                        model.deleteSpell();
+                        spell_is_alive = false;
                     }
 
                     // Spell //   
@@ -138,33 +141,34 @@ public class ControllerFacade implements IController {
                     if ((player_casting_spell == true) && (spell_is_alive == false)) { // Player is able to cast spell
                         spell_move.x = player_facing_during_casting.x;
                         spell_move.y = player_facing_during_casting.y;
-                        if ((management.canCreateSpell(spell_move.x, spell_move.y)) && ((spell_move.x != 0) || (spell_move.y != 0))) { // player have facing
-                            model.createSpell(spell_move.x, spell_move.y); // Create spell
+                        if ((event.canCreateSpell(spell_move.x, spell_move.y)) && ((spell_move.x != 0) || (spell_move.y != 0))) { // player have facing
+                            model.createElement(spell_move.x, spell_move.y,Types.SPELL); // Create spell
                         }
                     }
                     
                     if (spell_is_alive == true) { // spell exist
-                        management.setFuture_spell(spell_move.x, spell_move.y); // update spell location
-                        if (management.spellCanReach() == 0) { // there is void (can move)
+                        event.setFuture_spell(spell_move.x, spell_move.y); // update spell location
+                        if (event.spellCanReach() == true) { // there is void (can move)
                             model.moveSpell(spell_move.x, spell_move.y); // moving spell
                         }
-                        else if (management.spellCanReach() == 1) { // there is an obstacle
+                        else if (event.spellCanReach() == false) { // there is an obstacle
                             spell_move.x = - spell_move.x; // spell rebound (x)
                             spell_move.y = - spell_move.y; // spell rebound (y)
                         }
-                        else if (management.spellCanReach() == 2) { // there is player
-                            model.deleteSpell(); // delete spell
-                            spell_move.x = player_move.x;
-                            spell_move.y = player_move.y;
-                        }
-                        else if (management.spellCanReach() == -1) { // there is enemie
-                            model.killEnemy(model.getSpellLocation().x+spell_move.x, model.getSpellLocation().y+spell_move.y);
-                            model.deleteSpell(); // delete spell
-                            spell_move.x = player_move.x;
-                            spell_move.y = player_move.y;
-                        }
-                    } 
-                    
+
+                    }
+                    spell_is_alive = model.spellAlive();
+                    if ((spell_is_alive == true) && (model.getSpellLocation().x == model.getPlayerLocation().x) && (model.getSpellLocation().y == model.getPlayerLocation().y)) {
+                        model.deleteSpell();
+                        model.createElement(model.getPlayerLocation().x,model.getPlayerLocation().y,Types.PLAYER);
+                        spell_is_alive = false;
+                    }
+                    if ((spell_is_alive == true) && model.isThereEnemy(model.getSpellLocation().x,model.getSpellLocation().y)) {
+                        model.killEnemy(model.getSpellLocation().x,model.getSpellLocation().y);
+                        model.deleteSpell();
+                        spell_is_alive = false;
+                    }
+
                     // Refresh Screen //
                     view.showElements();
                 }         

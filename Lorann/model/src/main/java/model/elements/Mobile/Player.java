@@ -14,12 +14,12 @@ public class Player extends Mobile{
 
     /**** METHODS ****/
     public void animate (int directionX, int directionY){
+
         if (directionX == 0 && directionY == 0) {
             if (animationNumber < 7){
                 this.sprite = ElementsList.values()[animationNumber].getImage();
                 this.stringStyle = ElementsList.values()[animationNumber].getCharacter();
                 animationNumber++;
-
             }
             else {
                 this.sprite = ElementsList.values()[animationNumber].getImage();

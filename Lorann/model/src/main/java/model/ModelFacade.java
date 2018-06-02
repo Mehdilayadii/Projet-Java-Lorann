@@ -10,6 +10,7 @@ import model.dao.ImportLevel;
 import model.dao.LorannBDDConnector;
 import model.dao.ProcedureDAO;
 import model.elements.Mobile.Mobile;
+import model.elements.Mobile.Player;
 import model.elements.Mobile.Spell;
 import model.elements.Static;
 
@@ -79,7 +80,7 @@ public final class ModelFacade implements IModel {
 
     /**
      * Animate elements
-     * @see animateElements in class MapModel
+     * @see model.IModel#animate(int, int)
      * @param directionX
      * 			Direction in X coordinate
      * @param directionY
@@ -110,8 +111,10 @@ public final class ModelFacade implements IModel {
             int newX = oldX + enemyMove.x;
             int newY = oldY + enemyMove.y;
 
-            map.moveElement(oldX,oldY,newX,newY);
-            map.getEnemies().get(i).setLocation(newX,newY);
+            if (isThereEnemy(newX,newY) == false) {
+                map.moveElement(oldX,oldY,newX,newY);
+                map.getEnemies().get(i).setLocation(newX,newY);
+            }
 
             i++;
         }
@@ -152,15 +155,37 @@ public final class ModelFacade implements IModel {
         return map.getMap()[x][y].getType();
     }
 
-    /*Create the spell*/
-    public void createSpell(int directionX, int directionY) {
-        int x = getPlayerLocation().x+directionX;
-        int y = getPlayerLocation().y-directionY;
-        Spell spell = new Spell("S1",x,y, new Point(directionX,directionY));
+    /*Create a player*/
+    public void createElement(int x, int y,Types type) {
+        switch (type) {
+            case PLAYER:
+                /*Use to be sure that the player haven't benn eat*/
+                Player player = new Player("L1",x,y);
+                map.setPlayer(player);
+                map.addElement(player,x,y);
+                break;
+            case ENEMY:
+                /*Use to be sure that the enemies haven't benn eat*/
+                for (Mobile enemyLoc : map.getEnemies()) {
+                    if (enemyLoc.getLocation().x == x && enemyLoc.getLocation().y == y) {
+                        map.addElement(enemyLoc,x,y);
+                    }
+                }
+                break;
+            case SPELL:
+                int posX = getPlayerLocation().x+x;
+                int posY = getPlayerLocation().y-y;
+                Spell spell = new Spell("S1",posX,posY, new Point(x,y));
 
-        map.addElement(spell,x,y);
-        map.setSpell(spell);
-        map.getSpell().setLocation(x,y);
+                map.addElement(spell,posX,posY);
+                map.setSpell(spell);
+                map.getSpell().setLocation(posX,posY);
+                break;
+            case EXIT_DOOR:
+                map.addElement(new Static("DO",Types.EXIT_DOOR),map.getExitDoor().x,map.getExitDoor().y);
+                break;
+        }
+;
     }
 
     /* Delete the spell*/
@@ -194,8 +219,13 @@ public final class ModelFacade implements IModel {
         return false;
     }
 
-    /* Spawn the exit door */
-    public void spawnExitDoor() {
-        map.addElement(new Static("DO",Types.EXIT_DOOR),map.getExitDoor().x,map.getExitDoor().y);
+    /*Check if there is an enemy at a position*/
+    public boolean isThereEnemy(int x,int y) {
+        for (Point enemyLoc : getEnemiesLocation()) {
+            if (enemyLoc.x == x && enemyLoc.y == y) {
+                return true;
+            }
+        }
+        return false;
     }
 }

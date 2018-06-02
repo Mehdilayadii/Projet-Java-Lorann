@@ -1,35 +1,37 @@
-package controller;
+package controller.GameManagement;
 
 import model.IModel;
 import model.Types;
 import view.IView;
 
-public class Management {
+public class Events extends EventsManager{
+
+    private boolean gameEnd = false;
 
     private IModel model;
     private IView view;
-    private boolean gameEnd = false;
 
-    int futureX;
-    int futureY;
+    int futureX_player;
+    int futureY_player;
     
     int futureX_spell;
     int futureY_spell;
 
     /**** CONSTRUCTOR ****/
-    public Management(IModel model, IView view,int moveX, int moveY) {
+    public Events(IModel model, IView view,int moveX, int moveY) {
+
         this.model = model;
         this.view = view;
 
-        this.futureX = model.getPlayerLocation().x+moveX;
-        this.futureY = model.getPlayerLocation().y-moveY;
+        this.futureX_player = model.getPlayerLocation().x+moveX;
+        this.futureY_player = model.getPlayerLocation().y-moveY;
 
     }
 
     /**** METHODS ****/
     public boolean playerCanReach() {
 
-        Types type = model.getType(futureX,futureY);
+        Types type = model.getType(futureX_player,futureY_player);
         boolean canReach = !(type.isSolid());
 
         if (type == Types.ITEM) {
@@ -40,11 +42,11 @@ public class Management {
             gameEnd = true;
         }
         else if (type == Types.MAGICAL_BALL) {
-            model.spawnExitDoor();
-        }
+            model.createElement(0,0,Types.EXIT_DOOR);
+        }/*
         else if (type == Types.SPELL) {
             model.deleteSpell();    
-        }
+        }*/
         
         playerDie();
         playerWin();
@@ -52,14 +54,14 @@ public class Management {
     }
 
     public void playerDie() {
-        if (model.getType(futureX,futureY).getBehavior() == -1) {
+        if (model.getType(futureX_player,futureY_player).getBehavior() == -1) {
             view.displayMessage("Game over !");
             gameEnd = true;
         }
     }
 
     public void playerWin() {
-        if (model.getType(futureX,futureY) == Types.EXIT_DOOR) {
+        if (model.getType(futureX_player,futureY_player) == Types.EXIT_DOOR) {
             view.displayMessage("You finish the level !");
             gameEnd = true;
         }
@@ -69,38 +71,25 @@ public class Management {
         return gameEnd;
     }
 
-    public void setFuture(int moveX, int moveY) {
-        this.futureX = model.getPlayerLocation().x + moveX;
-        this.futureY = model.getPlayerLocation().y - moveY;
+    public void setFuture_player(int moveX, int moveY) {
+        this.futureX_player = model.getPlayerLocation().x + moveX;
+        this.futureY_player = model.getPlayerLocation().y - moveY;
     }
     
     public void setFuture_spell(int moveX, int moveY) {
         this.futureX_spell = model.getSpellLocation().x + moveX;
         this.futureY_spell = model.getSpellLocation().y - moveY;
     }
-    
-    // Spell //
-    // 0 - Void
-    // 1 - Obstacle
-    // -1 - Demons
-    // 2  - Player
-    public int spellCanReach() {
+
+    public boolean spellCanReach() {
         Types type = model.getType(futureX_spell,futureY_spell);
-        int canReach_spell = 0;
+        boolean canReach_spell = true;
 
 
         if ((type == Types.ITEM) || (type.isSolid() == true) || (type == Types.MAGICAL_BALL) || (type == Types.EXIT_DOOR)) {
-            canReach_spell = 1;
-        }
-        
-        if (type == Types.PLAYER) {
-            canReach_spell = 2;
+            canReach_spell = false;
         }
 
-        if (type == Types.ENEMY) {
-            canReach_spell = -1;
-        }
-        
         return canReach_spell;
     }
     

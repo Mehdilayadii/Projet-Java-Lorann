@@ -34,7 +34,6 @@ public interface IModel {
 
     /*Spell -----------------------------------------------*/
     /*Create and delete*/
-    void        createSpell(int directionX, int directionY);
     void        deleteSpell();
 
     /*Movement management*/
@@ -47,5 +46,7 @@ public interface IModel {
     /*Others -----------------------------------------------*/
     void        animate(int directionX, int directionY);
     Types       getType(int x, int y);
-    void        spawnExitDoor();
+
+    void createElement(int x, int y,Types type);
+    boolean isThereEnemy(int x,int y);
 }
