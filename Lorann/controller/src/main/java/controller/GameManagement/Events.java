@@ -4,7 +4,7 @@ import model.IModel;
 import model.Types;
 import view.IView;
 
-public class Events extends EventsManager{
+public class Events {
 
     private boolean gameEnd = false;
 
@@ -43,10 +43,7 @@ public class Events extends EventsManager{
         }
         else if (type == Types.MAGICAL_BALL) {
             model.createElement(0,0,Types.EXIT_DOOR);
-        }/*
-        else if (type == Types.SPELL) {
-            model.deleteSpell();    
-        }*/
+        }
         
         playerDie();
         playerWin();

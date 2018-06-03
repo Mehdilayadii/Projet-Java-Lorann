@@ -36,11 +36,6 @@ public class EventsManager {
 
         this.event = new Events( model, view, player_move.x, player_move.y);
     }
-    /**
-     * This constructor is used for the class Events only.
-     */
-    public EventsManager() {
-    }
 
     // GETTERS and SETTERS //
     public IModel getModel() {
@@ -67,6 +62,10 @@ public class EventsManager {
         player_move = view.return_deplacement_player(); //
     }
 
+    /**
+     * Get the player movement.
+     * @return Vector of the player movement
+     */
     public Point getPlayer_move() {
         return player_move;
     }
@@ -74,18 +73,7 @@ public class EventsManager {
     // METHODS //
 
     /**
-     * Animate all animated elements :
-     * - PLayer
-     * - Spell
-     *
-     * @see model.IModel#animate(int, int)
-     */
-    public void animateSprites() {
-        model.animate(player_move.x, player_move.y);
-    }
-
-    /**
-     * Get the direction of the player.
+     * Set the direction of the player. Same as setPlayerMove() but is save if player stop move. Make able the player to shoot then he don't move.
      */
     public void setPlayer_facing_during_casting() {
         if ((player_move.x != 0) || (player_move.y != 0)) { // player is moving
@@ -102,13 +90,13 @@ public class EventsManager {
      *
      * @return False if the player finish.
      *
+     * @see Events#setFuture_player(int, int)
      * @see Events#playerCanReach()
      * @see Events#isGameEnd()
      */
     public boolean movePlayer() {
         event.setFuture_player(player_move.x, player_move.y);
         if (event.isGameEnd() == true) {
-            game_loop = false;
             return false;
         }
         else if (event.playerCanReach()) {
@@ -119,6 +107,8 @@ public class EventsManager {
 
     /**
      * Check if the player pick up the spell. If so make sure that the player haven't been erase by the spell.
+     * @see IModel#deleteSpell()
+     * @see IModel#createElement(int, int, Types)
      */
     public void checkPlayerGetSpell() {
         setSpell_is_alive();
@@ -128,6 +118,11 @@ public class EventsManager {
         }
     }
 
+    /**
+     * Check if a enemy pick up the spell. If so make kill the good one and delete the spell.
+     * @see IModel#deleteSpell()
+     * @see IModel#killEnemy(int, int)
+     */
     public void checkMobGetSpell() {
         setSpell_is_alive();
         if ((spell_is_alive == true) && model.isThereEnemy(model.getSpellLocation().x,model.getSpellLocation().y)) {
@@ -136,6 +131,12 @@ public class EventsManager {
         }
     }
 
+    /**
+     * Create a spell in function of the player position and his facing.
+     * @see IView#return_casting_player()
+     * @see Events#canCreateSpell(int, int)
+     * @see IModel#createElement(int, int, Types)
+     */
     public void createSpell() {
         spell_is_alive = model.spellAlive();
         player_casting_spell = view.return_casting_player(); // is player casting ?
@@ -148,6 +149,11 @@ public class EventsManager {
         }
     }
 
+    /**
+     * Move the spell (if exist)
+     * @see Events#setFuture_spell(int, int)
+     * @see IModel#moveSpell(int, int)
+     */
     public void moveSpell() {
         if (spell_is_alive == true) { // spell exist
             event.setFuture_spell(spell_move.x, spell_move.y); // update spell location
@@ -160,22 +166,4 @@ public class EventsManager {
             }
         }
     }
-/*
-            //RECHECK IF SPELL EAT SOMETHING
-            spell_is_alive = model.spellAlive();
-            if ((spell_is_alive == true) && (model.getSpellLocation().x == model.getPlayerLocation().x) && (model.getSpellLocation().y == model.getPlayerLocation().y)) {
-                model.deleteSpell();
-                model.createElement(model.getPlayerLocation().x,model.getPlayerLocation().y,Types.PLAYER);
-                spell_is_alive = false;
-            }
-            if ((spell_is_alive == true) && model.isThereEnemy(model.getSpellLocation().x,model.getSpellLocation().y)) {
-                model.killEnemy(model.getSpellLocation().x,model.getSpellLocation().y);
-                model.deleteSpell();
-                spell_is_alive = false;
-            }
-
-            // Refresh Screen //
-            view.showElements();
-/*
-*/
 }

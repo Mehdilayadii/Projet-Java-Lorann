@@ -80,101 +80,58 @@ public class ControllerFacade implements IController {
 
     /**
      * Main function, launch the game.
+     * Handle events :
+     * @see EventsManager
+     * @see AIDeplacement
      */
     //
     public void play(){
 
-        // ATTRIBUTE //
-        Point spell_position = new Point(0,0);
-        Point player_facing_during_casting = new Point(0,0);
-        Point spell_move = new Point(0,0);
-        Point player_move = new Point(0,0);
-        boolean player_casting_spell = false;
-        boolean spell_is_alive = false;
+        /*Handle events*/
+        EventsManager manager = new EventsManager(model,view);
 
-        Events event = new Events(model, view,player_move.x, player_move.y);
-
-     // GAME LOOP //    
+        // GAME LOOP //
         try {
                 while (game_loop) {
 
-                    // Loop //
+                    /*Set a pause (in millisecond), equivalent to the game speed (or FPS) : with 120 ms we have like 10 FPS*/
                     Thread.sleep(speed);
-                    spell_is_alive = model.spellAlive();
 
-                    // Get Player Facing //
-                    player_move = view.return_deplacement_player(); // get player facing
-                    // Animate Sprite //
-                    model.animate(player_move.x, player_move.y);
-                    
-                    if ((player_move.x != 0) || (player_move.y != 0)) { // player is moving
-                        if (spell_is_alive == false) { // spell not exist
-                            player_facing_during_casting.x = player_move.x; // set new facing (x)
-                            player_facing_during_casting.y = player_move.y; // set new facing (y)
-                        }
-                    }    
+                    /*Check if player already launch a spell*/
+                    manager.setSpell_is_alive();
+                    /*Get the input of the user (Direction vector)*/
+                    manager.setPlayer_move();
 
-                    // Moving //
-                    event.setFuture_player(player_move.x, player_move.y);
-                    if (event.isGameEnd() == true) { // Player die
-                        game_loop = false;
-                    }
-                    else if (event.playerCanReach()) { // Moving player
-                        model.movePlayer(player_move.x,player_move.y);
-                    }
+                    /*Manage animation of the player and spell (if exist)*/
+                    model.animate(manager.getPlayer_move().x, manager.getPlayer_move().y);
 
-                    spell_is_alive = model.spellAlive();
-                    if ((spell_is_alive == true) && (model.getSpellLocation().x == model.getPlayerLocation().x) && (model.getSpellLocation().y == model.getPlayerLocation().y)) {
-                        model.deleteSpell();
-                        model.createElement(model.getPlayerLocation().x,model.getPlayerLocation().y,Types.PLAYER);
-                        spell_is_alive = false;
-                    }
-                    model.moveEnemies(AIDeplacement.moveAI(model)); // Moving demons
-                    if ((spell_is_alive == true) && model.isThereEnemy(model.getSpellLocation().x,model.getSpellLocation().y)) {
-                        model.killEnemy(model.getSpellLocation().x,model.getSpellLocation().y);
-                        model.deleteSpell();
-                        spell_is_alive = false;
-                    }
+                    /*Get the player looking direction*/
+                    manager.setPlayer_facing_during_casting();
 
-                    // Spell //   
-                    spell_is_alive = model.spellAlive();
-                    player_casting_spell = view.return_casting_player(); // is player casting ?
-                    if ((player_casting_spell == true) && (spell_is_alive == false)) { // Player is able to cast spell
-                        spell_move.x = player_facing_during_casting.x;
-                        spell_move.y = player_facing_during_casting.y;
-                        if ((event.canCreateSpell(spell_move.x, spell_move.y)) && ((spell_move.x != 0) || (spell_move.y != 0))) { // player have facing
-                            model.createElement(spell_move.x, spell_move.y,Types.SPELL); // Create spell
-                        }
-                    }
-                    
-                    if (spell_is_alive == true) { // spell exist
-                        event.setFuture_spell(spell_move.x, spell_move.y); // update spell location
-                        if (event.spellCanReach() == true) { // there is void (can move)
-                            model.moveSpell(spell_move.x, spell_move.y); // moving spell
-                        }
-                        else if (event.spellCanReach() == false) { // there is an obstacle
-                            spell_move.x = - spell_move.x; // spell rebound (x)
-                            spell_move.y = - spell_move.y; // spell rebound (y)
-                        }
+                    /*Move the player and stop the game if he move in a mob/wall/exit door*/
+                    game_loop = manager.movePlayer();
+                    /*Check if the player get back his spell*/
+                    manager.checkPlayerGetSpell();
 
-                    }
-                    spell_is_alive = model.spellAlive();
-                    if ((spell_is_alive == true) && (model.getSpellLocation().x == model.getPlayerLocation().x) && (model.getSpellLocation().y == model.getPlayerLocation().y)) {
-                        model.deleteSpell();
-                        model.createElement(model.getPlayerLocation().x,model.getPlayerLocation().y,Types.PLAYER);
-                        spell_is_alive = false;
-                    }
-                    if ((spell_is_alive == true) && model.isThereEnemy(model.getSpellLocation().x,model.getSpellLocation().y)) {
-                        model.killEnemy(model.getSpellLocation().x,model.getSpellLocation().y);
-                        model.deleteSpell();
-                        spell_is_alive = false;
-                    }
+                    /*Move the enemies*/
+                    model.moveEnemies(AIDeplacement.moveAI(model));
+                    /*Check if a mob go on a spell*/
+                    manager.checkMobGetSpell();
 
-                    // Refresh Screen //
+                    /*Create the spell (if player casting)*/
+                    manager.createSpell();
+                    /*Move the spell (if exist)*/
+                    manager.moveSpell();
+
+                    /*Check if the spell hit something dynamic (player or enemies)*/
+                    manager.checkMobGetSpell();
+                    manager.checkPlayerGetSpell();
+
+                    /*Refresh the view*/
                     view.showElements();
                 }         
-        } catch(InterruptedException e) { e.printStackTrace();
-                }
+        } catch(InterruptedException e)
+        { e.printStackTrace(); }
        
     }
 
