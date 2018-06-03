@@ -1,6 +1,6 @@
 package view;
 
-import java.awt.Point;
+import java.awt.*;
 
 /**
  * <h1>The Interface IView.</h1>
@@ -17,4 +17,5 @@ public interface IView {
 
     void setScore(int score);
     int getScore();
+    void setImageMap(Image[][] map);
 }

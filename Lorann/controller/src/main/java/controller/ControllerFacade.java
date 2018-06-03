@@ -128,6 +128,7 @@ public class ControllerFacade implements IController {
                     manager.checkPlayerGetSpell();
 
                     /*Refresh the view*/
+                    view.setImageMap(getImageMap());
                     view.showElements();
                 }         
         } catch(InterruptedException e)

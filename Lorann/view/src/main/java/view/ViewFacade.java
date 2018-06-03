@@ -14,8 +14,8 @@ import java.awt.event.WindowEvent;
 public class ViewFacade implements IView {
 
     private final CustomJFrame window;
-    private IController controller;
 
+    private Image[][] map;
     int score = 0;
 
     /**
@@ -40,17 +40,14 @@ public class ViewFacade implements IView {
     }
 
     /**** GETTERS and SETTERS ****/
-    public void setController(IController controller) {
-        this.controller = controller;
+    public void setImageMap(Image[][] map) {
+        this.map = map;
     }
 
     /**** METHODS ****/
-    public final void run() {
-
-    }
 
     public void showElements() {
-        window.add(new CustomJPanel(controller.getImageMap(),score));
+        window.add(new CustomJPanel(map,score));
         window.revalidate();
     }
     
