@@ -18,7 +18,6 @@ public interface IModel {
 
     /*Database --------------------------------------------*/
     void        connectToDB();
-    List<Example> getLevelByID(int id) throws SQLException;
 
     /*Player ----------------------------------------------*/
     /*Movement management*/

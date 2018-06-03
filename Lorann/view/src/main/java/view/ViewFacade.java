@@ -29,10 +29,6 @@ public class ViewFacade implements IView {
         }
     }
 
-    /*
-     * (non-Javadoc)
-     * @see view.IView#displayMessage(java.lang.String)
-     */
     @Override
     public final void displayMessage(final String message) {
         JOptionPane.showMessageDialog(null, message);
@@ -43,7 +39,12 @@ public class ViewFacade implements IView {
     public void setImageMap(Image[][] map) {
         this.map = map;
     }
-
+    public void setScore(int score) {
+        this.score = score;
+    }
+    public int getScore() {
+        return score;
+    }
     /**** METHODS ****/
 
     public void showElements() {
@@ -59,13 +60,5 @@ public class ViewFacade implements IView {
     // Return UserInputCastingSpell
     public boolean return_casting_player() {
     	return window.return_casting_player();
-    }
-
-    /*Set the score*/
-    public void setScore(int score) {
-        this.score = score;
-    }
-    public int getScore() {
-        return score;
     }
 }

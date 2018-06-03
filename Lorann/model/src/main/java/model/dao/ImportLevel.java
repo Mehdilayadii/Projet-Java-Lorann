@@ -13,8 +13,7 @@ public abstract class ImportLevel{
 	 * @author Groupe 13
 	 * @version 2.0
 	 */	
-	
-	//
+
 	/**
      * Create the map from database 
      *
@@ -44,10 +43,10 @@ public abstract class ImportLevel{
 		
 		
 	     //Call our procedure and store data into our var 'message'
-		final List<Example> examples = model.getLevelByID(1);
+		final List<DatabaseMap> databaseMaps = ProcedureDAO.getLevelByID(2);
 		final StringBuilder message = new StringBuilder();
-	    for (final Example example : examples) {
-	        message.append(example);
+	    for (final DatabaseMap databaseMap : databaseMaps) {
+	        message.append(databaseMap);
 	        message.append('\n'); 
 	    }
 	    

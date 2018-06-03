@@ -1,10 +1,11 @@
 package model;
 
 import model.elements.Elements;
+import model.elements.ElementsList;
 import model.elements.Mobile.Mobile;
 import model.elements.Mobile.Player;
 import model.elements.Mobile.Spell;
-import model.elements.Static;
+import model.elements.Static.Static;
 
 import java.awt.*;
 import java.util.ArrayList;

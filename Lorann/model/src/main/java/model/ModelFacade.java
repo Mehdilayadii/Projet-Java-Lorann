@@ -12,7 +12,7 @@ import model.dao.ProcedureDAO;
 import model.elements.Mobile.Mobile;
 import model.elements.Mobile.Player;
 import model.elements.Mobile.Spell;
-import model.elements.Static;
+import model.elements.Static.Static;
 
 /**
  * <h1>The Class ModelFacade provides a facade of the Model component.</h1>
@@ -32,15 +32,7 @@ public final class ModelFacade implements IModel {
         this.map = new MapModel(ImportLevel.CreateMap(this));
     }
 
-    /**** GETTERS and SETTERS ****/
-    /**
-     * Gets entire level from a int(id of level)
-     * @see getLevelById(id) in class ProcedureDAO
-     * @throws SQLException 
-     * @return the map of String
-     * @param id
-     * 			ID of level(1 to 5)
-     */
+    // GETTERS and SETTERS //
     public Image getSpriteFromMap(int x,int y) {
         return map.getMap()[x][y].getSprite();
     }
@@ -49,7 +41,7 @@ public final class ModelFacade implements IModel {
         return new Dimension(map.getMap().length,map.getMap()[0].length);
     }
 
-    /**** METHODS ****/
+    // METHODS //
    /**
 	 * Connect to the database lorann
 	 */
@@ -64,27 +56,12 @@ public final class ModelFacade implements IModel {
             e.printStackTrace();
         }
     }
-    
-    /**
-     * Gets entire level from a int(id of level)
-     * @see getLevelById(id) in class ProcedureDAO
-     * @throws SQLException 
-     * @return the map of String
-     * @param id
-     * 			ID of level(1 to 5)
-     */
-    @Override
-    public List<Example> getLevelByID(int id) throws SQLException {
-        return ProcedureDAO.getLevelByID(id);
-    }
 
     /**
      * Animate elements
      * @see model.IModel#animate(int, int)
-     * @param directionX
-     * 			Direction in X coordinate
-     * @param directionY
-     * 			Direction in Y coordinate
+     * @param directionX Direction in X coordinate
+     * @param directionY Direction in Y coordinate
      */
     public void animate(int directionX, int directionY) {
         map.animateElements(directionX, directionY);
@@ -119,6 +96,7 @@ public final class ModelFacade implements IModel {
             i++;
         }
     }
+
 
     /* Get Player location*/
     public Point getPlayerLocation() {

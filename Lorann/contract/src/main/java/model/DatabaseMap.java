@@ -1,12 +1,12 @@
 package model;
 
 /**
- * <h1>The Class Example.</h1>
+ * <h1>The Class DatabaseMap.</h1>
  *
- * @author Jean-Aymeric DIET jadiet@cesi.fr
- * @version 1.0
+ * @author Groupe 13
+ * @version 2.0
  */
-public class Example {
+public class DatabaseMap {
 
 
     /** The name of element */
@@ -28,7 +28,7 @@ public class Example {
      * @param cooY
      *            the Y coordinate
      */
-    public Example(final String element,final int cooX,final int cooY) {
+    public DatabaseMap(final String element, final int cooX, final int cooY) {
         super();
         this.element = element;
         this.cooX = cooX;

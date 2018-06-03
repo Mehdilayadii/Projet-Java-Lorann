@@ -1,6 +1,6 @@
 package model.elements.Mobile;
 
-import model.ElementsList;
+import model.elements.ElementsList;
 import model.Types;
 
 public class Player extends Mobile{

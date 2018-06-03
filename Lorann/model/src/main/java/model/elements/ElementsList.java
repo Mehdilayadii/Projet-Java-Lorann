@@ -1,4 +1,6 @@
-package model;
+package model.elements;
+
+import model.Types;
 
 import java.awt.*;
 import java.util.HashMap;

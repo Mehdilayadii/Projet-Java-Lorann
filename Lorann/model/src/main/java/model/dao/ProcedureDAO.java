@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Example;
+import model.DatabaseMap;
 
 
 /**
@@ -43,8 +43,8 @@ public abstract class ProcedureDAO extends AbstractDAO {
      * @throws SQLException
      *             the SQL exception
      */
-   public static List<Example> getLevelByID(final int id) throws SQLException {
-    	final ArrayList<Example> levels = new ArrayList<Example>();
+   public static List<DatabaseMap> getLevelByID(final int id) throws SQLException {
+    	final ArrayList<DatabaseMap> levels = new ArrayList<DatabaseMap>();
         final CallableStatement callStatement = prepareCall(sqlgetLevelByID);
         callStatement.setInt(1, id);
         if (callStatement.execute()) {
@@ -53,7 +53,7 @@ public abstract class ProcedureDAO extends AbstractDAO {
             for (boolean isResultLeft = result.first(); isResultLeft; isResultLeft = result.next()) {
             	
             	//System.out.print(result.getString(elementColumnIndex)+"\n");
-                levels.add(new Example(result.getString(elementColumnIndex), result.getInt(cooXColumnIndex), result.getInt(cooYColumnIndex)));
+                levels.add(new DatabaseMap(result.getString(elementColumnIndex), result.getInt(cooXColumnIndex), result.getInt(cooYColumnIndex)));
             }
             result.close();
         }

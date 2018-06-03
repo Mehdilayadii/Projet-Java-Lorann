@@ -1,5 +1,7 @@
 package model;
 
+import model.elements.ElementsList;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.File;
