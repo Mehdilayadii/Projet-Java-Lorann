@@ -21,15 +21,12 @@ public abstract class ImportLevel{
      * @return a map as a Array of String[][]
      * 
      */
-	public static String[][] CreateMap(ModelFacade model) {
+	public static String[][] CreateMap() {
 
 	// Convert List<Example> to StringBuilder
-   
-try {
-		
+	try {
+
 		// 			Our variables
-		//
-		//
 		// Will store different elements as String type
 	     String x; 
 	     String y;
@@ -42,55 +39,47 @@ try {
 	     //Our map
 	     String[][]map= new String[20][12];
 		
-		
 	     //Call our procedure and store data into our var 'message'
-		final List<DatabaseMap> databaseMaps = ProcedureDAO.getLevelByID(2);
+		final List<DatabaseMap> databaseMaps = ProcedureDAO.getLevelByID(1);
 		final StringBuilder message = new StringBuilder();
 	    for (final DatabaseMap databaseMap : databaseMaps) {
 	        message.append(databaseMap);
 	        message.append('\n'); 
 	    }
-	    
-	    
+
 	    //Convert StringBuilder type to String type
 	    String stringMessage=message.toString();
 	    
 	   //Separe our different element in an array 
 	    String[] ary = stringMessage.split("\n");
-	    
 
 	     for(int i=0;i<ary.length;i++){	
-	     	
-	     	 //Temporary String storing sql recording line per line
-	          String provisional = ary[i];
-	         
-	           //Separe our message from database to real coordinate
+	     	//Temporary String storing sql recording line per line
+	        String provisional = ary[i];
+	        //Separe our message from database to real coordinate
 	         		//Example : Convert C;1;1
 	         		//To Element=C, X=1, Y=1
-	           String[] tempo = provisional.split(";"); // Cutting String 
-	     	  element=tempo[0];
-	     	  x=tempo[1];
-	     	  y=tempo[2];
-	     	  
-	     	  //Convert String coordinates to integer
-	     	  cooX=Integer.parseInt(x); 
-	     	  cooY=Integer.parseInt(y);
-	     	  cooX-=1;
-	       	  cooY-=1;
+			 String[] tempo = provisional.split(";"); // Cutting String
+			 element=tempo[0];
+			 x=tempo[1];
+			 y=tempo[2];
+
+			 //Convert String coordinates to integer
+			 cooX=Integer.parseInt(x);
+			 cooY=Integer.parseInt(y);
+			 cooX-=1;
+			 cooY-=1;
 	       	  
-	     	  //Store data into our map
-	     	  map[cooX][cooY]=element; 
-	     	  
-	     		}
+			 //Store data into our map
+			 map[cooX][cooY]=element;
+
+			 }
 	     return map;
 	
 	}
 	catch(SQLException e) {e.printStackTrace();}
-
    
    return null;
-
     }
-	
 }
 
