@@ -39,6 +39,7 @@ public abstract class ProcedureDAO extends AbstractDAO {
     /**
      * Gets the map 
      *
+     *@param id ID of the map
      * @return a list of elements of Example type(Element, X, Y)
      * @throws SQLException
      *             the SQL exception

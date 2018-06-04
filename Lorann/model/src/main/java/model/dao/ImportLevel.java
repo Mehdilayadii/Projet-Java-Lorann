@@ -17,7 +17,7 @@ public abstract class ImportLevel{
 	/**
      * Create the map from database 
      *
-     * @param model the model
+     * @param levelID ID of the map's level
      * @return a map as a Array of String[][]
      * 
      */
