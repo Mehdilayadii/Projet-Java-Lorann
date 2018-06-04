@@ -27,29 +27,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ControllerFacade.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/ControllerFacade.java">
+      <file leaf-file-name="ModelFacade.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/model/src/main/java/model/ModelFacade.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="125" column="37" selection-start-line="125" selection-start-column="37" selection-end-line="125" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EventsManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/GameManagement/EventsManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1335">
-              <caret line="17" column="35" lean-forward="true" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Events.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/GameManagement/Events.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1118">
-              <caret line="89" column="32" selection-start-line="89" selection-start-column="32" selection-end-line="89" selection-end-column="45" />
+            <state relative-caret-position="172">
+              <caret line="384" column="24" lean-forward="true" selection-start-line="384" selection-start-column="24" selection-end-line="384" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -114,11 +96,11 @@
         <option value="$PROJECT_DIR$/model/src/test/java/model/MapModelTest.java" />
         <option value="$PROJECT_DIR$/model/src/main/java/model/dao/ProcedureDAO.java" />
         <option value="$PROJECT_DIR$/model/src/test/java/model/dao/LorannBDDConnectorTest.java" />
-        <option value="$PROJECT_DIR$/model/src/main/java/model/ModelFacade.java" />
         <option value="$PROJECT_DIR$/model/src/main/java/model/Sprite.java" />
         <option value="$PROJECT_DIR$/controller/src/main/java/controller/GameManagement/Events.java" />
         <option value="$PROJECT_DIR$/controller/src/main/java/controller/GameManagement/EventsManager.java" />
         <option value="$PROJECT_DIR$/controller/src/main/java/controller/ControllerFacade.java" />
+        <option value="$PROJECT_DIR$/model/src/main/java/model/ModelFacade.java" />
       </list>
     </option>
   </component>
@@ -160,58 +142,37 @@
             <path>
               <item name="lorann" type="b2602c69:ProjectViewProjectNode" />
               <item name="Lorann" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lorann" type="b2602c69:ProjectViewProjectNode" />
               <item name="Lorann" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lorann" type="b2602c69:ProjectViewProjectNode" />
               <item name="Lorann" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lorann" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lorann" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lorann" type="b2602c69:ProjectViewProjectNode" />
               <item name="Lorann" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="lorann" type="b2602c69:ProjectViewProjectNode" />
               <item name="Lorann" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="GameManagement" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lorann" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lorann" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lorann" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Lorann" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -476,11 +437,11 @@
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="6" weight="0.16040269" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.43019944" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.43019944" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20402685" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20402685" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
@@ -768,27 +729,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/ModelFacade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-          <folding>
-            <element signature="e#1088#1089#0" expanded="true" />
-            <element signature="e#1141#1142#0" expanded="true" />
-            <element signature="e#1348#1349#0" expanded="true" />
-            <element signature="e#1428#1429#0" expanded="true" />
-            <element signature="e#2127#2128#0" expanded="true" />
-            <element signature="e#2186#2187#0" expanded="true" />
-            <element signature="e#4313#4314#0" expanded="true" />
-            <element signature="e#4365#4366#0" expanded="true" />
-            <element signature="e#5994#5995#0" expanded="true" />
-            <element signature="e#6045#6046#0" expanded="true" />
-            <element signature="e#10082#10083#0" expanded="true" />
-            <element signature="e#10133#10134#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/src/main/java/model/dao/ImportLevel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-353">
@@ -810,13 +750,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/src/main/java/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="32" selection-start-line="32" selection-end-line="33" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/GameManagement/Events.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1118">
@@ -833,8 +766,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/ControllerFacade.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="125" column="37" selection-start-line="125" selection-start-column="37" selection-end-line="125" selection-end-column="37" />
+        <state relative-caret-position="-1133">
+          <caret line="46" column="13" lean-forward="true" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/src/main/java/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="32" selection-start-line="32" selection-end-line="33" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/ModelFacade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="384" column="24" lean-forward="true" selection-start-line="384" selection-start-column="24" selection-end-line="384" selection-end-column="24" />
         </state>
       </provider>
     </entry>

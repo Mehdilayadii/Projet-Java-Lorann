@@ -33,7 +33,6 @@ public final class ModelFacade implements IModel {
     }
 
     // GETTERS and SETTERS //
-    
     /**
      * Get sprite from specific coordinate
      * @see model.MapModel#getMap()
@@ -95,10 +94,10 @@ public final class ModelFacade implements IModel {
      * - Get location of an element
      * @see model.elements.Mobile.Mobile#setLocation(int ,int)
      * - Set location of an element
-     * @see model.MapModel.moveElement(int oldX, int oldY, int newX, int newY)
+     * @see model.MapModel#moveElement(int oldX, int oldY, int newX, int newY)
      * - Move element from current coordinate to new ones
-     * @param directionX Relative direction in X coordinate
-     * @param directionY Relative direction in Y coordinate
+     * @param moveX Relative direction in X coordinate
+     * @param moveY Relative direction in Y coordinate
      * 
      */
     public void movePlayer(int moveX, int moveY) {
@@ -174,7 +173,7 @@ public final class ModelFacade implements IModel {
      * - Get current mobile elements
      * @see model.ModelFacade#getEnemiesLocation()
      * - Get current enemies positions
-     * @see model.MapModel#addElement()
+     * @see model.MapModel#addElement(Elements, int, int)
      * - Add element at specific position
      * @param x coordinate X of an enemy
      * @param y coordinate Y of an enemy
@@ -197,7 +196,7 @@ public final class ModelFacade implements IModel {
     /**
      * Get type of an element at specific coordinates
      * 
-     * @see model.MapModel#getMaps()
+     * @see MapModel#getMap()
      * - Get the map 
      * @see model.elements.Elements#getType()
      * - Get type of a specific square of the map
@@ -221,15 +220,15 @@ public final class ModelFacade implements IModel {
      * - Get current mobile elements
      * @see model.elements.Mobile.Mobile#getLocation()
      * - Get current location of an element
-     * @see model.MapModel#setPlayer(player)
+     * @see model.MapModel#setPlayer(Player)
      * - Set player 
-     * @see model.MapModel#setSpell(spell)
+     * @see model.MapModel#setSpell(Spell)
      * - Set the spell at a specific position
-     * @see model.MapModel#getSpell(spell)
+     * @see MapModel#getSpell()
      * - Get current location of the spell
      * @see model.MapModel#getExitDoor()
      * - Get infos about exit door
-     * @see model.MapModel#addElement(Element,int,int)
+     * @see model.MapModel#addElement(Elements, int, int)
      * - Add element at specific coordinates
      * 
      * @param x coordinate X of an element
