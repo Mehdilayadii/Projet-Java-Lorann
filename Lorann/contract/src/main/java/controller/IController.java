@@ -1,7 +1,5 @@
 package controller;
 
-import java.awt.*;
-
 /**
  * <h1>The Interface IController.</h1>
  * 
