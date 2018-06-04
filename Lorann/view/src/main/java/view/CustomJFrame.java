@@ -93,7 +93,8 @@ public class CustomJFrame extends JFrame implements KeyListener {
 
     /**
      * Event when a key is pressed
-     * @see changing_value_deplacement(int)
+     * @see view.CustomJFrame#changing_value_deplacement(int keyCode)
+     * - Change value of deplacement
      * @param key
      * 			key pressed by player
      */
@@ -104,9 +105,10 @@ public class CustomJFrame extends JFrame implements KeyListener {
     
     /**
      * Event when a key is released:
-     * -Change value of deplacement_player depending on user
-     * -Detect if player stop casting spell (released space)
-     * @see return_deplacement_player()
+     * \Change value of deplacement_player depending on user
+     * \Detect if player stop casting spell (released space)
+     * @see  view.CustomJFrame#return_deplacement_player()
+     * - Get player deplacement
      * @param key
      * 			key released by player
      */
@@ -145,10 +147,12 @@ public class CustomJFrame extends JFrame implements KeyListener {
 
     }
      
+
+    @Override
+    
     /**
      * Event when a key is typed
      */
-    @Override
     public void keyTyped(KeyEvent key) {
     }
     

@@ -13,11 +13,11 @@ import java.awt.event.WindowEvent;
 public class ViewFacade implements IView {
 
 					/**** ATTRIBUTE ****/
-	/* Window */
+	/** The window */
     private final CustomJFrame window;
-    /* Array with the map */
+    /** Array with the map */
     private Image[][] map;
-    /* The score */
+    /** The score */
     int score = 0;
 
     				/**** CONSTRUCTOR ****/
@@ -28,27 +28,29 @@ public class ViewFacade implements IView {
 
     				/**** GETTERS and SETTERS ****/
     /**
-     * Set map
-     * @param Image map
+     * Set the map
+     * @param map
      * 		Array of the map
      */
     public void setImageMap(Image[][] map) {
         this.map = map;
-        
+       
+    }
+    
     /**
-     * Set score
-     * @param int score
+     * Set the score
+     * @param score
      * 		the score
      */
-    }
     public void setScore(int score) {
         this.score = score;
-    
-   /**
-    * Get the score
-    * @return score
-    */
+  
     }
+    
+    /**
+     * Get the score
+     * @return score the score
+     */
     public int getScore() {
         return score;
     }
@@ -57,7 +59,7 @@ public class ViewFacade implements IView {
      
     /**
      * Create window with message
-     * @param String message
+     * @param message
      * 		String with the message
      */
     @Override
@@ -69,7 +71,6 @@ public class ViewFacade implements IView {
     /**
      * Instantiate new Jpanel to Print elements on the screen (map + score) 
      * Refresh the window
-     * @see java.awt.event.WindowEvent
      */
     public void showElements() {
         window.add(new CustomJPanel(map,score));
@@ -77,8 +78,9 @@ public class ViewFacade implements IView {
     }
     
     /**
-     * @return Point (X,Y) wich is user order input 
-     * @see return_deplacement_player()
+     * @return Point (X,Y) which is user order input 
+     * @see view.CustomJFrame#return_deplacement_player()
+     * - Get the player deplacement
      */
     public Point return_deplacement_player() {
     	return window.return_deplacement_player();
@@ -86,7 +88,8 @@ public class ViewFacade implements IView {
     
     /**
      * @return boolean to check if player is casting spell 
-     * @see return_casting_player()
+     * @see view.CustomJFrame#return_casting_player()
+     * - Get true if a player is casting a spell
      */
     public boolean return_casting_player() {
     	return window.return_casting_player();

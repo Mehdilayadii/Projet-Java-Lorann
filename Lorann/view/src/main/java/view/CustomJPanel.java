@@ -14,14 +14,19 @@ import java.text.DecimalFormat;
 public class CustomJPanel extends JPanel {
 	
 					/**** ATTRIBUTE ****/
-	/** serialVersionUID */
+	/** SerialVersionUID */
 	private static final long serialVersionUID = 1L;
-	/* array with de map */
+	/** Array of the map */
     private Image map[][];
-    /* the score */
+    /** The score */
     private String score;
     
     				/**** CONSTRUCTOR ****/
+     /**
+     * Initiate the Panel
+     * @param map the map
+     * @param score the score
+     */
     public CustomJPanel(Image map[][], int score) {
         this.map = map;
         this.score = "SCORE : "+(new DecimalFormat("00000").format(score));
@@ -32,7 +37,7 @@ public class CustomJPanel extends JPanel {
     			/**** GETTERS and SETTERS ****/
     
     /**
-     * get the score
+     * Get the score
      * @return score
      */
     public String getScore() {
@@ -52,7 +57,7 @@ public class CustomJPanel extends JPanel {
     
     /**
      * Standart graphic from swing
-     * @see javax.swing.Graphics
+     * 
      * @param Graphics g
      */
     @Override
