@@ -15,8 +15,6 @@ public interface IModel {
     Image       getSpriteFromMap(int x,int y);
     Dimension   getMapSize();
 
-    /*Database --------------------------------------------*/
-    void        connectToDB();
 
     /*Player ----------------------------------------------*/
     /*Movement management*/

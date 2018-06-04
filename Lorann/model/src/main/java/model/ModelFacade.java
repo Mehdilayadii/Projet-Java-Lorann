@@ -60,21 +60,7 @@ public final class ModelFacade implements IModel {
 
     // METHODS //
     
-    /**
-	 * Connect to the database lorann
-	 */
-    public void connectToDB() {
-        LorannBDDConnector conn = null;
-        try {
-            System.out.print("Trying to connect to Database :\n");
-            conn =new LorannBDDConnector();
-            System.out.print("Successfuly connected\n");
-        }
-        catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-
+  
     /**
      * Animate elements
      * @see model.MapModel#animateElements(int, int)

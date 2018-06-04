@@ -40,24 +40,9 @@ public class ControllerFacade implements IController {
         this.view = view;
         this.model = model;
 
-        try {
-        this.Initialization(); 
-        }catch(SQLException e) {
-                e.printStackTrace();
-        }
     }
     
     				/**** METHODS ****/
-
-    /**
-     * Initialization :
-     * Load all sprites and start the JDBC connection
-     */
-    private void Initialization() throws SQLException {
-     
-        //Connection to database "lorann"
-        model.connectToDB();   
-        }
 
     /**
      * Main function: mainloop of the game
