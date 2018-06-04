@@ -13,6 +13,7 @@ import view.IView;
  * @author Groupe 13
  * @version 2.0
  */
+
 public class ControllerFacade implements IController {
 
 					/**** ATTRIBUTE ****/
