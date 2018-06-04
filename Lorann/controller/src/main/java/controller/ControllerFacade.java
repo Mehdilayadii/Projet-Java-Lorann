@@ -57,7 +57,7 @@ public class ControllerFacade implements IController {
      * - Animate element
      * @see controller.GameManagement.EventsManager#setPlayer_facing_during_casting()
      * - Set player facing
-     * @see controller.GameManagement.EventsManager.checkPlayerGetSpell()
+     * @see controller.GameManagement.EventsManager#checkPlayerGetSpell()
      * - Check if the player pick up the spell
      * @see controller.GameManagement.EventsManager#createSpell()
      * - Create spell
