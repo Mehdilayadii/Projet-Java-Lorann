@@ -17,15 +17,15 @@ import model.elements.Static.Static;
 /**
  * <h1>The Class ModelFacade provides a facade of the Model component.</h1>
  *
- * @author Jean-Aymeric DIET jadiet@cesi.fr
- * @version 1.0
+ * @author Groupe 13
+ * @version 2.0
  */
 public final class ModelFacade implements IModel {
 
     private MapModel map;
+    
     /**
      * Instantiates a new model facade.
-     * @throws SQLException 
      */
     public ModelFacade()  {
         Sprite.LoadAllSprite();
@@ -33,16 +33,35 @@ public final class ModelFacade implements IModel {
     }
 
     // GETTERS and SETTERS //
+    
+    /**
+     * Get sprite from specific coordinate
+     * @see model.MapModel#getMap()
+     * - Get the map
+     * @see model.elements.Elements#getSprite()
+     * - Get the sprite
+     * @param x X coordinate
+     * @param y Y coordinate
+     * @return the sprite at these coordinates
+     */
     public Image getSpriteFromMap(int x,int y) {
         return map.getMap()[x][y].getSprite();
     }
 
+    /**
+     * Get dimension from a map
+     * @see model.MapModel#getMap()
+     * - Get the map
+     * @return a object of type Dimension (dimension of the map)
+     */
     public Dimension getMapSize() {
         return new Dimension(map.getMap().length,map.getMap()[0].length);
     }
+    
 
     // METHODS //
-   /**
+    
+    /**
 	 * Connect to the database lorann
 	 */
     public void connectToDB() {
@@ -59,7 +78,8 @@ public final class ModelFacade implements IModel {
 
     /**
      * Animate elements
-     * @see model.IModel#animate(int, int)
+     * @see model.MapModel#animateElements(int, int)
+     * - Animate elements
      * @param directionX Direction in X coordinate
      * @param directionY Direction in Y coordinate
      */
@@ -67,7 +87,20 @@ public final class ModelFacade implements IModel {
         map.animateElements(directionX, directionY);
     }
 
-    /*Move player*/
+    /**
+     * Move player
+     * @see model.MapModel#getPlayer()
+     * - Get infos about player
+     * @see model.elements.Mobile.Mobile#getLocation()
+     * - Get location of an element
+     * @see model.elements.Mobile.Mobile#setLocation(int ,int)
+     * - Set location of an element
+     * @see model.MapModel.moveElement(int oldX, int oldY, int newX, int newY)
+     * - Move element from current coordinate to new ones
+     * @param directionX Relative direction in X coordinate
+     * @param directionY Relative direction in Y coordinate
+     * 
+     */
     public void movePlayer(int moveX, int moveY) {
         int newX = map.getPlayer().getLocation().x + moveX;
         int newY = map.getPlayer().getLocation().y - moveY;
@@ -79,6 +112,12 @@ public final class ModelFacade implements IModel {
     /**
      * Move enemies on the map
      * @param enemiesMove List of current enemies position
+     * @see model.MapModel#getEnemies()
+     * - Get current mobile elements
+     * @see model.elements.Mobile.Mobile#getLocation()
+     * - Get location of an element
+     * @see model.elements.Mobile.Mobile#setLocation(int ,int)
+     * - Set location of an element
      */
     public void moveEnemies(List<Point> enemiesMove) {
         int i = 0;
@@ -101,9 +140,13 @@ public final class ModelFacade implements IModel {
 
     /**
      * Get Player location
-     * @see model.MapModel#getLocation()
+     * @see model.elements.Mobile.Mobile#getLocation()
+     * - Get location of an element
      * @see model.MapModel#getPlayer()
+     * - Get infos about player
+     * @return object of type Point with player coordinates
      */
+    
     public Point getPlayerLocation() {
         return map.getPlayer().getLocation();
     }
@@ -111,7 +154,8 @@ public final class ModelFacade implements IModel {
     /**
      * Get Enemies location
      * @see model.MapModel#getEnemies()
-     * @return enemiesMove List of current enemies position
+     * - Get current mobile elements
+     * @return list of points of enemies locations
      */
     public List<Point> getEnemiesLocation() {
 
@@ -123,7 +167,20 @@ public final class ModelFacade implements IModel {
         }
         return enemiesLocations;
     }
-    /*Kill enemy*/
+    
+    /**
+     * Kill a specific enemy
+     * @see model.MapModel#getEnemies()
+     * - Get current mobile elements
+     * @see model.ModelFacade#getEnemiesLocation()
+     * - Get current enemies positions
+     * @see model.MapModel#addElement()
+     * - Add element at specific position
+     * @param x coordinate X of an enemy
+     * @param y coordinate Y of an enemy
+     */
+    
+
     public void killEnemy(int x, int y) {
         int i = 0;
         List<Point> enemiesLocation = getEnemiesLocation();
@@ -137,12 +194,48 @@ public final class ModelFacade implements IModel {
         }
     }
 
-    /*Get type of an element*/
+    /**
+     * Get type of an element at specific coordinates
+     * 
+     * @see model.MapModel#getMaps()
+     * - Get the map 
+     * @see model.elements.Elements#getType()
+     * - Get type of a specific square of the map
+     * @param x coordinate X 
+     * @param y coordinate Y 
+     * 
+     * @return type of an element
+     */
     public Types getType(int x, int y) {
         return map.getMap()[x][y].getType();
     }
+    
+    
 
-    /*Create a player*/
+    /**
+     * Create a an element at specific coordinates (of  types : Player, Enemy, Spell, or Exit door
+     * 
+     * @see model.Types
+     * - Enumeration of all available types
+     * @see model.MapModel#getEnemies()
+     * - Get current mobile elements
+     * @see model.elements.Mobile.Mobile#getLocation()
+     * - Get current location of an element
+     * @see model.MapModel#setPlayer(player)
+     * - Set player 
+     * @see model.MapModel#setSpell(spell)
+     * - Set the spell at a specific position
+     * @see model.MapModel#getSpell(spell)
+     * - Get current location of the spell
+     * @see model.MapModel#getExitDoor()
+     * - Get infos about exit door
+     * @see model.MapModel#addElement(Element,int,int)
+     * - Add element at specific coordinates
+     * 
+     * @param x coordinate X of an element
+     * @param y coordinate Y of an element
+     * @param type type of element to create
+     */
     public void createElement(int x, int y,Types type) {
         switch (type) {
             case PLAYER:
@@ -175,7 +268,20 @@ public final class ModelFacade implements IModel {
 ;
     }
 
-    /* Delete the spell*/
+    /**
+     * Delete the spell
+     * 
+     * @see model.elements.Mobile.Mobile#getLocation()
+     * - Get current location of an element
+     * @see model.MapModel#setSpell(spell)
+     *  - Set the spell at a specific position
+     * @see model.MapModel#getSpell()
+     *  - Get current location of the spell
+     * @see model.MapModel#addElement(Element,int,int)
+     * - Create an element at specific coordinate
+     * 
+     */
+    
     public void deleteSpell() {
         int x = map.getSpell().getLocation().x;
         int y = map.getSpell().getLocation().y;
@@ -183,7 +289,23 @@ public final class ModelFacade implements IModel {
         map.addElement(new Static(" ",Types.VOID),x,y); 
     }
 
-    /* Spell get and set location*/
+    /**
+    * Move the spell
+    * 
+    * @see model.elements.Mobile.Mobile#getLocation()
+    * - Get current location of an element
+    * @see model.elements.Mobile.Mobile#setLocation(int,int)
+    *  - Move an element at new coordinates
+    * @see model.MapModel#getSpell()
+    *  - Get current location of the spell
+    * @see model.MapModel#moveElement(int,int,int,int)
+    * - Move an element at specific coordinate
+    * 
+    * @param moveX new coordinate X of the spell
+     *@param moveY new coordinate Y of the spell
+    */
+    
+    
     public void moveSpell(int moveX, int moveY) {
         int oldX = map.getSpell().getLocation().x;
         int oldY = map.getSpell().getLocation().y;
@@ -194,11 +316,28 @@ public final class ModelFacade implements IModel {
         map.moveElement(oldX,oldY,newX,newY);
 
     }
+    
+    /**
+     * Get location of the spell
+     * 
+     * @see model.elements.Mobile.Mobile#getLocation()
+     * - Get location of a specifi element
+     * @see model.MapModel#getSpell()
+     * - Get current infos about the spell
+     * @return a object of type Point with spell's coordinates
+     */
     public Point getSpellLocation() {
         return map.getSpell().getLocation();
     }
 
-    /* Check if spell is alive*/
+    /**
+     * Check if spell is alive
+     * 
+     * @see model.MapModel#getSpell()
+     * - Get current infos about the spell
+     * @return false if no spell is currently created
+     */
+    
     public boolean spellAlive() {
         if (map.getSpell() != null) {
             return true;
@@ -206,7 +345,17 @@ public final class ModelFacade implements IModel {
         return false;
     }
 
-    /*Check if there is an enemy at a position*/
+    /**
+     * Check if there is enemy at specific position
+     * 
+     * @see model.ModelFacade#getEnemiesLocation()
+     * - Get current location of enemies
+     * 
+     * @param x coordinate X 
+     * @param y coordinate Y 
+     * 
+     * @return false if there is no enemy at this position
+     */
     public boolean isThereEnemy(int x,int y) {
         for (Point enemyLoc : getEnemiesLocation()) {
             if (enemyLoc.x == x && enemyLoc.y == y) {
