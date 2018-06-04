@@ -39,6 +39,10 @@ public class Events {
      * Initiate events
      * @see model.IModel#getPlayerLocation()
      * - Get location of the player
+     * @param model The model
+     * @param view The view
+     * @param moveX Relative move in X coordinate
+     * @param moveY Relative move in Y coordinate
      */
     public Events(IModel model, IView view,int moveX, int moveY) {
 

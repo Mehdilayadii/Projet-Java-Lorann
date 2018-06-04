@@ -155,6 +155,7 @@ public class EventsManager {
      * Check if a enemy eat the player. If so make kill the good one and delete the spell.
      * @see IModel#deleteSpell()
      * @see IModel#killEnemy(int, int)
+     * @return true if mob get a player
      */
     public boolean checkMobGetPlayer() {
         if (model.isThereEnemy(model.getPlayerLocation().x,model.getPlayerLocation().y)) {
