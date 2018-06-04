@@ -14,25 +14,31 @@ import view.IView;
 
 public class Events {
 
-	/**** ATTRIBUTE ****/
+					/**** ATTRIBUTE ****/
     private boolean gameEnd = false;
 
-    /* model */
+    /** model */
     private IModel model;
-    /* view */
+    /** view */
     private IView view;
 
-    /* move player */
+    /** move player x*/
     int futureX_player;
+    /** move player y*/
     int futureY_player;
     
-    /* move spell */
+    /** move spell x*/
     int futureX_spell;
+    /** move spell y*/
     int futureY_spell;
 
+    
+    
+    			/**** CONSTRUCTORS ****/
     /**
-     * CONSTRUCTOR
-     * @see getPlayerLocation()
+     * Initiate events
+     * @see model.IModel#getPlayerLocation()
+     * - Get location of the player
      */
     public Events(IModel model, IView view,int moveX, int moveY) {
 
@@ -44,22 +50,21 @@ public class Events {
 
     }
 
-    /**** METHODS ****/
+    				/**** METHODS ****/
 
     /**
      * Check if player can reach the desired case, also handle behavior of the player with his environment :
      * - Set score if go on item
      * @see IView#setScore(int)
-     * - Spawn teh exit if go on magical ball
+     * - Spawn the exit if go on magical ball
      * @see IModel#createElement(int, int, Types)
      * - Kill the player if go on an deadly point
      * @see Events#playerDie()
      * - Finish the game if player get to the exit
      * @see Events#playerWin()
-     *
-     * To get the type of a case :
+     * - To get the type of a case :
      * @see IModel#getType(int, int)
-     *
+     * - Get type at specific coordinates
      * @return false if the desired case is an obstacle
      */
     public boolean playerCanReach() {
@@ -82,9 +87,10 @@ public class Events {
     /**
      * Check if player get on a deadly case, then finish the game.
      * @see IView#displayMessage(String)
-     *
+     *- Display a message
      * To get the type of a case, and then its behavior:
      * @see IModel#getType(int, int)
+     * - Get type at specific coordinates
      */
     public void playerDie() {
         if (model.getType(futureX_player,futureY_player).getBehavior() == -1) {
@@ -96,9 +102,10 @@ public class Events {
     /**
      * Check if player get on a exit case, then finish the game.
      * @see IView#displayMessage(String)
-     *
+     *- Display a message
      * To get the type of a case:
      * @see IModel#getType(int, int)
+     * - Get type at specific coordinates
      */
     public void playerWin() {
         if (model.getType(futureX_player,futureY_player) == Types.EXIT_DOOR) {
