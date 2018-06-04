@@ -136,6 +136,7 @@ public class MapModel {
      * @param stringStyle each stringStyle corresponds to a specific sprite (example "L1" = the player)
      * @param positionX X coordinate
      * @param positionY Y coordinate
+     * @return Elements
      */
     public Elements elementsFromType(Types type, String stringStyle, int positionX, int positionY) {
         Elements element;

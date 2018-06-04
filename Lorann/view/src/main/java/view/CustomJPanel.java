@@ -38,15 +38,15 @@ public class CustomJPanel extends JPanel {
     
     /**
      * Get the score
-     * @return score
+     * @return score the score
      */
     public String getScore() {
         return score;
     }
 
     /**
-     * set score = string "Score : " + the value
-     * @param String score
+     * Set score = string "Score : " + the value
+     * @param score
      * 			player's score
      */
     public void setScore(String score) {
@@ -58,7 +58,7 @@ public class CustomJPanel extends JPanel {
     /**
      * Standard graphic from swing
      * 
-     * @param Graphics g
+     * @param g Object of type Graphics
      */
     @Override
     public void paintComponent(Graphics g) {
