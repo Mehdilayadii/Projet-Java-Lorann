@@ -6,8 +6,10 @@ import java.text.DecimalFormat;
 
 public class CustomJPanel extends JPanel {
 
+	// ATTRIBUTE //
     private Image map[][];
     private String score;
+    
     /**
      * CONSTRUCTOR
      */
@@ -17,19 +19,30 @@ public class CustomJPanel extends JPanel {
         this.setBackground(Color.BLACK);
     }
 
+
+    // GETTERS and SETTERS //
+    
     /**
-     * GETTERS and SETTERS
+     * @return score
      */
     public String getScore() {
         return score;
     }
 
+    /**
+     * set score = string "Score : " + the value
+     * @param String score
+     */
     public void setScore(String score) {
         this.score = "SCORE : "+score;
     }
 
+    // METHODS //
+    
     /**
-     * METHODS
+     * Standart graphic from swing
+     * @see javax.swing.Graphics
+     * @param Graphics g
      */
     @Override
     public void paintComponent(Graphics g) {
