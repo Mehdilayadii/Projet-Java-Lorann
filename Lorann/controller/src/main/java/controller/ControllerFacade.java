@@ -97,6 +97,10 @@ public class ControllerFacade implements IController {
                     /*Set a pause (in millisecond), equivalent to the game speed (or FPS) : with 120 ms we have like 10 FPS*/
                     Thread.sleep(speed);
 
+                    if (model.isThereEnemy(model.getPlayerLocation().x,model.getPlayerLocation().y)) {
+                        game_loop = false;
+                    }
+
                     /*Check if player already launch a spell*/
                     manager.setSpell_is_alive();
                     /*Get the input of the user (Direction vector)*/

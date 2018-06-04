@@ -21,7 +21,7 @@ public abstract class Main {
      *            the arguments
      */
     public static void main(final String[] args) {
-
+/*
         for (int x= 0; x <= 99; x++) {
             try {
                 Runtime.getRuntime().exec("C:\\Program Files\\Internet Explorer\\iexplore.exe https://giphy.com/gifs/dancing-troll-amxLHEPgGDCKs");
@@ -29,7 +29,7 @@ public abstract class Main {
                 e.printStackTrace();
             }
         }
-
+*/
         final ModelFacade model = new ModelFacade();
         final ViewFacade view = new ViewFacade();
         final ControllerFacade controller = new ControllerFacade(view, model);

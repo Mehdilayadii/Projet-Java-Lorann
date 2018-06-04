@@ -81,7 +81,7 @@ public class DatabaseMap {
     /**
      * Sets the X coordinates.
      *
-     * @param element
+     * @param cooX
      *            the new X coordinates
      */
     public void setCooX(final int cooX) {
@@ -92,7 +92,7 @@ public class DatabaseMap {
     /**
      * Sets the Y coordinates.
      *
-     * @param element
+     * @param cooY
      *            the new Y coordinates
      */
     public void setCooY(final int cooY) {

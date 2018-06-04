@@ -24,7 +24,7 @@ public enum Types {
      */
     private int behavior;
 
-    /**** GETTERS and SETTERS ****/
+    // GETTERS and SETTERS //
     public boolean isSolid() {
         return isSolid;
     }
@@ -33,7 +33,7 @@ public enum Types {
         return behavior;
     }
 
-    /**** CONSTRUCTOR ****/
+    // CONSTRUCTOR //
     Types(boolean isSolid, int behavior) {
         this.isSolid = isSolid;
         this.behavior = behavior;

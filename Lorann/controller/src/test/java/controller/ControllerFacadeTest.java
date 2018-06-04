@@ -2,16 +2,19 @@ package controller;
 
 import static org.junit.Assert.*;
 
+import model.IModel;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import view.IView;
 
 public class ControllerFacadeTest {
 
 	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
+	public static void setUpBeforeClass(IModel model, IView view) throws Exception {
+
 	}
 
 	@AfterClass
@@ -27,8 +30,7 @@ public class ControllerFacadeTest {
 	}
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void getImageMap() {
 	}
 
 }
