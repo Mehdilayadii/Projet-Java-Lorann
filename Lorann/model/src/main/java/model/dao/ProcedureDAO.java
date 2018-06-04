@@ -17,6 +17,7 @@ import model.DatabaseMap;
  * @version 2.0
  */
 	
+
 public abstract class ProcedureDAO extends AbstractDAO {
 
     /** String which contain sql call to procedure 'getLevelByID'  */
