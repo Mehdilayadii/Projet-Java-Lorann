@@ -35,6 +35,7 @@ public class MobileTest {
 	public void tearDown() throws Exception {
 	}
 
+
 	@Test
 	public void testGetLocation() {
 		assertEquals(14, m.getLocation().x);
@@ -45,6 +46,9 @@ public class MobileTest {
 	    assertEquals(7, b.getLocation().y);
 	}
 
+	/**
+	 * Check if the location in good set
+	 */
 	@Test
 	public void testSetLocation() {
 		 m.setLocation(3,7);
