@@ -4,53 +4,64 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+/**
+ * <h1>The Class CustomJFrame get key event. </h1>
+ *
+ * @author Groupe 13
+ * @version 2.0
+ */
+
 public class CustomJFrame extends JFrame implements KeyListener {
 
-	// ATTRIBUTE //
+
+					/**** ATTRIBUTE ****/
+	/* serialVersionUID */
+	private static final long serialVersionUID = 1L;
+	/* player deplacement */
     int move_x = 0;
     int move_y = 0; 
     Point deplacement_player = new Point(0,0);
-    
+    /* player casting spell */
     boolean casting_spell = false;
 
-    /**
-     * CONSTRUCTOR
-     */
+    				/**** CONSTRUCTOR ****/
     public CustomJFrame() {
 
-        /*Style*/
+        /* Style */
         this.setTitle("Lorann Game");
         this.setSize(660, 460);
-        /*Position*/
+        /* Position */
         this.setLocationRelativeTo(null);
-        /*Behavior*/
+        /* Behavior */
         this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+        /* make window visible */
         this.setVisible(true);
         
+        /* add KetListener */
         addKeyListener(this);
-        //Focus on Keyboard
+        /* Focus on keyboard */
         requestFocusInWindow();
     }
     
-    // GETTERS and SETTERS //
-    
+    				/**** GETTERS and SETTERS ****/
     /**
-     * @return player deplacement
+     * get the player deplacement
+     * @return deplacement_player
      */
     public Point return_deplacement_player() {
         return deplacement_player; 
     }
 
     /**
-     * @return if player is casting spell
+     * get if player is casting_spell
+     * @return casting_spell
      */
     public boolean return_casting_player() {
         return casting_spell; 
     }
     
-    // METHODS //
+    				/**** METHODS ****/
     
     /**
      * Change value of deplacement_player depending on user input
@@ -85,7 +96,6 @@ public class CustomJFrame extends JFrame implements KeyListener {
      */
     @Override
     public void keyPressed(KeyEvent key) {
-        // TODO Auto-generated method stub
         this.changing_value_deplacement(key.getKeyCode());       
     }
     
@@ -98,7 +108,6 @@ public class CustomJFrame extends JFrame implements KeyListener {
      */
     @Override
     public void keyReleased(KeyEvent key) {
-        // TODO Auto-generated method stub
         int keyCode = key.getKeyCode();
         Point player_deplacement_point = new Point(0,0);
         player_deplacement_point = return_deplacement_player();
@@ -137,7 +146,6 @@ public class CustomJFrame extends JFrame implements KeyListener {
      */
     @Override
     public void keyTyped(KeyEvent key) {
-        // TODO Auto-generated method stub
     }
     
 }
