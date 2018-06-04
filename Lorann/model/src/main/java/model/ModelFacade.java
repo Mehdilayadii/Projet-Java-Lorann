@@ -7,6 +7,7 @@ import java.util.List;
 
 import model.dao.ImportLevel;
 import model.dao.LorannBDDConnector;
+import model.elements.Elements;
 import model.elements.Mobile.Mobile;
 import model.elements.Mobile.Player;
 import model.elements.Mobile.Spell;
@@ -238,27 +239,13 @@ public final class ModelFacade implements IModel {
     public void createElement(int x, int y,Types type) {
         switch (type) {
             case PLAYER:
-                /*Use to be sure that the player haven't benn eat*/
-                Player player = new Player("L1",x,y);
-                map.setPlayer(player);
-                map.addElement(player,x,y);
+                createPlayer(x,y);
                 break;
             case ENEMY:
-                /*Use to be sure that the enemies haven't benn eat*/
-                for (Mobile enemyLoc : map.getEnemies()) {
-                    if (enemyLoc.getLocation().x == x && enemyLoc.getLocation().y == y) {
-                        map.addElement(enemyLoc,x,y);
-                    }
-                }
+                createEnemy(x,y);
                 break;
             case SPELL:
-                int posX = getPlayerLocation().x+x;
-                int posY = getPlayerLocation().y-y;
-                Spell spell = new Spell("S1",posX,posY, new Point(x,y));
-
-                map.addElement(spell,posX,posY);
-                map.setSpell(spell);
-                map.getSpell().setLocation(posX,posY);
+                createSpell(x,y);
                 break;
             case EXIT_DOOR:
                 map.addElement(new Static("DO",Types.EXIT_DOOR),map.getExitDoor().x,map.getExitDoor().y);
@@ -268,17 +255,55 @@ public final class ModelFacade implements IModel {
     }
 
     /**
+     * Create the player at a special location
+     * @param x spawn location
+     * @param y spawn location
+     */
+    private void createPlayer(int x, int y) {
+        Player player = new Player("L1",x,y);
+        map.setPlayer(player);
+        map.addElement(player,x,y);
+    }
+
+    /**
+     * Create an enemy at a special location
+     * @param x spawn location
+     * @param y spawn location
+     */
+    private void createEnemy(int x, int y) {
+        for (Mobile enemyLoc : map.getEnemies()) {
+            if (enemyLoc.getLocation().x == x && enemyLoc.getLocation().y == y) {
+                map.addElement(enemyLoc,x,y);
+            }
+        }
+    }
+
+    /**
+     * Create a spell at a special location
+     * @param x spawn location
+     * @param y spawn location
+     */
+    private void createSpell(int x,int y) {
+        int posX = getPlayerLocation().x+x;
+        int posY = getPlayerLocation().y-y;
+        Spell spell = new Spell("S1",posX,posY, new Point(x,y));
+
+        map.addElement(spell,posX,posY);
+        map.setSpell(spell);
+        map.getSpell().setLocation(posX,posY);
+    }
+
+    /**
      * Delete the spell
      * 
      * @see model.elements.Mobile.Mobile#getLocation()
      * - Get current location of an element
-     * @see model.MapModel#setSpell(spell)
+     * @see model.MapModel#setSpell(Spell)
      *  - Set the spell at a specific position
      * @see model.MapModel#getSpell()
      *  - Get current location of the spell
-     * @see model.MapModel#addElement(Element,int,int)
+     * @see model.MapModel#addElement(Elements, int, int)
      * - Create an element at specific coordinate
-     * 
      */
     
     public void deleteSpell() {

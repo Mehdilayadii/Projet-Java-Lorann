@@ -48,8 +48,8 @@
       <file leaf-file-name="ImportLevel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/src/main/java/model/dao/ImportLevel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="54" column="48" selection-start-line="54" selection-start-column="48" selection-end-line="54" selection-end-column="48" />
+            <state relative-caret-position="360">
+              <caret line="55" column="48" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -66,8 +66,22 @@
       <file leaf-file-name="ModelFacade.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/model/src/main/java/model/ModelFacade.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1553">
-              <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+            <state relative-caret-position="82">
+              <caret line="305" column="49" selection-start-line="305" selection-start-column="49" selection-end-line="305" selection-end-column="49" />
+              <folding>
+                <element signature="e#1088#1089#0" expanded="true" />
+                <element signature="e#1141#1142#0" expanded="true" />
+                <element signature="e#1348#1349#0" expanded="true" />
+                <element signature="e#1428#1429#0" expanded="true" />
+                <element signature="e#2127#2128#0" expanded="true" />
+                <element signature="e#2186#2187#0" expanded="true" />
+                <element signature="e#4313#4314#0" expanded="true" />
+                <element signature="e#4365#4366#0" expanded="true" />
+                <element signature="e#5994#5995#0" expanded="true" />
+                <element signature="e#6045#6046#0" expanded="true" />
+                <element signature="e#10082#10083#0" expanded="true" />
+                <element signature="e#10133#10134#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -125,7 +139,6 @@
         <option value="$PROJECT_DIR$/contract/src/main/java/model/IModel.java" />
         <option value="$PROJECT_DIR$/contract/src/main/java/model/Example.java" />
         <option value="$PROJECT_DIR$/model/src/main/java/model/dao/ImportLevel.java" />
-        <option value="$PROJECT_DIR$/model/src/main/java/model/ModelFacade.java" />
         <option value="$PROJECT_DIR$/controller/src/main/java/controller/GameManagement/AIDeplacement.java" />
         <option value="$PROJECT_DIR$/contract/src/main/java/model/DatabaseMap.java" />
         <option value="$PROJECT_DIR$/contract/src/main/java/model/Types.java" />
@@ -146,6 +159,7 @@
         <option value="$PROJECT_DIR$/model/src/test/java/model/MapModelTest.java" />
         <option value="$PROJECT_DIR$/model/src/main/java/model/dao/ProcedureDAO.java" />
         <option value="$PROJECT_DIR$/model/src/test/java/model/dao/LorannBDDConnectorTest.java" />
+        <option value="$PROJECT_DIR$/model/src/main/java/model/ModelFacade.java" />
       </list>
     </option>
   </component>
@@ -325,7 +339,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.LorannBDDConnectorTest.executeQuery">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.Main" />
+      <module name="main" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -398,29 +423,6 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="MapModelTest.mapStringToMapElements" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="model" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.MapModelTest" />
-      <option name="METHOD_NAME" value="mapStringToMapElements" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
     <configuration name="MapModelTest.moveElement" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="model" />
       <extension name="coverage">
@@ -483,19 +485,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="JUnit.MapModelTest.mapStringToMapElements" />
       <item itemvalue="JUnit.MapModelTest.elementsFromType" />
       <item itemvalue="JUnit.MapModelTest.moveElement" />
       <item itemvalue="JUnit.MapModelTest.addElement" />
       <item itemvalue="JUnit.LorannBDDConnectorTest.executeQuery" />
+      <item itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.LorannBDDConnectorTest.executeQuery" />
         <item itemvalue="JUnit.MapModelTest.addElement" />
         <item itemvalue="JUnit.MapModelTest.moveElement" />
         <item itemvalue="JUnit.MapModelTest.elementsFromType" />
-        <item itemvalue="JUnit.MapModelTest.mapStringToMapElements" />
       </list>
     </recent_temporary>
   </component>
@@ -581,7 +583,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="6" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -860,8 +862,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/model/src/main/java/model/dao/ImportLevel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="54" column="48" selection-start-line="54" selection-start-column="48" selection-end-line="54" selection-end-column="48" />
+        <state relative-caret-position="360">
+          <caret line="55" column="48" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -902,8 +904,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/model/src/main/java/model/ModelFacade.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1553">
-          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+        <state relative-caret-position="82">
+          <caret line="305" column="49" selection-start-line="305" selection-start-column="49" selection-end-line="305" selection-end-column="49" />
+          <folding>
+            <element signature="e#1088#1089#0" expanded="true" />
+            <element signature="e#1141#1142#0" expanded="true" />
+            <element signature="e#1348#1349#0" expanded="true" />
+            <element signature="e#1428#1429#0" expanded="true" />
+            <element signature="e#2127#2128#0" expanded="true" />
+            <element signature="e#2186#2187#0" expanded="true" />
+            <element signature="e#4313#4314#0" expanded="true" />
+            <element signature="e#4365#4366#0" expanded="true" />
+            <element signature="e#5994#5995#0" expanded="true" />
+            <element signature="e#6045#6046#0" expanded="true" />
+            <element signature="e#10082#10083#0" expanded="true" />
+            <element signature="e#10133#10134#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
