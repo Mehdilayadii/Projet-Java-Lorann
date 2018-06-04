@@ -20,11 +20,19 @@ import java.util.List;
 
 public class MapModel {
 
+	/** The map */
     private Elements[][] map;
+    
+    /** The player */
     private Player player;
+    
+    /** The spell */
     private Spell spell;
+    
+    /** The exit door */
     private Point exitDoor;
 
+    /** The list of enemies */
     private List<Mobile> enemies = new ArrayList<Mobile>();
 
     /**** CONSTRUCTOR ****/
