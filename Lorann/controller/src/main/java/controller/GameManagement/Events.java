@@ -4,20 +4,35 @@ import model.IModel;
 import model.Types;
 import view.IView;
 
+/**
+ * <h1>The Class Events  </h1>
+ *
+ * @author Groupe 13
+ * @version 2.0
+ */
+
 public class Events {
 
+	/**** ATTRIBUTE ****/
     private boolean gameEnd = false;
 
+    /* model */
     private IModel model;
+    /* view */
     private IView view;
 
+    /* move player */
     int futureX_player;
     int futureY_player;
     
+    /* move spell */
     int futureX_spell;
     int futureY_spell;
 
-    // CONSTRUCTOR //
+    /**
+     * CONSTRUCTOR
+     * @see getPlayerLocation()
+     */
     public Events(IModel model, IView view,int moveX, int moveY) {
 
         this.model = model;
@@ -28,7 +43,7 @@ public class Events {
 
     }
 
-    // METHODS //
+    /**** METHODS ****/
 
     /**
      * Check if player can reach the desired case, also handle behavior of the player with his environment :
