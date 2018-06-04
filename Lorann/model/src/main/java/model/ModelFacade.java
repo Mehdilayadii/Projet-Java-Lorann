@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.dao.ImportLevel;
-import model.dao.LorannBDDConnector;
 import model.elements.Elements;
 import model.elements.Mobile.Mobile;
 import model.elements.Mobile.Player;

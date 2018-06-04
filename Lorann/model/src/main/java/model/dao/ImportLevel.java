@@ -32,6 +32,9 @@ public abstract class ImportLevel{
 	     String y;
 	     String element;
 	     
+	     //Change there to change the level
+	     int ID_LEVEL = 1;
+	     
 	     //Real coordinates as integer
 	     int cooX;
 	     int cooY;
@@ -40,7 +43,11 @@ public abstract class ImportLevel{
 	     String[][]map= new String[20][12];
 		
 	     //Call our procedure and store data into our var 'message'
+<<<<<<< HEAD
 		final List<DatabaseMap> databaseMaps = ProcedureDAO.getLevelByID(levelID);
+=======
+		final List<DatabaseMap> databaseMaps = ProcedureDAO.getLevelByID(ID_LEVEL);
+>>>>>>> 87b54ab7edf24719ab64d332e90a6836ccd135c3
 		final StringBuilder message = new StringBuilder();
 	    for (final DatabaseMap databaseMap : databaseMaps) {
 	        message.append(databaseMap);
