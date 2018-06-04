@@ -99,7 +99,7 @@ public class MapModel {
 
     /**
      * Set the player
-     * @param spell Object of type Player
+     * @param player Object of type Player
      */
     public void setPlayer(Player player) {
         this.player = player;

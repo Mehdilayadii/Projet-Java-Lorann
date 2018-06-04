@@ -1,8 +1,5 @@
 package model.elements.Mobile;
 
-import model.Sprite;
-import model.Types;
-import model.elements.Elements;
 import model.elements.ElementsList;
 import org.junit.After;
 import org.junit.Before;

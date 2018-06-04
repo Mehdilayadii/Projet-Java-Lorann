@@ -18,7 +18,7 @@ public class Player extends Mobile{
     
     /**
      * Initiate the player
-     * @param stringStylestringStyle the stringStyle (example : "L1" corresponds to the player)
+     * @param stringStyle the stringStyle (example : "L1" corresponds to the player)
      * @param x X coordinate
      * @param y Y coordinate
      */

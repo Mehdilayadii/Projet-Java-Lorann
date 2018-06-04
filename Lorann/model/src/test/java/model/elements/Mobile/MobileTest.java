@@ -14,15 +14,6 @@ public class MobileTest {
 	
 	private Mobile m;
 	private Mobile b;
-	
-	
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
 
 	@Before
 	public void setUp() throws Exception {
@@ -31,11 +22,9 @@ public class MobileTest {
 
 	}
 
-	@After
-	public void tearDown() throws Exception {
-	}
-
-
+	/**
+	 * Check if the getter work
+	 */
 	@Test
 	public void testGetLocation() {
 		assertEquals(14, m.getLocation().x);
@@ -47,7 +36,7 @@ public class MobileTest {
 	}
 
 	/**
-	 * Check if the location in good set
+	 * Check if the setter work
 	 */
 	@Test
 	public void testSetLocation() {
