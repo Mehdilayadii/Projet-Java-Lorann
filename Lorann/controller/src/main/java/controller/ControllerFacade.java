@@ -65,8 +65,6 @@ public class ControllerFacade implements IController {
      * - Move the spell
      * @see controller.GameManagement.EventsManager#checkMobGetSpell()
      * - Check if a enemy pick up the spell
-     * @see controller.GameManagement.EventsManager#checkPlayerGetSpell()
-     * - Check if the player pick up the spell.
      * @see controller.GameManagement.EventsManager#movePlayer()
      * - Change the player location from the user inputs
      * @see  view.IView#setImageMap(Image[][] map)
