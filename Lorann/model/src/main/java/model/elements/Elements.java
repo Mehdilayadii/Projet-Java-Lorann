@@ -13,6 +13,12 @@ public class Elements {
     protected Types type;
 
     /**** CONSTRUCTOR ****/
+    
+    /**
+     * Instantiate Elements
+     * @param stringStyle Object of type String (example : "L1" corresponds to the player)
+     * @param type Object of type Types
+     */
     public Elements(String stringStyle, Types type) {
         this.stringStyle = stringStyle;
         this.type = type;
@@ -20,14 +26,27 @@ public class Elements {
     }
 
     /**** GETTERS and SETTERS ****/
+    
+    /**
+     * Get the string style
+     * @return an object of type String : the string style
+     */
     public String getStringStyle() {
         return stringStyle;
     }
 
+    /**
+     * Get the sprite
+     * @return an object of type Image : the sprite
+     */
     public Image getSprite() {
         return sprite;
     }
 
+    /**
+     * Get the type
+     * @return an object of type Types : the type
+     */
     public Types getType() {
         return this.type;
     }

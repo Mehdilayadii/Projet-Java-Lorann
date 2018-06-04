@@ -17,6 +17,7 @@ public abstract class ImportLevel{
 	/**
      * Create the map from database 
      *
+     * @param model the model
      * @return a map as a Array of String[][]
      * 
      */
@@ -24,9 +25,9 @@ public abstract class ImportLevel{
 
 	// Convert List<Example> to StringBuilder
    
-	try {
+try {
 		
-		// 			Our variable
+		// 			Our variables
 		//
 		//
 		// Will store different elements as String type
@@ -39,7 +40,7 @@ public abstract class ImportLevel{
 	     int cooY;
 	     
 	     //Our map
-	     String[][]mapV2= new String[20][12];
+	     String[][]map= new String[20][12];
 		
 		
 	     //Call our procedure and store data into our var 'message'
@@ -78,10 +79,10 @@ public abstract class ImportLevel{
 	       	  cooY-=1;
 	       	  
 	     	  //Store data into our map
-	     	  mapV2[cooX][cooY]=element; 
+	     	  map[cooX][cooY]=element; 
 	     	  
 	     		}
-	     return mapV2;
+	     return map;
 	
 	}
 	catch(SQLException e) {e.printStackTrace();}

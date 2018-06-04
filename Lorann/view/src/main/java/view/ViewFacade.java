@@ -12,9 +12,7 @@ import java.awt.event.WindowEvent;
  */
 public class ViewFacade implements IView {
 
-    /**
-     * ATTRIBUTE
-     */
+    // ATTRIBUTE //
     private final CustomJFrame window;
     private Image[][] map;
     int score = 0;
@@ -28,14 +26,25 @@ public class ViewFacade implements IView {
         new JFrame();  
     }
 
+    // GETTERS and SETTERS //
     /**
-     * GETTERS and SETTERS
+     * Set map
+     * @param Array of the map
      */
     public void setImageMap(Image[][] map) {
         this.map = map;
+        
+    /**
+     * Set score
+     * @param score
+     */
     }
     public void setScore(int score) {
         this.score = score;
+    
+   /**
+    * @return score
+    */
     }
     public int getScore() {
         return score;
@@ -56,6 +65,7 @@ public class ViewFacade implements IView {
     /**
      * Instantiate new Jpanel to Print elements on the screen (map + score) 
      * Refresh the window
+     * @see java.awt.event.WindowEvent
      */
     public void showElements() {
         window.add(new CustomJPanel(map,score));

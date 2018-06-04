@@ -13,6 +13,7 @@ public abstract class Sprite {
     /**
 	 * Create the sprite from a name
 	 *
+	 * @param name String : name of the string
 	 * @return a a Sprite of type Image
 	 * 
 	 */
@@ -29,6 +30,10 @@ public abstract class Sprite {
 
     /**
 	 * Load all the sprites 
+	 * @see model.elements.ElementsList#setImage(Image image)
+	 * - Set image
+	 * @see model.elements.ElementsList#getName()
+	 * - Get name of a sprite
 	 */    
     public static void LoadAllSprite() {
         for (ElementsList sprite : ElementsList.values()) {
@@ -36,8 +41,12 @@ public abstract class Sprite {
         }
     }
     /**
-	 * Create the sprite from a string
+	 * Get the sprite from a string
 	 *
+	 * @see model.elements.ElementsList#getImage()
+	 * Get image
+	 * 
+	 * @param sprite Strin : name of the sprite
 	 * @return  a a Sprite of type Image
 	 * 
 	 */
