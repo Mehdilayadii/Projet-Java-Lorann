@@ -66,7 +66,7 @@ public class CustomJFrame extends JFrame implements KeyListener {
     /**
      * Change value of deplacement_player depending on user input
      * Detect if player is casting spell (pressing space)
-     * @param int keycode
+     * @param keyCode 
      * 			keycode of pressed touch
      */
     private void changing_value_deplacement(final int keyCode) {
@@ -93,7 +93,7 @@ public class CustomJFrame extends JFrame implements KeyListener {
     /**
      * Event when a key is pressed
      * @see changing_value_deplacement(int)
-     * @param KeyEvent key
+     * @param key
      * 			key pressed by player
      */
     @Override
@@ -106,7 +106,7 @@ public class CustomJFrame extends JFrame implements KeyListener {
      * -Change value of deplacement_player depending on user
      * -Detect if player stop casting spell (released space)
      * @see return_deplacement_player()
-     * @param KeyEvent key
+     * @param key
      * 			key released by player
      */
     @Override
