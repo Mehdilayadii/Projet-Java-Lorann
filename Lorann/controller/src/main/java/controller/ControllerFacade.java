@@ -73,8 +73,7 @@ public class ControllerFacade implements IController {
                     /* Get the player looking direction */
                     manager.setPlayer_facing_during_casting();
 
-                    /* Move the player and stop the game if he move in a mob/wall/exit door */
-                    game_loop = manager.movePlayer();
+                    
                     /* Check if the player get back his spell */
                     manager.checkPlayerGetSpell();
 
@@ -92,6 +91,9 @@ public class ControllerFacade implements IController {
                     /* Check if the spell hit something dynamic (player or enemies) */
                     manager.checkMobGetSpell();
                     manager.checkPlayerGetSpell();
+                    
+                    /* Move the player and stop the game if he move in a mob/wall/exit door */
+                    game_loop = manager.movePlayer();
 
                     /* Refresh the view */
                     view.setImageMap(getImageMap());
