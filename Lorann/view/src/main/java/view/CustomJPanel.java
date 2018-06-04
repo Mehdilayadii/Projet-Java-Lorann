@@ -42,6 +42,7 @@ public class CustomJPanel extends JPanel {
     /**
      * set score = string "Score : " + the value
      * @param String score
+     * 			player's score
      */
     public void setScore(String score) {
         this.score = "SCORE : "+score;
