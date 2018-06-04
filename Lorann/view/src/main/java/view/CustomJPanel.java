@@ -4,15 +4,24 @@ import javax.swing.*;
 import java.awt.*;
 import java.text.DecimalFormat;
 
-public class CustomJPanel extends JPanel {
+/**
+ * <h1>The Class CustomJPanel create score and the map </h1>
+ *
+ * @author Groupe 13
+ * @version 2.0
+ */
 
-	// ATTRIBUTE //
+public class CustomJPanel extends JPanel {
+	
+					/**** ATTRIBUTE ****/
+	/** serialVersionUID */
+	private static final long serialVersionUID = 1L;
+	/* array with de map */
     private Image map[][];
+    /* the score */
     private String score;
     
-    /**
-     * CONSTRUCTOR
-     */
+    				/**** CONSTRUCTOR ****/
     public CustomJPanel(Image map[][], int score) {
         this.map = map;
         this.score = "SCORE : "+(new DecimalFormat("00000").format(score));
@@ -20,9 +29,10 @@ public class CustomJPanel extends JPanel {
     }
 
 
-    // GETTERS and SETTERS //
+    			/**** GETTERS and SETTERS ****/
     
     /**
+     * get the score
      * @return score
      */
     public String getScore() {
@@ -37,7 +47,7 @@ public class CustomJPanel extends JPanel {
         this.score = "SCORE : "+score;
     }
 
-    // METHODS //
+    				/**** METHODS ****/
     
     /**
      * Standart graphic from swing
@@ -50,7 +60,7 @@ public class CustomJPanel extends JPanel {
 
         for (int x = 0; x < map.length; x++) {
             for (int y = 0; y < map[0].length; y++) {
-                g.drawImage(map[x][y],x*32,y*32,32,32,null);
+                g.drawImage(map[x][y],x*32,y*32,32,32,null); // draw the map for each element in the array
             }
         }
         Font fonte = new Font("Courier New",Font.BOLD,30);
