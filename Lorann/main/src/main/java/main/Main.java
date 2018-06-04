@@ -9,8 +9,8 @@ import java.io.IOException;
 /**
  * <h1>The Class Main.</h1>
  *
- * @author Jean-Aymeric DIET jadiet@cesi.fr
- * @version 1.0
+ * @author Groupe 13
+ * @version 2.0
  */
 public abstract class Main {
 
