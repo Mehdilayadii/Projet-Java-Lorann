@@ -38,13 +38,6 @@ public class EventsManager {
     }
 
     // GETTERS and SETTERS //
-    public IModel getModel() {
-        return model;
-    }
-    public IView getView() {
-        return view;
-    }
-
     /**
      * Set the spell state
      * Player state is a boolean :
@@ -129,6 +122,19 @@ public class EventsManager {
             model.killEnemy(model.getSpellLocation().x,model.getSpellLocation().y);
             model.deleteSpell();
         }
+    }
+
+    /**
+     * Check if a enemy pick up the spell. If so make kill the good one and delete the spell.
+     * @see IModel#deleteSpell()
+     * @see IModel#killEnemy(int, int)
+     */
+    public boolean checkMobGetPlayer() {
+        if (model.isThereEnemy(model.getPlayerLocation().x,model.getPlayerLocation().y)) {
+            view.displayMessage("Game over !");
+            return false;
+        }
+        return true;
     }
 
     /**

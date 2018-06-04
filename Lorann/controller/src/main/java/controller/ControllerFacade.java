@@ -119,6 +119,7 @@ public class ControllerFacade implements IController {
 
                     /*Move the enemies*/
                     model.moveEnemies(AIDeplacement.moveAI(model));
+                    game_loop = manager.checkMobGetPlayer();
                     /*Check if a mob go on a spell*/
                     manager.checkMobGetSpell();
 
