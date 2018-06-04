@@ -11,6 +11,9 @@ import model.elements.Mobile.Mobile;
 import model.elements.Mobile.Player;
 import model.elements.Mobile.Spell;
 import model.elements.Static.Static;
+import model.management.EnemiesAccess;
+import model.management.PlayerAccess;
+import model.management.SpellAccess;
 
 /**
  * <h1>The Class ModelFacade provides a facade of the Model component.</h1>
@@ -22,6 +25,10 @@ public final class ModelFacade implements IModel {
 
 	/** Map model */
     private MapModel map;
+
+    private PlayerAccess playerAccess;
+    private EnemiesAccess enemiesAccess;
+    private SpellAccess spellAccess;
     
     /**
      * Instantiates a new model facade.
@@ -29,6 +36,10 @@ public final class ModelFacade implements IModel {
     public ModelFacade()  {
         Sprite.LoadAllSprite();
         this.map = new MapModel(ImportLevel.CreateMap(1));
+
+        this.playerAccess = new PlayerAccess(map);
+        this.enemiesAccess = new EnemiesAccess(map);
+        this.spellAccess = new SpellAccess(map);
     }
 
     // GETTERS and SETTERS //
@@ -58,8 +69,6 @@ public final class ModelFacade implements IModel {
     
 
     // METHODS //
-    
-  
     /**
      * Animate elements
      * @see model.MapModel#animateElements(int, int)
@@ -72,54 +81,10 @@ public final class ModelFacade implements IModel {
     }
 
     /**
-     * Move player
-     * @see model.MapModel#getPlayer()
-     * - Get infos about player
-     * @see model.elements.Mobile.Mobile#getLocation()
-     * - Get location of an element
-     * @see model.elements.Mobile.Mobile#setLocation(int ,int)
-     * - Set location of an element
-     * @see model.MapModel#moveElement(int oldX, int oldY, int newX, int newY)
-     * - Move element from current coordinate to new ones
-     * @param moveX Relative direction in X coordinate
-     * @param moveY Relative direction in Y coordinate
-     * 
+     * @see PlayerAccess#movePlayer(int, int)
      */
     public void movePlayer(int moveX, int moveY) {
-        int newX = map.getPlayer().getLocation().x + moveX;
-        int newY = map.getPlayer().getLocation().y - moveY;
-
-        map.moveElement(map.getPlayer().getLocation().x,map.getPlayer().getLocation().y,newX,newY);
-        map.getPlayer().setLocation(newX,newY);
-    }
-
-    /**
-     * Move enemies on the map
-     * @param enemiesMove List of current enemies position
-     * @see model.MapModel#getEnemies()
-     * - Get current mobile elements
-     * @see model.elements.Mobile.Mobile#getLocation()
-     * - Get location of an element
-     * @see model.elements.Mobile.Mobile#setLocation(int ,int)
-     * - Set location of an element
-     */
-    public void moveEnemies(List<Point> enemiesMove) {
-        int i = 0;
-
-        for (Point enemyMove : enemiesMove) {
-            int oldX = map.getEnemies().get(i).getLocation().x;
-            int oldY = map.getEnemies().get(i).getLocation().y;
-
-            int newX = oldX + enemyMove.x;
-            int newY = oldY + enemyMove.y;
-
-            if (isThereEnemy(newX,newY) == false) {
-                map.moveElement(oldX,oldY,newX,newY);
-                map.getEnemies().get(i).setLocation(newX,newY);
-            }
-
-            i++;
-        }
+        playerAccess.movePlayer(moveX,moveY);
     }
 
     /**
@@ -130,52 +95,78 @@ public final class ModelFacade implements IModel {
      * - Get infos about player
      * @return object of type Point with player coordinates
      */
-    
     public Point getPlayerLocation() {
         return map.getPlayer().getLocation();
     }
 
     /**
-     * Get Enemies location
-     * @see model.MapModel#getEnemies()
-     * - Get current mobile elements
-     * @return list of points of enemies locations
+     * @see EnemiesAccess#moveEnemies(List)
+     */
+    public void moveEnemies(List<Point> enemiesMove) {
+        enemiesAccess.moveEnemies(enemiesMove);
+    }
+
+    /**
+     * @see EnemiesAccess#getEnemiesLocation()
      */
     public List<Point> getEnemiesLocation() {
-
-        List<Point> enemiesLocations = new ArrayList<>();
-        List<Mobile> enemies = map.getEnemies();
-
-        for(Mobile enemy : enemies) {
-            enemiesLocations.add(enemy.getLocation());
-        }
-        return enemiesLocations;
+        return enemiesAccess.getEnemiesLocation();
     }
     
     /**
-     * Kill a specific enemy
-     * @see model.MapModel#getEnemies()
-     * - Get current mobile elements
-     * @see model.ModelFacade#getEnemiesLocation()
-     * - Get current enemies positions
-     * @see model.MapModel#addElement(Elements, int, int)
-     * - Add element at specific position
-     * @param x coordinate X of an enemy
-     * @param y coordinate Y of an enemy
+     * @see EnemiesAccess#killEnemy(int, int)
      */
-    
-
     public void killEnemy(int x, int y) {
-        int i = 0;
-        List<Point> enemiesLocation = getEnemiesLocation();
+        enemiesAccess.killEnemy(x,y);
+    }
 
-        for (Point enemyLocation : enemiesLocation) {
-            if(enemyLocation.x == x && enemyLocation.y == y) {
-                map.addElement(new Static(" ", Types.VOID),x,y);
-                map.getEnemies().remove(i);
-            }
-            i++;
+    /**
+     * @see EnemiesAccess#isThereEnemy(int, int)
+     */
+    public boolean isThereEnemy(int x,int y) {
+        return enemiesAccess.isThereEnemy(x,y);
+    }
+
+    /**
+     * @see SpellAccess#moveSpell(int, int)
+     */
+    public void moveSpell(int moveX, int moveY) {
+        spellAccess.moveSpell(moveX,moveY);
+
+    }
+    /**
+     * @see SpellAccess#deleteSpell()
+     */
+    public void deleteSpell() {
+        spellAccess.deleteSpell();
+    }
+
+    /**
+     * Get location of the spell
+     *
+     * @see model.elements.Mobile.Mobile#getLocation()
+     * - Get location of a specifi element
+     * @see model.MapModel#getSpell()
+     * - Get current infos about the spell
+     * @return a object of type Point with spell's coordinates
+     */
+    public Point getSpellLocation() {
+        return map.getSpell().getLocation();
+    }
+
+    /**
+     * Check if spell is alive
+     *
+     * @see model.MapModel#getSpell()
+     * - Get current infos about the spell
+     * @return false if no spell is currently created
+     */
+
+    public boolean spellAlive() {
+        if (map.getSpell() != null) {
+            return true;
         }
+        return false;
     }
 
     /**
@@ -193,8 +184,6 @@ public final class ModelFacade implements IModel {
     public Types getType(int x, int y) {
         return map.getMap()[x][y].getType();
     }
-    
-    
 
     /**
      * Create a an element at specific coordinates (of  types : Player, Enemy, Spell, or Exit door
@@ -223,13 +212,13 @@ public final class ModelFacade implements IModel {
     public void createElement(int x, int y,Types type) {
         switch (type) {
             case PLAYER:
-                createPlayer(x,y);
+                playerAccess.createPlayer(x,y);
                 break;
             case ENEMY:
-                createEnemy(x,y);
+                enemiesAccess.createEnemy(x,y);
                 break;
             case SPELL:
-                createSpell(x,y);
+                spellAccess.createSpell(x,y);
                 break;
             case EXIT_DOOR:
                 map.addElement(new Static("DO",Types.EXIT_DOOR),map.getExitDoor().x,map.getExitDoor().y);
@@ -238,140 +227,5 @@ public final class ModelFacade implements IModel {
 			break;
         }
 ;
-    }
-
-    /**
-     * Create the player at a special location
-     * @param x spawn location
-     * @param y spawn location
-     */
-    private void createPlayer(int x, int y) {
-        Player player = new Player("L1",x,y);
-        map.setPlayer(player);
-        map.addElement(player,x,y);
-    }
-
-    /**
-     * Create an enemy at a special location
-     * @param x spawn location
-     * @param y spawn location
-     */
-    private void createEnemy(int x, int y) {
-        for (Mobile enemyLoc : map.getEnemies()) {
-            if (enemyLoc.getLocation().x == x && enemyLoc.getLocation().y == y) {
-                map.addElement(enemyLoc,x,y);
-            }
-        }
-    }
-
-    /**
-     * Create a spell at a special location
-     * @param x spawn location
-     * @param y spawn location
-     */
-    private void createSpell(int x,int y) {
-        int posX = getPlayerLocation().x+x;
-        int posY = getPlayerLocation().y-y;
-        Spell spell = new Spell("S1",posX,posY, new Point(x,y));
-
-        map.addElement(spell,posX,posY);
-        map.setSpell(spell);
-        map.getSpell().setLocation(posX,posY);
-    }
-
-    /**
-     * Delete the spell
-     * 
-     * @see model.elements.Mobile.Mobile#getLocation()
-     * - Get current location of an element
-     * @see model.MapModel#setSpell(Spell)
-     *  - Set the spell at a specific position
-     * @see model.MapModel#getSpell()
-     *  - Get current location of the spell
-     * @see model.MapModel#addElement(Elements, int, int)
-     * - Create an element at specific coordinate
-     */
-    
-    public void deleteSpell() {
-        int x = map.getSpell().getLocation().x;
-        int y = map.getSpell().getLocation().y;
-        map.setSpell(null);
-        map.addElement(new Static(" ",Types.VOID),x,y); 
-    }
-
-    /**
-    * Move the spell
-    * 
-    * @see model.elements.Mobile.Mobile#getLocation()
-    * - Get current location of an element
-    * @see model.elements.Mobile.Mobile#setLocation(int,int)
-    *  - Move an element at new coordinates
-    * @see model.MapModel#getSpell()
-    *  - Get current location of the spell
-    * @see model.MapModel#moveElement(int,int,int,int)
-    * - Move an element at specific coordinate
-    * 
-    * @param moveX new coordinate X of the spell
-     *@param moveY new coordinate Y of the spell
-    */
-    
-    
-    public void moveSpell(int moveX, int moveY) {
-        int oldX = map.getSpell().getLocation().x;
-        int oldY = map.getSpell().getLocation().y;
-        int newX = oldX + moveX;
-        int newY = oldY - moveY;
-        
-        map.getSpell().setLocation(newX,newY);
-        map.moveElement(oldX,oldY,newX,newY);
-
-    }
-    
-    /**
-     * Get location of the spell
-     * 
-     * @see model.elements.Mobile.Mobile#getLocation()
-     * - Get location of a specifi element
-     * @see model.MapModel#getSpell()
-     * - Get current infos about the spell
-     * @return a object of type Point with spell's coordinates
-     */
-    public Point getSpellLocation() {
-        return map.getSpell().getLocation();
-    }
-
-    /**
-     * Check if spell is alive
-     * 
-     * @see model.MapModel#getSpell()
-     * - Get current infos about the spell
-     * @return false if no spell is currently created
-     */
-    
-    public boolean spellAlive() {
-        if (map.getSpell() != null) {
-            return true;
-        }
-        return false;
-    }
-
-    /**
-     * Check if there is enemy at specific position
-     * 
-     * @see model.ModelFacade#getEnemiesLocation()
-     * - Get current location of enemies
-     * 
-     * @param x coordinate X 
-     * @param y coordinate Y 
-     * 
-     * @return false if there is no enemy at this position
-     */
-    public boolean isThereEnemy(int x,int y) {
-        for (Point enemyLoc : getEnemiesLocation()) {
-            if (enemyLoc.x == x && enemyLoc.y == y) {
-                return true;
-            }
-        }
-        return false;
     }
 }
