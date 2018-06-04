@@ -73,6 +73,7 @@ public final class LorannBDDConnector {
             this.connection = DriverManager.getConnection(LorannBDDConnector.url, LorannBDDConnector.user,
                     LorannBDDConnector.password);
             this.statement = this.connection.createStatement();
+            System.out.print("Successfully connected !\n");
             return true;
         } catch (final SQLException exception) {
         	System.out.print("Error ! :(  \n\nCheck these errors :\n");
