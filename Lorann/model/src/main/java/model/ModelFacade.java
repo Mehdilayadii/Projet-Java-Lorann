@@ -2,13 +2,11 @@ package model;
 
 
 import java.awt.*;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import model.dao.ImportLevel;
 import model.dao.LorannBDDConnector;
-import model.dao.ProcedureDAO;
 import model.elements.Mobile.Mobile;
 import model.elements.Mobile.Player;
 import model.elements.Mobile.Spell;
@@ -22,6 +20,7 @@ import model.elements.Static.Static;
  */
 public final class ModelFacade implements IModel {
 
+	/** Map model */
     private MapModel map;
     
     /**
