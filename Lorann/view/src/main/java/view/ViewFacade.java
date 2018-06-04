@@ -12,7 +12,7 @@ import java.awt.event.WindowEvent;
  */
 public class ViewFacade implements IView {
 
-	/**** ATTRIBUTE ****/
+					/**** ATTRIBUTE ****/
 	/* Window */
     private final CustomJFrame window;
     /* Array with the map */
@@ -20,19 +20,17 @@ public class ViewFacade implements IView {
     /* The score */
     int score = 0;
 
-    /**
-     * CONSTRUCTOR
-     * Instantiates a new view facade.
-     */
+    				/**** CONSTRUCTOR ****/
     public ViewFacade() {
         window = new CustomJFrame();
         new JFrame();  
     }
 
-    /**** GETTERS and SETTERS ****/
+    				/**** GETTERS and SETTERS ****/
     /**
      * Set map
-     * @param Array of the map
+     * @param Image map
+     * 		Array of the map
      */
     public void setImageMap(Image[][] map) {
         this.map = map;
@@ -55,7 +53,7 @@ public class ViewFacade implements IView {
         return score;
     }
     
-    /**** METHODS ****/
+    				/**** METHODS ****/
      
     /**
      * Create window with message
