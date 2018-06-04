@@ -1,7 +1,6 @@
 package controller;
 
 import java.awt.*;
-import java.sql.SQLException;
 
 import controller.GameManagement.AIDeplacement;
 import controller.GameManagement.EventsManager;

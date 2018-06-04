@@ -17,6 +17,7 @@ import java.awt.*;
 
 public class EventsManager {
 
+                    /**** ATTRIBUTE ****/
 	/** the model*/
     private IModel model;
     
