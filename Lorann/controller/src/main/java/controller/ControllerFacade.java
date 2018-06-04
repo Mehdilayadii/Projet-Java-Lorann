@@ -16,7 +16,7 @@ import view.IView;
  */
 public class ControllerFacade implements IController {
 
-	/**** ATTRIBUTE ****/
+					/**** ATTRIBUTE ****/
     /** The view. */
     private final IView  view;
     /** The model. */
@@ -26,16 +26,15 @@ public class ControllerFacade implements IController {
     private static final int speed = 120;
     /** game loop */
     private boolean game_loop = true;
-
+    
+    				/**** CONSTRUCTOR ****/
     /**
-     * CONSTRUCTOR
      * Instantiates a new controller facade.
      * @param view
      * 		the view
      * @param model
      * 		the model
      */
-
     public ControllerFacade(final IView view, final IModel model) {
         super();
         this.view = view;
@@ -48,7 +47,7 @@ public class ControllerFacade implements IController {
         }
     }
     
-    // METHODS //
+    				/**** METHODS ****/
 
     /**
      * Initialization :
@@ -66,50 +65,50 @@ public class ControllerFacade implements IController {
      * @see EventsManager
      * @see AIDeplacement
      */
-    public void play(){
+    public void play() {
 
-        /*Handle events*/
+        /* Handle events */
         EventsManager manager = new EventsManager(model,view);
 
         // MAIN LOOP //
         try {
                 while (game_loop) {
 
-                    /*Set a pause (in millisecond), equivalent to the game speed (or FPS) : with 120 ms we have like 10 FPS*/
+                    /* Set a pause (in millisecond), equivalent to the game speed (or FPS) : with 120 ms we have like 10 FPS */
                     Thread.sleep(speed);
 
-                    /*Check if player already launch a spell*/
+                    /* Check if player already launch a spell */
                     manager.setSpell_is_alive();
-                    /*Get the input of the user (Direction vector)*/
+                    /* Get the input of the user (Direction vector) */
                     manager.setPlayer_move();
 
-                    /*Manage animation of the player and spell (if exist)*/
+                    /* Manage animation of the player and spell (if exist) */
                     model.animate(manager.getPlayer_move().x, manager.getPlayer_move().y);
 
-                    /*Get the player looking direction*/
+                    /* Get the player looking direction */
                     manager.setPlayer_facing_during_casting();
 
-                    /*Move the player and stop the game if he move in a mob/wall/exit door*/
+                    /* Move the player and stop the game if he move in a mob/wall/exit door */
                     game_loop = manager.movePlayer();
-                    /*Check if the player get back his spell*/
+                    /* Check if the player get back his spell */
                     manager.checkPlayerGetSpell();
 
-                    /*Move the enemies*/
+                    /* Move the enemies */
                     model.moveEnemies(AIDeplacement.moveAI(model));
                     game_loop = manager.checkMobGetPlayer();
-                    /*Check if a mob go on a spell*/
+                    /* Check if a mob go on a spell */
                     manager.checkMobGetSpell();
 
-                    /*Create the spell (if player casting)*/
+                    /* Create the spell (if player casting) */
                     manager.createSpell();
-                    /*Move the spell (if exist)*/
+                    /* Move the spell (if exist) */
                     manager.moveSpell();
 
-                    /*Check if the spell hit something dynamic (player or enemies)*/
+                    /* Check if the spell hit something dynamic (player or enemies) */
                     manager.checkMobGetSpell();
                     manager.checkPlayerGetSpell();
 
-                    /*Refresh the view*/
+                    /* Refresh the view */
                     view.setImageMap(getImageMap());
                     view.showElements();
                 }         
@@ -117,12 +116,12 @@ public class ControllerFacade implements IController {
         { e.printStackTrace(); }
        
     }
+    
     /**
      * Instantiate Image and return array with the map
      * @see IModel#getSpriteFromMap(int, int)
      * @return imageMap
      */
-
     private Image[][] getImageMap() {
         int mapX = model.getMapSize().width;
         int mapY = model.getMapSize().height;
