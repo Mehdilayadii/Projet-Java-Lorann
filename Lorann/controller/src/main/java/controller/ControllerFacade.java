@@ -47,8 +47,32 @@ public class ControllerFacade implements IController {
     /**
      * Main function: mainloop of the game
      * Handle events:
-     * @see EventsManager
-     * @see AIDeplacement
+     * @see controller.GameManagement.EventsManager#setSpell_is_alive()
+     * - Set the spell alive
+     * @see controller.GameManagement.EventsManager#setPlayer_move()
+     * - Set player's move
+     * @see  controller.GameManagement.EventsManager#getPlayer_move()
+     * - Get player's move
+     * @see model.IModel#animate(int directionX, int directionY)
+     * - Animate element
+     * @see controller.GameManagement.EventsManager#setPlayer_facing_during_casting()
+     * - Set player facing
+     * @see GameManagement.EventsManager#checkPlayerGetSpell()
+     * - Check if the player pick up the spell
+     * @see controller.GameManagement.EventsManager#createSpell()
+     * - Create spell
+     * @see controller.GameManagement.EventsManager#moveSpell()
+     * - Move the spell
+     * @see controller.GameManagement.EventsManager#checkMobGetSpell()
+     * - Check if a enemy pick up the spell
+     * @see controller.GameManagement.EventsManager#checkPlayerGetSpell()
+     * - Check if the player pick up the spell.
+     * @see controller.GameManagement.EventsManager#movePlayer()
+     * - Change the player location from the user inputs
+     * @see  view.IView#setImageMap(Image[][] map)
+     * - Set image from the image map
+     * @see  view.IView#showElements()
+     * - Show elements
      */
     public void play() {
 
@@ -107,6 +131,9 @@ public class ControllerFacade implements IController {
     /**
      * Instantiate Image and return array with the map
      * @see IModel#getSpriteFromMap(int, int)
+     * - Get Sprite from the map
+     * @see model.IModel#getMapSize()
+     * - Get map size
      * @return imageMap
      */
     private Image[][] getImageMap() {
