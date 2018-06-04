@@ -15,13 +15,14 @@ public class CustomJFrame extends JFrame implements KeyListener {
 
 
 					/**** ATTRIBUTE ****/
-	/* serialVersionUID */
+	/** serialVersionUID */
 	private static final long serialVersionUID = 1L;
-	/* player deplacement */
+	/** player deplacement x*/
     int move_x = 0;
+    /** player deplacement y */
     int move_y = 0; 
     Point deplacement_player = new Point(0,0);
-    /* player casting spell */
+    /** player casting spell */
     boolean casting_spell = false;
 
     				/**** CONSTRUCTOR ****/
@@ -46,7 +47,7 @@ public class CustomJFrame extends JFrame implements KeyListener {
     
     				/**** GETTERS and SETTERS ****/
     /**
-     * get the player deplacement
+     * Get the player deplacement
      * @return deplacement_player
      */
     public Point return_deplacement_player() {
@@ -54,7 +55,7 @@ public class CustomJFrame extends JFrame implements KeyListener {
     }
 
     /**
-     * get if player is casting_spell
+     * Get if player is casting_spell
      * @return casting_spell
      */
     public boolean return_casting_player() {

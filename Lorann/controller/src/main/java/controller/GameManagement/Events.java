@@ -11,6 +11,7 @@ import view.IView;
  * @version 2.0
  */
 
+
 public class Events {
 
 	/**** ATTRIBUTE ****/
