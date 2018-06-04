@@ -249,6 +249,8 @@ public final class ModelFacade implements IModel {
             case EXIT_DOOR:
                 map.addElement(new Static("DO",Types.EXIT_DOOR),map.getExitDoor().x,map.getExitDoor().y);
                 break;
+		default:
+			break;
         }
 ;
     }
