@@ -49,25 +49,6 @@ public class ControllerFacade implements IController {
         }
     }
     
-
-    /**
-     * Gets the view.
-     *
-     * @return the view
-     */
-    public IView getView() {
-        return this.view;
-    }
-
-    /**
-     * Gets the model.
-     *
-     * @return the model
-     */
-    public IModel getModel() {
-        return this.model;
-    }
-
     /**
      * Initialization :
      * Load all sprites and start the JDBC connection
@@ -141,7 +122,13 @@ public class ControllerFacade implements IController {
        
     }
 
-    public Image[][] getImageMap() {
+    /**
+     * Instantiate Image and return array with the map
+     * @see IModel#getSpriteFromMap(int, int)
+     * @return imageMap
+     */
+
+    private Image[][] getImageMap() {
 
         int mapX = model.getMapSize().width;
         int mapY = model.getMapSize().height;

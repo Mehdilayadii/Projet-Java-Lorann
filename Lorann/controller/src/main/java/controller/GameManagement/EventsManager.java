@@ -11,9 +11,6 @@ public class EventsManager {
     private IModel model;
     private IView view;
 
-    private boolean game_loop = true;
-
-    private Point spell_position;
     private Point player_facing_during_casting;
     private Point spell_move;
     private Point player_move;
@@ -27,7 +24,6 @@ public class EventsManager {
         this.model = model;
         this.view = view;
 
-        this.spell_position = new Point(0,0);
         this.player_facing_during_casting = new Point(0,0);
         this.spell_move = new Point(0,0);
         this.player_move = new Point(0,0);
@@ -125,7 +121,7 @@ public class EventsManager {
     }
 
     /**
-     * Check if a enemy pick up the spell. If so make kill the good one and delete the spell.
+     * Check if a enemy eat the player. If so make kill the good one and delete the spell.
      * @see IModel#deleteSpell()
      * @see IModel#killEnemy(int, int)
      */
