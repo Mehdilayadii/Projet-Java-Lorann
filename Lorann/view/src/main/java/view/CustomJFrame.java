@@ -6,11 +6,11 @@ import java.awt.event.*;
 
 public class CustomJFrame extends JFrame implements KeyListener {
 
-    // Move //
+	// ATTRIBUTE //
     int move_x = 0;
     int move_y = 0; 
     Point deplacement_player = new Point(0,0);
-    // spell //
+    
     boolean casting_spell = false;
 
     /**
@@ -34,6 +34,29 @@ public class CustomJFrame extends JFrame implements KeyListener {
         requestFocusInWindow();
     }
     
+    // GETTERS and SETTERS //
+    
+    /**
+     * @return player deplacement
+     */
+    public Point return_deplacement_player() {
+        return deplacement_player; 
+    }
+
+    /**
+     * @return if player is casting spell
+     */
+    public boolean return_casting_player() {
+        return casting_spell; 
+    }
+    
+    // METHODS //
+    
+    /**
+     * Change value of deplacement_player depending on user input
+     * Detect if player is casting spell (pressing space)
+     * @param keycode of pressed touch
+     */
     private void changing_value_deplacement(final int keyCode) {
         switch (keyCode)
         {
@@ -55,28 +78,31 @@ public class CustomJFrame extends JFrame implements KeyListener {
         }
     }
 
-    // Return player input in mainloop
-    public Point return_deplacement_player() {
-        return deplacement_player; 
-    }
-
-    public boolean return_casting_player() {
-        return casting_spell; 
-    }
-
-    
+    /**
+     * Event when a key is pressed
+     * @see changing_value_deplacement(int)
+     * @param key pressed by player
+     */
     @Override
     public void keyPressed(KeyEvent key) {
         // TODO Auto-generated method stub
         this.changing_value_deplacement(key.getKeyCode());       
     }
     
+    /**
+     * Event when a key is released:
+     * -Change value of deplacement_player depending on user
+     * -Detect if player stop casting spell (released space)
+     * @see return_deplacement_player()
+     * @param key released by player
+     */
     @Override
     public void keyReleased(KeyEvent key) {
         // TODO Auto-generated method stub
         int keyCode = key.getKeyCode();
         Point player_deplacement_point = new Point(0,0);
         player_deplacement_point = return_deplacement_player();
+        
         switch (keyCode)
         {
             case KeyEvent.VK_UP: // UP
@@ -105,9 +131,13 @@ public class CustomJFrame extends JFrame implements KeyListener {
         }
 
     }
-    
+     
+    /**
+     * Event when a key is typed
+     */
     @Override
     public void keyTyped(KeyEvent key) {
         // TODO Auto-generated method stub
     }
+    
 }
