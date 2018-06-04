@@ -4,7 +4,7 @@ import java.awt.*;
 import java.util.List;
 
 /**
- * <h1>The Interface IModel.</h1>
+ * <h1>The Interface IModel. Implement by model.ModelFacade</h1>
  *
  * @author Group 13
  * @version 2.0

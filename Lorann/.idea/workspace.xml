@@ -17,109 +17,55 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4035533">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/main/src/main/java/main/Main.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="135">
-                  <caret line="11" selection-start-line="11" selection-end-line="11" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ModelFacade.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/model/src/main/java/model/ModelFacade.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="168">
-                  <caret line="227" column="9" selection-start-line="227" selection-start-column="9" selection-end-line="227" selection-end-column="9" />
-                  <folding>
-                    <element signature="e#1980#1981#0" expanded="true" />
-                    <element signature="e#2032#2033#0" expanded="true" />
-                    <element signature="e#2406#2407#0" expanded="true" />
-                    <element signature="e#2458#2459#0" expanded="true" />
-                    <element signature="e#3044#3045#0" expanded="true" />
-                    <element signature="e#3072#3073#0" expanded="true" />
-                    <element signature="e#3004#3005#0" expanded="true" />
-                    <element signature="e#3043#3044#0" expanded="true" />
-                    <element signature="e#3394#3395#0" expanded="true" />
-                    <element signature="e#3422#3423#0" expanded="true" />
-                    <element signature="e#3139#3140#0" expanded="true" />
-                    <element signature="e#3193#3194#0" expanded="true" />
-                    <element signature="e#3275#3276#0" expanded="true" />
-                    <element signature="e#3316#3317#0" expanded="true" />
-                    <element signature="e#5594#5595#0" expanded="true" />
-                    <element signature="e#5645#5646#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ControllerFacade.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/ControllerFacade.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="150">
-                  <caret line="80" selection-start-line="80" selection-end-line="80" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="PlayerAccess.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/model/src/main/java/model/management/PlayerAccess.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-255">
-                  <caret line="7" selection-start-line="7" selection-end-line="14" selection-end-column="15" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#165#166#0" expanded="true" />
-                    <element signature="e#195#196#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="SpellAccess.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/model/src/main/java/model/management/SpellAccess.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="107">
-                  <caret line="71" column="7" lean-forward="true" selection-start-line="71" selection-start-column="7" selection-end-line="71" selection-end-column="7" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#172#173#0" expanded="true" />
-                    <element signature="e#202#203#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="EnemiesAccess.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/model/src/main/java/model/management/EnemiesAccess.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="58" column="23" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/src/main/java/main/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ModelFacade.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/src/main/java/model/ModelFacade.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="111">
+              <caret line="215" column="22" lean-forward="true" selection-start-line="215" selection-start-column="22" selection-end-line="215" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayerAccessTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/model/src/test/java/model/management/PlayerAccessTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="534">
+              <caret line="51" column="65" lean-forward="true" selection-start-line="51" selection-start-column="65" selection-end-line="51" selection-end-column="65" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayerAccess.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/src/main/java/model/management/PlayerAccess.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="107">
+              <caret line="38" column="47" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="JUnit4 Test Class" />
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -152,7 +98,6 @@
         <option value="$PROJECT_DIR$/contract/src/main/java/view/IView.java" />
         <option value="$PROJECT_DIR$/contract/src/main/java/controller/IController.java" />
         <option value="$PROJECT_DIR$/view/src/main/java/view/ViewFacade.java" />
-        <option value="$PROJECT_DIR$/contract/src/main/java/model/IModel.java" />
         <option value="$PROJECT_DIR$/contract/src/main/java/model/Example.java" />
         <option value="$PROJECT_DIR$/controller/src/main/java/controller/GameManagement/AIDeplacement.java" />
         <option value="$PROJECT_DIR$/contract/src/main/java/model/DatabaseMap.java" />
@@ -185,10 +130,13 @@
         <option value="$PROJECT_DIR$/model/src/main/java/model/elements/ElementsList.java" />
         <option value="$PROJECT_DIR$/model/src/test/java/model/elements/Static/StaticTest.java" />
         <option value="$PROJECT_DIR$/model/src/test/java/model/elements/ElementsListTest.java" />
-        <option value="$PROJECT_DIR$/model/src/main/java/model/management/PlayerAccess.java" />
-        <option value="$PROJECT_DIR$/model/src/main/java/model/management/EnemiesAccess.java" />
         <option value="$PROJECT_DIR$/model/src/main/java/model/management/SpellAccess.java" />
+        <option value="$PROJECT_DIR$/contract/src/main/java/model/IModel.java" />
         <option value="$PROJECT_DIR$/model/src/main/java/model/ModelFacade.java" />
+        <option value="$PROJECT_DIR$/model/src/main/java/model/management/EnemiesAccess.java" />
+        <option value="$PROJECT_DIR$/model/src/test/java/model/management/EnemiesAccessTest.java" />
+        <option value="$PROJECT_DIR$/model/src/main/java/model/management/PlayerAccess.java" />
+        <option value="$PROJECT_DIR$/model/src/test/java/model/management/PlayerAccessTest.java" />
       </list>
     </option>
   </component>
@@ -211,14 +159,15 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
-    <option name="width" value="1939" />
-    <option name="height" value="1049" />
+    <option name="width" value="1940" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -269,6 +218,27 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="elements" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lorann" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lorann" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="elements" type="462c0819:PsiDirectoryNode" />
+              <item name="Mobile" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lorann" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lorann" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
               <item name="management" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -299,9 +269,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -313,11 +282,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="model.management" />
       <recent name="model.elements" />
       <recent name="model.elements.Static" />
       <recent name="model.elements.Mobile" />
       <recent name="model.dao" />
-      <recent name="model" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="model" />
@@ -339,34 +308,23 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.Main" />
-      <module name="main" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
+  <component name="RunManager" selected="JUnit.PlayerAccessTest.createPlayer">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="AbstractDAOTest.executeQuery" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EnemiesAccessTest.createEnemy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="model" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="model.dao.*" />
+          <option name="PATTERN" value="model.management.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="model.dao" />
-      <option name="MAIN_CLASS_NAME" value="model.dao.AbstractDAOTest" />
-      <option name="METHOD_NAME" value="executeQuery" />
+      <option name="PACKAGE_NAME" value="model.management" />
+      <option name="MAIN_CLASS_NAME" value="model.management.EnemiesAccessTest" />
+      <option name="METHOD_NAME" value="createEnemy" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -377,42 +335,19 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="ElementsListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EnemiesAccessTest.isThereEnemy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="model" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="model.*" />
+          <option name="PATTERN" value="model.management.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="model.elements" />
-      <option name="MAIN_CLASS_NAME" value="model.elements.ElementsListTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="ElementsListTest.getImage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="model" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="model.elements" />
-      <option name="MAIN_CLASS_NAME" value="model.elements.ElementsListTest" />
-      <option name="METHOD_NAME" value="getImage" />
+      <option name="PACKAGE_NAME" value="model.management" />
+      <option name="MAIN_CLASS_NAME" value="model.management.EnemiesAccessTest" />
+      <option name="METHOD_NAME" value="isThereEnemy" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -423,20 +358,66 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="LorannBDDConnectorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EnemiesAccessTest.reCreateEnemy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="model" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="model.dao.*" />
+          <option name="PATTERN" value="model.management.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="model.dao" />
-      <option name="MAIN_CLASS_NAME" value="model.dao.LorannBDDConnectorTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="model.management" />
+      <option name="MAIN_CLASS_NAME" value="model.management.EnemiesAccessTest" />
+      <option name="METHOD_NAME" value="reCreateEnemy" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="PlayerAccessTest.createPlayer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="model" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.management.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="model.management" />
+      <option name="MAIN_CLASS_NAME" value="model.management.PlayerAccessTest" />
+      <option name="METHOD_NAME" value="createPlayer" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="PlayerAccessTest.movePlayer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="model" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.management.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="model.management" />
+      <option name="MAIN_CLASS_NAME" value="model.management.PlayerAccessTest" />
+      <option name="METHOD_NAME" value="movePlayer" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -485,19 +466,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="JUnit.LorannBDDConnectorTest" />
-      <item itemvalue="JUnit.AbstractDAOTest.executeQuery" />
-      <item itemvalue="JUnit.ElementsListTest.getImage" />
-      <item itemvalue="JUnit.ElementsListTest" />
-      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.EnemiesAccessTest.createEnemy" />
+      <item itemvalue="JUnit.EnemiesAccessTest.reCreateEnemy" />
+      <item itemvalue="JUnit.EnemiesAccessTest.isThereEnemy" />
+      <item itemvalue="JUnit.PlayerAccessTest.movePlayer" />
+      <item itemvalue="JUnit.PlayerAccessTest.createPlayer" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.ElementsListTest" />
-        <item itemvalue="JUnit.ElementsListTest.getImage" />
-        <item itemvalue="JUnit.AbstractDAOTest.executeQuery" />
-        <item itemvalue="JUnit.LorannBDDConnectorTest" />
+        <item itemvalue="JUnit.PlayerAccessTest.createPlayer" />
+        <item itemvalue="JUnit.PlayerAccessTest.movePlayer" />
+        <item itemvalue="JUnit.EnemiesAccessTest.isThereEnemy" />
+        <item itemvalue="JUnit.EnemiesAccessTest.createEnemy" />
+        <item itemvalue="JUnit.EnemiesAccessTest.reCreateEnemy" />
       </list>
     </recent_temporary>
   </component>
@@ -515,40 +496,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ElementsListTest - 2018.06.04 at 17h 20m 14s.xml">
-      <configuration name="ElementsListTest" configurationId="JUnit" />
+    <history-entry file="EnemiesAccessTest_createEnemy - 2018.06.04 at 23h 05m 38s.xml">
+      <configuration name="EnemiesAccessTest.createEnemy" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ElementsListTest - 2018.06.04 at 17h 21m 18s.xml">
-      <configuration name="ElementsListTest" configurationId="JUnit" />
+    <history-entry file="EnemiesAccessTest_createEnemy - 2018.06.04 at 23h 08m 34s.xml">
+      <configuration name="EnemiesAccessTest.createEnemy" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ElementsListTest - 2018.06.04 at 17h 22m 28s.xml">
-      <configuration name="ElementsListTest" configurationId="JUnit" />
+    <history-entry file="EnemiesAccessTest_isThereEnemy - 2018.06.04 at 23h 11m 04s.xml">
+      <configuration name="EnemiesAccessTest.isThereEnemy" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ElementsListTest - 2018.06.04 at 17h 22m 53s.xml">
-      <configuration name="ElementsListTest" configurationId="JUnit" />
+    <history-entry file="PlayerAccessTest_movePlayer - 2018.06.04 at 23h 14m 22s.xml">
+      <configuration name="PlayerAccessTest.movePlayer" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ElementsListTest - 2018.06.04 at 17h 24m 00s.xml">
-      <configuration name="ElementsListTest" configurationId="JUnit" />
+    <history-entry file="PlayerAccessTest_movePlayer - 2018.06.04 at 23h 14m 42s.xml">
+      <configuration name="PlayerAccessTest.movePlayer" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ElementsListTest - 2018.06.04 at 17h 25m 49s.xml">
-      <configuration name="ElementsListTest" configurationId="JUnit" />
+    <history-entry file="PlayerAccessTest_movePlayer - 2018.06.04 at 23h 15m 27s.xml">
+      <configuration name="PlayerAccessTest.movePlayer" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ElementsListTest - 2018.06.04 at 17h 36m 29s.xml">
-      <configuration name="ElementsListTest" configurationId="JUnit" />
+    <history-entry file="PlayerAccessTest_movePlayer - 2018.06.04 at 23h 15m 57s.xml">
+      <configuration name="PlayerAccessTest.movePlayer" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ElementsListTest - 2018.06.04 at 17h 38m 03s.xml">
-      <configuration name="ElementsListTest" configurationId="JUnit" />
+    <history-entry file="PlayerAccessTest_createPlayer - 2018.06.04 at 23h 16m 29s.xml">
+      <configuration name="PlayerAccessTest.createPlayer" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ElementsListTest - 2018.06.04 at 19h 57m 08s.xml">
-      <configuration name="ElementsListTest" configurationId="JUnit" />
+    <history-entry file="PlayerAccessTest_movePlayer - 2018.06.04 at 23h 16m 31s.xml">
+      <configuration name="PlayerAccessTest.movePlayer" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ElementsListTest - 2018.06.04 at 19h 57m 24s.xml">
-      <configuration name="ElementsListTest" configurationId="JUnit" />
+    <history-entry file="PlayerAccessTest_createPlayer - 2018.06.04 at 23h 18m 28s.xml">
+      <configuration name="PlayerAccessTest.createPlayer" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -559,12 +539,11 @@
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="6" weight="0.16040269" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.48005697" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.48005697" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20671141" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20939597" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
@@ -576,6 +555,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -583,19 +563,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="15" />
+      <option name="time" value="20" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/elements/ElementsManager.java" />
-    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/elements/Mobile/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="42" lean-forward="true" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contract/src/main/java/model/State.java" />
     <entry file="file://$PROJECT_DIR$/contract/src/main/java/model/IState.java" />
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -639,13 +610,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contract/src/main/java/model/IModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/contract/src/main/java/model/DatabaseMap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -682,31 +646,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/test/java/model/SpriteTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-          <folding>
-            <element signature="e#340#341#0" expanded="true" />
-            <element signature="e#436#437#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-10.0.1/lib/src.zip!/java.base/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="123" column="19" selection-start-line="123" selection-start-column="19" selection-end-line="123" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/test/java/model/MapModelTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-30">
-          <caret line="25" column="98" lean-forward="true" selection-start-line="25" selection-start-column="98" selection-end-line="25" selection-end-column="98" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -819,54 +762,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/Management/ElementsAccess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/elements/Mobile/Enemy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/MapModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="101" column="42" selection-start-line="101" selection-start-column="42" selection-end-line="101" selection-end-column="42" />
-          <folding>
-            <element signature="e#1066#1067#0" expanded="true" />
-            <element signature="e#1120#1121#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/elements/Mobile/Mobile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="46" column="5" selection-start-line="44" selection-start-column="4" selection-end-line="46" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/elements/Mobile/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="16" selection-start-line="16" selection-end-line="26" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/Management/ElementsAccess.java" />
+    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/elements/Mobile/Enemy.java" />
     <entry file="file://$PROJECT_DIR$/model/src/main/java/model/elements/Static/Static.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -874,46 +774,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/test/java/model/elements/Static/StaticTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="12" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/test/java/model/elements/ElementsListTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-659">
-          <caret line="18" selection-start-line="18" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/elements/ElementsList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="185" column="40" selection-start-line="185" selection-start-column="40" selection-end-line="185" selection-end-column="40" />
-          <folding>
-            <element signature="e#4580#4581#0" expanded="true" />
-            <element signature="e#4627#4628#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/management/PlayerAccess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-255">
-          <caret line="7" selection-start-line="7" selection-end-line="14" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#165#166#0" expanded="true" />
-            <element signature="e#195#196#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/model/src/test/java/model/elements/Static/StaticTest.java" />
     <entry file="file://$PROJECT_DIR$/model/src/main/java/model/management/SpellAccess.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="107">
@@ -933,6 +794,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/contract/src/main/java/model/IModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="6" column="64" selection-start-line="6" selection-start-column="64" selection-end-line="6" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controller/src/main/java/controller/ControllerFacade.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -940,38 +808,119 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/management/EnemiesAccess.java">
+    <entry file="file://$PROJECT_DIR$/model/src/test/java/model/elements/ElementsListTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="58" column="23" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
+        <state relative-caret-position="90">
+          <caret line="18" selection-start-line="18" selection-end-line="21" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/src/test/java/model/SpriteTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/elements/ElementsList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2552">
+          <caret line="185" column="40" selection-start-line="185" selection-start-column="40" selection-end-line="185" selection-end-column="40" />
+          <folding>
+            <element signature="e#4580#4581#0" expanded="true" />
+            <element signature="e#4627#4628#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/src/test/java/model/MapModelTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="60" column="20" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.0/junit-4.0.jar!/org/junit/Assert.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-325">
+          <caret line="147" column="23" selection-start-line="147" selection-start-column="23" selection-end-line="147" selection-end-column="23" />
+          <folding>
+            <element signature="e#4784#4785#0" expanded="true" />
+            <element signature="e#4845#4846#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/MapModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1455">
+          <caret line="11" selection-start-line="11" selection-end-line="11" selection-end-column="22" />
+          <folding>
+            <element signature="e#1066#1067#0" expanded="true" />
+            <element signature="e#1120#1121#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/management/EnemiesAccess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-253">
+          <caret line="94" column="112" selection-start-line="94" selection-start-column="112" selection-end-line="94" selection-end-column="112" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/src/test/java/model/management/EnemiesAccessTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2024#2031#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/model/src/main/java/model/ModelFacade.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="227" column="9" selection-start-line="227" selection-start-column="9" selection-end-line="227" selection-end-column="9" />
+        <state relative-caret-position="111">
+          <caret line="215" column="22" lean-forward="true" selection-start-line="215" selection-start-column="22" selection-end-line="215" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/elements/Mobile/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-260">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/elements/Mobile/Mobile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="46" column="5" selection-start-line="44" selection-start-column="4" selection-end-line="46" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/src/main/java/model/management/PlayerAccess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="38" column="47" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
           <folding>
-            <element signature="e#1980#1981#0" expanded="true" />
-            <element signature="e#2032#2033#0" expanded="true" />
-            <element signature="e#2406#2407#0" expanded="true" />
-            <element signature="e#2458#2459#0" expanded="true" />
-            <element signature="e#3044#3045#0" expanded="true" />
-            <element signature="e#3072#3073#0" expanded="true" />
-            <element signature="e#3004#3005#0" expanded="true" />
-            <element signature="e#3043#3044#0" expanded="true" />
-            <element signature="e#3394#3395#0" expanded="true" />
-            <element signature="e#3422#3423#0" expanded="true" />
-            <element signature="e#3139#3140#0" expanded="true" />
-            <element signature="e#3193#3194#0" expanded="true" />
-            <element signature="e#3275#3276#0" expanded="true" />
-            <element signature="e#3316#3317#0" expanded="true" />
-            <element signature="e#5594#5595#0" expanded="true" />
-            <element signature="e#5645#5646#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/src/test/java/model/management/PlayerAccessTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="534">
+          <caret line="51" column="65" lean-forward="true" selection-start-line="51" selection-start-column="65" selection-end-line="51" selection-end-column="65" />
         </state>
       </provider>
     </entry>

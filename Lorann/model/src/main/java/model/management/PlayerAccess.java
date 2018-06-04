@@ -36,7 +36,7 @@ public class PlayerAccess {
     }
 
     /**
-     * Create the player at a special location
+     * Create the player at a special location.
      * @param x spawn location
      * @param y spawn location
      */

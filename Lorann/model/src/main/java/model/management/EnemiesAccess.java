@@ -92,7 +92,7 @@ public class EnemiesAccess {
     }
 
     /**
-     * Create an enemy at a special location
+     * Create an enemy at a special location, is used to refresh the view. Only MapModel can create new enemies.
      * @param x spawn location
      * @param y spawn location
      */
