@@ -13,7 +13,7 @@ public abstract class AIDeplacement {
 	public static List<Point> moveAI(IModel model) {
 
 
-		final int DETECTION_RANGE=0;
+		final int DETECTION_RANGE=5;
 
 		List<Point> enemiesPos = model.getEnemiesLocation();
 		List<Point> newEnemiesMove = new ArrayList<>();
@@ -22,9 +22,9 @@ public abstract class AIDeplacement {
 		//Get the current player's position
 		Point playerPos = model.getPlayerLocation();
 
-		int random=0;
+		int random;
 		boolean nearPlayer;
-		boolean movementDone=false;
+		boolean movementDone;
 
 
 		for (Point enemyPos : enemiesPos) {
@@ -40,7 +40,7 @@ public abstract class AIDeplacement {
 			//Check if a player is around our monster
 			if((enemyPos.x+DETECTION_RANGE>=playerPos.x) && (playerPos.x>=enemyPos.x-DETECTION_RANGE)) {
 				if ((enemyPos.y-DETECTION_RANGE<=playerPos.y) && (playerPos.y<=enemyPos.y+DETECTION_RANGE)){
-					nearPlayer=true;
+					nearPlayer = true;
 				} 
 			}
 
