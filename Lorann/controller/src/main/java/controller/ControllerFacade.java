@@ -1,42 +1,41 @@
 package controller;
 
 import java.awt.*;
-
-import java.io.IOException;
 import java.sql.SQLException;
 
 import controller.GameManagement.AIDeplacement;
-import controller.GameManagement.Events;
 import controller.GameManagement.EventsManager;
 import model.IModel;
-import model.Types;
 import view.IView;
 
 /**
  * <h1>The Class ControllerFacade provides a facade of the Controller component.</h1>
  *
- * @author Jean-Aymeric DIET jadiet@cesi.fr
- * @version 1.0
+ * @author Groupe 13
+ * @version 2.0
  */
 public class ControllerFacade implements IController {
 
+	/**** ATTRIBUTE ****/
     /** The view. */
     private final IView  view;
-
     /** The model. */
     private final IModel model;
     
+    /** time in ms between refresh */
     private static final int speed = 120;
+    /** game loop */
     private boolean game_loop = true;
 
     /**
+     * CONSTRUCTOR
      * Instantiates a new controller facade.
-     *
      * @param view
-     *            the view
+     * 		the view
      * @param model
-     *            the model
+     * 		the model
      */
+
     public ControllerFacade(final IView view, final IModel model) {
         super();
         this.view = view;
@@ -49,10 +48,9 @@ public class ControllerFacade implements IController {
         }
     }
     
-
+    // GETTERS and SETTERS //
     /**
      * Gets the view.
-     *
      * @return the view
      */
     public IView getView() {
@@ -61,45 +59,41 @@ public class ControllerFacade implements IController {
 
     /**
      * Gets the model.
-     *
      * @return the model
      */
     public IModel getModel() {
         return this.model;
     }
+    
+    // METHODS //
 
     /**
      * Initialization :
      * Load all sprites and start the JDBC connection
-     * */
-    public void Initialization() throws SQLException {
+     */
+    private void Initialization() throws SQLException {
      
         //Connection to database "lorann"
         model.connectToDB();   
         }
 
     /**
-     * Main function, launch the game.
-     * Handle events :
+     * Main function: mainloop of the game
+     * Handle events:
      * @see EventsManager
      * @see AIDeplacement
      */
-    //
     public void play(){
 
         /*Handle events*/
         EventsManager manager = new EventsManager(model,view);
 
-        // GAME LOOP //
+        // MAIN LOOP //
         try {
                 while (game_loop) {
 
                     /*Set a pause (in millisecond), equivalent to the game speed (or FPS) : with 120 ms we have like 10 FPS*/
                     Thread.sleep(speed);
-
-                    if (model.isThereEnemy(model.getPlayerLocation().x,model.getPlayerLocation().y)) {
-                        game_loop = false;
-                    }
 
                     /*Check if player already launch a spell*/
                     manager.setSpell_is_alive();
@@ -140,8 +134,12 @@ public class ControllerFacade implements IController {
        
     }
 
-    public Image[][] getImageMap() {
-
+    /** 
+     * Instantiate Image and return array with the map
+     * @see getSpriteFromMap(int, int)
+     * @return imageMap
+     */
+    private Image[][] getImageMap() {
         int mapX = model.getMapSize().width;
         int mapY = model.getMapSize().height;
 
