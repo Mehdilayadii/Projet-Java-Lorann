@@ -226,6 +226,5 @@ public final class ModelFacade implements IModel {
 		default:
 			break;
         }
-;
     }
 }
