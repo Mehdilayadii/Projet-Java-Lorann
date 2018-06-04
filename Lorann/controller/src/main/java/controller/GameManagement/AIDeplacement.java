@@ -8,8 +8,29 @@ import java.util.Random;
 import model.IModel;
 import model.Types;
 
+
+
+/**
+ *<h1>Class AIDeplacement.</h1>
+ * 
+ * @author Groupe 13
+ * @version 2.0
+ */
+
 public abstract class AIDeplacement {
 
+	/**
+	 * Generate new moves for monsters
+	 * @param model the model
+	 * 
+	 * @see  model.IModel#getEnemiesLocation()
+	 * - Get enemies location
+	 * @see model.IModel#getPlayerLocation()
+	 * - Get player location
+	 * @see  controller.GameManagement.AIDeplacement#getPath(IModel model, Point enemyPos)
+	 * - Get possible moves
+	 * @return a list of Point : the move of each enemie
+	 */
 	public static List<Point> moveAI(IModel model) {
 
 
@@ -186,7 +207,8 @@ public abstract class AIDeplacement {
 
 
 				//If different X and Y and not in diagonal
-				//TODO Add some features --> still random moves when near player but with a different X or Y
+				// 		We didn't implement more intelligent IA,
+				//		game would have been way too harder otherwise
 				if (movementDone==false) {
 					newEnemiesMove.add(new Point(possiblePath.get(random).x,possiblePath.get(random).y));
 				}
@@ -200,6 +222,13 @@ public abstract class AIDeplacement {
 
 
 	/*Get all possible position*/
+	
+	/**
+	 * Get the different square around available
+	 * @param model the model
+	 * @param enemyPos current enemies positions
+	 * @return a list of Point : available moves
+	 */
 	public static List<Point> getPath(IModel model,Point enemyPos) {
 
 		List<Point> possiblePath = new ArrayList<>();
