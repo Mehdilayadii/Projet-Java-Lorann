@@ -4,8 +4,6 @@ import controller.ControllerFacade;
 import model.ModelFacade;
 import view.ViewFacade;
 
-import java.io.IOException;
-
 /**
  * <h1>The Class Main.</h1>
  *
