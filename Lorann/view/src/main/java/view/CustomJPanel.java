@@ -56,7 +56,7 @@ public class CustomJPanel extends JPanel {
     				/**** METHODS ****/
     
     /**
-     * Standart graphic from swing
+     * Standard graphic from swing
      * 
      * @param Graphics g
      */
