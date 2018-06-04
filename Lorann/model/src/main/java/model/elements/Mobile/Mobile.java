@@ -10,10 +10,15 @@ public class Mobile extends Elements{
     protected Point location;
 
     /**** CONSTRUCTOR ****/
-    public Mobile(String stringStyle, Types type, int x, int y) {
+    public Mobile(String stringStyle, Types type, int x, int y){
         super(stringStyle, type);
 
+
+        if ((x < 0) || (y < 0)) {
+            throw new IllegalArgumentException("Negative location error");
+        }
         this.location = new Point(x,y);
+
     }
 
     /**** GETTERS and SETTERS ****/

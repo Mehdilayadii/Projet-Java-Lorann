@@ -56,46 +56,16 @@ public class MobileTest {
 	     assertEquals(1, b.getLocation().y);
 	}
 
+	/**
+	 *  Check if the given location is negative. There is no max to location because map may change and become larger.
+	 */
 	@Test
-	public void excepXMinRange() {
+	public void negativeValue() {
 		try {
-			new Mobile("S4", Types.SPELL, -1, 1);
-			fail("Should throw exception when x < 0");
-		} catch (final Exception e) {
-			final String expected = "x out of range";
-			assertEquals(expected, e.getMessage());
-		}
-	}
-	
-	@Test
-	public void excepXMaxRange() {
-		try {
-			new Mobile("S4", Types.SPELL, 20, 1);
-			fail("Should throw exception when x > 19");
-		} catch (final Exception e) {
-			final String expected = "x out of range";
-			assertEquals(expected, e.getMessage());
-		}
-	}
-	
-	@Test
-	public void excepYMinRange() {
-		try {
-			new Mobile("S4", Types.SPELL, 1, -1);
-			fail("Should throw exception when y < 0");
-		} catch (final Exception e) {
-			final String expected = "y out of range";
-			assertEquals(expected, e.getMessage());
-		}
-	}
-	
-	@Test
-	public void excepYMaxRange() {
-		try {
-			new Mobile("S4", Types.SPELL, 1, 12);
-			fail("Should throw exception when y > 11");
-		} catch (final Exception e) {
-			final String expected = "y out of range";
+			new Mobile("L1",Types.PLAYER, -1, 11);
+			fail("Location cannot be negative !");
+		} catch(final Exception e) {
+			final String expected = "Negative location error";
 			assertEquals(expected, e.getMessage());
 		}
 	}

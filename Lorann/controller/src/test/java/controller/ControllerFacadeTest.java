@@ -13,7 +13,7 @@ import view.IView;
 public class ControllerFacadeTest {
 
 	@BeforeClass
-	public static void setUpBeforeClass(IModel model, IView view) throws Exception {
+	public static void setUpBeforeClass() throws Exception {
 
 	}
 
