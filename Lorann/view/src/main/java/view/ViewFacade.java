@@ -12,7 +12,7 @@ import java.awt.event.WindowEvent;
  */
 public class ViewFacade implements IView {
 
-	// ATTRIBUTE //
+    // ATTRIBUTE //
     private final CustomJFrame window;
     private Image[][] map;
     int score = 0;
