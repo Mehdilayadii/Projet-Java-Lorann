@@ -12,7 +12,7 @@ import java.sql.Statement;
  * @author Groupe 13
  * @version 2.0
  */	
-//
+
 public final class LorannBDDConnector {
 
     /** The instance. */
@@ -37,7 +37,7 @@ public final class LorannBDDConnector {
      * Instantiates a new BDD connector.
      */
     public LorannBDDConnector() {
-        this.open();
+			this.open();
     }
 
     /**
@@ -69,11 +69,13 @@ public final class LorannBDDConnector {
      */
     private boolean open() {
         try {
+        	System.out.print("Trying to connect to database 'lorann'... \n");
             this.connection = DriverManager.getConnection(LorannBDDConnector.url, LorannBDDConnector.user,
                     LorannBDDConnector.password);
             this.statement = this.connection.createStatement();
             return true;
         } catch (final SQLException exception) {
+        	System.out.print("Error ! :(  \n\nCheck these errors :\n");
             exception.printStackTrace();
         }
         return false;
