@@ -21,7 +21,7 @@ public abstract class ImportLevel{
      * @return a map as a Array of String[][]
      * 
      */
-	public static String[][] CreateMap() {
+	public static String[][] CreateMap(int levelID) {
 
 	// Convert List<Example> to StringBuilder
 	try {
@@ -40,7 +40,7 @@ public abstract class ImportLevel{
 	     String[][]map= new String[20][12];
 		
 	     //Call our procedure and store data into our var 'message'
-		final List<DatabaseMap> databaseMaps = ProcedureDAO.getLevelByID(1);
+		final List<DatabaseMap> databaseMaps = ProcedureDAO.getLevelByID(levelID);
 		final StringBuilder message = new StringBuilder();
 	    for (final DatabaseMap databaseMap : databaseMaps) {
 	        message.append(databaseMap);

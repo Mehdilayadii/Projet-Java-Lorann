@@ -8,7 +8,8 @@ import static org.junit.Assert.*;
 
 public class ImportLevelTest {
 
-    private String[][] mapString ={{" "," ","C","V","V","V","V","V","V","V","V","C"},
+    private String[][] mapString =
+            {{" "," ","C","V","V","V","V","V","V","V","V","C"},
             {" "," ","H","G"," "," "," "," "," "," ","B","H"},
             {" "," ","C","V","V","C"," "," "," "," "," ","H"},
             {" "," "," "," "," ","H","G","H"," ","H","G","H"},
@@ -29,16 +30,11 @@ public class ImportLevelTest {
             {" "," "," ","H"," "," "," "," "," "," ","DC","H"},
             {" "," "," ","C","V","V","V","V","V","V","V","C"}};
 
-    @Before
-    public void setUp() throws Exception {
-    }
-
-    @After
-    public void tearDown() throws Exception {
-    }
-
+    /**
+     * Check that we get correctly the map.
+     */
     @Test
     public void createMap() {
-        assertEquals(mapString, ImportLevel.CreateMap());
+        assertEquals(mapString, ImportLevel.CreateMap(1));
     }
 }

@@ -29,7 +29,7 @@ public final class ModelFacade implements IModel {
      */
     public ModelFacade()  {
         Sprite.LoadAllSprite();
-        this.map = new MapModel(ImportLevel.CreateMap());
+        this.map = new MapModel(ImportLevel.CreateMap(1));
     }
 
     // GETTERS and SETTERS //
