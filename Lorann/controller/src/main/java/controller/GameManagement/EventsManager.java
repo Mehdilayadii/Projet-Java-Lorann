@@ -6,20 +6,47 @@ import view.IView;
 
 import java.awt.*;
 
+
+/**
+ * <h1>The Class EventsManager.</h1>
+ *
+ * @author Groupe 13
+ * @version 2.0
+ */
+
+
 public class EventsManager {
 
+	/** the model*/
     private IModel model;
+    
+    /** the view*/
     private IView view;
 
+    /** the facing look */
     private Point player_facing_during_casting;
+    
+    /** the spell's move*/
     private Point spell_move;
+    
+    /** the player's move*/
     private Point player_move;
+    
+    /** the check if player is casting spell */
     private boolean player_casting_spell;
+    
+    /** the check if spell is alive*/
     private boolean spell_is_alive;
 
     public Events event;
 
-    // CONSTRUCTOR //
+    				/**** CONSTRUCTOR ****/
+    
+    /**
+     * Initiate the Events Manager
+     * @param model the model
+     * @param view the view
+     */
     public EventsManager(IModel model, IView view) {
         this.model = model;
         this.view = view;
@@ -33,11 +60,13 @@ public class EventsManager {
         this.event = new Events( model, view, player_move.x, player_move.y);
     }
 
-    // GETTERS and SETTERS //
+    				/**** GETTERS and SETTERS ****/
+    
     /**
      * Set the spell state
      * Player state is a boolean :
-     * @see model.IModel#spellAlive();
+     * @see model.IModel#spellAlive()
+     * - Get the current state
      */
     public void setSpell_is_alive(){
         spell_is_alive = model.spellAlive();
@@ -46,6 +75,7 @@ public class EventsManager {
     /**
      * Set the player movement from user inputs, it's also the player look direction.
      * @see view.IView#return_deplacement_player()
+     * - Get the current deplacement
      * */
     public void setPlayer_move() {
         player_move = view.return_deplacement_player(); //
@@ -59,7 +89,7 @@ public class EventsManager {
         return player_move;
     }
 
-    // METHODS //
+    				/**** METHODS ****/
 
     /**
      * Set the direction of the player. Same as setPlayerMove() but is save if player stop move. Make able the player to shoot then he don't move.
