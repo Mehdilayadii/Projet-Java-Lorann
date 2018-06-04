@@ -37,5 +37,4 @@ public abstract class Main {
         /* To move in the controller.play()*/
         controller.play();
     }
-//yolo
 }
