@@ -7,8 +7,8 @@ import java.util.List;
 /**
  * <h1>The Interface IModel.</h1>
  *
- * @author Not Jean-Aymeric DIET jadiet@cesi.fr
- * @version At least 100.0
+ * @author Group 13
+ * @version 2.0
  */
 public interface IModel {
 
