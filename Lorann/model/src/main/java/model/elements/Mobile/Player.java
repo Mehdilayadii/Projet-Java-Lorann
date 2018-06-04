@@ -1,7 +1,14 @@
 package model.elements.Mobile;
 
 import model.elements.ElementsList;
+
 import model.Types;
+/**
+ * <h1>The Class Player.</h1>
+ *
+ * @author Groupe 13
+ * @version 2.0
+ */
 
 public class Player extends Mobile{
 

@@ -5,6 +5,14 @@ import model.Types;
 
 import java.awt.*;
 
+/**
+ * <h1>The Class Spell.</h1>
+ *
+ * @author Groupe 13
+ * @version 2.0
+ */
+
+
 public class Spell extends Mobile{
 
 	/** the direction*/

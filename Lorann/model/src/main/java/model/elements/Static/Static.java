@@ -4,7 +4,7 @@ import model.Types;
 import model.elements.Elements;
 
 /**
- * The Class Static.
+ * <h1>The Class Static.</h1>
  *
  * @author Groupe 13
  * @version 2.0
