@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * <h1>The Class MapModel provides basic methods of the Model component.</h1>
  *
- * @author Groupe 13
+ * @author Group 13
  * @version 2.0
  */
 
@@ -39,7 +39,7 @@ public class MapModel {
     /** The list of enemies */
     private List<IEnemy> enemies = new ArrayList<>();
 
-    /**** CONSTRUCTOR ****/
+    				/**** CONSTRUCTOR ****/
     
     /**
      * Instantiate a map model from the map
@@ -51,10 +51,11 @@ public class MapModel {
         this.MapStringToMapElements(mapString);
     }
 
-    /**** GETTERS and SETTERS ****/
+    				/**** GETTERS and SETTERS ****/
     
     /**
-     * Get the map
+     * Get the map.
+     * 
      * @return a 2 dimension array of type Elements : the map
      */
     public IElements[][] getMap() {
@@ -62,7 +63,8 @@ public class MapModel {
     }
 
     /**
-     * Get the player
+     * Get the player.
+     * 
      * @return an object of type Player
      */
     public Player getPlayer() {
@@ -70,7 +72,8 @@ public class MapModel {
     }
 
     /**
-     * Get the enemies
+     * Get the enemies.
+     * 
      * @return a list of object of type Mobile
      */
     public List<IEnemy> getEnemies() {
@@ -78,7 +81,8 @@ public class MapModel {
     }
 
     /**
-     * Get the spell
+     * Get the spell.
+     * 
      * @return an object of type Spell
      */
     public Spell getSpell() {
@@ -86,7 +90,8 @@ public class MapModel {
     }
     
     /**
-     * Set the spell
+     * Set the spell.
+     * 
      * @param spell Object of type Spell
      */
     public void setSpell(Spell spell) {
@@ -94,7 +99,8 @@ public class MapModel {
     }
 
     /**
-     * Get the exit door informations
+     * Get the exit door informations.
+     * 
      * @return an object of type Point 
      */
     public Point getExitDoor() {
@@ -102,7 +108,8 @@ public class MapModel {
     }
 
     /**
-     * Set the player
+     * Set the player.
+     * 
      * @param player Object of type Player
      */
     public void setPlayer(Player player) {
@@ -110,10 +117,11 @@ public class MapModel {
     }
     
     
-    /**** METHODS ****/
+    				/**** METHODS ****/
     
     /**
-     * Convert the map from the string ressource
+     * Convert the map from the string resource.
+     * 
      * @see model.MapModel#elementsFromType(Types type, String stringStyle, int positionX, int positionY)
      * - Get element from specific type
      * @see model.elements.ElementsList#getType()
@@ -135,7 +143,8 @@ public class MapModel {
     }
 
     /**
-     * Choose the good class for the elements (from type given in ElementsList)
+     * Choose the good class for the elements (from type given in ElementsList).
+     * 
      * @param type type of the future element
      * @param stringStyle each stringStyle corresponds to a specific sprite (example "L1" = the player)
      * @param positionX X coordinate
@@ -179,7 +188,8 @@ public class MapModel {
     }
 
     /**
-     * Move any elements
+     * Move any elements.
+     * 
      * @param oldX Current X coordinate
      * @param oldY Current Y coordinate
      * @param newX New X coordinate
@@ -194,13 +204,12 @@ public class MapModel {
     }
 
     /**
-     * Animate Player and Spells
+     * Animate Player and Spells.
      * 
      * @see model.elements.Mobile.Player#animate(int directionX, int directionY)
      * - Animate 
      * @param directionX Relative X coordinate deplacement
      * @param directionY Relative Y coordinate deplacement
-     * 
      */
     public void animateElements(int directionX, int directionY) {
         player.animate(directionX,directionY);
@@ -210,12 +219,11 @@ public class MapModel {
     }
 
     /**
-     * Create an element
+     * Create an element.
      * 
      * @param elements object of type Elements to add
      * @param x X coordinate
      * @param y Y coordinate 
-     * 
      */
     public void addElement(IElements elements, int x, int y) {
         map[x][y] = elements;
