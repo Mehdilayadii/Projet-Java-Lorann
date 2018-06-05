@@ -4,6 +4,7 @@ import java.awt.*;
 
 import controller.GameManagement.AIDeplacement;
 import controller.GameManagement.EventsManager;
+import controller.GameManagement.SpellManagement;
 import model.IModel;
 import view.IView;
 
@@ -76,6 +77,7 @@ public class ControllerFacade implements IController {
 
         /* Handle events */
         EventsManager manager = new EventsManager(model,view);
+        SpellManagement spellManagement  = new SpellManagement(model,view);
 
         // MAIN LOOP //
         try {
@@ -85,7 +87,7 @@ public class ControllerFacade implements IController {
                     Thread.sleep(speed);
 
                     /* Check if player already launch a spell */
-                    manager.setSpell_is_alive();
+                    spellManagement.setSpell_is_alive();
                     /* Get the input of the user (Direction vector) */
                     manager.setPlayer_move();
 
@@ -93,26 +95,25 @@ public class ControllerFacade implements IController {
                     model.animate(manager.getPlayer_move().x, manager.getPlayer_move().y);
 
                     /* Get the player looking direction */
-                    manager.setPlayer_facing_during_casting();
-
+                    spellManagement.setPlayer_facing_during_casting();
                     
                     /* Check if the player get back his spell */
-                    manager.checkPlayerGetSpell();
+                    spellManagement.checkPlayerGetSpell();
 
                     /* Move the enemies */
                     model.moveEnemies(AIDeplacement.moveAI(model));
                     game_loop = manager.checkMobGetPlayer();
                     /* Check if a mob go on a spell */
-                    manager.checkMobGetSpell();
+                    spellManagement.checkMobGetSpell();
 
                     /* Create the spell (if player casting) */
-                    manager.createSpell();
+                    spellManagement.createSpell();
                     /* Move the spell (if exist) */
-                    manager.moveSpell();
+                    spellManagement.moveSpell();
 
                     /* Check if the spell hit something dynamic (player or enemies) */
-                    manager.checkMobGetSpell();
-                    manager.checkPlayerGetSpell();
+                    spellManagement.checkMobGetSpell();
+                    spellManagement.checkPlayerGetSpell();
                     
                     /* Move the player and stop the game if he move in a mob/wall/exit door */
                     game_loop = manager.movePlayer();
