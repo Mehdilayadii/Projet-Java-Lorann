@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * <h1>The Class Static.</h1>
+ * <h1>The Class EnemiesAccess </h1>
  *
  * @author Group 13
  * @version 2.0
