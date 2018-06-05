@@ -10,11 +10,10 @@ import model.IModel;
 import model.Types;
 
 
-
 /**
- *<h1>Class AIDeplacement.</h1>
+ *<h1> The Class AIDeplacement manage AI movement.</h1>
  * 
- * @author Groupe 13
+ * @author Group 13
  * @version 2.0
  */
 
@@ -24,14 +23,14 @@ public class AIDeplacement {
 	private List<Point> newEnemiesMove;
 	private static final int DETECTION_RANGE = 5;
 
-	//CONSTRUCTOR//
+					/**** CONSTRUCTOR ****/
 	public AIDeplacement(IModel model) {
 		this.model = model;
 		this.newEnemiesMove = new ArrayList<>();
 	}
 
 	/**
-	 * Generate new moves for monsters
+	 * Generate new moves for monsters.
 	 * 
 	 * @see  model.IModel#getEnemiesLocation()
 	 * - Get enemies location
@@ -100,7 +99,8 @@ public class AIDeplacement {
 	}
 
 	/**
-	 * Verify that the movement to the player is accessible (no obstacle)
+	 * Verify that the movement to the player is accessible (no obstacle).
+	 * 
 	 * @param moveX Movement X to verify
 	 * @param moveY Movement Y to verify
 	 * @param possiblePath All possible path for this enemy
@@ -128,7 +128,8 @@ public class AIDeplacement {
 	}
 
 	/**
-	 * Get the different square around available
+	 * Get the different square around available.
+	 * 
 	 * @param enemyPos current enemies positions
 	 * @return a list of Point : available moves
 	 */
@@ -150,6 +151,7 @@ public class AIDeplacement {
 
 	/**
 	 * Delete path that don't correspond to the path.
+	 * 
 	 * @param paths
 	 * @param i
 	 * @return
@@ -170,6 +172,7 @@ public class AIDeplacement {
 
 	/**
 	 * Check if the given move is in the path list.
+	 * 
 	 * @param x
 	 * @param y
 	 * @param possiblePath
