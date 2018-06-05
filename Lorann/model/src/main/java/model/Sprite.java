@@ -7,6 +7,12 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * <h1>The Class ModelFacade provides a facade of the Model component.</h1>
+ *
+ * @author Group 13
+ * @version 2.0
+ */
 
 public abstract class Sprite {
 
@@ -15,7 +21,6 @@ public abstract class Sprite {
 	 *
 	 * @param name String : name of the string
 	 * @return a a Sprite of type Image
-	 * 
 	 */
     public static Image LoadSprite(String name) {
         Image picture;
@@ -29,7 +34,7 @@ public abstract class Sprite {
     }
 
     /**
-	 * Load all the sprites 
+	 * Load all the sprite 
 	 * @see model.elements.ElementsList#setImage(Image image)
 	 * - Set image
 	 * @see model.elements.ElementsList#getName()
@@ -46,7 +51,7 @@ public abstract class Sprite {
 	 * @see model.elements.ElementsList#getImage()
 	 * Get image
 	 * 
-	 * @param sprite Strin : name of the sprite
+	 * @param sprite String : name of the sprite
 	 * @return  a a Sprite of type Image
 	 * 
 	 */
