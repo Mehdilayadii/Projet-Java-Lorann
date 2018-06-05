@@ -9,30 +9,32 @@ import java.sql.Statement;
 /**
  * <h1>The Class LorannBDDConnector.</h1>
  *
- * @author Groupe 13
+ * @author Group 13
  * @version 2.0
  */	
 
 public final class LorannBDDConnector {
 
+					/**** ATTRIBUTE ****/
     /** The instance. */
     private static LorannBDDConnector instance;
 
     /** The login. */
-    private static String                  user     = "root";
+    private static String user     = "root";
 
     /** The password. */
-    private static String                  password = "";
+    private static String password = "";
 
     /** The url. */
-    private static String                  url      = "jdbc:mysql://localhost/lorann?useSSL=false&serverTimezone=UTC";
+    private static String url      = "jdbc:mysql://localhost/lorann?useSSL=false&serverTimezone=UTC";
 
     /** The connection. */
-    private Connection                     connection;
+    private Connection connection;
 
     /** The statement. */
-    private Statement                      statement;
+    private Statement statement;
 
+    				/**** CONSTRUCTOR ****/
     /**
      * Instantiates a new BDD connector.
      */
@@ -40,6 +42,7 @@ public final class LorannBDDConnector {
 			this.open();
     }
 
+    				/**** METHODS ****/
     /**
      * Gets the single instance of the BDDConnector.
      *
@@ -129,6 +132,8 @@ public final class LorannBDDConnector {
         }
         return 0;
     }
+    
+    				/**** GETTERS and SETTERS ****/
 
     /**
      * Gets the connection.
