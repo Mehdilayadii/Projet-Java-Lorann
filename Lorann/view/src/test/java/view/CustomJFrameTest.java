@@ -14,43 +14,60 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class CustomJFrameTest {
+	
+	/** the jframe*/
 	CustomJFrame jframe;
+	/** the robot to simulate key press*/
 	static Robot r = null;
 
 	
-    //jframe.getKeyListeners()[0].keyPressed(key);
-
+	/**
+	 * The set up before class
+	 * @throws Exception
+	 * @throws AWTException
+	 */
 	@BeforeClass
-	public static void setUpBeforeClass() throws Exception, AWTException {
-		
-		
-        
+	public static void setUpBeforeClass() throws Exception, AWTException {    
 	}
 
+	
+	/**
+	 * The tear down after the class
+	 * @throws Exception
+	 */
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
 	}
 
+	
+	/**
+	 * The set up
+	 * @throws Exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 		try {
 			r = new Robot();
 			jframe = new CustomJFrame();
 		} catch (AWTException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
+	
+	/**
+	 * The tear down
+	 * @throws Exception
+	 */
 	@After
 	public void tearDown() throws Exception {
 	}
 
-	@Test
-	public void testReturn_deplacement_player() {
-		
-	}
 
+	
+	/**
+	 * Test return_casting_player
+	 */
 	@Test
 	public void testReturn_casting_player() {
 		int expected = 1;
@@ -66,6 +83,10 @@ public class CustomJFrameTest {
 	
 	
 	
+	
+	/**
+	 * Test keyPressed
+	 */
 	@Test
 	public void testKeyPressed() {
 		final int expected = 0;
@@ -74,6 +95,10 @@ public class CustomJFrameTest {
 		assertEquals(expected, vk);
 	}
 
+	
+	/**
+	 * Test keyReleased
+	 */
 	@Test
 	public void testKeyReleased() {
 		final int expected = 0;

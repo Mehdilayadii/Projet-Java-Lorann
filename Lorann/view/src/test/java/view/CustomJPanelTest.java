@@ -11,33 +11,66 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class CustomJPanelTest {
+	/** the jpanel J*/
     private CustomJPanel J;
+    /** the jpanel P*/
     private CustomJPanel P;
+    /** the map*/
     private Image[][] map;
-	@BeforeClass
+    
+	
+	/**
+	 * The set up before class
+	 * @throws Exception
+	 */
+    @BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
 
+	
+	/**
+	 * The tear down after class
+	 * @throws Exception
+	 */
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
 	}
 
+	
+	/**
+	 * The set up
+	 * @throws Exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 	J=new CustomJPanel(map, 37);
 	P=new CustomJPanel(map,8270);
 	}
 
+	
+	/**
+	 * The tear down
+	 * @throws Exception
+	 */
 	@After
 	public void tearDown() throws Exception {
 	}
 
+	
+	/**
+	 * Test getScore
+	 * @throws Exception
+	 */
 	@Test
 	public void testGetScore() throws Exception{
 		assertEquals("SCORE : 00037", J.getScore());
 	    assertEquals("SCORE : 08270", P.getScore());
 	}
 
+	
+	/**
+	 * Test setScore
+	 */
 	@Test
 	public void testSetScore() {
 		J.setScore("00123");
