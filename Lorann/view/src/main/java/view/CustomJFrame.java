@@ -90,9 +90,7 @@ public class CustomJFrame extends JFrame implements KeyListener {
                 break;
         }
     }
-    public int getChanging_value_deplacement() {
-    	return this.deplacement_player.y;
-    }
+
 
     /**
      * Event when a key is pressed
