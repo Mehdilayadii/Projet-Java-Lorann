@@ -151,65 +151,66 @@
 <a class="jxr_linenumber" name="L143" href="#L143">143</a> 
 <a class="jxr_linenumber" name="L144" href="#L144">144</a>         <strong class="jxr_keyword">switch</strong> (type) {
 <a class="jxr_linenumber" name="L145" href="#L145">145</a>             <strong class="jxr_keyword">case</strong> PLAYER:
-<a class="jxr_linenumber" name="L146" href="#L146">146</a>                 player = <strong class="jxr_keyword">new</strong> <a href="../model/elements/Mobile/Player.html">Player</a>(stringStyle,positionX,positionY);
-<a class="jxr_linenumber" name="L147" href="#L147">147</a>                 element = player;
-<a class="jxr_linenumber" name="L148" href="#L148">148</a>                 <strong class="jxr_keyword">break</strong>;
-<a class="jxr_linenumber" name="L149" href="#L149">149</a>             <strong class="jxr_keyword">case</strong> ENEMY:
-<a class="jxr_linenumber" name="L150" href="#L150">150</a>                 enemies.add(<strong class="jxr_keyword">new</strong> <a href="../model/elements/Mobile/Mobile.html">Mobile</a>(stringStyle,Types.ENEMY,positionX,positionY));
-<a class="jxr_linenumber" name="L151" href="#L151">151</a>                 element = enemies.get(enemies.size()-1);
-<a class="jxr_linenumber" name="L152" href="#L152">152</a>                 <strong class="jxr_keyword">break</strong>;
-<a class="jxr_linenumber" name="L153" href="#L153">153</a>             <strong class="jxr_keyword">case</strong> OBSTACLE_KILL:
-<a class="jxr_linenumber" name="L154" href="#L154">154</a>                 element = <strong class="jxr_keyword">new</strong> <a href="../model/elements/Static/Static.html">Static</a>(stringStyle, type);
-<a class="jxr_linenumber" name="L155" href="#L155">155</a>                 exitDoor = <strong class="jxr_keyword">new</strong> Point(positionX,positionY);
-<a class="jxr_linenumber" name="L156" href="#L156">156</a>             <strong class="jxr_keyword">default</strong>:
-<a class="jxr_linenumber" name="L157" href="#L157">157</a>                 element = <strong class="jxr_keyword">new</strong> <a href="../model/elements/Static/Static.html">Static</a>(stringStyle, type);
-<a class="jxr_linenumber" name="L158" href="#L158">158</a>         }
-<a class="jxr_linenumber" name="L159" href="#L159">159</a>         <strong class="jxr_keyword">return</strong> element;
-<a class="jxr_linenumber" name="L160" href="#L160">160</a>     }
-<a class="jxr_linenumber" name="L161" href="#L161">161</a> 
-<a class="jxr_linenumber" name="L162" href="#L162">162</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L163" href="#L163">163</a> <em class="jxr_javadoccomment">     * Move any elements</em>
-<a class="jxr_linenumber" name="L164" href="#L164">164</a> <em class="jxr_javadoccomment">     * @param oldX Current X coordinate</em>
-<a class="jxr_linenumber" name="L165" href="#L165">165</a> <em class="jxr_javadoccomment">     * @param oldY Current Y coordinate</em>
-<a class="jxr_linenumber" name="L166" href="#L166">166</a> <em class="jxr_javadoccomment">     * @param newX New X coordinate</em>
-<a class="jxr_linenumber" name="L167" href="#L167">167</a> <em class="jxr_javadoccomment">     * @param newY New Y coordinate</em>
-<a class="jxr_linenumber" name="L168" href="#L168">168</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="L169" href="#L169">169</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> moveElement(<strong class="jxr_keyword">int</strong> oldX, <strong class="jxr_keyword">int</strong> oldY, <strong class="jxr_keyword">int</strong> newX, <strong class="jxr_keyword">int</strong> newY) {
-<a class="jxr_linenumber" name="L170" href="#L170">170</a>         <a href="../model/elements/Elements.html">Elements</a> elementToMove = map[oldX][oldY];
-<a class="jxr_linenumber" name="L171" href="#L171">171</a>         <strong class="jxr_keyword">if</strong> ((newX != oldX) || (newY != oldY)) {
-<a class="jxr_linenumber" name="L172" href="#L172">172</a>             map[newX][newY] = elementToMove;
-<a class="jxr_linenumber" name="L173" href="#L173">173</a>             map[oldX][oldY] = <strong class="jxr_keyword">new</strong> <a href="../model/elements/Static/Static.html">Static</a>(<span class="jxr_string">" "</span>, Types.VOID);
-<a class="jxr_linenumber" name="L174" href="#L174">174</a>         }
-<a class="jxr_linenumber" name="L175" href="#L175">175</a>     }
-<a class="jxr_linenumber" name="L176" href="#L176">176</a> 
-<a class="jxr_linenumber" name="L177" href="#L177">177</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L178" href="#L178">178</a> <em class="jxr_javadoccomment">     * Animate Player and Spells</em>
-<a class="jxr_linenumber" name="L179" href="#L179">179</a> <em class="jxr_javadoccomment">     * </em>
-<a class="jxr_linenumber" name="L180" href="#L180">180</a> <em class="jxr_javadoccomment">     * @see model.elements.Mobile.Player#animate(int directionX, int directionY)</em>
-<a class="jxr_linenumber" name="L181" href="#L181">181</a> <em class="jxr_javadoccomment">     * - Animate </em>
-<a class="jxr_linenumber" name="L182" href="#L182">182</a> <em class="jxr_javadoccomment">     * @param directionX Relative X coordinate deplacement</em>
-<a class="jxr_linenumber" name="L183" href="#L183">183</a> <em class="jxr_javadoccomment">     * @param directionY Relative Y coordinate deplacement</em>
-<a class="jxr_linenumber" name="L184" href="#L184">184</a> <em class="jxr_javadoccomment">     * </em>
-<a class="jxr_linenumber" name="L185" href="#L185">185</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="L186" href="#L186">186</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> animateElements(<strong class="jxr_keyword">int</strong> directionX, <strong class="jxr_keyword">int</strong> directionY) {
-<a class="jxr_linenumber" name="L187" href="#L187">187</a>         player.animate(directionX,directionY);
-<a class="jxr_linenumber" name="L188" href="#L188">188</a>         <strong class="jxr_keyword">if</strong> (spell != <strong class="jxr_keyword">null</strong>) {
-<a class="jxr_linenumber" name="L189" href="#L189">189</a>             spell.animate();
-<a class="jxr_linenumber" name="L190" href="#L190">190</a>         }
-<a class="jxr_linenumber" name="L191" href="#L191">191</a>     }
-<a class="jxr_linenumber" name="L192" href="#L192">192</a> 
-<a class="jxr_linenumber" name="L193" href="#L193">193</a>     <em class="jxr_javadoccomment">/**</em>
-<a class="jxr_linenumber" name="L194" href="#L194">194</a> <em class="jxr_javadoccomment">     * Create an element</em>
-<a class="jxr_linenumber" name="L195" href="#L195">195</a> <em class="jxr_javadoccomment">     * </em>
-<a class="jxr_linenumber" name="L196" href="#L196">196</a> <em class="jxr_javadoccomment">     * @param elements object of type Elements to add</em>
-<a class="jxr_linenumber" name="L197" href="#L197">197</a> <em class="jxr_javadoccomment">     * @param x X coordinate</em>
-<a class="jxr_linenumber" name="L198" href="#L198">198</a> <em class="jxr_javadoccomment">     * @param y Y coordinate </em>
-<a class="jxr_linenumber" name="L199" href="#L199">199</a> <em class="jxr_javadoccomment">     * </em>
-<a class="jxr_linenumber" name="L200" href="#L200">200</a> <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="L201" href="#L201">201</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> addElement(<a href="../model/elements/Elements.html">Elements</a> elements, <strong class="jxr_keyword">int</strong> x, <strong class="jxr_keyword">int</strong> y) {
-<a class="jxr_linenumber" name="L202" href="#L202">202</a>         map[x][y] = elements;
-<a class="jxr_linenumber" name="L203" href="#L203">203</a>     }
-<a class="jxr_linenumber" name="L204" href="#L204">204</a> }
+<a class="jxr_linenumber" name="L146" href="#L146">146</a>                 Player.setInstance(stringStyle,positionX,positionY);
+<a class="jxr_linenumber" name="L147" href="#L147">147</a>                 player = Player.getInstance();
+<a class="jxr_linenumber" name="L148" href="#L148">148</a>                 element = player;
+<a class="jxr_linenumber" name="L149" href="#L149">149</a>                 <strong class="jxr_keyword">break</strong>;
+<a class="jxr_linenumber" name="L150" href="#L150">150</a>             <strong class="jxr_keyword">case</strong> ENEMY:
+<a class="jxr_linenumber" name="L151" href="#L151">151</a>                 enemies.add(<strong class="jxr_keyword">new</strong> <a href="../model/elements/Mobile/Mobile.html">Mobile</a>(stringStyle,Types.ENEMY,positionX,positionY));
+<a class="jxr_linenumber" name="L152" href="#L152">152</a>                 element = enemies.get(enemies.size()-1);
+<a class="jxr_linenumber" name="L153" href="#L153">153</a>                 <strong class="jxr_keyword">break</strong>;
+<a class="jxr_linenumber" name="L154" href="#L154">154</a>             <strong class="jxr_keyword">case</strong> OBSTACLE_KILL:
+<a class="jxr_linenumber" name="L155" href="#L155">155</a>                 element = <strong class="jxr_keyword">new</strong> <a href="../model/elements/Static/Static.html">Static</a>(stringStyle, type);
+<a class="jxr_linenumber" name="L156" href="#L156">156</a>                 exitDoor = <strong class="jxr_keyword">new</strong> Point(positionX,positionY);
+<a class="jxr_linenumber" name="L157" href="#L157">157</a>             <strong class="jxr_keyword">default</strong>:
+<a class="jxr_linenumber" name="L158" href="#L158">158</a>                 element = <strong class="jxr_keyword">new</strong> <a href="../model/elements/Static/Static.html">Static</a>(stringStyle, type);
+<a class="jxr_linenumber" name="L159" href="#L159">159</a>         }
+<a class="jxr_linenumber" name="L160" href="#L160">160</a>         <strong class="jxr_keyword">return</strong> element;
+<a class="jxr_linenumber" name="L161" href="#L161">161</a>     }
+<a class="jxr_linenumber" name="L162" href="#L162">162</a> 
+<a class="jxr_linenumber" name="L163" href="#L163">163</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L164" href="#L164">164</a> <em class="jxr_javadoccomment">     * Move any elements</em>
+<a class="jxr_linenumber" name="L165" href="#L165">165</a> <em class="jxr_javadoccomment">     * @param oldX Current X coordinate</em>
+<a class="jxr_linenumber" name="L166" href="#L166">166</a> <em class="jxr_javadoccomment">     * @param oldY Current Y coordinate</em>
+<a class="jxr_linenumber" name="L167" href="#L167">167</a> <em class="jxr_javadoccomment">     * @param newX New X coordinate</em>
+<a class="jxr_linenumber" name="L168" href="#L168">168</a> <em class="jxr_javadoccomment">     * @param newY New Y coordinate</em>
+<a class="jxr_linenumber" name="L169" href="#L169">169</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="L170" href="#L170">170</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> moveElement(<strong class="jxr_keyword">int</strong> oldX, <strong class="jxr_keyword">int</strong> oldY, <strong class="jxr_keyword">int</strong> newX, <strong class="jxr_keyword">int</strong> newY) {
+<a class="jxr_linenumber" name="L171" href="#L171">171</a>         <a href="../model/elements/Elements.html">Elements</a> elementToMove = map[oldX][oldY];
+<a class="jxr_linenumber" name="L172" href="#L172">172</a>         <strong class="jxr_keyword">if</strong> ((newX != oldX) || (newY != oldY)) {
+<a class="jxr_linenumber" name="L173" href="#L173">173</a>             map[newX][newY] = elementToMove;
+<a class="jxr_linenumber" name="L174" href="#L174">174</a>             map[oldX][oldY] = <strong class="jxr_keyword">new</strong> <a href="../model/elements/Static/Static.html">Static</a>(<span class="jxr_string">" "</span>, Types.VOID);
+<a class="jxr_linenumber" name="L175" href="#L175">175</a>         }
+<a class="jxr_linenumber" name="L176" href="#L176">176</a>     }
+<a class="jxr_linenumber" name="L177" href="#L177">177</a> 
+<a class="jxr_linenumber" name="L178" href="#L178">178</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L179" href="#L179">179</a> <em class="jxr_javadoccomment">     * Animate Player and Spells</em>
+<a class="jxr_linenumber" name="L180" href="#L180">180</a> <em class="jxr_javadoccomment">     * </em>
+<a class="jxr_linenumber" name="L181" href="#L181">181</a> <em class="jxr_javadoccomment">     * @see model.elements.Mobile.Player#animate(int directionX, int directionY)</em>
+<a class="jxr_linenumber" name="L182" href="#L182">182</a> <em class="jxr_javadoccomment">     * - Animate </em>
+<a class="jxr_linenumber" name="L183" href="#L183">183</a> <em class="jxr_javadoccomment">     * @param directionX Relative X coordinate deplacement</em>
+<a class="jxr_linenumber" name="L184" href="#L184">184</a> <em class="jxr_javadoccomment">     * @param directionY Relative Y coordinate deplacement</em>
+<a class="jxr_linenumber" name="L185" href="#L185">185</a> <em class="jxr_javadoccomment">     * </em>
+<a class="jxr_linenumber" name="L186" href="#L186">186</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="L187" href="#L187">187</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> animateElements(<strong class="jxr_keyword">int</strong> directionX, <strong class="jxr_keyword">int</strong> directionY) {
+<a class="jxr_linenumber" name="L188" href="#L188">188</a>         player.animate(directionX,directionY);
+<a class="jxr_linenumber" name="L189" href="#L189">189</a>         <strong class="jxr_keyword">if</strong> (spell != <strong class="jxr_keyword">null</strong>) {
+<a class="jxr_linenumber" name="L190" href="#L190">190</a>             spell.animate();
+<a class="jxr_linenumber" name="L191" href="#L191">191</a>         }
+<a class="jxr_linenumber" name="L192" href="#L192">192</a>     }
+<a class="jxr_linenumber" name="L193" href="#L193">193</a> 
+<a class="jxr_linenumber" name="L194" href="#L194">194</a>     <em class="jxr_javadoccomment">/**</em>
+<a class="jxr_linenumber" name="L195" href="#L195">195</a> <em class="jxr_javadoccomment">     * Create an element</em>
+<a class="jxr_linenumber" name="L196" href="#L196">196</a> <em class="jxr_javadoccomment">     * </em>
+<a class="jxr_linenumber" name="L197" href="#L197">197</a> <em class="jxr_javadoccomment">     * @param elements object of type Elements to add</em>
+<a class="jxr_linenumber" name="L198" href="#L198">198</a> <em class="jxr_javadoccomment">     * @param x X coordinate</em>
+<a class="jxr_linenumber" name="L199" href="#L199">199</a> <em class="jxr_javadoccomment">     * @param y Y coordinate </em>
+<a class="jxr_linenumber" name="L200" href="#L200">200</a> <em class="jxr_javadoccomment">     * </em>
+<a class="jxr_linenumber" name="L201" href="#L201">201</a> <em class="jxr_javadoccomment">     */</em>
+<a class="jxr_linenumber" name="L202" href="#L202">202</a>     <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> addElement(<a href="../model/elements/Elements.html">Elements</a> elements, <strong class="jxr_keyword">int</strong> x, <strong class="jxr_keyword">int</strong> y) {
+<a class="jxr_linenumber" name="L203" href="#L203">203</a>         map[x][y] = elements;
+<a class="jxr_linenumber" name="L204" href="#L204">204</a>     }
+<a class="jxr_linenumber" name="L205" href="#L205">205</a> }
 </pre>
 <hr/>
 <div id="footer">Copyright &#169; 2018. All rights reserved.</div>

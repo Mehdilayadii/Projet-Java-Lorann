@@ -65,7 +65,7 @@
 <a class="jxr_linenumber" name="L57" href="#L57">57</a>      @Test
 <a class="jxr_linenumber" name="L58" href="#L58">58</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> elementsFromType() {
 <a class="jxr_linenumber" name="L59" href="#L59">59</a>          Elements element = map.elementsFromType(Types.PLAYER,<span class="jxr_string">"L1"</span>,0,0);
-<a class="jxr_linenumber" name="L60" href="#L60">60</a>          Elements exceptedElement = <strong class="jxr_keyword">new</strong> Player(<span class="jxr_string">"L1"</span>,0,0);
+<a class="jxr_linenumber" name="L60" href="#L60">60</a>          Elements exceptedElement = Player.getInstance();
 <a class="jxr_linenumber" name="L61" href="#L61">61</a>          assertEquals(element.getClass(),exceptedElement.getClass());
 <a class="jxr_linenumber" name="L62" href="#L62">62</a>  
 <a class="jxr_linenumber" name="L63" href="#L63">63</a>          element = map.elementsFromType(Types.OBSTACLE,<span class="jxr_string">"C"</span>,0,0);
