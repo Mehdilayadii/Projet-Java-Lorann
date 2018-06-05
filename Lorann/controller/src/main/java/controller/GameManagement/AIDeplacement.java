@@ -17,54 +17,42 @@ import model.Types;
  * @version 2.0
  */
 
-public abstract class AIDeplacement {
+public class AIDeplacement {
+
+	private IModel model;
+	private List<Point> newEnemiesMove;
+	private static final int DETECTION_RANGE=5;
+
+	//CONSTRUCTOR//
+	public AIDeplacement(IModel model) {
+		this.model = model;
+		this.newEnemiesMove = new ArrayList<>();
+	}
 
 	/**
 	 * Generate new moves for monsters
-	 * @param model the model
 	 * 
 	 * @see  model.IModel#getEnemiesLocation()
 	 * - Get enemies location
 	 * @see model.IModel#getPlayerLocation()
 	 * - Get player location
-	 * @see  controller.GameManagement.AIDeplacement#getPath(IModel model, Point enemyPos)
+	 * @see  controller.GameManagement.AIDeplacement#getPath(Point enemyPos)
 	 * - Get possible moves
 	 * @return a list of Point : the move of each enemie
 	 */
-	public static List<Point> moveAI(IModel model) {
-
-
-		final int DETECTION_RANGE=5;
+	public List<Point> moveAI() {
+		newEnemiesMove = new ArrayList<>();
 
 		List<Point> enemiesPos = model.getEnemiesLocation();
-		List<Point> newEnemiesMove = new ArrayList<>();
 		Random rand = new Random();
 
 		//Get the current player's position
 		Point playerPos = model.getPlayerLocation();
-
 		int random;
-		boolean nearPlayer;
-		boolean movementDone;
-
 
 		for (Point enemyPos : enemiesPos) {
 
-			//false by default
-			nearPlayer=false;
-			movementDone=false;
-
-			List<Point> possiblePath = getPath(model,enemyPos);
-
-
-
-			//Check if a player is around our monster
-			if((enemyPos.x+DETECTION_RANGE>=playerPos.x) && (playerPos.x>=enemyPos.x-DETECTION_RANGE)) {
-				if ((enemyPos.y-DETECTION_RANGE<=playerPos.y) && (playerPos.y<=enemyPos.y+DETECTION_RANGE)){
-					nearPlayer = true;
-				} 
-			}
-
+			List<Point> possiblePath = getPath(enemyPos);
 
 			if (possiblePath.size() <= 1) {
 				random = 0;
@@ -72,164 +60,72 @@ public abstract class AIDeplacement {
 			else {
 				random = rand.nextInt(possiblePath.size());
 			}
-			// minimum = 0 // maximum = array length //
 
-			//If not near just do random moves
-			if (!nearPlayer) {
+			if (isPlayerReachable(enemyPos,possiblePath) != null) {
+				newEnemiesMove.add(isPlayerReachable(enemyPos,possiblePath));
+			}
+			else  {
 				newEnemiesMove.add(new Point(possiblePath.get(random).x,possiblePath.get(random).y));
 			}
-
-			else {
-				//Same x but different y
-				if(playerPos.x==enemyPos.x) {
-					if(playerPos.y>enemyPos.y) {
-
-
-						for (int i=0; i<possiblePath.size();i++) {
-							//Check if it's possible to move y+1
-							if ((possiblePath.get(i).x==0) &&(possiblePath.get(i).y==1)) {
-								newEnemiesMove.add(new Point(0,1));
-								movementDone=true;
-							}
-
-						}
-
-					}
-					else if(playerPos.y<enemyPos.y) {
-
-
-						for (int i=0; i<possiblePath.size();i++) {
-							//Check if it's possible to move y-1
-							if ((possiblePath.get(i).x==0) &&(possiblePath.get(i).y==-1)) {
-
-								newEnemiesMove.add(new Point(0,-1));
-								movementDone=true;
-							}
-							
-						}
-
-					}
-					
-				}
-
-
-				//Same y but different x
-				else if(playerPos.y==enemyPos.y) {
-					if(playerPos.x>enemyPos.x) {
-
-
-						for (int i=0; i<possiblePath.size();i++) {
-
-							//Check if it's possible to move x+1
-							if ((possiblePath.get(i).x==1) &&(possiblePath.get(i).y==0)) {
-								newEnemiesMove.add(new Point(1,0));
-								movementDone=true;
-							}
-							
-						}
-
-					}
-					else if(playerPos.x<enemyPos.x) {
-
-
-						for (int i=0; i<possiblePath.size();i++) {
-
-							//Check if it's possible to move x-1
-							if ((possiblePath.get(i).x==-1) &&(possiblePath.get(i).y==0)) {
-								newEnemiesMove.add(new Point(-1,-0));
-								movementDone=true;
-							}
-							
-						}
-						
-					}
-					
-				}
-				
-				
-				
-				else  { //There we are in the "near player zone" but with a different X or Y
-					
-					
-					//check if player is in diagonal of a monster
-					if((playerPos.y>enemyPos.y && playerPos.x>enemyPos.x )&&(enemyPos.x-playerPos.x==enemyPos.y-playerPos.y  )) {
-						//Down-Right diagonal
-						 for (int i=0; i<possiblePath.size();i++) {
-								//Check if it's possible to move y+1
-								if ((possiblePath.get(i).x==1) &&(possiblePath.get(i).y==1)) {
-									newEnemiesMove.add(new Point(1,1));
-									movementDone=true;
-								}
-								
-						 }
-												 
-					 }
-					
-					if((playerPos.y<enemyPos.y && playerPos.x<enemyPos.x )&&(playerPos.x-enemyPos.x==playerPos.y-enemyPos.y)) {
-						 //Down-Left diagonal
-						 for (int i=0; i<possiblePath.size();i++) {
-								//Check if it's possible to move y+1
-								if ((possiblePath.get(i).x==-1) &&(possiblePath.get(i).y==1)) {
-									newEnemiesMove.add(new Point(-1,1));
-									movementDone=true;
-								}
-						 } 
-						 
-					 }
-					
-					if((playerPos.y>enemyPos.y && playerPos.x<enemyPos.x )&&(playerPos.x-enemyPos.x==enemyPos.y-playerPos.y  )) {
-						//Up-Right diagonal
-						 for (int i=0; i<possiblePath.size();i++) {
-								//Check if it's possible to move y+1
-								if ((possiblePath.get(i).x==-1) &&(possiblePath.get(i).y==-1)) {
-									newEnemiesMove.add(new Point(-1,-1));
-									movementDone=true;
-								}
-								
-						 }
-						
-					 }
-					
-					if((playerPos.y<enemyPos.y && playerPos.x>enemyPos.x )&&(enemyPos.x-playerPos.x==playerPos.y-enemyPos.y )) {
-						//Up-Left diagonal
-						 
-						 for (int i=0; i<possiblePath.size();i++) {
-								//Check if it's possible to move y+1
-								if ((possiblePath.get(i).x==1) &&(possiblePath.get(i).y==-1)) {
-									newEnemiesMove.add(new Point(1,-1));
-									movementDone=true;
-								}
-								
-						 }
-									 
-					 }
-				}
-
-
-				//If different X and Y and not in diagonal
-				// 		We didn't implement more intelligent IA,
-				//		game would have been way too harder otherwise
-				if (movementDone==false) {
-					newEnemiesMove.add(new Point(possiblePath.get(random).x,possiblePath.get(random).y));
-				}
-
-
-			}
 		}
-
 		return newEnemiesMove;
 	}
 
+	/**
+	 * Check if the player can be see and if he can be rush.
+	 *
+	 * @see AIDeplacement#isMovePossible(int, int, List)
+	 *
+	 * @param enemyPos position of the enemy to move.
+	 * @param possiblePath list of possibles paths of this enemy
+	 * @return
+	 */
+	private Point isPlayerReachable(Point enemyPos,List<Point> possiblePath) {
+		Point playerDirectionRelative = new Point(model.getPlayerLocation().x-enemyPos.x, model.getPlayerLocation().y-enemyPos.y);
+		int moveX = playerDirectionRelative.x+enemyPos.x;
+		int moveY = playerDirectionRelative.y+enemyPos.y;
 
-	/*Get all possible position*/
-	
+		if(Math.abs(playerDirectionRelative.x) < DETECTION_RANGE && Math.abs(playerDirectionRelative.y) < DETECTION_RANGE) {
+			return isMovePossible(playerDirectionRelative.x,playerDirectionRelative.y, possiblePath);
+		}
+
+		return null;
+	}
+
+	/**
+	 * Verify that the movement to the player is accessible (no obstacle)
+	 * @param moveX Movement X to verify
+	 * @param moveY Movement Y to verify
+	 * @param possiblePath All possible path for this enemy
+	 * @return null if no possible path found
+	 */
+	private Point isMovePossible(int moveX, int moveY, List<Point> possiblePath) {
+		if(moveX < 0) {
+			moveX = -1;
+		}
+		else if(moveX > 0) {
+			moveX = 1;
+		}
+		if(moveY < 0) {
+			moveY = -1;
+		}
+		else if(moveY > 0) {
+			moveY = 1;
+		}
+		for (Point path : possiblePath) {
+			if (path.x == moveX && path.y == moveY) {
+				return path;
+			}
+		}
+		return null;
+	}
+
 	/**
 	 * Get the different square around available
-	 * @param model the model
 	 * @param enemyPos current enemies positions
 	 * @return a list of Point : available moves
 	 */
-	public static List<Point> getPath(IModel model,Point enemyPos) {
+	private List<Point> getPath(Point enemyPos) {
 
 		List<Point> possiblePath = new ArrayList<>();
 		Types typeCheck;

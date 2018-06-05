@@ -48,7 +48,7 @@ public class ControllerFacade implements IController {
     /**
      * Main function: mainloop of the game
      * Handle events:
-     * @see controller.GameManagement.EventsManager#setSpell_is_alive()
+     * @see controller.GameManagement.SpellManagement#setSpell_is_alive()
      * - Set the spell alive
      * @see controller.GameManagement.EventsManager#setPlayer_move()
      * - Set player's move
@@ -56,15 +56,15 @@ public class ControllerFacade implements IController {
      * - Get player's move
      * @see model.IModel#animate(int directionX, int directionY)
      * - Animate element
-     * @see controller.GameManagement.EventsManager#setPlayer_facing_during_casting()
+     * @see controller.GameManagement.SpellManagement#setPlayer_facing_during_casting()
      * - Set player facing
-     * @see controller.GameManagement.EventsManager#checkPlayerGetSpell()
+     * @see controller.GameManagement.SpellManagement#checkPlayerGetSpell()
      * - Check if the player pick up the spell
-     * @see controller.GameManagement.EventsManager#createSpell()
+     * @see controller.GameManagement.SpellManagement#createSpell()
      * - Create spell
-     * @see controller.GameManagement.EventsManager#moveSpell()
+     * @see controller.GameManagement.SpellManagement#moveSpell()
      * - Move the spell
-     * @see controller.GameManagement.EventsManager#checkMobGetSpell()
+     * @see controller.GameManagement.SpellManagement#checkMobGetSpell()
      * - Check if a enemy pick up the spell
      * @see controller.GameManagement.EventsManager#movePlayer()
      * - Change the player location from the user inputs
@@ -77,6 +77,7 @@ public class ControllerFacade implements IController {
 
         /* Handle events */
         EventsManager manager = new EventsManager(model,view);
+        AIDeplacement aiDeplacement = new AIDeplacement(model);
         SpellManagement spellManagement  = new SpellManagement(model,view);
 
         // MAIN LOOP //
@@ -101,7 +102,7 @@ public class ControllerFacade implements IController {
                     spellManagement.checkPlayerGetSpell();
 
                     /* Move the enemies */
-                    model.moveEnemies(AIDeplacement.moveAI(model));
+                    model.moveEnemies(aiDeplacement.moveAI());
                     game_loop = manager.checkMobGetPlayer();
                     /* Check if a mob go on a spell */
                     spellManagement.checkMobGetSpell();
