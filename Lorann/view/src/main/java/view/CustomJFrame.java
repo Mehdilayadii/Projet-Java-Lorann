@@ -7,7 +7,7 @@ import java.awt.event.*;
 /**
  * <h1>The Class CustomJFrame get key event. </h1>
  *
- * @author Groupe 13
+ * @author Group 13
  * @version 2.0
  */
 
@@ -145,15 +145,12 @@ public class CustomJFrame extends JFrame implements KeyListener {
                 casting_spell = false;
                 break;
         }
-
     }
      
-
-    @Override
-    
     /**
      * Event when a key is typed
      */
+    @Override
     public void keyTyped(KeyEvent key) {
     }
     
