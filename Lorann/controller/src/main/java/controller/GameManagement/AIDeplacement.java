@@ -55,7 +55,7 @@ public class AIDeplacement {
 		int i = 0;
 
 		for (Point enemyPos : enemiesPos) {
-			List<Point> possiblePath = deletePath(getPath(enemyPos),i);
+			List<Point> possiblePath = getPath(enemyPos);
 
 			if (possiblePath.size() <= 1) {
 				random = 0;
@@ -76,6 +76,15 @@ public class AIDeplacement {
 				newEnemiesMove.add(isPlayerReachable(enemyPos,possiblePath));
 			}
 			else  {
+				possiblePath = deletePath(possiblePath,i);
+
+				if (possiblePath.size() <= 1) {
+					random = 0;
+				}
+				else {
+					random = rand.nextInt(possiblePath.size());
+				}
+				
 				newEnemiesMove.add(new Point(possiblePath.get(random).x,possiblePath.get(random).y));
 			}
 			i++;

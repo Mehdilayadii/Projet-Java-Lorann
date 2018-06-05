@@ -35,7 +35,7 @@ public final class ModelFacade implements IModel {
      */
     public ModelFacade()  {
         Sprite.LoadAllSprite();
-        this.map = new MapModel(ImportLevel.CreateMap(2));
+        this.map = new MapModel(ImportLevel.CreateMap(1));
 
         this.playerAccess = new PlayerAccess(map);
         this.enemiesAccess = new EnemiesAccess(map);
