@@ -1,7 +1,7 @@
 package model;
 
 /**
- * <h1>The Class DatabaseMap.</h1>
+ * <h1>The Class DatabaseMap return the map from the DB.</h1>
  *
  * @author Group 13
  * @version 2.0
