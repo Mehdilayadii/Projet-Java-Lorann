@@ -6,6 +6,7 @@ package model;
  * @author Group 13
  * @version 2.0
  */
+
 public class DatabaseMap {
 
 				/**** ATTRIBUTE ****/
