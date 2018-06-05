@@ -77,15 +77,19 @@ public class AIDeplacement {
 			}
 			else  {
 				possiblePath = deletePath(possiblePath,i);
+				Point move = new Point(0,0);
 
-				if (possiblePath.size() <= 1) {
-					random = 0;
+				if (possiblePath.size() == 1) {
+					new Point(possiblePath.get(0).x,possiblePath.get(0).y);
+				}
+				else if (possiblePath.size() == 0){
+					move = new Point(0,0);
 				}
 				else {
 					random = rand.nextInt(possiblePath.size());
+					move = new Point(possiblePath.get(random).x,possiblePath.get(random).y);
 				}
-
-				newEnemiesMove.add(new Point(possiblePath.get(random).x,possiblePath.get(random).y));
+				newEnemiesMove.add(move);
 			}
 			i++;
 		}
@@ -103,8 +107,6 @@ public class AIDeplacement {
 	 */
 	private Point isPlayerReachable(Point enemyPos,List<Point> possiblePath) {
 		Point playerDirectionRelative = new Point(model.getPlayerLocation().x-enemyPos.x, model.getPlayerLocation().y-enemyPos.y);
-		int moveX = playerDirectionRelative.x+enemyPos.x;
-		int moveY = playerDirectionRelative.y+enemyPos.y;
 
 		if(Math.abs(playerDirectionRelative.x) < DETECTION_RANGE && Math.abs(playerDirectionRelative.y) < DETECTION_RANGE) {
 			return isMovePossible(playerDirectionRelative.x,playerDirectionRelative.y, possiblePath);
@@ -166,12 +168,12 @@ public class AIDeplacement {
 		Iterator<Point> iterator = paths.iterator();
 		while (iterator.hasNext()) {
 			Point path = iterator.next();
-
 			if (model.getBehavior(i) == 1 && ((path.x == 0) || (path.y == 0))) {
 				iterator.remove();
 			}
 			if (model.getBehavior(i) == 0 && ((path.x != 0) || (path.y != 0))) {
 				iterator.remove();
+
 			}
 		}
 		return paths;
