@@ -7,7 +7,7 @@ import java.text.DecimalFormat;
 /**
  * <h1>The Class CustomJPanel create score and the map </h1>
  *
- * @author Groupe 13
+ * @author Group 13
  * @version 2.0
  */
 
@@ -59,6 +59,7 @@ public class CustomJPanel extends JPanel {
      * Standard graphic from swing
      * 
      * @param g Object of type Graphics
+     * @see Graphics
      */
     @Override
     public void paintComponent(Graphics g) {
