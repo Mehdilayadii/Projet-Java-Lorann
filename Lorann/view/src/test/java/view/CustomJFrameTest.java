@@ -41,12 +41,6 @@ public class CustomJFrameTest {
 		fail("Not yet implemented");
 	}
 
-	@Test
-	public void testChanging_value_deplacement() {
-		final int expected = 1;
-		final int vk=CustomJFrame.getChanging_value_deplacement().changing_value_deplacement(KeyEvent.VK_UP);
-		assertEquals(expected, vk);
-	}
 	
 	@Test
 	public void testKeyPressed() {
