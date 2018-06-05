@@ -3,7 +3,7 @@ package view;
 import java.awt.*;
 
 /**
- * <h1>The Interface IView.</h1>
+ * <h1>The Interface IView Implement by view.viewFacade.</h1>
  *
  * @author Group 13
  * @version 2.0
