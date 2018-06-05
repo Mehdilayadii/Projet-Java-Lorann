@@ -13,6 +13,7 @@ import model.Types;
 public class Player extends Mobile{
 
     private int animationNumber = 0;
+    private static Player INSTANCE = null;
 
     /**** CONSTRUCTOR ****/
     
@@ -22,8 +23,20 @@ public class Player extends Mobile{
      * @param x X coordinate
      * @param y Y coordinate
      */
-    public Player(String stringStyle, int x, int y) {
+    private Player(String stringStyle, int x, int y) {
         super(stringStyle,Types.PLAYER,x,y);
+    }
+
+    public static synchronized void setInstance(String stringStyle, int x, int y)
+    {
+        if (INSTANCE == null)
+        {
+            INSTANCE = new Player(stringStyle,x,y);
+        }
+    }
+
+    public static Player getInstance() {
+        return Player.INSTANCE;
     }
 
     /**** METHODS ****/

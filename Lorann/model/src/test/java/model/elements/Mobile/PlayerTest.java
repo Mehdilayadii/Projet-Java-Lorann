@@ -13,7 +13,7 @@ public class PlayerTest {
 
     @Before
     public void setUp() throws Exception {
-        this.player = new Player("L1",0,0);
+        this.player = Player.getInstance();
     }
 
     @After

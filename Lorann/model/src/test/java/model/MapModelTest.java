@@ -57,7 +57,7 @@ public class MapModelTest {
     @Test
     public void elementsFromType() {
         Elements element = map.elementsFromType(Types.PLAYER,"L1",0,0);
-        Elements exceptedElement = new Player("L1",0,0);
+        Elements exceptedElement = Player.getInstance();
         assertEquals(element.getClass(),exceptedElement.getClass());
 
         element = map.elementsFromType(Types.OBSTACLE,"C",0,0);

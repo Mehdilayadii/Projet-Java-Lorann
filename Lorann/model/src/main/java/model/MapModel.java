@@ -143,7 +143,8 @@ public class MapModel {
 
         switch (type) {
             case PLAYER:
-                player = new Player(stringStyle,positionX,positionY);
+                Player.setInstance(stringStyle,positionX,positionY);
+                player = Player.getInstance();
                 element = player;
                 break;
             case ENEMY:

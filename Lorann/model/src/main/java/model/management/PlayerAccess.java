@@ -41,7 +41,7 @@ public class PlayerAccess {
      * @param y spawn location
      */
     public void createPlayer(int x, int y) {
-        Player player = new Player("L1",x,y);
+        Player player = Player.getInstance();
         map.setPlayer(player);
         map.addElement(player,x,y);
     }
