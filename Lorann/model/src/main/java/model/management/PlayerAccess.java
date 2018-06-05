@@ -25,7 +25,6 @@ public class PlayerAccess {
      * - Move element from current coordinate to new ones
      * @param moveX Relative direction in X coordinate
      * @param moveY Relative direction in Y coordinate
-     *
      */
     public void movePlayer(int moveX, int moveY) {
         int newX = map.getPlayer().getLocation().x + moveX;

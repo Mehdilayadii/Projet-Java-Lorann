@@ -2,7 +2,11 @@ package model;
 
 import model.elements.Elements;
 import model.elements.ElementsList;
-import model.elements.Mobile.Mobile;
+import model.elements.IElements;
+import model.elements.Mobile.Enemies.EnemyDiagonal;
+import model.elements.Mobile.Enemies.EnemyLine;
+import model.elements.Mobile.Enemies.EnemyRandom;
+import model.elements.Mobile.Enemies.IEnemy;
 import model.elements.Mobile.Player;
 import model.elements.Mobile.Spell;
 import model.elements.Static.Static;
@@ -21,7 +25,7 @@ import java.util.List;
 public class MapModel {
 
 	/** The map */
-    private Elements[][] map;
+    private IElements[][] map;
     
     /** The player */
     private Player player;
@@ -33,7 +37,7 @@ public class MapModel {
     private Point exitDoor;
 
     /** The list of enemies */
-    private List<Mobile> enemies = new ArrayList<Mobile>();
+    private List<IEnemy> enemies = new ArrayList<>();
 
     /**** CONSTRUCTOR ****/
     
@@ -53,7 +57,7 @@ public class MapModel {
      * Get the map
      * @return a 2 dimension array of type Elements : the map
      */
-    public Elements[][] getMap() {
+    public IElements[][] getMap() {
         return map;
     }
 
@@ -69,7 +73,7 @@ public class MapModel {
      * Get the enemies
      * @return a list of object of type Mobile
      */
-    public List<Mobile> getEnemies() {
+    public List<IEnemy> getEnemies() {
         return enemies;
     }
 
@@ -148,8 +152,22 @@ public class MapModel {
                 element = player;
                 break;
             case ENEMY:
-                enemies.add(new Mobile(stringStyle,Types.ENEMY,positionX,positionY));
-                element = enemies.get(enemies.size()-1);
+                if(EnemyRandom.number == 0) {
+                    enemies.add(new EnemyRandom(stringStyle,positionX,positionY));
+                    element = new EnemyRandom(stringStyle,positionX,positionY);
+                }
+                else if(EnemyDiagonal.number == 0) {
+                    enemies.add(new EnemyDiagonal(stringStyle,positionX,positionY));
+                    element = new EnemyDiagonal(stringStyle,positionX,positionY);
+                }
+                else if(EnemyLine.number == 0) {
+                    enemies.add(new EnemyLine(stringStyle,positionX,positionY));
+                    element = new EnemyLine(stringStyle,positionX,positionY);
+                }
+                else {
+                    enemies.add(new EnemyRandom(stringStyle,positionX,positionY));
+                    element = new EnemyRandom(stringStyle,positionX,positionY);
+                }
                 break;
             case OBSTACLE_KILL:
                 element = new Static(stringStyle, type);
@@ -168,7 +186,7 @@ public class MapModel {
      * @param newY New Y coordinate
      */
     public void moveElement(int oldX, int oldY, int newX, int newY) {
-        Elements elementToMove = map[oldX][oldY];
+        IElements elementToMove = map[oldX][oldY];
         if ((newX != oldX) || (newY != oldY)) {
             map[newX][newY] = elementToMove;
             map[oldX][oldY] = new Static(" ", Types.VOID);
@@ -199,7 +217,7 @@ public class MapModel {
      * @param y Y coordinate 
      * 
      */
-    public void addElement(Elements elements, int x, int y) {
+    public void addElement(IElements elements, int x, int y) {
         map[x][y] = elements;
     }
 }

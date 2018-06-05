@@ -227,4 +227,14 @@ public final class ModelFacade implements IModel {
 			break;
         }
     }
+
+    /**
+     * Get the behavior of a specific element.
+     * @param i the desired element
+     * @return the behavior in Point form
+     */
+
+    public Point getBehavior(int i) {
+        return map.getEnemies().get(i).getBehavior();
+    }
 }

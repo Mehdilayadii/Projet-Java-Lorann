@@ -13,7 +13,7 @@ import java.awt.*;
  */
 
 
-public class Elements {
+public class Elements implements IElements{
 
     protected String stringStyle;
     protected Image sprite;

@@ -3,6 +3,8 @@ package model.management;
 import model.MapModel;
 import model.Types;
 import model.elements.Elements;
+import model.elements.IElements;
+import model.elements.Mobile.Enemies.IEnemy;
 import model.elements.Mobile.Mobile;
 import model.elements.Static.Static;
 
@@ -59,9 +61,9 @@ public class EnemiesAccess {
     public List<Point> getEnemiesLocation() {
 
         List<Point> enemiesLocations = new ArrayList<>();
-        List<Mobile> enemies = map.getEnemies();
+        List<IEnemy> enemies = map.getEnemies();
 
-        for(Mobile enemy : enemies) {
+        for(IEnemy enemy : enemies) {
             enemiesLocations.add(enemy.getLocation());
         }
         return enemiesLocations;
@@ -73,7 +75,7 @@ public class EnemiesAccess {
      * - Get current mobile elements
      * @see model.ModelFacade#getEnemiesLocation()
      * - Get current enemies positions
-     * @see model.MapModel#addElement(Elements, int, int)
+     * @see model.MapModel#addElement(IElements, int, int)
      * - Add element at specific position
      * @param x coordinate X of an enemy
      * @param y coordinate Y of an enemy
@@ -97,7 +99,7 @@ public class EnemiesAccess {
      * @param y spawn location
      */
     public void createEnemy(int x, int y) {
-        for (Mobile enemyLoc : map.getEnemies()) {
+        for (IEnemy enemyLoc : map.getEnemies()) {
             if (enemyLoc.getLocation().x == x && enemyLoc.getLocation().y == y) {
                 map.addElement(enemyLoc,x,y);
             }

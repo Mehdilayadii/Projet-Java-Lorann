@@ -21,7 +21,7 @@ public class AIDeplacement {
 
 	private IModel model;
 	private List<Point> newEnemiesMove;
-	private static final int DETECTION_RANGE=5;
+	private static final int DETECTION_RANGE = 5;
 
 	//CONSTRUCTOR//
 	public AIDeplacement(IModel model) {
@@ -38,19 +38,20 @@ public class AIDeplacement {
 	 * - Get player location
 	 * @see  controller.GameManagement.AIDeplacement#getPath(Point enemyPos)
 	 * - Get possible moves
-	 * @return a list of Point : the move of each enemie
+	 * @return a list of Point : the move of each enemies
 	 */
 	public List<Point> moveAI() {
+		List<Point> oldEnemiesMove = newEnemiesMove;
 		newEnemiesMove = new ArrayList<>();
  
 		List<Point> enemiesPos = model.getEnemiesLocation();
 		Random rand = new Random();
-
 		//Get the current player's position
 		int random;
+		int i = 0;
 
 		for (Point enemyPos : enemiesPos) {
-
+			Point oldEnemyMove = oldEnemiesMove.get(i);
 			List<Point> possiblePath = getPath(enemyPos);
 
 			if (possiblePath.size() <= 1) {
@@ -66,6 +67,7 @@ public class AIDeplacement {
 			else  {
 				newEnemiesMove.add(new Point(possiblePath.get(random).x,possiblePath.get(random).y));
 			}
+			i++;
 		}
 		return newEnemiesMove;
 	}
@@ -138,5 +140,9 @@ public class AIDeplacement {
 			}
 		}
 		return possiblePath;
+	}
+
+	private List<Point> deletePath(List<Point> paths) {
+		return null;
 	}
 }
