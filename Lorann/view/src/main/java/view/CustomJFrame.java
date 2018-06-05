@@ -48,6 +48,7 @@ public class CustomJFrame extends JFrame implements KeyListener {
     				/**** GETTERS and SETTERS ****/
     /**
      * Get the player deplacement
+     * 
      * @return deplacement_player
      */
     public Point return_deplacement_player() {
@@ -55,7 +56,8 @@ public class CustomJFrame extends JFrame implements KeyListener {
     }
 
     /**
-     * Get if player is casting_spell
+     * Get if player is casting_spell.
+     * 
      * @return casting_spell
      */
     public boolean return_casting_player() {
@@ -93,7 +95,8 @@ public class CustomJFrame extends JFrame implements KeyListener {
 
 
     /**
-     * Event when a key is pressed
+     * Event when a key is pressed:
+     * 
      * @see view.CustomJFrame#changing_value_deplacement(int keyCode)
      * - Change value of deplacement
      * @param key
