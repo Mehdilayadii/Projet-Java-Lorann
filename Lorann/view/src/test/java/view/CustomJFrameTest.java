@@ -49,9 +49,7 @@ public class CustomJFrameTest {
 
 	@Test
 	public void testKeyReleased() {
-		final int expected = 0;
-		final int vk=CustomJFrame.keyReleased(KeyEvent.VK_UP).deplacement_player.y;
-		assertEquals(expected, vk);
+
 	}
 
 	@Test

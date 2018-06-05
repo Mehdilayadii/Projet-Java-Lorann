@@ -234,7 +234,7 @@ public final class ModelFacade implements IModel {
      * @return the behavior in Point form
      */
 
-    public Point getBehavior(int i) {
+    public int getBehavior(int i) {
         return map.getEnemies().get(i).getBehavior();
     }
 }

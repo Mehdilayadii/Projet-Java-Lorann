@@ -8,7 +8,7 @@ import java.awt.*;
 public class EnemyLine extends Mobile implements IEnemy{
 
     public static int number = 0;
-    private static Point behavior = new Point(0,1);
+    private static int behavior = 0;
 
     /**** CONSTRUCTOR ****/
 
@@ -27,11 +27,11 @@ public class EnemyLine extends Mobile implements IEnemy{
     /**
      * Get the behavior of the enemy.
      * @return behavior
-     * 1,0 for diagonal
-     * 0,1 for line
-     * 1,1 for all
+     * 1 for diagonal
+     * 0 for line
+     * -1 for all
      */
-    public Point getBehavior() {
+    public int getBehavior() {
         return behavior;
     }
 }

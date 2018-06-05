@@ -2,6 +2,7 @@ package controller.GameManagement;
 
 import java.awt.Point;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
@@ -41,7 +42,10 @@ public class AIDeplacement {
 	 * @return a list of Point : the move of each enemies
 	 */
 	public List<Point> moveAI() {
-		List<Point> oldEnemiesMove = newEnemiesMove;
+		List<Point> oldEnemiesMove = new ArrayList<>();
+		if (newEnemiesMove.size()<0) {
+			oldEnemiesMove = newEnemiesMove;
+		}
 		newEnemiesMove = new ArrayList<>();
  
 		List<Point> enemiesPos = model.getEnemiesLocation();
@@ -51,8 +55,7 @@ public class AIDeplacement {
 		int i = 0;
 
 		for (Point enemyPos : enemiesPos) {
-			Point oldEnemyMove = oldEnemiesMove.get(i);
-			List<Point> possiblePath = getPath(enemyPos);
+			List<Point> possiblePath = deletePath(getPath(enemyPos),i);
 
 			if (possiblePath.size() <= 1) {
 				random = 0;
@@ -61,7 +64,15 @@ public class AIDeplacement {
 				random = rand.nextInt(possiblePath.size());
 			}
 
-			if (isPlayerReachable(enemyPos,possiblePath) != null) {
+			if (oldEnemiesMove.size()>0){
+				for (Point path : possiblePath) {
+					if(oldEnemiesMove.get(i).x == path.x && oldEnemiesMove.get(i).y == path.y) {
+						newEnemiesMove.add(new Point(oldEnemiesMove.get(i).x,oldEnemiesMove.get(i).y));
+					}
+				}
+
+			}
+			else if (isPlayerReachable(enemyPos,possiblePath) != null) {
 				newEnemiesMove.add(isPlayerReachable(enemyPos,possiblePath));
 			}
 			else  {
@@ -142,7 +153,18 @@ public class AIDeplacement {
 		return possiblePath;
 	}
 
-	private List<Point> deletePath(List<Point> paths) {
-		return null;
+	private List<Point> deletePath(List<Point> paths,int i) {
+		Iterator<Point> iterator = paths.iterator();
+		while (iterator.hasNext()) {
+			Point path = iterator.next();
+
+			if (model.getBehavior(i) == 1 && ((path.x == 0) || (path.y == 0))) {
+				iterator.remove();
+			}
+			if (model.getBehavior(i) == 0 && ((path.x != 0) || (path.y != 0))) {
+				iterator.remove();
+			}
+		}
+		return paths;
 	}
 }

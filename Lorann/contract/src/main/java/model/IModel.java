@@ -28,7 +28,7 @@ public interface IModel {
     /*kill*/
     void        killEnemy(int x, int y);
     /*Get specific behavior*/
-    Point       getBehavior(int i);
+    int         getBehavior(int i);
 
     /*Spell -----------------------------------------------*/
     /*Create and delete*/

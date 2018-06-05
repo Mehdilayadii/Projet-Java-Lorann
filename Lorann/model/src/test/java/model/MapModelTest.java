@@ -1,6 +1,7 @@
 package model;
 
 import model.elements.Elements;
+import model.elements.IElements;
 import model.elements.Mobile.Player;
 import model.elements.Static.Static;
 import org.junit.After;
@@ -77,7 +78,7 @@ public class MapModelTest {
         int newX = 5;
         int newY = 5;
 
-        Elements elementsToMove = map.getMap()[0][0];
+        IElements elementsToMove = map.getMap()[0][0];
         map.moveElement(oldX,oldY,newX,newY);
 
         assertEquals(elementsToMove,map.getMap()[5][5]);
