@@ -42,55 +42,32 @@ public class AIDeplacement {
 	 * @return a list of Point : the move of each enemies
 	 */
 	public List<Point> moveAI() {
-		List<Point> oldEnemiesMove = new ArrayList<>();
-		if (newEnemiesMove.size()<0) {
-			oldEnemiesMove = newEnemiesMove;
-		}
-		newEnemiesMove = new ArrayList<>();
- 
 		List<Point> enemiesPos = model.getEnemiesLocation();
+		List<Point> oldEnemiesMove = newEnemiesMove;
 		Random rand = new Random();
+
+		newEnemiesMove = new ArrayList<>();
+
 		//Get the current player's position
 		int random;
 		int i = 0;
 
 		for (Point enemyPos : enemiesPos) {
 			List<Point> possiblePath = getPath(enemyPos);
+			Point chosePath = new Point(0,0);
 
-			if (possiblePath.size() <= 1) {
-				random = 0;
+			if(oldEnemiesMove.size() != 0 && isInPath(oldEnemiesMove.get(i).x,oldEnemiesMove.get(i).y,possiblePath)) {
+				chosePath = new Point(oldEnemiesMove.get(i).x, oldEnemiesMove.get(i).y);
 			}
-			else {
+			else if(possiblePath.size() == 1) {
+				chosePath = possiblePath.get(0);
+			}
+			else if(possiblePath.size() > 1) {
 				random = rand.nextInt(possiblePath.size());
+				chosePath = possiblePath.get(random);
 			}
 
-			if (oldEnemiesMove.size()>0){
-				for (Point path : possiblePath) {
-					if(oldEnemiesMove.get(i).x == path.x && oldEnemiesMove.get(i).y == path.y) {
-						newEnemiesMove.add(new Point(oldEnemiesMove.get(i).x,oldEnemiesMove.get(i).y));
-					}
-				}
-
-			}
-			else if (isPlayerReachable(enemyPos,possiblePath) != null) {
-				newEnemiesMove.add(isPlayerReachable(enemyPos,possiblePath));
-			}
-			else  {
-				possiblePath = deletePath(possiblePath,i);
-				Point move = new Point(0,0);
-
-				if (possiblePath.size() == 1) {
-					new Point(possiblePath.get(0).x,possiblePath.get(0).y);
-				}
-				else if (possiblePath.size() == 0){
-					move = new Point(0,0);
-				}
-				else {
-					random = rand.nextInt(possiblePath.size());
-					move = new Point(possiblePath.get(random).x,possiblePath.get(random).y);
-				}
-				newEnemiesMove.add(move);
-			}
+			newEnemiesMove.add(chosePath);
 			i++;
 		}
 		return newEnemiesMove;
@@ -164,6 +141,12 @@ public class AIDeplacement {
 		return possiblePath;
 	}
 
+	/**
+	 * Delete path that don't correspond to the path.
+	 * @param paths
+	 * @param i
+	 * @return
+	 */
 	private List<Point> deletePath(List<Point> paths,int i) {
 		Iterator<Point> iterator = paths.iterator();
 		while (iterator.hasNext()) {
@@ -173,9 +156,24 @@ public class AIDeplacement {
 			}
 			if (model.getBehavior(i) == 0 && ((path.x != 0) || (path.y != 0))) {
 				iterator.remove();
-
 			}
 		}
 		return paths;
+	}
+
+	/**
+	 * Check if the given move is in the path list.
+	 * @param x
+	 * @param y
+	 * @param possiblePath
+	 * @return true if is in the list of path
+	 */
+	private boolean isInPath(int x, int y, List<Point> possiblePath) {
+		for (Point path : possiblePath) {
+			if (path.x == x && path.y == y) {
+				return true;
+			}
+		}
+		return false;
 	}
 }
