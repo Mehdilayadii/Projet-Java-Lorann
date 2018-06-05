@@ -7,7 +7,7 @@ import view.ViewFacade;
 /**
  * <h1>The Class Main.</h1>
  *
- * @author Groupe 13
+ * @author Group 13
  * @version 2.0
  */
 public abstract class Main {
