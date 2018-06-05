@@ -8,18 +8,25 @@ import model.elements.Static.Static;
 
 import java.awt.*;
 
+/**
+ * <h1>The Class SpellAccess </h1>
+ *
+ * @author Group 13
+ * @version 2.0
+ */
+
 public class SpellAccess {
 
     private MapModel map;
 
-    //CONSTRUCTOR//
+    				/**** CONSTRUCTOR ****/
     public SpellAccess(MapModel map) {
         this.map = map;
     }
 
-    //METHODS//
+    				/**** METHODS ****/
     /**
-     * Move the spell
+     * Move the spell.
      *
      * @see model.elements.Mobile.Mobile#getLocation()
      * - Get current location of an element
@@ -45,6 +52,7 @@ public class SpellAccess {
 
     /**
      * Create a spell at a special location, in function of the player location and a direction vector.
+     * 
      * @param x spawn location
      * @param y spawn location
      */
@@ -59,7 +67,7 @@ public class SpellAccess {
     }
 
     /**
-     * Delete the spell
+     * Delete the spell.
      *
      * @see model.elements.Mobile.Mobile#getLocation()
      * - Get current location of an element
