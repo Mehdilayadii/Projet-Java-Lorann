@@ -5,7 +5,7 @@ import model.ModelFacade;
 import view.ViewFacade;
 
 /**
- * <h1>The Class Main.</h1>
+ * <h1>The Class Main run the game.</h1>
  *
  * @author Group 13
  * @version 2.0
