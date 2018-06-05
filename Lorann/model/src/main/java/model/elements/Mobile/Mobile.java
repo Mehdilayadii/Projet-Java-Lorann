@@ -9,17 +9,18 @@ import java.awt.*;
 /**
  * <h1>The Class Mobile.</h1>
  *
- * @author Groupe 13
+ * @author Group 13
  * @version 2.0
  */
 public class Mobile extends Elements{
 
     protected Point location;
 
-    /**** CONSTRUCTOR ****/
+    				/**** CONSTRUCTOR ****/
     
      /**
-     * Instantiate a mobile element
+     * Instantiate a mobile element.
+     * 
      * @param stringStyle the string style (example : "L1" corresponds to the player)
      * @param type Type of the mobile element
      * @param x X coordinate 
@@ -36,10 +37,11 @@ public class Mobile extends Elements{
 
     }
 
-    /**** GETTERS and SETTERS ****/
+    				/**** GETTERS and SETTERS ****/
     
     /**
-     * Get the location
+     * Get the location.
+     * 
      * @return an object of type Point : the location
      */
     public Point getLocation() {
@@ -48,7 +50,8 @@ public class Mobile extends Elements{
 
     
     /**
-     * Set the location
+     * Set the location.
+     * 
      * @param x X coordinate
      * @param y Y coordinate
      */
