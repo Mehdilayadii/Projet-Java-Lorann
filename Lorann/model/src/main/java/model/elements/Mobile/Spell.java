@@ -8,12 +8,11 @@ import java.awt.*;
 /**
  * <h1>The Class Spell.</h1>
  *
- * @author Groupe 13
+ * @author Group 13
  * @version 2.0
  */
 
-
-public class Spell extends Mobile{
+public class Spell extends Mobile {
 
 	/** the direction*/
     private Point direction;
@@ -21,10 +20,11 @@ public class Spell extends Mobile{
     /** the animate number*/
     int animationNumber = 8;
 
-    /**** CONSTRUCTOR ****/
+    				/**** CONSTRUCTOR ****/
     
     /**
-     * Initiate a spell
+     * Initiate a spell.
+     * 
      * @param stringStyle the string style (example : "L1" corresponds to the player)
      * @param x X coordinate
      * @param y Y coordinate
@@ -35,10 +35,11 @@ public class Spell extends Mobile{
         this.direction = direction;
     }
 
-    /**** GETTERS and SETTERS ****/
+    				/**** GETTERS and SETTERS ****/
     
     /**
-     * Get the direction
+     * Get the direction.
+     * 
      * @return the direction
      */
     public Point getDirection() {
@@ -46,17 +47,19 @@ public class Spell extends Mobile{
     }
     
     /**
-     * Set the direction
+     * Set the direction.
+     * 
      * @param direction the direction
      */
     public void setDirection(Point direction) {
         this.direction = direction;
     }
 
-    /**** METHODS ****/
+    				/**** METHODS ****/
     
     /**
-     * Animate a sprite
+     * Animate a sprite.
+     * 
      * @see model.elements.ElementsList#getImage()
      * - Get the image
      * @see model.elements.ElementsList#getCharacter()
