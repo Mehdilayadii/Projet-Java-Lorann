@@ -84,7 +84,7 @@ public class AIDeplacement {
 				else {
 					random = rand.nextInt(possiblePath.size());
 				}
-				
+
 				newEnemiesMove.add(new Point(possiblePath.get(random).x,possiblePath.get(random).y));
 			}
 			i++;
