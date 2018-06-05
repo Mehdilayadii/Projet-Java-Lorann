@@ -7,6 +7,7 @@ import java.util.List;
 
 import model.dao.ImportLevel;
 import model.elements.Elements;
+import model.elements.IElements;
 import model.elements.Mobile.Mobile;
 import model.elements.Mobile.Player;
 import model.elements.Mobile.Spell;
@@ -38,7 +39,7 @@ public final class ModelFacade implements IModel {
      */
     public ModelFacade()  {
         Sprite.LoadAllSprite();
-        this.map = new MapModel(ImportLevel.CreateMap(3));
+        this.map = new MapModel(ImportLevel.CreateMap(5));
 
         this.playerAccess = new PlayerAccess(map);
         this.enemiesAccess = new EnemiesAccess(map);
@@ -207,7 +208,7 @@ public final class ModelFacade implements IModel {
      * - Get current location of the spell
      * @see model.MapModel#getExitDoor()
      * - Get info about exit door
-     * @see model.MapModel#addElement(Elements, int, int)
+     * @see model.MapModel#addElement(IElements, int, int)
      * - Add element at specific coordinates
      * 
      * @param x coordinate X of an element

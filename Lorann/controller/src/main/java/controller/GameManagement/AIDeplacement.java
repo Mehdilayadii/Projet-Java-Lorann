@@ -56,16 +56,23 @@ public class AIDeplacement {
 			List<Point> possiblePath = getPath(enemyPos);
 			Point chosePath = new Point(0,0);
 
-			if(oldEnemiesMove.size() != 0 && isInPath(oldEnemiesMove.get(i).x,oldEnemiesMove.get(i).y,possiblePath)) {
-				chosePath = new Point(oldEnemiesMove.get(i).x, oldEnemiesMove.get(i).y);
+			if (isPlayerReachable(enemyPos, possiblePath) != null) {
+				chosePath = isPlayerReachable(enemyPos, possiblePath);
 			}
-			else if(possiblePath.size() == 1) {
-				chosePath = possiblePath.get(0);
+			else {
+				possiblePath = deletePath(possiblePath,i);
+				if(oldEnemiesMove.size() != 0 && (oldEnemiesMove.get(i).x != 0 && oldEnemiesMove.get(i).y != 0) && isInPath(oldEnemiesMove.get(i).x,oldEnemiesMove.get(i).y,possiblePath)) {
+					chosePath = new Point(oldEnemiesMove.get(i).x, oldEnemiesMove.get(i).y);
+				}
+				else if(possiblePath.size() == 1) {
+					chosePath = possiblePath.get(0);
+				}
+				else if(possiblePath.size() > 1) {
+					random = rand.nextInt(possiblePath.size());
+					chosePath = possiblePath.get(random);
+				}
 			}
-			else if(possiblePath.size() > 1) {
-				random = rand.nextInt(possiblePath.size());
-				chosePath = possiblePath.get(random);
-			}
+
 
 			newEnemiesMove.add(chosePath);
 			i++;
@@ -154,7 +161,7 @@ public class AIDeplacement {
 			if (model.getBehavior(i) == 1 && ((path.x == 0) || (path.y == 0))) {
 				iterator.remove();
 			}
-			if (model.getBehavior(i) == 0 && ((path.x != 0) || (path.y != 0))) {
+			if (model.getBehavior(i) == 0 && ((path.x != 0) && (path.y != 0))) {
 				iterator.remove();
 			}
 		}

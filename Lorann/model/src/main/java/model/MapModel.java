@@ -161,17 +161,17 @@ public class MapModel {
                 element = player;
                 break;
             case ENEMY:
-                if(EnemyRandom.number == 0) {
+                if(EnemyDiagonal.number == 0) {
+                    enemies.add(new EnemyDiagonal(stringStyle,positionX,positionY));
+                    element = new EnemyDiagonal(stringStyle,positionX,positionY);
+                }
+                else if(EnemyRandom.number == 0) {
                     enemies.add(new EnemyRandom(stringStyle,positionX,positionY));
                     element = new EnemyRandom(stringStyle,positionX,positionY);
                 }
                 else if(EnemyLine.number == 0) {
                     enemies.add(new EnemyLine(stringStyle,positionX,positionY));
                     element = new EnemyLine(stringStyle,positionX,positionY);
-                }
-                else if(EnemyDiagonal.number == 0) {
-                    enemies.add(new EnemyDiagonal(stringStyle,positionX,positionY));
-                    element = new EnemyDiagonal(stringStyle,positionX,positionY);
                 }
                 else {
                     enemies.add(new EnemyRandom(stringStyle,positionX,positionY));
