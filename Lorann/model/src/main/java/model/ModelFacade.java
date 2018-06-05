@@ -18,18 +18,21 @@ import model.management.SpellAccess;
 /**
  * <h1>The Class ModelFacade provides a facade of the Model component.</h1>
  *
- * @author Groupe 13
+ * @author Group 13
  * @version 2.0
  */
 public final class ModelFacade implements IModel {
 
 	/** Map model */
     private MapModel map;
-
+    /** Modify position, sprite... (player) */
     private PlayerAccess playerAccess;
+    /** Modify position, sprite... (enemy) */
     private EnemiesAccess enemiesAccess;
+    /** Modify position, sprite... (spell) */
     private SpellAccess spellAccess;
     
+    				/**** CONSTRUCTOR ****/
     /**
      * Instantiates a new model facade.
      */
@@ -42,9 +45,10 @@ public final class ModelFacade implements IModel {
         this.spellAccess = new SpellAccess(map);
     }
 
-    // GETTERS and SETTERS //
+    				/**** GETTERS and SETTERS ****/
     /**
-     * Get sprite from specific coordinate
+     * Get sprite from specific coordinate.
+     * 
      * @see model.MapModel#getMap()
      * - Get the map
      * @see model.elements.Elements#getSprite()
@@ -58,7 +62,8 @@ public final class ModelFacade implements IModel {
     }
 
     /**
-     * Get dimension from a map
+     * Get dimension from a map.
+     * 
      * @see model.MapModel#getMap()
      * - Get the map
      * @return a object of type Dimension (dimension of the map)
@@ -68,7 +73,7 @@ public final class ModelFacade implements IModel {
     }
     
 
-    // METHODS //
+    				/**** METHODS ****/
     /**
      * Animate elements
      * @see model.MapModel#animateElements(int, int)
@@ -92,7 +97,7 @@ public final class ModelFacade implements IModel {
      * @see model.elements.Mobile.Mobile#getLocation()
      * - Get location of an element
      * @see model.MapModel#getPlayer()
-     * - Get infos about player
+     * - Get info about player
      * @return object of type Point with player coordinates
      */
     public Point getPlayerLocation() {
@@ -145,9 +150,9 @@ public final class ModelFacade implements IModel {
      * Get location of the spell
      *
      * @see model.elements.Mobile.Mobile#getLocation()
-     * - Get location of a specifi element
+     * - Get location of a specific element
      * @see model.MapModel#getSpell()
-     * - Get current infos about the spell
+     * - Get current info about the spell
      * @return a object of type Point with spell's coordinates
      */
     public Point getSpellLocation() {
@@ -158,7 +163,7 @@ public final class ModelFacade implements IModel {
      * Check if spell is alive
      *
      * @see model.MapModel#getSpell()
-     * - Get current infos about the spell
+     * - Get current info about the spell
      * @return false if no spell is currently created
      */
 
@@ -201,7 +206,7 @@ public final class ModelFacade implements IModel {
      * @see MapModel#getSpell()
      * - Get current location of the spell
      * @see model.MapModel#getExitDoor()
-     * - Get infos about exit door
+     * - Get info about exit door
      * @see model.MapModel#addElement(Elements, int, int)
      * - Add element at specific coordinates
      * 
@@ -233,7 +238,6 @@ public final class ModelFacade implements IModel {
      * @param i the desired element
      * @return the behavior in Point form
      */
-
     public int getBehavior(int i) {
         return map.getEnemies().get(i).getBehavior();
     }
