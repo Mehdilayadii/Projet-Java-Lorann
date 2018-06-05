@@ -17,10 +17,11 @@ public class CustomJFrameTest {
 	
 	/** the jframe*/
 	CustomJFrame jframe;
+	
 	/** the robot to simulate key press*/
 	static Robot r = null;
 
-	
+
 	/**
 	 * The set up before class
 	 * @throws Exception

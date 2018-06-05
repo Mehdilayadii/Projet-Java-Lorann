@@ -47,7 +47,6 @@ public class CustomJPanelTest {
 	P=new CustomJPanel(map,8270);
 	}
 
-	
 	/**
 	 * The tear down
 	 * @throws Exception
