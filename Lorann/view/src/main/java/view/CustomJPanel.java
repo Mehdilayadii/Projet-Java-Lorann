@@ -5,7 +5,7 @@ import java.awt.*;
 import java.text.DecimalFormat;
 
 /**
- * <h1>The Class CustomJPanel create score and the map </h1>
+ * <h1>The Class CustomJPanel create score and the map.</h1>
  *
  * @author Group 13
  * @version 2.0
@@ -23,7 +23,8 @@ public class CustomJPanel extends JPanel {
     
     				/**** CONSTRUCTOR ****/
      /**
-     * Initiate the Panel
+     * Initiate the Panel.
+     * 
      * @param map the map
      * @param score the score
      */
@@ -37,7 +38,8 @@ public class CustomJPanel extends JPanel {
     			/**** GETTERS and SETTERS ****/
     
     /**
-     * Get the score
+     * Get the score.
+     * 
      * @return score the score
      */
     public String getScore() {
@@ -56,7 +58,7 @@ public class CustomJPanel extends JPanel {
     				/**** METHODS ****/
     
     /**
-     * Standard graphic from swing
+     * Standard graphic from swing.
      * 
      * @param g Object of type Graphics
      * @see Graphics

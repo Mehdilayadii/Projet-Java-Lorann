@@ -64,7 +64,8 @@ public class ViewFacade implements IView, Observer {
     				/**** METHODS ****/
      
     /**
-     * Create window with message
+     * Create window with message.
+     * 
      * @param message
      * 		String with the message
      * @see WindowEvent#showMessageDialog()
@@ -77,8 +78,8 @@ public class ViewFacade implements IView, Observer {
     }
     
     /**
-     * Instantiate new Jpanel to Print elements on the screen (map + score) 
-     * Refresh the window
+     * Instantiate new Jpanel to Print elements on the screen (map + score).
+     * Refresh the window.
      * 
      * @see WindowEvent#add()
      * @see WindowEvent#revalidate()
@@ -107,7 +108,7 @@ public class ViewFacade implements IView, Observer {
     }
 
     /**
-     * update and refresh the screen
+     * Update and refresh the screen.
      * 
      * @see IView#showElements()
      */

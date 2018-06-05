@@ -43,6 +43,7 @@ public enum Types {
     				/**** GETTERS and SETTERS ****/
     /**
      * Get if the element is solid.
+     * 
      * @return isSolid
      */
     public boolean isSolid() {
@@ -51,6 +52,7 @@ public enum Types {
 
     /**
      * Get if element can kill.
+     * 
      * @return behavior
      */
     public int getBehavior() {
