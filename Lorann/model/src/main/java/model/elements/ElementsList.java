@@ -6,43 +6,50 @@ import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * <h1>The Class Elements.</h1>
+ *
+ * @author Group 13
+ * @version 2.0
+ */
+
 public enum ElementsList {
 
-	//LORANN//
+	// LORANN //
 	
-    /**Lorann looking down*/
+    /** Lorann looking down */
     Lorann_D                ("lorann_b","L1",Types.PLAYER,0,-1),
-    /**Lorann looking down left*/
+    /** Lorann looking down left */
     Lorann_DL               ("lorann_bl","L2",Types.PLAYER,-1,-1),
-    /**Lorann looking left*/
+    /** Lorann looking left */
     Lorann_L                ("lorann_l","L3",Types.PLAYER,-1,0),
-    /**Lorann looking up left*/
+    /** Lorann looking up left */
     Lorann_UL               ("lorann_ul","L4",Types.PLAYER,-1,1),
-    /**Lorann looking up*/
+    /** Lorann looking up */
     Lorann_U                ("lorann_u","L5",Types.PLAYER,0,1),
-    /**Lorann looking up right*/
+    /** Lorann looking up right */
     Lorann_UR               ("lorann_ur","L6",Types.PLAYER,1,1),
-    /**Lorann looking right*/
+    /** Lorann looking right */
     Lorann_R                ("lorann_r","L7",Types.PLAYER,1,0),
-    /**Lorann down right*/
+    /** Lorann down right */
     Lorann_DR               ("lorann_br","L8",Types.PLAYER,1,-1),
 
     
     //SPELLS//
     
-    /**Green spell*/
+    /** Green spell */
     Spell_GREEN             ("fireball_1","S1",Types.SPELL),
-    /**Blue spell*/
+    /** Blue spell */
     Spell_BLUE              ("fireball_2","S2",Types.SPELL),
-    /**Purple spell*/
+    /** Purple spell */
     Spell_PURPLE            ("fireball_3","S3",Types.SPELL),
-    /**Red spell*/
+    /** Red spell */
     Spell_RED               ("fireball_4","S4",Types.SPELL),
-    /**Yellow spell*/
+    /** Yellow spell */
     Spell_YELLOW            ("fireball_5","S5",Types.SPELL),
 
     
-    //DOOR//
+    // DOOR //
     
     /**Closed door*/
     Door_CLOSE              ("gate_closed","DC",Types.OBSTACLE_KILL),
@@ -50,41 +57,41 @@ public enum ElementsList {
     Door_OPEN               ("gate_open", "DO",Types.EXIT_DOOR),
 
     
-    //OBSTACLE//
+    // OBSTACLE //
     
-    /**Space*/
+    /** Space */
     Obstacle_SPACE          ("space"," ",Types.VOID),
-    /**Corner bone*/
+    /** Corner bone */
     Obstacle_COIN           ("bone","C",Types.OBSTACLE),
-    /**Horizontal bone*/
+    /** Horizontal bone */
     Obstacle_HORIZONTAL     ("horizontal_bone","H",Types.OBSTACLE),
-    /**Vertical bone*/
+    /** Vertical bone */
     Obstacle_VERTICAL       ("vertical_bone","V",Types.OBSTACLE),
 
     
-    //DEMONS//
+    // DEMONS //
 
-    //** Demon Kyrac*/
+    //** Demon Kyrac */
     Demon_KYRAC             ("monster_1", "D1",Types.ENEMY),
-    //** Demon Cargyr*/
+    //** Demon Cargyr */
     Demon_CARGYR            ("monster_2", "D2",Types.ENEMY),
-   //** Demon Arrbarr*/
+   //** Demon Arrbarr */
     Demon_ARRBARR           ("monster_3", "D3",Types.ENEMY),
-   //** Demon Maarcg*/
+   //** Demon Maarcg */
     Demon_MAARCG            ("monster_4", "D4",Types.ENEMY),
 
     
-    //OTHERS//
+    // OTHERS //
     
-    /**Gold bag */
+    /** Gold bag */
     Object_GOLD             ("purse","G",Types.ITEM),
-    /**Crystal ball */
+    /** Crystal ball */
     Object_BALL             ("crystal_ball","B",Types.MAGICAL_BALL);
 
-	/** The x coordinate*/
+	/** The x coordinate */
     int x = 0;
     
-    /** The y coordinate*/
+    /** The y coordinate */
     int y = 0;
     
     /** The name */
@@ -108,7 +115,8 @@ public enum ElementsList {
     }
 
     /**
-     * Instantiate the element list
+     * Instantiate the element list.
+     * 
      * @param name Name of the element
      * @param character Character of the element
      * @param type Type of the element
@@ -120,7 +128,8 @@ public enum ElementsList {
     }
 
     /**
-     * Instantiate the element list
+     * Instantiate the element list.
+     * 
      * @param name Name of the element
      * @param character Character of the element
      * @param type Type of the element
@@ -136,10 +145,11 @@ public enum ElementsList {
         this.y = y;
     }
 
-    /**** GETTERS and SETTERS ****/
+    				/**** GETTERS and SETTERS ****/
     
     /**
-     * Get the name
+     * Get the name.
+     * 
      * @return the name
      */
     public String getName(){
@@ -147,7 +157,8 @@ public enum ElementsList {
     }
 
     /**
-     * Get the image
+     * Get the image.
+     * 
      * @return the image
      */
     public Image getImage() {
@@ -155,7 +166,8 @@ public enum ElementsList {
     }
     
     /**
-     * Get the type
+     * Get the type.
+     * 
      * @return the type
      */
     public Types getType() {
@@ -163,7 +175,8 @@ public enum ElementsList {
     }
 
     /**
-     * Get the character
+     * Get the character.
+     * 
      * @return the character
      */
     public String getCharacter() {
@@ -171,7 +184,8 @@ public enum ElementsList {
     }
 
     /**
-     * Set the image
+     * Set the image.
+     * 
      * @param image The image to set
      */
     public void setImage(Image image) {
@@ -179,7 +193,8 @@ public enum ElementsList {
     }
     
     /**
-     * Get the direction
+     * Get the direction.
+     * 
      * @return an object of type Point
      */
     public Point getDirection() {
@@ -187,7 +202,8 @@ public enum ElementsList {
     }
 
     /**
-     * Get enumeration from given char
+     * Get enumeration from given char.
+     * 
      * @param character The character to get the corresponding enumeration
      * @return the enum of ElementsList
      */
