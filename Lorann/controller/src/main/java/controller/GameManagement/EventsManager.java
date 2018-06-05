@@ -8,7 +8,7 @@ import java.awt.*;
 
 
 /**
- * <h1>The Class EventsManager.</h1>
+ * <h1>The Class EventsManager manage event.</h1>
  *
  * @author Groupe 13
  * @version 2.0
@@ -33,7 +33,8 @@ public class EventsManager {
     				/**** CONSTRUCTOR ****/
     
     /**
-     * Initiate the Events Manager
+     * Initiate the Events Manager.
+     * 
      * @param model the model
      * @param view the view
      */
@@ -50,6 +51,7 @@ public class EventsManager {
   
     /**
      * Set the player movement from user inputs, it's also the player look direction.
+     * 
      * @see view.IView#return_deplacement_player()
      * - Get the current deplacement
      * */
@@ -59,6 +61,7 @@ public class EventsManager {
 
     /**
      * Get the player movement.
+     * 
      * @return Vector of the player movement
      */
     public Point getPlayer_move() {
@@ -90,6 +93,7 @@ public class EventsManager {
 
     /**
      * Check if a enemy eat the player. If so make kill the good one and delete the spell.
+     * 
      * @see IModel#deleteSpell()
      * @see IModel#killEnemy(int, int)
      * @return true if mob get a player
