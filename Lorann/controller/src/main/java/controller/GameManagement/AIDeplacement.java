@@ -42,12 +42,11 @@ public class AIDeplacement {
 	 */
 	public List<Point> moveAI() {
 		newEnemiesMove = new ArrayList<>();
-
+ 
 		List<Point> enemiesPos = model.getEnemiesLocation();
 		Random rand = new Random();
 
 		//Get the current player's position
-		Point playerPos = model.getPlayerLocation();
 		int random;
 
 		for (Point enemyPos : enemiesPos) {
@@ -78,7 +77,7 @@ public class AIDeplacement {
 	 *
 	 * @param enemyPos position of the enemy to move.
 	 * @param possiblePath list of possibles paths of this enemy
-	 * @return
+	 * @return an object of type Point : if case is reachable
 	 */
 	private Point isPlayerReachable(Point enemyPos,List<Point> possiblePath) {
 		Point playerDirectionRelative = new Point(model.getPlayerLocation().x-enemyPos.x, model.getPlayerLocation().y-enemyPos.y);
