@@ -5,7 +5,7 @@ import model.Types;
 import view.IView;
 
 /**
- * <h1>The Class Events  </h1>
+ * <h1>The Class Events manage event. </h1>
  *
  * @author Groupe 13
  * @version 2.0
@@ -36,7 +36,8 @@ public class Events {
     
     			/**** CONSTRUCTORS ****/
     /**
-     * Initiate events
+     * Initiate events.
+     * 
      * @see model.IModel#getPlayerLocation()
      * - Get location of the player
      * @param model The model
@@ -90,6 +91,7 @@ public class Events {
 
     /**
      * Check if player get on a deadly case, then finish the game.
+     * 
      * @see IView#displayMessage(String)
      *- Display a message
      * To get the type of a case, and then its behavior:
@@ -105,6 +107,7 @@ public class Events {
 
     /**
      * Check if player get on a exit case, then finish the game.
+     * 
      * @see IView#displayMessage(String)
      *- Display a message
      * To get the type of a case:
@@ -120,6 +123,7 @@ public class Events {
 
     /**
      * Use for the controller to check if the game is end.
+     * 
      * @return True if the game is end
      */
     public boolean isGameEnd() {
@@ -127,7 +131,7 @@ public class Events {
     }
 
     /**
-     * Set the player future location, in function of its actual position and the user input
+     * Set the player future location, in function of its actual position and the user input.
      *
      * @see IModel#getPlayerLocation()
      *
@@ -140,7 +144,7 @@ public class Events {
     }
 
     /**
-     * Set the spell future location, in function of its actual position and the user input
+     * Set the spell future location, in function of its actual position and the user input.
      *
      * @see IModel#getSpellLocation()
      *
@@ -168,7 +172,6 @@ public class Events {
      *
      * @return false if the desired case is an obstacle
      */
-
     public boolean spellCanReach() {
         Types type = model.getType(futureX_spell,futureY_spell);
         boolean canReach_spell = true;
@@ -181,7 +184,14 @@ public class Events {
         return canReach_spell;
     }
     
-    /*Check if we can create the spell*/
+    /**
+     * Check if we can create the spell.
+     * 
+     * @see IModel#getPlayerLocation()
+     * @see IModel#getType(int,int)
+     *      
+     * @return if Lorann can't create spell
+     */
     public boolean canCreateSpell(int moveX, int moveY) {
         boolean canCreateSpell = false;
         int futureX = model.getPlayerLocation().x + moveX;
