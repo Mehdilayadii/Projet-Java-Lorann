@@ -44,7 +44,7 @@ public class SpellAccess {
     }
 
     /**
-     * Create a spell at a special location
+     * Create a spell at a special location, in function of the player location and a direction vector.
      * @param x spawn location
      * @param y spawn location
      */
