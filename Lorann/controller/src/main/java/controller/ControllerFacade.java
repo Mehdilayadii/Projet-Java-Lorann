@@ -1,6 +1,7 @@
 package controller;
 
 import java.awt.*;
+import java.util.Observable;
 
 import controller.GameManagement.AIDeplacement;
 import controller.GameManagement.EventsManager;
@@ -11,11 +12,11 @@ import view.IView;
 /**
  * <h1>The Class ControllerFacade provides a facade of the Controller component.</h1>
  *
- * @author Groupe 13
+ * @author Group 13
  * @version 2.0
  */
 
-public class ControllerFacade implements IController {
+public class ControllerFacade extends Observable implements IController {
 
 					/**** ATTRIBUTE ****/
     /** The view. */
@@ -121,7 +122,8 @@ public class ControllerFacade implements IController {
 
                     /* Refresh the view */
                     view.setImageMap(getImageMap());
-                    view.showElements();
+                    view.update();
+                    //view.showElements();
                 }         
         } catch(InterruptedException e)
         { e.printStackTrace(); }
