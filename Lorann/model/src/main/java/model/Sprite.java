@@ -8,7 +8,7 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * <h1>The Class Sprite provides basic methods of the Model component. </h1>
+ * <h1>The Class Sprite provides basic methods of the Model component.</h1>
  *
  * @author Group 13
  * @version 2.0
