@@ -6,7 +6,7 @@ import model.Types;
 /**
  * <h1>The Class Player.</h1>
  *
- * @author Groupe 13
+ * @author Group 13
  * @version 2.0
  */
 
@@ -15,10 +15,11 @@ public class Player extends Mobile{
     private int animationNumber = 0;
     private static Player INSTANCE = null;
 
-    /**** CONSTRUCTOR ****/
+    				/**** CONSTRUCTOR ****/
     
     /**
-     * Initiate the player
+     * Initiate the player.
+     * 
      * @param stringStyle the stringStyle (example : "L1" corresponds to the player)
      * @param x X coordinate
      * @param y Y coordinate
@@ -39,12 +40,13 @@ public class Player extends Mobile{
         return Player.INSTANCE;
     }
 
-    /**** METHODS ****/
+    				/**** METHODS ****/
     
     /**
-     * Animate an element depends on the coordinates
+     * Animate an element depends on the coordinates.
+     * 
      * @param directionX Relative X coordinate
-     * @param directionY Realtive Y coordinate
+     * @param directionY Relative Y coordinate
      * 
      * @see model.elements.ElementsList#getCharacter()
      * - Get the character
