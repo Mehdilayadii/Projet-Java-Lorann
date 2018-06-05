@@ -6,15 +6,16 @@ import model.elements.Elements;
 /**
  * <h1>The Class Static.</h1>
  *
- * @author Groupe 13
+ * @author Group 13
  * @version 2.0
  */
 public class Static extends Elements {
 
-    /**** CONSTRUCTOR ****/
+				/**** CONSTRUCTOR ****/
 	
 	/**
-	 * Initiate a static element
+	 * Initiate a static element.
+	 * 
 	 * @param stringStyle the stringStyle (example : "L1" corresponds to the player)
 	 * @param type The type 
 	 */

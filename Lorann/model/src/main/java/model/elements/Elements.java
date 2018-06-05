@@ -8,10 +8,9 @@ import java.awt.*;
 /**
  * <h1>The Class Elements.</h1>
  *
- * @author Groupe 13
+ * @author Group 13
  * @version 2.0
  */
-
 
 public class Elements implements IElements{
 
@@ -20,10 +19,11 @@ public class Elements implements IElements{
 
     protected Types type;
 
-    /**** CONSTRUCTOR ****/
+    				/**** CONSTRUCTOR ****/
     
     /**
-     * Instantiate Elements
+     * Instantiate Elements.
+     * 
      * @param stringStyle Object of type String (example : "L1" corresponds to the player)
      * @param type Object of type Types
      */
@@ -33,10 +33,11 @@ public class Elements implements IElements{
         sprite = Sprite.getSpriteFromString(stringStyle);
     }
 
-    /**** GETTERS and SETTERS ****/
+    				/**** GETTERS and SETTERS ****/
     
     /**
-     * Get the string style
+     * Get the string style.
+     * 
      * @return an object of type String : the string style
      */
     public String getStringStyle() {
@@ -44,7 +45,8 @@ public class Elements implements IElements{
     }
 
     /**
-     * Get the sprite
+     * Get the sprite.
+     * 
      * @return an object of type Image : the sprite
      */
     public Image getSprite() {
@@ -52,7 +54,8 @@ public class Elements implements IElements{
     }
 
     /**
-     * Get the type
+     * Get the type.
+     * 
      * @return an object of type Types : the type
      */
     public Types getType() {

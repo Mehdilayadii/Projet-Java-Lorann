@@ -3,20 +3,28 @@ package model.management;
 import model.MapModel;
 import model.elements.Mobile.Player;
 
+/**
+ * <h1>The Class PlayerAccess </h1>
+ *
+ * @author Group 13
+ * @version 2.0
+ */
+
 public class PlayerAccess {
 
     private MapModel map;
 
-    //CONSTRUCTOR//
+    				/**** CONSTRUCTOR ****/
     public PlayerAccess(MapModel map) {
         this.map = map;
     }
 
-    //METHODS//
+    				/**** METHODS ****/
     /**
-     * Move player
+     * Move player.
+     * 
      * @see model.MapModel#getPlayer()
-     * - Get infos about player
+     * - Get info about player
      * @see model.elements.Mobile.Mobile#getLocation()
      * - Get location of an element
      * @see model.elements.Mobile.Mobile#setLocation(int ,int)
@@ -36,6 +44,7 @@ public class PlayerAccess {
 
     /**
      * Create the player at a special location.
+     * 
      * @param x spawn location
      * @param y spawn location
      */

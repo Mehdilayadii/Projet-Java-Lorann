@@ -12,19 +12,30 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * <h1>The Class EnemiesAccess </h1>
+ *
+ * @author Group 13
+ * @version 2.0
+ */
+
 public class EnemiesAccess {
 
     private MapModel map;
 
-    //CONSTRUCTOR//
+    				/**** CONSTRUCTOR ****/
+    /**
+     * @param map
+     */
     public EnemiesAccess(MapModel map) {
         this.map = map;
     }
 
-    //METHODS//
+    				/**** METHODS ****/
 
     /**
-     * Move enemies on the map
+     * Move enemies on the map.
+     * 
      * @param enemiesMove List of current enemies position
      * @see model.MapModel#getEnemies()
      * - Get current mobile elements
@@ -53,7 +64,8 @@ public class EnemiesAccess {
     }
 
     /**
-     * Get Enemies location
+     * Get Enemies location.
+     * 
      * @see model.MapModel#getEnemies()
      * - Get current mobile elements
      * @return list of points of enemies locations
@@ -70,7 +82,8 @@ public class EnemiesAccess {
     }
 
     /**
-     * Kill a specific enemy
+     * Kill a specific enemy.
+     * 
      * @see model.MapModel#getEnemies()
      * - Get current mobile elements
      * @see model.ModelFacade#getEnemiesLocation()
@@ -95,6 +108,7 @@ public class EnemiesAccess {
 
     /**
      * Create an enemy at a special location, is used to refresh the view. Only MapModel can create new enemies.
+     * 
      * @param x spawn location
      * @param y spawn location
      */
@@ -107,7 +121,7 @@ public class EnemiesAccess {
     }
 
     /**
-     * Check if there is enemy at specific position
+     * Check if there is enemy at specific position.
      *
      * @see model.ModelFacade#getEnemiesLocation()
      * - Get current location of enemies
