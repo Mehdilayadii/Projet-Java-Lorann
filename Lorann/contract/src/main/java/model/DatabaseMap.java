@@ -3,21 +3,21 @@ package model;
 /**
  * <h1>The Class DatabaseMap.</h1>
  *
- * @author Groupe 13
+ * @author Group 13
  * @version 2.0
  */
 public class DatabaseMap {
 
-
+				/**** ATTRIBUTE ****/
     /** The name of element */
-    private String    element;
+    private String element;
     
     /** The X coordinates of element */
     private int cooX;
-    
     /** The Y coordinates of element */
     private int cooY;
 
+    				/**** CONSTRUCTOR ****/
     /**
      * Instantiates a new example.
      *
@@ -35,6 +35,7 @@ public class DatabaseMap {
         this.cooY = cooY;
     }
 
+    				/**** GETTERS and SETTERS ****/
     /**
      * Gets the element.
      *
@@ -85,7 +86,7 @@ public class DatabaseMap {
      *            the new X coordinates
      */
     public void setCooX(final int cooX) {
-        this.cooX= cooX;
+        this.cooX = cooX;
     }
     
     
@@ -96,14 +97,18 @@ public class DatabaseMap {
      *            the new Y coordinates
      */
     public void setCooY(final int cooY) {
-        this.cooY= cooY;
+        this.cooY = cooY;
     }
     
     
 
-    /*
-     * (non-Javadoc)
+    /**
+     * Get the element with his localisation.
+     * 
      * @see java.lang.Object#toString()
+     * @see IModel#getCooX()
+     * @see IModel#getCooY()
+     * @return element with localisation
      */
     @Override
    public String toString() {
