@@ -121,7 +121,7 @@ public class SpellManagement {
      * @see IView#return_casting_player()
      * @see Events#canCreateSpell(int, int)
      * @see IModel#createElement(int, int, Types)
-     * @see GameManagement#spell_controlling()
+     * @see controller.GameManagement.SpellManagement#spell_controlling()
      */
     public void createSpell() {
         spell_is_alive = model.spellAlive();

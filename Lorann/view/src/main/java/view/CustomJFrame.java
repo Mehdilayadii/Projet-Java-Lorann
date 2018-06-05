@@ -91,6 +91,7 @@ public class CustomJFrame extends JFrame implements KeyListener {
         }
     }
 
+
     /**
      * Event when a key is pressed
      * @see view.CustomJFrame#changing_value_deplacement(int keyCode)
