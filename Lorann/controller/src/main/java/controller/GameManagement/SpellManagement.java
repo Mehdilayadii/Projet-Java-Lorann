@@ -8,7 +8,7 @@ import java.awt.*;
 
 
 /**
- * <h1>The Class EventsManager.</h1>
+ * <h1>The Class SpellManagement manage spell.</h1>
  *
  * @author Groupe 13
  * @version 2.0
@@ -45,7 +45,8 @@ public class SpellManagement {
     				/**** CONSTRUCTOR ****/
     
     /**
-     * Initiate the Events Manager
+     * Initiate the Events Manager.
+     * 
      * @param model the model
      * @param view the view
      */
@@ -65,7 +66,8 @@ public class SpellManagement {
     				/**** GETTERS and SETTERS ****/
     
     /**
-     * Set the spell state
+     * Set the spell state.
+     * 
      * Player state is a boolean :
      * @see model.IModel#spellAlive()
      * - Get the current state
@@ -78,6 +80,7 @@ public class SpellManagement {
 
     /**
      * Set the direction of the player. Same as setPlayerMove() but is save if player stop move. Make able the player to shoot then he don't move.
+     * 
      * @see IView#return_deplacement_player()
      */
     public void setPlayer_facing_during_casting() {
@@ -92,6 +95,7 @@ public class SpellManagement {
 
     /**
      * Check if the player pick up the spell. If so make sure that the player haven't been erase by the spell.
+     * 
      * @see IModel#deleteSpell()
      * @see IModel#createElement(int, int, Types)
      */
@@ -105,6 +109,7 @@ public class SpellManagement {
 
     /**
      * Check if a enemy pick up the spell. If so make kill the good one and delete the spell.
+     * 
      * @see IModel#deleteSpell()
      * @see IModel#killEnemy(int, int)
      */
@@ -118,6 +123,7 @@ public class SpellManagement {
 
     /**
      * Create a spell in function of the player position and his facing.
+     * 
      * @see IView#return_casting_player()
      * @see Events#canCreateSpell(int, int)
      * @see IModel#createElement(int, int, Types)
@@ -140,6 +146,7 @@ public class SpellManagement {
 
     /**
      * Make the spell controllable by Lorann.
+     * 
      * @see IMdodel#getPlayerLocation()
      * @see IMdodel#getSpellLocation()
      */
@@ -173,7 +180,8 @@ public class SpellManagement {
 	}
 
 	/**
-     * Move the spell (if exist)
+     * Move the spell (if exist).
+     * 
      * @see Events#setFuture_spell(int, int)
      * @see IModel#moveSpell(int, int)
      */
