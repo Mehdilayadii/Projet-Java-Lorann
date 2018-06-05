@@ -6,4 +6,5 @@ model.dao
 model.elements
 model.elements.Mobile
 model.elements.Static
+model.management
 view
