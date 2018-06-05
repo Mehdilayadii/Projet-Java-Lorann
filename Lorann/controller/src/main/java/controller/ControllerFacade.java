@@ -47,7 +47,8 @@ public class ControllerFacade extends Observable implements IController {
     				/**** METHODS ****/
 
     /**
-     * Main function: mainloop of the game
+     * Main function: mainloop of the game.
+     * 
      * Handle events:
      * @see controller.GameManagement.SpellManagement#setSpell_is_alive()
      * - Set the spell alive
@@ -131,7 +132,8 @@ public class ControllerFacade extends Observable implements IController {
     }
     
     /**
-     * Instantiate Image and return array with the map
+     * Instantiate Image and return array with the map.
+     * 
      * @see IModel#getSpriteFromMap(int, int)
      * - Get Sprite from the map
      * @see model.IModel#getMapSize()
